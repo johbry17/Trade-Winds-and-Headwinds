@@ -1,0 +1,40 @@
+GEO.id,GEO.id2,GEO.display-label,NAICS.id,NAICS.display-label,YEAR.id,ESTAB,RCPTOT,RCPTOT_N,PAYANN,PAYANN_N,EMP,EMP_N
+Geographic identifier code,Id2,Geographic area name,2007 NAICS code,Meaning of 2007 NAICS code,Year,Number of establishments,"Value of sales, receipts, revenue, shipments, or business done ($1,000)","Noise range for value of sales, shipments, receipts, revenue, or business done","Annual payroll ($1,000)",Noise range for annual payroll,Paid employees for pay period including March 12 (number),Noise range for paid employees for pay period including March 12
+0400000US78,78,United States Virgin Islands,00,Total for all sectors,2007,2583,19478709,H,1084599,G,35300,G
+0400000US78,78,United States Virgin Islands,00,Total for all sectors,2002,2615,3961114,0,668986,0,28660,0
+0400000US78,78,United States Virgin Islands,21,"Mining, quarrying, and oil and gas extraction",2007,4,5934,H,1717,G,39,H
+0400000US78,78,United States Virgin Islands,21,"Mining, quarrying, and oil and gas extraction",2002,1,D,D,D,D,a,D
+0400000US78,78,United States Virgin Islands,22,Utilities,2007,7,D,D,D,D,f,D
+0400000US78,78,United States Virgin Islands,22,Utilities,2002,4,D,D,D,D,a,D
+0400000US78,78,United States Virgin Islands,23,Construction,2007,195,351615,G,115169,G,3388,G
+0400000US78,78,United States Virgin Islands,23,Construction,2002,190,285582,0,90662,0,3050,0
+0400000US78,78,United States Virgin Islands,31-33,Manufacturing,2007,70,D,D,D,D,g,D
+0400000US78,78,United States Virgin Islands,31-33,Manufacturing,2002,63,172830,0,27151,0,1058,0
+0400000US78,78,United States Virgin Islands,42,Wholesale trade,2007,58,288141,G,24641,G,797,G
+0400000US78,78,United States Virgin Islands,42,Wholesale trade,2002,74,262932,0,27664,0,1028,0
+0400000US78,78,United States Virgin Islands,44-45,Retail trade,2007,641,1397381,G,146149,G,6773,G
+0400000US78,78,United States Virgin Islands,44-45,Retail trade,2002,680,1217466,0,128444,0,6653,0
+0400000US78,78,United States Virgin Islands,48-49,Transportation and warehousing,2007,103,270138,G,49057,G,1571,G
+0400000US78,78,United States Virgin Islands,48-49,Transportation and warehousing,2002,106,181965,0,34194,0,1134,0
+0400000US78,78,United States Virgin Islands,51,Information,2007,45,175883,G,36408,G,892,G
+0400000US78,78,United States Virgin Islands,51,Information,2002,45,183770,0,30285,0,845,0
+0400000US78,78,United States Virgin Islands,52,Finance and insurance,2007,99,525669,G,66823,G,1555,G
+0400000US78,78,United States Virgin Islands,52,Finance and insurance,2002,96,248229,0,48040,0,1416,0
+0400000US78,78,United States Virgin Islands,53,Real estate and rental and leasing,2007,219,229015,G,44571,G,1296,G
+0400000US78,78,United States Virgin Islands,53,Real estate and rental and leasing,2002,192,184904,0,26224,0,1152,0
+0400000US78,78,United States Virgin Islands,54,"Professional, scientific, and technical services",2007,257,284353,G,60050,G,1370,G
+0400000US78,78,United States Virgin Islands,54,"Professional, scientific, and technical services",2002,228,360192,0,50235,0,1238,0
+0400000US78,78,United States Virgin Islands,55,Management of companies and enterprises,2007,8,5935,G,2383,H,83,H
+0400000US78,78,United States Virgin Islands,55,Management of companies and enterprises,2002,23,30745,0,2183,0,76,0
+0400000US78,78,United States Virgin Islands,56,Administrative and support and waste management and remediation services,2007,158,211080,G,62043,G,2498,G
+0400000US78,78,United States Virgin Islands,56,Administrative and support and waste management and remediation services,2002,155,135267,0,35834,0,2050,0
+0400000US78,78,United States Virgin Islands,61,Educational services,2007,15,3804,G,821,G,57,H
+0400000US78,78,United States Virgin Islands,61,Educational services,2002,19,5792,0,1668,0,97,0
+0400000US78,78,United States Virgin Islands,62,Health care and social assistance,2007,234,279681,G,58480,G,2624,G
+0400000US78,78,United States Virgin Islands,62,Health care and social assistance,2002,203,93289,0,24428,0,1232,0
+0400000US78,78,United States Virgin Islands,71,"Arts, entertainment, and recreation",2007,52,143356,G,23708,H,1001,H
+0400000US78,78,United States Virgin Islands,71,"Arts, entertainment, and recreation",2002,38,110039,0,14271,0,662,0
+0400000US78,78,United States Virgin Islands,72,Accommodation and food services,2007,255,460532,G,129635,G,6146,G
+0400000US78,78,United States Virgin Islands,72,Accommodation and food services,2002,313,331008,0,92357,0,5639,0
+0400000US78,78,United States Virgin Islands,81,Other services (except public administration),2007,163,191842,G,84535,G,2160,G
+0400000US78,78,United States Virgin Islands,81,Other services (except public administration),2002,185,153703,0,34689,0,1307,0

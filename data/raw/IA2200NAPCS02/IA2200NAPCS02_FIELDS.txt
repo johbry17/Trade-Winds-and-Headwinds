@@ -1,0 +1,24 @@
+Field_Name|Label|Field_Type|Field_Length|Number_of_Decimals
+GEOTYPE|Type of geography flag|CHARACTER|2|0
+ST|FIPS state code|CHARACTER|2|0
+GEO_ID|Geographic identifier code|CHARACTER|30|0
+GEO_LABEL|Geographic Area Name|CHARACTER|255|0
+GEO_ID_F|Geo Footnote|CHARACTER|4|0
+NAPCS2022|2022 NAPCS collection code|CHARACTER|20|0
+NAPCS2022_LABEL|Meaning of NAPCS2022|CHARACTER|255|0
+NAPCS2022_F|2022 NAPCS Footnote|CHARACTER|4|0
+SECTOR|NAICS economic sector|CHARACTER|2|0
+NAICS2022|2022 NAICS code|CHARACTER|8|0
+NAICS2022_LABEL|Meaning of NAICS2022|CHARACTER|255|0
+NAICS2022_F|2022 NAICS Footnote|CHARACTER|4|0
+YEAR|Year|CHARACTER|4|0
+ESTAB|Number of establishments|NUMBER|10|0
+ESTAB_F|Flag for number of establishments|CHARACTER|1|0
+RCPTOT|Sales, value of shipments, or revenue ($1,000)|NUMBER|11|0
+RCPTOT_F|Flag for sales, value of shipments, or revenue|CHARACTER|1|0
+RCPTOT_N|Noise range for sales, value of shipments, or revenue|NUMBER|10|0
+RCPTOT_N_F|Flag for Noise range for sales, value of shipments, or revenue|CHARACTER|1|0
+RMRTRAN|Guestrooms as of December 31|NUMBER|12|0
+RMRTRAN_F|Flag for guestrooms as of December 31|CHARACTER|1|0
+RMRTRAN_N|Noise range for guestrooms as of December 31|NUMBER|10|0
+RMRTRAN_N_F|Flag for Noise range for guestrooms as of December 31|CHARACTER|1|0

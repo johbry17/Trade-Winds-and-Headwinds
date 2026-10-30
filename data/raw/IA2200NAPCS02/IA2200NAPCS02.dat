@@ -1,0 +1,42 @@
+#GEOTYPE|ST|GEO_ID|GEO_LABEL|GEO_ID_F|NAPCS2022|NAPCS2022_LABEL|NAPCS2022_F|SECTOR|NAICS2022|NAICS2022_LABEL|NAICS2022_F|YEAR|ESTAB|ESTAB_F|RCPTOT|RCPTOT_F|RCPTOT_N|RCPTOT_N_F|RMRTRAN|RMRTRAN_F|RMRTRAN_N|RMRTRAN_N_F
+02|60|0400000US60|American Samoa||0000000000|Total||72|7211|Traveler accommodation||2022|6||11991||0|H|236||0|H
+02|60|0400000US60|American Samoa||7000025000|Meals, snacks, other food items, and nonalcoholic beverages, prepared and served or dispensed, for immediate consumption||72|7211|Traveler accommodation||2022|3||3940||0|H|171||0|J
+02|60|0400000US60|American Samoa||7000050000|Alcoholic beverages, prepared and served or dispensed for immediate consumption||72|7211|Traveler accommodation||2022|3||860||0|H|171||0|J
+02|60|0400000US60|American Samoa||7003825000|Room or unit accommodation for travelers||72|7211|Traveler accommodation||2022|6||5691||0|H|222||0|H
+02|60|0400000US60|American Samoa||7006425000|Rental of space for meetings, conventions, and similar short-term business uses||72|7211|Traveler accommodation||2022|3||1103||0|H|171||0|J
+02|60|0400000US60|American Samoa||7006475000|Rental of space for weddings, banquets, parties, and similar short-term social uses||72|7211|Traveler accommodation||2022|3||398||0|H|128||0|H
+02|66|0400000US66|Guam||0000000000|Total||72|7211|Traveler accommodation||2022|39||292458||0|G|8924||0|G
+02|66|0400000US66|Guam||5000300000|Retail sales of alcoholic beverages||72|7211|Traveler accommodation||2022|3||84||0|H|972||0|H
+02|66|0400000US66|Guam||7000025000|Meals, snacks, other food items, and nonalcoholic beverages, prepared and served or dispensed, for immediate consumption||72|7211|Traveler accommodation||2022|23||63843||0|G|6830||0|G
+02|66|0400000US66|Guam||7000050000|Alcoholic beverages, prepared and served or dispensed for immediate consumption||72|7211|Traveler accommodation||2022|17||10057||0|G|5974||0|G
+02|66|0400000US66|Guam||7003825000|Room or unit accommodation for travelers||72|7211|Traveler accommodation||2022|37||193701||0|G|8345||0|G
+02|66|0400000US66|Guam||7006425000|Rental of space for meetings, conventions, and similar short-term business uses||72|7211|Traveler accommodation||2022|17||4770||0|H|4303||0|G
+02|66|0400000US66|Guam||7006475000|Rental of space for weddings, banquets, parties, and similar short-term social uses||72|7211|Traveler accommodation||2022|8||2206||0|H|2559||0|H
+02|66|0400000US66|Guam||9000000000|All other products and services, not elsewhere classified||72|7211|Traveler accommodation||2022|24||17764||0|G|5418||0|G
+02|69|0400000US69|Commonwealth of the Northern Mariana Islands||0000000000|Total||72|7211|Traveler accommodation||2022|32||60616||0|G|2820||0|G
+02|69|0400000US69|Commonwealth of the Northern Mariana Islands||5000300000|Retail sales of alcoholic beverages||72|7211|Traveler accommodation||2022|5||133||0|G|1105||0|H
+02|69|0400000US69|Commonwealth of the Northern Mariana Islands||5000860000|Retail sales of household goods, not elsewhere classified||72|7211|Traveler accommodation||2022|3||177||0|H|416||0|H
+02|69|0400000US69|Commonwealth of the Northern Mariana Islands||7000025000|Meals, snacks, other food items, and nonalcoholic beverages, prepared and served or dispensed, for immediate consumption||72|7211|Traveler accommodation||2022|13||20877||0|G|2413||0|G
+02|69|0400000US69|Commonwealth of the Northern Mariana Islands||7000050000|Alcoholic beverages, prepared and served or dispensed for immediate consumption||72|7211|Traveler accommodation||2022|12||1053||0|H|2235||0|G
+02|69|0400000US69|Commonwealth of the Northern Mariana Islands||7003825000|Room or unit accommodation for travelers||72|7211|Traveler accommodation||2022|29||31368||0|G|2739||0|G
+02|69|0400000US69|Commonwealth of the Northern Mariana Islands||7006425000|Rental of space for meetings, conventions, and similar short-term business uses||72|7211|Traveler accommodation||2022|9||459||0|G|1520||0|G
+02|69|0400000US69|Commonwealth of the Northern Mariana Islands||7006475000|Rental of space for weddings, banquets, parties, and similar short-term social uses||72|7211|Traveler accommodation||2022|11||1111||0|H|2145||0|G
+02|69|0400000US69|Commonwealth of the Northern Mariana Islands||9000000000|All other products and services, not elsewhere classified||72|7211|Traveler accommodation||2022|12||5438||0|G|1202||0|G
+02|72|0400000US72|Puerto Rico||0000000000|Total||72|7211|Traveler accommodation||2022|280||1204129||0|G|18460||0|G
+02|72|0400000US72|Puerto Rico||5000300000|Retail sales of alcoholic beverages||72|7211|Traveler accommodation||2022|21||1382||0|G|1672||0|G
+02|72|0400000US72|Puerto Rico||7000025000|Meals, snacks, other food items, and nonalcoholic beverages, prepared and served or dispensed, for immediate consumption||72|7211|Traveler accommodation||2022|118||116160||0|G|11127||0|H
+02|72|0400000US72|Puerto Rico||7000050000|Alcoholic beverages, prepared and served or dispensed for immediate consumption||72|7211|Traveler accommodation||2022|72||71496||0|G|8696||0|H
+02|72|0400000US72|Puerto Rico||7002350000|Table wagering games||72|7211|Traveler accommodation||2022|12||56056||0|H|3206||0|G
+02|72|0400000US72|Puerto Rico||7002375000|Gambling machine products||72|7211|Traveler accommodation||2022|14||125688||0|G|3121||0|G
+02|72|0400000US72|Puerto Rico||7003825000|Room or unit accommodation for travelers||72|7211|Traveler accommodation||2022|269||753864||0|G|17516||0|G
+02|72|0400000US72|Puerto Rico||7006425000|Rental of space for meetings, conventions, and similar short-term business uses||72|7211|Traveler accommodation||2022|25||10874||0|H|2565||0|G
+02|72|0400000US72|Puerto Rico||7006475000|Rental of space for weddings, banquets, parties, and similar short-term social uses||72|7211|Traveler accommodation||2022|39||5674||0|H|3347||0|G
+02|72|0400000US72|Puerto Rico||7006550000|Hosting of coin-operated self-service gambling machines||72|7211|Traveler accommodation||2022|5||43814||0|G|745||0|H
+02|72|0400000US72|Puerto Rico||9000000000|All other products and services, not elsewhere classified||72|7211|Traveler accommodation||2022|53||16704||0|H|3428||0|H
+02|78|0400000US78|United States Virgin Islands||0000000000|Total||72|7211|Traveler accommodation||2022|53||235309||0|G|1958||0|G
+02|78|0400000US78|United States Virgin Islands||5000300000|Retail sales of alcoholic beverages||72|7211|Traveler accommodation||2022|3||760||0|G|121||0|H
+02|78|0400000US78|United States Virgin Islands||7000025000|Meals, snacks, other food items, and nonalcoholic beverages, prepared and served or dispensed, for immediate consumption||72|7211|Traveler accommodation||2022|17||49515||0|G|1205||0|G
+02|78|0400000US78|United States Virgin Islands||7000050000|Alcoholic beverages, prepared and served or dispensed for immediate consumption||72|7211|Traveler accommodation||2022|15||20271||0|G|1187||0|G
+02|78|0400000US78|United States Virgin Islands||7003825000|Room or unit accommodation for travelers||72|7211|Traveler accommodation||2022|51||135204||0|H|2039||0|H
+02|78|0400000US78|United States Virgin Islands||7006475000|Rental of space for weddings, banquets, parties, and similar short-term social uses||72|7211|Traveler accommodation||2022|15||8640||0|G|376||0|H
+02|78|0400000US78|United States Virgin Islands||9000000000|All other products and services, not elsewhere classified||72|7211|Traveler accommodation||2022|10||16717||0|H|2583||0|H

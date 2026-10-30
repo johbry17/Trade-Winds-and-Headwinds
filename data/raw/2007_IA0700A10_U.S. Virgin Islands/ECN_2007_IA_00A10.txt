@@ -1,0 +1,93 @@
+IA0700A10
+All Island Area Sectors: Geographic Area Series: Product Lines for Selected Islands and Number of Guestrooms for American Samoa, Guam, Northern Mariana Islands, Puerto Rico, and U.S. Virgin Islands: 2007
+
+Note: Includes only establishments or firms with payroll.
+Only American Samoa includes establishments without annual payroll.
+Data based on the 2007 Economic Census of Island Areas. Figures may
+not add due to rounding. 
+For comparability purposes, the 2007 Economic Census of the U.S.
+Virgin Islands includes, for the first time since 1992, the
+Petroleum Refineries (NAICS 32411). For information on
+confidentiality protection, sampling error, nonsampling, and
+definitions, see 
+Methodology.
+
+
+
+G	Low noise infusion
+
+N	Not available or not comparable
+
+^	Noise infusion range not applicable
+
+H	Medium noise infusion
+
+Universe Description
+The universe includes all establishments with payroll at any
+time during 2007 and classified in NAICS code 7211. For American
+Samoa, establishments without annual payroll are included.
+Data Items
+This file contains data on:
+
+  Number of establishments
+  Sales
+  Guestrooms as of December 31
+  Annual payroll
+  First-quarter payroll
+  Number of paid employees
+  Number of unpaid family workers (American Samoa only)
+
+Geographic Coverage
+The data are shown at the following geographic levels for:
+
+  American Samoa
+  State-equivalent (ST - American Samoa)
+
+
+  Guam
+  State-equivalent (ST - Guam)
+
+
+  Northern Mariana Islands (ST - Northern Mariana Islands)
+
+
+  Puerto Rico
+  State-equivalent (ST - Puerto Rico)
+  Commercial Region (COMMREG)
+
+
+  U.S. Virgin Islands
+  State-equivalent (ST - U.S. Virgin Islands)
+
+Industry Detail
+The data are shown for NAICS code 7211.
+Other Variables Identifying Records
+The data are shown for number of guestrooms. For Guam, Puerto
+Rico, and the U.S. Virgin Islands, the data are also shown for
+products and services code.
+Release Schedule
+The data in this file are scheduled for release on a flow basis
+beginning March 2009 through September 2010.
+Related Data Files
+None.
+Data Limitations
+Refer to 
+Survey Methodology for additional information.
+File Sequence
+Data are presented in ascending levels for:
+
+  American Samoa (ST) by NAICS code sequence
+  Guam (ST) by NAICS code and products and services code
+  sequences
+  Northern Mariana Islands (ST) by NAICS code sequence
+  Puerto Rico (ST x COMMREG) by NAICS code and products and
+  services code sequences
+  U.S. Virgin Islands (ST) by NAICS code and products and
+  services code sequences
+
+Estimated File Size
+Approx. 10K
+
+
+
+

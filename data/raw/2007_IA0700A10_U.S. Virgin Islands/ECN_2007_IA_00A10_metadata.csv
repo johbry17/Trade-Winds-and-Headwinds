@@ -1,0 +1,21 @@
+GEO.id,Geographic identifier code
+GEO.id2,Id2
+GEO.display-label,Geographic area name
+PSCODE.id,Products and services code
+PSCODE.display-label,Meaning of Products and services code
+NAICS.id,2007 NAICS code
+NAICS.display-label,Meaning of 2007 NAICS code
+YEAR.id,Year
+ESTAB,Number of establishments
+RCPTOT,"Value of sales ($1,000)"
+RCPTOT_N,"Noise range for value of sales, shipments, receipts, revenue, or business done"
+RMRTRAN,Guestrooms as of December 31 (number)
+RMRTRAN_N,Noise range for guestrooms as of December 31
+PAYANN,"Annual payroll ($1,000)"
+PAYANN_N,Noise range for annual payroll
+PAYQTR1,"First-quarter payroll ($1,000)"
+PAYQTR1_N,Noise range for first-quarter payroll
+EMP,Paid employees for pay period including March 12 (number)
+EMP_N,Noise range for paid employees for pay period including March 12
+EMPUNPD,Unpaid family workers (number)
+EMPUNPD_N,Noise range for number of unpaid family workers

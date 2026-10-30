@@ -1,0 +1,140 @@
+GEOTYPE|ST|PLANREG|GEO_ID|GEO_TTL|FOOTID_GEO|SECTOR|PSCODE2012|PROD_TTL|FOOTID_PSCODE|NAICS2012|NAICS2012_TTL|FOOTID_NAICS|YEAR|ESTAB|ESTAB_F|RCPTOT|RCPTOT_F|RCPTOT_N|RCPTOT_N_F|RMRTRAN|RMRTRAN_F|RMRTRAN_N|RMRTRAN_N_F|PAYANN|PAYANN_F|PAYANN_N|PAYANN_N_F|PAYQTR1|PAYQTR1_F|PAYQTR1_N|PAYQTR1_N_F|EMP|EMP_F|EMP_N|EMP_N_F|EMPUNPD|EMPUNPD_F|EMPUNPD_N|EMPUNPD_N_F
+02|60||0400000US60|American Samoa||72|20000|Industry total||7211|Traveler accommodation||2012|6||7989||0|H|196||0|H|1824||0|H|485||0|H|164||0|H|0||0|G
+02|66||0400000US66|Guam||72|20000|Industry total||7211|Traveler accommodation||2012|38||453681||0|G|8868||0|G|105011||0|G|26412||0|G|5654||0|G|0|N|0|^
+02|66||0400000US66|Guam||72|20015|Guestroom rentals||7211|Traveler accommodation||2012|0|N|313286||0|G|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+02|66||0400000US66|Guam||72|20120|Meals, unpackaged snacks, sandwiches, unpackaged ice cream & yogurt, bakery items, other food items & nonalcoholic beverages prepared for immediate consumption||7211|Traveler accommodation||2012|0|N|104160||0|G|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+02|66||0400000US66|Guam||72|20130|Alcoholic beverages served for immediate consumption||7211|Traveler accommodation||2012|0|N|8139||0|G|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+02|66||0400000US66|Guam||72|20140|Packaged liquor, wine, & beer||7211|Traveler accommodation||2012|0|N|598||0|H|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+02|66||0400000US66|Guam||72|29810|All other merchandise, excl lottery ticket sales/commissions||7211|Traveler accommodation||2012|0|N|14539||0|H|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+02|66||0400000US66|Guam||72|29980|All other nonmerchandise receipts||7211|Traveler accommodation||2012|0|N|12958||0|G|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+02|69||0400000US69|Commonwealth of the Northern Mariana Islands||72|20000|Industry total||7211|Traveler accommodation||2012|24||127408||0|H|3253||0|G|26235||0|H|6964||0|H|1953||0|H|0|N|0|^
+02|69||0400000US69|Commonwealth of the Northern Mariana Islands||72|20015|Guestroom rentals||7211|Traveler accommodation||2012|0|N|70517||0|H|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+02|69||0400000US69|Commonwealth of the Northern Mariana Islands||72|20120|Meals, unpackaged snacks, sandwiches, unpackaged ice cream & yogurt, bakery items, other food items & nonalcoholic beverages prepared for immediate consumption||7211|Traveler accommodation||2012|0|N|28395||0|H|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+02|69||0400000US69|Commonwealth of the Northern Mariana Islands||72|20130|Alcoholic beverages served for immediate consumption||7211|Traveler accommodation||2012|0|N|4080||0|H|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+02|69||0400000US69|Commonwealth of the Northern Mariana Islands||72|20140|Packaged liquor, wine, & beer||7211|Traveler accommodation||2012|0|N|1486||0|G|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+02|69||0400000US69|Commonwealth of the Northern Mariana Islands||72|29810|All other merchandise, excl lottery ticket sales/commissions||7211|Traveler accommodation||2012|0|N|3285||0|H|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+02|69||0400000US69|Commonwealth of the Northern Mariana Islands||72|29980|All other nonmerchandise receipts||7211|Traveler accommodation||2012|0|N|19644||0|H|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+03|69||0500000US69100|Rota Municipality||72|20000|Industry total||7211|Traveler accommodation||2012|1||0|D|0|D|0|D|0|D|0|D|0|D|0|D|0|D|0|a|0|D|0|N|0|^
+03|69||0500000US69100|Rota Municipality||72|20015|Guestroom rentals||7211|Traveler accommodation||2012|0|N|0|D|0|D|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+03|69||0500000US69100|Rota Municipality||72|20120|Meals, unpackaged snacks, sandwiches, unpackaged ice cream & yogurt, bakery items, other food items & nonalcoholic beverages prepared for immediate consumption||7211|Traveler accommodation||2012|0|N|0|D|0|D|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+03|69||0500000US69100|Rota Municipality||72|20130|Alcoholic beverages served for immediate consumption||7211|Traveler accommodation||2012|0|N|0|D|0|D|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+03|69||0500000US69100|Rota Municipality||72|20140|Packaged liquor, wine, & beer||7211|Traveler accommodation||2012|0|N|0|D|0|D|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+03|69||0500000US69100|Rota Municipality||72|29810|All other merchandise, excl lottery ticket sales/commissions||7211|Traveler accommodation||2012|0|N|0|D|0|D|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+03|69||0500000US69100|Rota Municipality||72|29980|All other nonmerchandise receipts||7211|Traveler accommodation||2012|0|N|0|D|0|D|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+03|69||0500000US69110|Saipan Municipality||72|20000|Industry total||7211|Traveler accommodation||2012|22||107443||0|H|2820||0|H|21735||0|H|5993||0|H|1609||0|H|0|N|0|^
+03|69||0500000US69110|Saipan Municipality||72|20015|Guestroom rentals||7211|Traveler accommodation||2012|0|N|68496||0|H|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+03|69||0500000US69110|Saipan Municipality||72|20120|Meals, unpackaged snacks, sandwiches, unpackaged ice cream & yogurt, bakery items, other food items & nonalcoholic beverages prepared for immediate consumption||7211|Traveler accommodation||2012|0|N|27391||0|H|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+03|69||0500000US69110|Saipan Municipality||72|20130|Alcoholic beverages served for immediate consumption||7211|Traveler accommodation||2012|0|N|3083||0|H|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+03|69||0500000US69110|Saipan Municipality||72|20140|Packaged liquor, wine, & beer||7211|Traveler accommodation||2012|0|N|489||0|H|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+03|69||0500000US69110|Saipan Municipality||72|29810|All other merchandise, excl lottery ticket sales/commissions||7211|Traveler accommodation||2012|0|N|2288||0|H|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+03|69||0500000US69110|Saipan Municipality||72|29980|All other nonmerchandise receipts||7211|Traveler accommodation||2012|0|N|5694||0|H|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+03|69||0500000US69120|Tinian Municipality||72|20000|Industry total||7211|Traveler accommodation||2012|1||0|D|0|D|0|D|0|D|0|D|0|D|0|D|0|D|0|e|0|D|0|N|0|^
+03|69||0500000US69120|Tinian Municipality||72|20015|Guestroom rentals||7211|Traveler accommodation||2012|0|N|0|D|0|D|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+03|69||0500000US69120|Tinian Municipality||72|20120|Meals, unpackaged snacks, sandwiches, unpackaged ice cream & yogurt, bakery items, other food items & nonalcoholic beverages prepared for immediate consumption||7211|Traveler accommodation||2012|0|N|0|D|0|D|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+03|69||0500000US69120|Tinian Municipality||72|20130|Alcoholic beverages served for immediate consumption||7211|Traveler accommodation||2012|0|N|0|D|0|D|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+03|69||0500000US69120|Tinian Municipality||72|20140|Packaged liquor, wine, & beer||7211|Traveler accommodation||2012|0|N|0|D|0|D|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+03|69||0500000US69120|Tinian Municipality||72|29810|All other merchandise, excl lottery ticket sales/commissions||7211|Traveler accommodation||2012|0|N|0|D|0|D|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+03|69||0500000US69120|Tinian Municipality||72|29980|All other nonmerchandise receipts||7211|Traveler accommodation||2012|0|N|0|D|0|D|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+02|72||0400000US72|Puerto Rico||72|20000|Industry total||7211|Traveler accommodation||2012|237||1272050||0|G|11516||0|G|457171||0|G|82508||0|G|15768||0|G|0|N|0|^
+02|72||0400000US72|Puerto Rico||72|20015|Guestroom rentals||7211|Traveler accommodation||2012|0|N|854655||0|G|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+02|72||0400000US72|Puerto Rico||72|20040|Gambling services||7211|Traveler accommodation||2012|0|N|252464||0|G|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+02|72||0400000US72|Puerto Rico||72|20120|Meals, unpackaged snacks, sandwiches, unpackaged ice cream & yogurt, bakery items, other food items & nonalcoholic beverages prepared for immediate consumption||7211|Traveler accommodation||2012|0|N|96199||0|H|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+02|72||0400000US72|Puerto Rico||72|20130|Alcoholic beverages served for immediate consumption||7211|Traveler accommodation||2012|0|N|9679||0|G|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+02|72||0400000US72|Puerto Rico||72|20140|Packaged liquor, wine, & beer||7211|Traveler accommodation||2012|0|N|23431||0|H|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+02|72||0400000US72|Puerto Rico||72|29810|All other merchandise, excl lottery ticket sales/commissions||7211|Traveler accommodation||2012|0|N|3582||0|H|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+02|72||0400000US72|Puerto Rico||72|29980|All other nonmerchandise receipts||7211|Traveler accommodation||2012|0|N|32038||0|H|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|A|9040000USA|Planning Region 1, Aguadilla||72|20000|Industry total||7211|Traveler accommodation||2012|34||28729||0|G|1274||0|G|10095||0|G|3271||0|G|994||0|G|0|N|0|^
+13|72|A|9040000USA|Planning Region 1, Aguadilla||72|20015|Guestroom rentals||7211|Traveler accommodation||2012|0|N|27022||0|G|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|A|9040000USA|Planning Region 1, Aguadilla||72|20040|Gambling services||7211|Traveler accommodation||2012|0|N|0|D|0|D|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|A|9040000USA|Planning Region 1, Aguadilla||72|20120|Meals, unpackaged snacks, sandwiches, unpackaged ice cream & yogurt, bakery items, other food items & nonalcoholic beverages prepared for immediate consumption||7211|Traveler accommodation||2012|0|N|338||0|G|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|A|9040000USA|Planning Region 1, Aguadilla||72|20130|Alcoholic beverages served for immediate consumption||7211|Traveler accommodation||2012|0|N|0||0|G|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|A|9040000USA|Planning Region 1, Aguadilla||72|20140|Packaged liquor, wine, & beer||7211|Traveler accommodation||2012|0|N|58||0|G|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|A|9040000USA|Planning Region 1, Aguadilla||72|29810|All other merchandise, excl lottery ticket sales/commissions||7211|Traveler accommodation||2012|0|N|29||0|H|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|A|9040000USA|Planning Region 1, Aguadilla||72|29980|All other nonmerchandise receipts||7211|Traveler accommodation||2012|0|N|139||0|G|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|B|9040000USB|Planning Region 2, Mayaguez||72|20000|Industry total||7211|Traveler accommodation||2012|31||38148||0|G|802||0|G|12260||0|G|3073||0|G|822||0|G|0|N|0|^
+13|72|B|9040000USB|Planning Region 2, Mayaguez||72|20015|Guestroom rentals||7211|Traveler accommodation||2012|0|N|21024||0|G|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|B|9040000USB|Planning Region 2, Mayaguez||72|20040|Gambling services||7211|Traveler accommodation||2012|0|N|0|D|0|D|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|B|9040000USB|Planning Region 2, Mayaguez||72|20120|Meals, unpackaged snacks, sandwiches, unpackaged ice cream & yogurt, bakery items, other food items & nonalcoholic beverages prepared for immediate consumption||7211|Traveler accommodation||2012|0|N|3807||0|H|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|B|9040000USB|Planning Region 2, Mayaguez||72|20130|Alcoholic beverages served for immediate consumption||7211|Traveler accommodation||2012|0|N|0|D|0|D|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|B|9040000USB|Planning Region 2, Mayaguez||72|20140|Packaged liquor, wine, & beer||7211|Traveler accommodation||2012|0|N|359||0|H|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|B|9040000USB|Planning Region 2, Mayaguez||72|29810|All other merchandise, excl lottery ticket sales/commissions||7211|Traveler accommodation||2012|0|N|31||0|H|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|B|9040000USB|Planning Region 2, Mayaguez||72|29980|All other nonmerchandise receipts||7211|Traveler accommodation||2012|0|N|1217||0|H|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|C|9040000USC|Planning Region 3, Arecibo||72|20000|Industry total||7211|Traveler accommodation||2012|6||2303||0|G|211||0|H|689||0|G|158||0|H|54||0|H|0|N|0|^
+13|72|C|9040000USC|Planning Region 3, Arecibo||72|20015|Guestroom rentals||7211|Traveler accommodation||2012|0|N|2216||0|G|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|C|9040000USC|Planning Region 3, Arecibo||72|20040|Gambling services||7211|Traveler accommodation||2012|0|N|0|D|0|D|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|C|9040000USC|Planning Region 3, Arecibo||72|20120|Meals, unpackaged snacks, sandwiches, unpackaged ice cream & yogurt, bakery items, other food items & nonalcoholic beverages prepared for immediate consumption||7211|Traveler accommodation||2012|0|N|0|D|0|D|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|C|9040000USC|Planning Region 3, Arecibo||72|20130|Alcoholic beverages served for immediate consumption||7211|Traveler accommodation||2012|0|N|0||0|G|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|C|9040000USC|Planning Region 3, Arecibo||72|20140|Packaged liquor, wine, & beer||7211|Traveler accommodation||2012|0|N|0|D|0|D|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|C|9040000USC|Planning Region 3, Arecibo||72|29810|All other merchandise, excl lottery ticket sales/commissions||7211|Traveler accommodation||2012|0|N|0|D|0|D|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|C|9040000USC|Planning Region 3, Arecibo||72|29980|All other nonmerchandise receipts||7211|Traveler accommodation||2012|0|N|24||0|H|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|D|9040000USD|Planning Region 4, Ponce||72|20000|Industry total||7211|Traveler accommodation||2012|20||58644||0|G|1168||0|H|14584||0|G|3906||0|G|941||0|G|0|N|0|^
+13|72|D|9040000USD|Planning Region 4, Ponce||72|20015|Guestroom rentals||7211|Traveler accommodation||2012|0|N|29388||0|G|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|D|9040000USD|Planning Region 4, Ponce||72|20040|Gambling services||7211|Traveler accommodation||2012|0|N|0|D|0|D|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|D|9040000USD|Planning Region 4, Ponce||72|20120|Meals, unpackaged snacks, sandwiches, unpackaged ice cream & yogurt, bakery items, other food items & nonalcoholic beverages prepared for immediate consumption||7211|Traveler accommodation||2012|0|N|354||0|H|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|D|9040000USD|Planning Region 4, Ponce||72|20130|Alcoholic beverages served for immediate consumption||7211|Traveler accommodation||2012|0|N|0||0|G|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|D|9040000USD|Planning Region 4, Ponce||72|20140|Packaged liquor, wine, & beer||7211|Traveler accommodation||2012|0|N|74||0|H|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|D|9040000USD|Planning Region 4, Ponce||72|29810|All other merchandise, excl lottery ticket sales/commissions||7211|Traveler accommodation||2012|0|N|38||0|H|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|D|9040000USD|Planning Region 4, Ponce||72|29980|All other nonmerchandise receipts||7211|Traveler accommodation||2012|0|N|179||0|H|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|E|9040000USE|Planning Region 5, Manati||72|20000|Industry total||7211|Traveler accommodation||2012|10||27721||0|H|558||0|H|6590||0|H|695||0|H|497||0|H|0|N|0|^
+13|72|E|9040000USE|Planning Region 5, Manati||72|20015|Guestroom rentals||7211|Traveler accommodation||2012|0|N|14796||0|H|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|E|9040000USE|Planning Region 5, Manati||72|20040|Gambling services||7211|Traveler accommodation||2012|0|N|0|D|0|D|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|E|9040000USE|Planning Region 5, Manati||72|20120|Meals, unpackaged snacks, sandwiches, unpackaged ice cream & yogurt, bakery items, other food items & nonalcoholic beverages prepared for immediate consumption||7211|Traveler accommodation||2012|0|N|0|D|0|D|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|E|9040000USE|Planning Region 5, Manati||72|20130|Alcoholic beverages served for immediate consumption||7211|Traveler accommodation||2012|0|N|0||0|G|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|E|9040000USE|Planning Region 5, Manati||72|20140|Packaged liquor, wine, & beer||7211|Traveler accommodation||2012|0|N|0|D|0|D|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|E|9040000USE|Planning Region 5, Manati||72|29810|All other merchandise, excl lottery ticket sales/commissions||7211|Traveler accommodation||2012|0|N|0||0|G|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|E|9040000USE|Planning Region 5, Manati||72|29980|All other nonmerchandise receipts||7211|Traveler accommodation||2012|0|N|0|D|0|D|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|F|9040000USF|Planning Region 6, Cayey||72|20000|Industry total||7211|Traveler accommodation||2012|1||0|D|0|D|0|D|0|D|0|D|0|D|0|D|0|D|0|a|0|D|0|N|0|^
+13|72|F|9040000USF|Planning Region 6, Cayey||72|20015|Guestroom rentals||7211|Traveler accommodation||2012|0|N|0|D|0|D|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|F|9040000USF|Planning Region 6, Cayey||72|20040|Gambling services||7211|Traveler accommodation||2012|0|N|0||0|G|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|F|9040000USF|Planning Region 6, Cayey||72|20120|Meals, unpackaged snacks, sandwiches, unpackaged ice cream & yogurt, bakery items, other food items & nonalcoholic beverages prepared for immediate consumption||7211|Traveler accommodation||2012|0|N|0|D|0|D|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|F|9040000USF|Planning Region 6, Cayey||72|20130|Alcoholic beverages served for immediate consumption||7211|Traveler accommodation||2012|0|N|0||0|G|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|F|9040000USF|Planning Region 6, Cayey||72|20140|Packaged liquor, wine, & beer||7211|Traveler accommodation||2012|0|N|0|D|0|D|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|F|9040000USF|Planning Region 6, Cayey||72|29810|All other merchandise, excl lottery ticket sales/commissions||7211|Traveler accommodation||2012|0|N|0|D|0|D|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|F|9040000USF|Planning Region 6, Cayey||72|29980|All other nonmerchandise receipts||7211|Traveler accommodation||2012|0|N|0|D|0|D|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|G|9040000USG|Planning Region 7, Guayama||72|20000|Industry total||7211|Traveler accommodation||2012|9||4346||0|G|121||0|G|1511||0|G|369||0|G|156||0|H|0|N|0|^
+13|72|G|9040000USG|Planning Region 7, Guayama||72|20015|Guestroom rentals||7211|Traveler accommodation||2012|0|N|4124||0|G|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|G|9040000USG|Planning Region 7, Guayama||72|20040|Gambling services||7211|Traveler accommodation||2012|0|N|0|D|0|D|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|G|9040000USG|Planning Region 7, Guayama||72|20120|Meals, unpackaged snacks, sandwiches, unpackaged ice cream & yogurt, bakery items, other food items & nonalcoholic beverages prepared for immediate consumption||7211|Traveler accommodation||2012|0|N|118||0|H|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|G|9040000USG|Planning Region 7, Guayama||72|20130|Alcoholic beverages served for immediate consumption||7211|Traveler accommodation||2012|0|N|0||0|G|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|G|9040000USG|Planning Region 7, Guayama||72|20140|Packaged liquor, wine, & beer||7211|Traveler accommodation||2012|0|N|0|D|0|D|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|G|9040000USG|Planning Region 7, Guayama||72|29810|All other merchandise, excl lottery ticket sales/commissions||7211|Traveler accommodation||2012|0|N|0|D|0|D|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|G|9040000USG|Planning Region 7, Guayama||72|29980|All other nonmerchandise receipts||7211|Traveler accommodation||2012|0|N|60||0|H|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|H|9040000USH|Planning Region 8, San Juan||72|20000|Industry total||7211|Traveler accommodation||2012|66||516411||0|G|4708||0|G|254535||0|H|29312||0|H|5353||0|G|0|N|0|^
+13|72|H|9040000USH|Planning Region 8, San Juan||72|20015|Guestroom rentals||7211|Traveler accommodation||2012|0|N|334286||0|G|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|H|9040000USH|Planning Region 8, San Juan||72|20040|Gambling services||7211|Traveler accommodation||2012|0|N|104029||0|G|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|H|9040000USH|Planning Region 8, San Juan||72|20120|Meals, unpackaged snacks, sandwiches, unpackaged ice cream & yogurt, bakery items, other food items & nonalcoholic beverages prepared for immediate consumption||7211|Traveler accommodation||2012|0|N|42745||0|H|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|H|9040000USH|Planning Region 8, San Juan||72|20130|Alcoholic beverages served for immediate consumption||7211|Traveler accommodation||2012|0|N|0|D|0|D|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|H|9040000USH|Planning Region 8, San Juan||72|20140|Packaged liquor, wine, & beer||7211|Traveler accommodation||2012|0|N|15158||0|H|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|H|9040000USH|Planning Region 8, San Juan||72|29810|All other merchandise, excl lottery ticket sales/commissions||7211|Traveler accommodation||2012|0|N|642||0|G|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|H|9040000USH|Planning Region 8, San Juan||72|29980|All other nonmerchandise receipts||7211|Traveler accommodation||2012|0|N|18591||0|H|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|J|9040000USJ|Planning Region 9, Carolina||72|20000|Industry total||7211|Traveler accommodation||2012|21||229075||0|G|1840||0|G|71318||0|G|17474||0|G|2836||0|G|0|N|0|^
+13|72|J|9040000USJ|Planning Region 9, Carolina||72|20015|Guestroom rentals||7211|Traveler accommodation||2012|0|N|152305||0|G|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|J|9040000USJ|Planning Region 9, Carolina||72|20040|Gambling services||7211|Traveler accommodation||2012|0|N|47081||0|G|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|J|9040000USJ|Planning Region 9, Carolina||72|20120|Meals, unpackaged snacks, sandwiches, unpackaged ice cream & yogurt, bakery items, other food items & nonalcoholic beverages prepared for immediate consumption||7211|Traveler accommodation||2012|0|N|19760||0|H|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|J|9040000USJ|Planning Region 9, Carolina||72|20130|Alcoholic beverages served for immediate consumption||7211|Traveler accommodation||2012|0|N|5312||0|H|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|J|9040000USJ|Planning Region 9, Carolina||72|20140|Packaged liquor, wine, & beer||7211|Traveler accommodation||2012|0|N|2489||0|G|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|J|9040000USJ|Planning Region 9, Carolina||72|29810|All other merchandise, excl lottery ticket sales/commissions||7211|Traveler accommodation||2012|0|N|155||0|H|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|J|9040000USJ|Planning Region 9, Carolina||72|29980|All other nonmerchandise receipts||7211|Traveler accommodation||2012|0|N|1972||0|H|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|K|9040000USK|Planning Region 10, Caguas||72|20000|Industry total||7211|Traveler accommodation||2012|7||27953||0|H|233||0|H|6795||0|H|1711||0|H|411||0|H|0|N|0|^
+13|72|K|9040000USK|Planning Region 10, Caguas||72|20015|Guestroom rentals||7211|Traveler accommodation||2012|0|N|7317||0|G|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|K|9040000USK|Planning Region 10, Caguas||72|20040|Gambling services||7211|Traveler accommodation||2012|0|N|0|D|0|D|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|K|9040000USK|Planning Region 10, Caguas||72|20120|Meals, unpackaged snacks, sandwiches, unpackaged ice cream & yogurt, bakery items, other food items & nonalcoholic beverages prepared for immediate consumption||7211|Traveler accommodation||2012|0|N|0|D|0|D|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|K|9040000USK|Planning Region 10, Caguas||72|20130|Alcoholic beverages served for immediate consumption||7211|Traveler accommodation||2012|0|N|0|D|0|D|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|K|9040000USK|Planning Region 10, Caguas||72|20140|Packaged liquor, wine, & beer||7211|Traveler accommodation||2012|0|N|0|D|0|D|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|K|9040000USK|Planning Region 10, Caguas||72|29810|All other merchandise, excl lottery ticket sales/commissions||7211|Traveler accommodation||2012|0|N|0|D|0|D|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|K|9040000USK|Planning Region 10, Caguas||72|29980|All other nonmerchandise receipts||7211|Traveler accommodation||2012|0|N|0|D|0|D|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|L|9040000USL|Planning Region 11, Humacao||72|20000|Industry total||7211|Traveler accommodation||2012|32||338313||0|H|603||0|G|78679||0|G|22500||0|H|3684||0|G|0|N|0|^
+13|72|L|9040000USL|Planning Region 11, Humacao||72|20015|Guestroom rentals||7211|Traveler accommodation||2012|0|N|261782||0|H|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|L|9040000USL|Planning Region 11, Humacao||72|20040|Gambling services||7211|Traveler accommodation||2012|0|N|37753||0|H|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|L|9040000USL|Planning Region 11, Humacao||72|20120|Meals, unpackaged snacks, sandwiches, unpackaged ice cream & yogurt, bakery items, other food items & nonalcoholic beverages prepared for immediate consumption||7211|Traveler accommodation||2012|0|N|25696||0|H|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|L|9040000USL|Planning Region 11, Humacao||72|20130|Alcoholic beverages served for immediate consumption||7211|Traveler accommodation||2012|0|N|1765||0|H|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|L|9040000USL|Planning Region 11, Humacao||72|20140|Packaged liquor, wine, & beer||7211|Traveler accommodation||2012|0|N|3602||0|H|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|L|9040000USL|Planning Region 11, Humacao||72|29810|All other merchandise, excl lottery ticket sales/commissions||7211|Traveler accommodation||2012|0|N|0|D|0|D|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+13|72|L|9040000USL|Planning Region 11, Humacao||72|29980|All other nonmerchandise receipts||7211|Traveler accommodation||2012|0|N|5063||0|G|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+02|78||0400000US78|United States Virgin Islands||72|20000|Industry total||7211|Traveler accommodation||2012|54||319049||0|G|5027||0|G|110288||0|G|27284||0|G|3797||0|G|0|N|0|^
+02|78||0400000US78|United States Virgin Islands||72|20015|Guestroom rentals||7211|Traveler accommodation||2012|0|N|163133||0|G|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+02|78||0400000US78|United States Virgin Islands||72|20120|Meals, unpackaged snacks, sandwiches, unpackaged ice cream & yogurt, bakery items, other food items & nonalcoholic beverages prepared for immediate consumption||7211|Traveler accommodation||2012|0|N|74504||0|H|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+02|78||0400000US78|United States Virgin Islands||72|20130|Alcoholic beverages served for immediate consumption||7211|Traveler accommodation||2012|0|N|38361||0|H|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+02|78||0400000US78|United States Virgin Islands||72|20140|Packaged liquor, wine, & beer||7211|Traveler accommodation||2012|0|N|1074||0|G|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+02|78||0400000US78|United States Virgin Islands||72|29810|All other merchandise, excl lottery ticket sales/commissions||7211|Traveler accommodation||2012|0|N|7498||0|H|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^
+02|78||0400000US78|United States Virgin Islands||72|29980|All other nonmerchandise receipts||7211|Traveler accommodation||2012|0|N|34479||0|H|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^|0|N|0|^

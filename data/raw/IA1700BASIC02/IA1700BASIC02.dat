@@ -1,0 +1,313 @@
+#GEOTYPE|ST|GEO_ID|GEO_TTL|GEO_ID_F|NAICS2017|NAICS2017_TTL|NAICS2017_F|SECTOR|YEAR|ESTAB|ESTAB_F|RCPTOT|RCPTOT_F|RCPTOT_N|RCPTOT_N_F|PAYANN|PAYANN_F|PAYANN_N|PAYANN_N_F|EMP|EMP_F|EMP_N|EMP_N_F
+02|60|0400000US60|American Samoa||00|Total for all sectors||00|2012|377||1153632||0|H|114048||0|G|7070||0|G
+02|60|0400000US60|American Samoa||00|Total for all sectors||00|2017|511||1079977||0|H|143908||0|G|8767||0|G
+02|60|0400000US60|American Samoa||23|Construction||23|2012|20||31403||0|G|5431||0|G|432||0|G
+02|60|0400000US60|American Samoa||23|Construction||23|2017|33||34086||0|G|8825||0|G|562||0|G
+02|60|0400000US60|American Samoa||31-33|Manufacturing||31|2012|25||0|D|0|D|0|D|0|D|0|g|0|D
+02|60|0400000US60|American Samoa||31-33|Manufacturing||31|2017|46||389512||0|H|35827||0|H|2506||0|H
+02|60|0400000US60|American Samoa||42|Wholesale trade||42|2012|16||275152||0|H|4618||0|H|253||0|H
+02|60|0400000US60|American Samoa||42|Wholesale trade||42|2017|23||124798||0|H|4963||0|G|293||0|G
+02|60|0400000US60|American Samoa||44-45|Retail trade||44|2012|136||209954||0|G|17240||0|G|1435||0|G
+02|60|0400000US60|American Samoa||44-45|Retail trade||44|2017|190||291671||0|G|23386||0|G|1759||0|G
+02|60|0400000US60|American Samoa||48-49|Transportation and warehousing||48|2012|22||18780||0|G|3492||0|H|255||0|H
+02|60|0400000US60|American Samoa||48-49|Transportation and warehousing||48|2017|24||17592||0|G|4588||0|H|332||0|H
+02|60|0400000US60|American Samoa||51|Information||51|2012|8||15612||0|H|3055||0|H|148||0|H
+02|60|0400000US60|American Samoa||51|Information||51|2017|10||38753||0|G|8372||0|G|378||0|G
+02|60|0400000US60|American Samoa||52|Finance and insurance||52|2012|11||15327||0|G|3081||0|H|101||0|H
+02|60|0400000US60|American Samoa||52|Finance and insurance||52|2017|17||15478||0|H|3269||0|G|127||0|G
+02|60|0400000US60|American Samoa||53|Real estate and rental and leasing||53|2012|19||6391||0|G|848||0|G|67||0|G
+02|60|0400000US60|American Samoa||53|Real estate and rental and leasing||53|2017|15||4607||0|G|994||0|H|91||0|H
+02|60|0400000US60|American Samoa||54|Professional, scientific, and technical services||54|2012|22||19535||0|H|5220||0|H|254||0|H
+02|60|0400000US60|American Samoa||54|Professional, scientific, and technical services||54|2017|25||17910||0|H|5313||0|G|231||0|G
+02|60|0400000US60|American Samoa||56|Administrative and support and waste management and remediation services||56|2012|15||5951||0|G|1459||0|H|151||0|H
+02|60|0400000US60|American Samoa||56|Administrative and support and waste management and remediation services||56|2017|21||6862||0|H|2266||0|G|172||0|G
+02|60|0400000US60|American Samoa||62|Health care and social assistance||62|2012|12||10726||0|H|20827||0|H|707||0|H
+02|60|0400000US60|American Samoa||62|Health care and social assistance||62|2017|18||40680||0|H|24556||0|H|962||0|H
+02|60|0400000US60|American Samoa||72|Accommodation and food services||72|2012|36||28924||0|G|6172||0|H|574||0|G
+02|60|0400000US60|American Samoa||72|Accommodation and food services||72|2017|52||35302||0|G|7109||0|H|800||0|G
+02|60|0400000US60|American Samoa||81|Other services (except public administration)||81|2012|24||14177||0|G|1223||0|H|123||0|H
+02|60|0400000US60|American Samoa||81|Other services (except public administration)||81|2017|32||8046||0|H|1941||0|G|136||0|G
+02|66|0400000US66|Guam||00|Total for all sectors||00|2012|3099||7736883||0|G|1287327||0|G|53579||0|G
+02|66|0400000US66|Guam||00|Total for all sectors||00|2017|3508||8465399||0|G|1630287||0|G|60539||0|G
+02|66|0400000US66|Guam||22|Utilities||22|2012|7||567874||0|H|47251||0|G|934||0|G
+02|66|0400000US66|Guam||22|Utilities||22|2017|3||445082||0|H|44076||0|H|709||0|H
+02|66|0400000US66|Guam||23|Construction||23|2012|320||750368||0|G|166511||0|G|6722||0|G
+02|66|0400000US66|Guam||23|Construction||23|2017|358||662375||0|G|168412||0|G|5501||0|G
+02|66|0400000US66|Guam||31-33|Manufacturing||31|2012|54||122589||0|G|28020||0|H|1282||0|G
+02|66|0400000US66|Guam||31-33|Manufacturing||31|2017|58||95565||0|G|24957||0|G|942||0|H
+02|66|0400000US66|Guam||42|Wholesale trade||42|2012|177||982335||0|H|65863||0|G|2505||0|G
+02|66|0400000US66|Guam||42|Wholesale trade||42|2017|228||1016175||0|G|87524||0|G|3074||0|G
+02|66|0400000US66|Guam||44-45|Retail trade||44|2012|630||1980280||0|G|183983||0|G|8879||0|G
+02|66|0400000US66|Guam||44-45|Retail trade||44|2017|680||2063574||0|G|222916||0|G|10073||0|G
+02|66|0400000US66|Guam||48-49|Transportation and warehousing||48|2012|85||196853||0|G|54580||0|G|1916||0|G
+02|66|0400000US66|Guam||48-49|Transportation and warehousing||48|2017|95||378143||0|H|102658||0|G|2885||0|G
+02|66|0400000US66|Guam||51|Information||51|2012|61||300969||0|H|58523||0|H|1722||0|H
+02|66|0400000US66|Guam||51|Information||51|2017|64||332409||0|G|77611||0|G|1998||0|G
+02|66|0400000US66|Guam||52|Finance and insurance||52|2012|127||679668||0|H|78913||0|G|1983||0|G
+02|66|0400000US66|Guam||52|Finance and insurance||52|2017|130||647256||0|H|99828||0|G|2270||0|G
+02|66|0400000US66|Guam||53|Real estate and rental and leasing||53|2012|265||226042||0|G|42688||0|G|1912||0|G
+02|66|0400000US66|Guam||53|Real estate and rental and leasing||53|2017|308||296727||0|G|55051||0|G|2620||0|G
+02|66|0400000US66|Guam||54|Professional, scientific, and technical services||54|2012|241||294211||0|G|104528||0|G|2737||0|G
+02|66|0400000US66|Guam||54|Professional, scientific, and technical services||54|2017|256||336474||0|G|115619||0|G|2723||0|G
+02|66|0400000US66|Guam||55|Management of companies and enterprises||55|2012|8||3732||0|H|7618||0|H|182||0|H
+02|66|0400000US66|Guam||55|Management of companies and enterprises||55|2017|9||6953||0|H|12532||0|H|299||0|H
+02|66|0400000US66|Guam||56|Administrative and support and waste management and remediation services||56|2012|156||171003||0|G|67669||0|G|3205||0|G
+02|66|0400000US66|Guam||56|Administrative and support and waste management and remediation services||56|2017|174||295323||0|G|83261||0|G|4109||0|G
+02|66|0400000US66|Guam||61|Educational services||61|2012|36||24788||0|G|8696||0|G|435||0|G
+02|66|0400000US66|Guam||61|Educational services||61|2017|45||27228||0|G|10666||0|G|496||0|G
+02|66|0400000US66|Guam||62|Health care and social assistance||62|2012|200||364966||0|H|119346||0|H|3475||0|H
+02|66|0400000US66|Guam||62|Health care and social assistance||62|2017|226||545313||0|G|195257||0|G|4623||0|G
+02|66|0400000US66|Guam||71|Arts, entertainment, and recreation||71|2012|58||73151||0|G|19842||0|G|1074||0|G
+02|66|0400000US66|Guam||71|Arts, entertainment, and recreation||71|2017|90||94110||0|G|26441||0|G|1407||0|H
+02|66|0400000US66|Guam||72|Accommodation and food services||72|2012|450||789844||0|G|189446||0|G|12575||0|G
+02|66|0400000US66|Guam||72|Accommodation and food services||72|2017|557||1082696||0|G|266998||0|G|15121||0|G
+02|66|0400000US66|Guam||81|Other services (except public administration)||81|2012|224||208209||0|G|43848||0|G|2038||0|G
+02|66|0400000US66|Guam||81|Other services (except public administration)||81|2017|227||139994||0|G|36475||0|G|1688||0|G
+02|69|0400000US69|Commonwealth of the Northern Mariana Islands||00|Total for all sectors||00|2012|1339||1323742||0|G|208434||0|G|14215||0|G
+02|69|0400000US69|Commonwealth of the Northern Mariana Islands||00|Total for all sectors||00|2017|1742||3616366||0|H|419500||0|G|22652||0|G
+02|69|0400000US69|Commonwealth of the Northern Mariana Islands||22|Utilities||22|2012|6||0|D|0|D|0|D|0|D|0|e|0|D
+02|69|0400000US69|Commonwealth of the Northern Mariana Islands||22|Utilities||22|2017|4||0|S|0|S|0|S|0|S|0|e|0|S
+02|69|0400000US69|Commonwealth of the Northern Mariana Islands||23|Construction||23|2012|62||37230||0|H|7707||0|H|821||0|G
+02|69|0400000US69|Commonwealth of the Northern Mariana Islands||23|Construction||23|2017|108||145998||0|G|33842||0|H|2803||0|G
+02|69|0400000US69|Commonwealth of the Northern Mariana Islands||31-33|Manufacturing||31|2012|39||20887||0|H|6700||0|H|592||0|G
+02|69|0400000US69|Commonwealth of the Northern Mariana Islands||31-33|Manufacturing||31|2017|46||49008||0|G|9548||0|G|523||0|G
+02|69|0400000US69|Commonwealth of the Northern Mariana Islands||42|Wholesale trade||42|2012|74||246827||0|G|10746||0|G|716||0|H
+02|69|0400000US69|Commonwealth of the Northern Mariana Islands||42|Wholesale trade||42|2017|88||350393||0|H|14031||0|G|797||0|G
+02|69|0400000US69|Commonwealth of the Northern Mariana Islands||44-45|Retail trade||44|2012|284||314066||0|G|30662||0|G|2463||0|G
+02|69|0400000US69|Commonwealth of the Northern Mariana Islands||44-45|Retail trade||44|2017|332||460420||0|G|45144||0|G|2910||0|G
+02|69|0400000US69|Commonwealth of the Northern Mariana Islands||48-49|Transportation and warehousing||48|2012|26||46438||0|H|11387||0|H|641||0|H
+02|69|0400000US69|Commonwealth of the Northern Mariana Islands||48-49|Transportation and warehousing||48|2017|68||66070||0|H|22527||0|H|1256||0|H
+02|69|0400000US69|Commonwealth of the Northern Mariana Islands||51|Information||51|2012|20||25138||0|H|8384||0|H|323||0|H
+02|69|0400000US69|Commonwealth of the Northern Mariana Islands||51|Information||51|2017|21||40828||0|H|12466||0|H|481||0|H
+02|69|0400000US69|Commonwealth of the Northern Mariana Islands||52|Finance and insurance||52|2012|47||57560||0|H|8559||0|G|327||0|G
+02|69|0400000US69|Commonwealth of the Northern Mariana Islands||52|Finance and insurance||52|2017|50||79314||0|H|8657||0|G|293||0|H
+02|69|0400000US69|Commonwealth of the Northern Mariana Islands||53|Real estate and rental and leasing||53|2012|177||30675||0|G|8305||0|G|694||0|G
+02|69|0400000US69|Commonwealth of the Northern Mariana Islands||53|Real estate and rental and leasing||53|2017|211||54833||0|G|12381||0|G|854||0|G
+02|69|0400000US69|Commonwealth of the Northern Mariana Islands||54|Professional, scientific, and technical services||54|2012|105||28703||0|G|9710||0|G|602||0|G
+02|69|0400000US69|Commonwealth of the Northern Mariana Islands||54|Professional, scientific, and technical services||54|2017|112||52809||0|G|13595||0|G|899||0|H
+02|69|0400000US69|Commonwealth of the Northern Mariana Islands||55|Management of companies and enterprises||55|2012|4||0|D|0|D|0|D|0|D|0|b|0|D
+02|69|0400000US69|Commonwealth of the Northern Mariana Islands||55|Management of companies and enterprises||55|2017|7||17463||0|G|4283||0|H|143||0|G
+02|69|0400000US69|Commonwealth of the Northern Mariana Islands||56|Administrative and support and waste management and remediation services||56|2012|115||50913||0|G|17689||0|G|1396||0|G
+02|69|0400000US69|Commonwealth of the Northern Mariana Islands||56|Administrative and support and waste management and remediation services||56|2017|180||80836||0|G|31069||0|G|2200||0|G
+02|69|0400000US69|Commonwealth of the Northern Mariana Islands||61|Educational services||61|2012|43||4979||0|G|1582||0|G|133||0|G
+02|69|0400000US69|Commonwealth of the Northern Mariana Islands||61|Educational services||61|2017|51||13553||0|G|4514||0|G|211||0|H
+02|69|0400000US69|Commonwealth of the Northern Mariana Islands||62|Health care and social assistance||62|2012|36||41349||0|H|19656||0|H|725||0|H
+02|69|0400000US69|Commonwealth of the Northern Mariana Islands||62|Health care and social assistance||62|2017|44||82505||0|H|43300||0|H|1195||0|H
+02|69|0400000US69|Commonwealth of the Northern Mariana Islands||71|Arts, entertainment, and recreation||71|2012|43||37467||0|G|7160||0|G|497||0|G
+02|69|0400000US69|Commonwealth of the Northern Mariana Islands||71|Arts, entertainment, and recreation||71|2017|72||0|S|0|S|0|S|0|S|0|g|0|S
+02|69|0400000US69|Commonwealth of the Northern Mariana Islands||72|Accommodation and food services||72|2012|142||179975||0|H|37761||0|H|3195||0|G
+02|69|0400000US69|Commonwealth of the Northern Mariana Islands||72|Accommodation and food services||72|2017|206||341473||0|G|72475||0|G|4710||0|G
+02|69|0400000US69|Commonwealth of the Northern Mariana Islands||81|Other services (except public administration)||81|2012|115||20636||0|G|6517||0|G|576||0|G
+02|69|0400000US69|Commonwealth of the Northern Mariana Islands||81|Other services (except public administration)||81|2017|141||33574||0|G|8454||0|G|637||0|G
+02|72|0400000US72|Puerto Rico||00|Total for all sectors||00|2017|42559||188632020||0|G|16509101||0|G|651719||0|G
+02|72|0400000US72|Puerto Rico||21|Mining, quarrying, and oil and gas extraction||21|2012|51||83874||0|H|14671||0|G|701||0|G
+02|72|0400000US72|Puerto Rico||21|Mining, quarrying, and oil and gas extraction||21|2017|39||42785||0|H|8777||0|G|482||0|G
+02|72|0400000US72|Puerto Rico||212|Mining (except oil and gas)||21|2012|47||83148||0|H|14590||0|G|694||0|G
+02|72|0400000US72|Puerto Rico||212|Mining (except oil and gas)||21|2017|36||42250||0|H|8662||0|G|479||0|G
+02|72|0400000US72|Puerto Rico||213|Support activities for mining||21|2012|3||354||0|H|62||0|H|0|a|0|J
+02|72|0400000US72|Puerto Rico||213|Support activities for mining||21|2017|3||535||0|G|116||0|G|2||0|J
+02|72|0400000US72|Puerto Rico||22|Utilities||22|2012|23||0|D|0|D|0|D|0|D|0|e|0|D
+02|72|0400000US72|Puerto Rico||22|Utilities||22|2017|34||626611||0|G|21840||0|G|350||0|H
+02|72|0400000US72|Puerto Rico||221|Utilities||22|2012|23||0|D|0|D|0|D|0|D|0|e|0|D
+02|72|0400000US72|Puerto Rico||221|Utilities||22|2017|34||626611||0|G|21840||0|G|350||0|H
+02|72|0400000US72|Puerto Rico||42|Wholesale trade||42|2012|1988||20184374||0|G|1120124||0|G|31462||0|G
+02|72|0400000US72|Puerto Rico||42|Wholesale trade||42|2017|1958||19110386||0|G|1114254||0|G|31255||0|G
+02|72|0400000US72|Puerto Rico||423|Merchant wholesalers, durable goods||42|2012|1052||6047202||0|G|429682||0|G|11963||0|G
+02|72|0400000US72|Puerto Rico||423|Merchant wholesalers, durable goods||42|2017|1072||5087222||0|G|422841||0|G|12516||0|G
+02|72|0400000US72|Puerto Rico||424|Merchant wholesalers, nondurable goods||42|2012|855||14102611||0|G|681252||0|G|19200||0|G
+02|72|0400000US72|Puerto Rico||424|Merchant wholesalers, nondurable goods||42|2017|814||13987523||0|G|682711||0|G|18357||0|G
+02|72|0400000US72|Puerto Rico||425|Wholesale electronic markets and agents and brokers||42|2012|81||34559||0|G|9190||0|G|299||0|G
+02|72|0400000US72|Puerto Rico||425|Wholesale electronic markets and agents and brokers||42|2017|72||35639||0|G|8701||0|H|380||0|H
+02|72|0400000US72|Puerto Rico||44-45|Retail trade||44|2012|9732||24957584||0|G|1995812||0|G|124887||0|G
+02|72|0400000US72|Puerto Rico||44-45|Retail trade||44|2017|9364||25456248||0|G|2368082||0|G|132033||0|G
+02|72|0400000US72|Puerto Rico||441|Motor vehicle and parts dealers||44|2012|1280||4439805||0|G|274625||0|G|13291||0|G
+02|72|0400000US72|Puerto Rico||441|Motor vehicle and parts dealers||44|2017|1326||4546207||0|G|330010||0|G|15225||0|G
+02|72|0400000US72|Puerto Rico||442|Furniture and home furnishings stores||44|2012|328||473371||0|G|44796||0|G|2318||0|G
+02|72|0400000US72|Puerto Rico||442|Furniture and home furnishings stores||44|2017|269||468730||0|G|44955||0|G|2284||0|G
+02|72|0400000US72|Puerto Rico||443|Electronics and appliance stores||44|2012|442||487301||0|H|58680||0|H|3201||0|H
+02|72|0400000US72|Puerto Rico||443|Electronics and appliance stores||44|2017|213||218439||0|H|32118||0|G|1740||0|G
+02|72|0400000US72|Puerto Rico||444|Building material and garden equipment and supplies dealers||44|2012|914||1293762||0|G|152279||0|G|8120||0|G
+02|72|0400000US72|Puerto Rico||444|Building material and garden equipment and supplies dealers||44|2017|847||1620623||0|G|155042||0|G|7947||0|G
+02|72|0400000US72|Puerto Rico||445|Food and beverage stores||44|2012|1143||4238505||0|G|288055||0|G|22737||0|G
+02|72|0400000US72|Puerto Rico||445|Food and beverage stores||44|2017|1126||4603220||0|G|363085||0|G|26409||0|G
+02|72|0400000US72|Puerto Rico||446|Health and personal care stores||44|2012|1447||3909171||0|H|340567||0|G|15648||0|G
+02|72|0400000US72|Puerto Rico||446|Health and personal care stores||44|2017|1547||3685615||0|G|471750||0|G|18725||0|G
+02|72|0400000US72|Puerto Rico||447|Gasoline stations||44|2012|775||2769444||0|H|69953||0|G|5078||0|G
+02|72|0400000US72|Puerto Rico||447|Gasoline stations||44|2017|842||2336193||0|G|65361||0|G|5462||0|G
+02|72|0400000US72|Puerto Rico||448|Clothing and clothing accessories stores||44|2012|2020||2515675||0|G|272524||0|G|22485||0|G
+02|72|0400000US72|Puerto Rico||448|Clothing and clothing accessories stores||44|2017|1830||2151613||0|G|267159||0|G|21619||0|G
+02|72|0400000US72|Puerto Rico||451|Sporting goods, hobby, musical instrument, and book stores||44|2012|274||140203||0|G|26990||0|G|1601||0|G
+02|72|0400000US72|Puerto Rico||451|Sporting goods, hobby, musical instrument, and book stores||44|2017|286||207100||0|G|27780||0|G|1924||0|G
+02|72|0400000US72|Puerto Rico||452|General merchandise stores||44|2012|339||4024841||0|H|364110||0|H|25199||0|H
+02|72|0400000US72|Puerto Rico||452|General merchandise stores||44|2017|324||4493841||0|H|503540||0|H|25607||0|G
+02|72|0400000US72|Puerto Rico||453|Miscellaneous store retailers||44|2012|556||440466||0|G|74438||0|G|3745||0|G
+02|72|0400000US72|Puerto Rico||453|Miscellaneous store retailers||44|2017|556||561501||0|G|68804||0|G|3902||0|G
+02|72|0400000US72|Puerto Rico||454|Nonstore retailers||44|2012|214||225039||0|G|28794||0|G|1463||0|G
+02|72|0400000US72|Puerto Rico||454|Nonstore retailers||44|2017|198||563167||0|H|38480||0|H|1192||0|G
+02|72|0400000US72|Puerto Rico||48-49|Transportation and warehousing||48|2012|918||1918575||0|G|356088||0|G|13716||0|G
+02|72|0400000US72|Puerto Rico||48-49|Transportation and warehousing||48|2017|982||2345789||0|G|424650||0|G|15626||0|G
+02|72|0400000US72|Puerto Rico||481|Air transportation||48|2012|13||13882||0|H|4271||0|H|140||0|H
+02|72|0400000US72|Puerto Rico||481|Air transportation||48|2017|32||52444||0|G|11148||0|G|326||0|G
+02|72|0400000US72|Puerto Rico||483|Water transportation||48|2012|16||92260||0|H|34046||0|H|890||0|H
+02|72|0400000US72|Puerto Rico||483|Water transportation||48|2017|25||162215||0|H|20455||0|H|546||0|G
+02|72|0400000US72|Puerto Rico||484|Truck transportation||48|2012|388||292716||0|G|59427||0|G|2864||0|G
+02|72|0400000US72|Puerto Rico||484|Truck transportation||48|2017|378||304097||0|G|67386||0|G|2960||0|G
+02|72|0400000US72|Puerto Rico||485|Transit and ground passenger transportation||48|2012|189||142113||0|G|40582||0|H|2071||0|G
+02|72|0400000US72|Puerto Rico||485|Transit and ground passenger transportation||48|2017|203||230685||0|G|63737||0|G|3201||0|G
+02|72|0400000US72|Puerto Rico||486|Pipeline transportation||48|2012|11||4853||0|G|1183||0|G|48||0|H
+02|72|0400000US72|Puerto Rico||486|Pipeline transportation||48|2017|13||88704||0|H|2698||0|H|88||0|H
+02|72|0400000US72|Puerto Rico||487|Scenic and sightseeing transportation||48|2012|16||14214||0|H|2816||0|G|303||0|H
+02|72|0400000US72|Puerto Rico||487|Scenic and sightseeing transportation||48|2017|24||17636||0|G|3890||0|G|187||0|G
+02|72|0400000US72|Puerto Rico||488|Support activities for transportation||48|2012|169||432074||0|H|110789||0|G|3875||0|G
+02|72|0400000US72|Puerto Rico||488|Support activities for transportation||48|2017|177||1013091||0|G|164364||0|G|5772||0|G
+02|72|0400000US72|Puerto Rico||492|Couriers and messengers||48|2012|52||681492||0|G|55455||0|G|1494||0|G
+02|72|0400000US72|Puerto Rico||492|Couriers and messengers||48|2017|61||180463||0|G|52265||0|G|1250||0|G
+02|72|0400000US72|Puerto Rico||493|Warehousing and storage||48|2012|64||244969||0|H|47518||0|G|2030||0|G
+02|72|0400000US72|Puerto Rico||493|Warehousing and storage||48|2017|68||296430||0|H|38705||0|G|1296||0|G
+02|72|0400000US72|Puerto Rico||51|Information||51|2012|727||12342587||0|H|542569||0|G|22610||0|G
+02|72|0400000US72|Puerto Rico||51|Information||51|2017|868||14705619||0|H|841980||0|G|19872||0|G
+02|72|0400000US72|Puerto Rico||511|Publishing industries (except internet)||51|2012|97||0|D|0|D|0|D|0|D|0|g|0|D
+02|72|0400000US72|Puerto Rico||511|Publishing industries (except internet)||51|2017|107||0|S|0|S|0|S|0|S|0|g|0|S
+02|72|0400000US72|Puerto Rico||512|Motion picture and sound recording industries||51|2012|83||133025||0|H|23769||0|H|1830||0|H
+02|72|0400000US72|Puerto Rico||512|Motion picture and sound recording industries||51|2017|70||159406||0|H|19530||0|H|1772||0|H
+02|72|0400000US72|Puerto Rico||515|Broadcasting (except internet)||51|2012|96||266401||0|H|80182||0|H|1903||0|G
+02|72|0400000US72|Puerto Rico||515|Broadcasting (except internet)||51|2017|86||365926||0|G|69123||0|G|1621||0|G
+02|72|0400000US72|Puerto Rico||517|Telecommunications||51|2012|284||2378200||0|H|237922||0|H|10725||0|H
+02|72|0400000US72|Puerto Rico||517|Telecommunications||51|2017|397||3236332||0|H|445992||0|H|9871||0|H
+02|72|0400000US72|Puerto Rico||518|Data processing, hosting, and related services||51|2012|104||491120||0|H|81420||0|H|5246||0|H
+02|72|0400000US72|Puerto Rico||518|Data processing, hosting, and related services||51|2017|123||526140||0|H|159866||0|H|3463||0|H
+02|72|0400000US72|Puerto Rico||519|Other information services||51|2012|63||100225||0|H|30154||0|G|895||0|H
+02|72|0400000US72|Puerto Rico||519|Other information services||51|2017|85||101594||0|G|22682||0|G|688||0|G
+02|72|0400000US72|Puerto Rico||52|Finance and insurance||52|2012|1791||14644495||0|G|1172737||0|G|30950||0|G
+02|72|0400000US72|Puerto Rico||52|Finance and insurance||52|2017|1785||14357432||0|G|1444679||0|G|31928||0|G
+02|72|0400000US72|Puerto Rico||522|Credit intermediation and related activities||52|2012|1044||6164175||0|H|593308||0|H|17609||0|H
+02|72|0400000US72|Puerto Rico||522|Credit intermediation and related activities||52|2017|981||4556130||0|H|759650||0|H|18650||0|H
+02|72|0400000US72|Puerto Rico||523|Securities, commodity contracts, and other financial investments and related activities||52|2012|139||326759||0|H|121020||0|H|1715||0|H
+02|72|0400000US72|Puerto Rico||523|Securities, commodity contracts, and other financial investments and related activities||52|2017|156||548869||0|G|131476||0|H|1558||0|G
+02|72|0400000US72|Puerto Rico||524|Insurance carriers and related activities||52|2012|608||8153561||0|H|458408||0|G|11625||0|G
+02|72|0400000US72|Puerto Rico||524|Insurance carriers and related activities||52|2017|645||9192412||0|H|548595||0|G|11647||0|G
+02|72|0400000US72|Puerto Rico||525|Funds, trusts, and other financial vehicles||52|2017|3||60021||0|H|4957||0|H|72||0|H
+02|72|0400000US72|Puerto Rico||53|Real estate and rental and leasing||53|2012|1592||1465763||0|H|262402||0|G|11310||0|G
+02|72|0400000US72|Puerto Rico||53|Real estate and rental and leasing||53|2017|1672||1617282||0|G|322424||0|G|13101||0|G
+02|72|0400000US72|Puerto Rico||531|Real estate||53|2012|1104||1008313||0|H|177704||0|G|7480||0|G
+02|72|0400000US72|Puerto Rico||531|Real estate||53|2017|1201||1090732||0|G|223351||0|G|9385||0|G
+02|72|0400000US72|Puerto Rico||532|Rental and leasing services||53|2012|483||450641||0|H|83158||0|H|3783||0|H
+02|72|0400000US72|Puerto Rico||532|Rental and leasing services||53|2017|461||521208||0|H|97834||0|G|3677||0|G
+02|72|0400000US72|Puerto Rico||533|Lessors of nonfinancial intangible assets (except copyrighted works)||53|2012|5||6809||0|H|1540||0|H|47||0|H
+02|72|0400000US72|Puerto Rico||533|Lessors of nonfinancial intangible assets (except copyrighted works)||53|2017|10||5341||0|H|1239||0|H|39||0|H
+02|72|0400000US72|Puerto Rico||54|Professional, scientific, and technical services||54|2012|4044||3145282||0|G|1060800||0|G|49750||0|H
+02|72|0400000US72|Puerto Rico||54|Professional, scientific, and technical services||54|2017|4490||4481246||0|G|1231711||0|G|34559||0|G
+02|72|0400000US72|Puerto Rico||541|Professional, scientific, and technical services||54|2012|4044||3145282||0|G|1060800||0|G|49750||0|H
+02|72|0400000US72|Puerto Rico||541|Professional, scientific, and technical services||54|2017|4490||4481246||0|G|1231711||0|G|34559||0|G
+02|72|0400000US72|Puerto Rico||55|Management of companies and enterprises||55|2012|88||835387||0|H|182603||0|H|3931||0|H
+02|72|0400000US72|Puerto Rico||55|Management of companies and enterprises||55|2017|108||1040588||0|H|342976||0|G|6709||0|G
+02|72|0400000US72|Puerto Rico||551|Management of companies and enterprises||55|2017|108||1040588||0|H|342976||0|G|6709||0|G
+02|72|0400000US72|Puerto Rico||56|Administrative and support and waste management and remediation services||56|2012|1644||2948546||0|G|1447914||0|G|85049||0|G
+02|72|0400000US72|Puerto Rico||56|Administrative and support and waste management and remediation services||56|2017|1884||3197260||0|G|1445280||0|G|74461||0|G
+02|72|0400000US72|Puerto Rico||561|Administrative and support services||56|2012|1510||2592482||0|G|1369909||0|G|81948||0|G
+02|72|0400000US72|Puerto Rico||561|Administrative and support services||56|2017|1747||2805165||0|G|1365757||0|G|71498||0|G
+02|72|0400000US72|Puerto Rico||562|Waste management and remediation services||56|2012|134||356063||0|G|78006||0|G|3101||0|G
+02|72|0400000US72|Puerto Rico||562|Waste management and remediation services||56|2017|137||392096||0|G|79523||0|G|2962||0|G
+02|72|0400000US72|Puerto Rico||61|Educational services||61|2012|440||462482||0|G|160972||0|G|9809||0|G
+02|72|0400000US72|Puerto Rico||61|Educational services||61|2017|482||418303||0|G|149688||0|G|9443||0|G
+02|72|0400000US72|Puerto Rico||611|Educational services||61|2012|440||462482||0|G|160972||0|G|9809||0|G
+02|72|0400000US72|Puerto Rico||611|Educational services||61|2017|482||418303||0|G|149688||0|G|9443||0|G
+02|72|0400000US72|Puerto Rico||62|Health care and social assistance||62|2012|7014||6098340||0|G|1842086||0|G|80913||0|G
+02|72|0400000US72|Puerto Rico||62|Health care and social assistance||62|2017|7738||7885285||0|G|2085097||0|G|84933||0|G
+02|72|0400000US72|Puerto Rico||621|Ambulatory health care services||62|2012|5924||2972294||0|G|792796||0|G|32623||0|G
+02|72|0400000US72|Puerto Rico||621|Ambulatory health care services||62|2017|6463||4276745||0|G|946059||0|G|37751||0|G
+02|72|0400000US72|Puerto Rico||622|Hospitals||62|2012|130||2824703||0|G|842036||0|G|32342||0|G
+02|72|0400000US72|Puerto Rico||622|Hospitals||62|2017|147||2961648||0|G|889026||0|G|31178||0|G
+02|72|0400000US72|Puerto Rico||623|Nursing and residential care facilities||62|2012|380||99592||0|G|63578||0|G|4762||0|G
+02|72|0400000US72|Puerto Rico||623|Nursing and residential care facilities||62|2017|488||195160||0|G|71151||0|G|5438||0|G
+02|72|0400000US72|Puerto Rico||624|Social assistance||62|2012|580||201753||0|G|143676||0|G|11189||0|G
+02|72|0400000US72|Puerto Rico||624|Social assistance||62|2017|640||451732||0|G|178859||0|G|10566||0|G
+02|72|0400000US72|Puerto Rico||71|Arts, entertainment, and recreation||71|2012|341||187328||0|G|62745||0|G|3024||0|G
+02|72|0400000US72|Puerto Rico||71|Arts, entertainment, and recreation||71|2017|458||299586||0|G|67179||0|G|3811||0|G
+02|72|0400000US72|Puerto Rico||711|Performing arts, spectator sports, and related industries||71|2012|146||70045||0|G|25104||0|G|924||0|G
+02|72|0400000US72|Puerto Rico||711|Performing arts, spectator sports, and related industries||71|2017|184||130878||0|G|23662||0|G|1164||0|G
+02|72|0400000US72|Puerto Rico||712|Museums, historical sites, and similar institutions||71|2012|14||12023||0|H|6492||0|H|290||0|H
+02|72|0400000US72|Puerto Rico||712|Museums, historical sites, and similar institutions||71|2017|27||19378||0|G|7283||0|G|365||0|G
+02|72|0400000US72|Puerto Rico||713|Amusement, gambling, and recreation industries||71|2012|181||105259||0|G|31149||0|G|1810||0|G
+02|72|0400000US72|Puerto Rico||713|Amusement, gambling, and recreation industries||71|2017|247||149330||0|G|36234||0|G|2282||0|G
+02|72|0400000US72|Puerto Rico||72|Accommodation and food services||72|2012|4084||4256139||0|G|1135032||0|G|74741||0|G
+02|72|0400000US72|Puerto Rico||72|Accommodation and food services||72|2017|4758||4313196||0|G|1084616||0|G|82815||0|G
+02|72|0400000US72|Puerto Rico||721|Accommodation||72|2012|253||1275998||0|G|458366||0|G|15965||0|G
+02|72|0400000US72|Puerto Rico||721|Accommodation||72|2017|261||1119096||0|G|342689||0|G|15024||0|G
+02|72|0400000US72|Puerto Rico||722|Food services and drinking places||72|2012|3831||2980141||0|G|676667||0|G|58776||0|G
+02|72|0400000US72|Puerto Rico||722|Food services and drinking places||72|2017|4497||3194100||0|G|741928||0|G|67790||0|G
+02|72|0400000US72|Puerto Rico||81|Other services (except public administration)||81|2012|2070||750512||0|G|224347||0|G|16144||0|G
+02|72|0400000US72|Puerto Rico||81|Other services (except public administration)||81|2017|2497||1106981||0|G|250707||0|G|13125||0|G
+02|72|0400000US72|Puerto Rico||811|Repair and maintenance||81|2012|1158||402365||0|G|115857||0|G|9755||0|H
+02|72|0400000US72|Puerto Rico||811|Repair and maintenance||81|2017|1147||423924||0|G|102165||0|G|5088||0|G
+02|72|0400000US72|Puerto Rico||812|Personal and laundry services||81|2012|813||293020||0|G|87450||0|G|5425||0|G
+02|72|0400000US72|Puerto Rico||812|Personal and laundry services||81|2017|831||333597||0|G|91843||0|G|5481||0|G
+02|72|0400000US72|Puerto Rico||813|Religious, grantmaking, civic, professional, and similar organizations||81|2012|99||55128||0|G|21040||0|G|964||0|H
+02|72|0400000US72|Puerto Rico||813|Religious, grantmaking, civic, professional, and similar organizations||81|2017|507||348658||0|G|56492||0|G|2534||0|G
+02|72|0400000US72|Puerto Rico||814|Private households||81|2017|12||802||0|G|206||0|G|20||0|H
+02|78|0400000US78|United States Virgin Islands||00|Total for all sectors||00|2012|2414||6830529||0|G|1129260||0|G|32465||0|G
+02|78|0400000US78|United States Virgin Islands||00|Total for all sectors||00|2017|2419||5835853||0|G|1018090||0|G|30506||0|G
+02|78|0400000US78|United States Virgin Islands||22|Utilities||22|2012|11||366880||0|H|49438||0|H|807||0|H
+02|78|0400000US78|United States Virgin Islands||22|Utilities||22|2017|6||0|S|0|S|0|S|0|S|0|f|0|S
+02|78|0400000US78|United States Virgin Islands||23|Construction||23|2012|161||237929||0|G|57772||0|G|1729||0|G
+02|78|0400000US78|United States Virgin Islands||23|Construction||23|2017|137||145688||0|G|47348||0|G|1298||0|G
+02|78|0400000US78|United States Virgin Islands||31-33|Manufacturing||31|2012|57||1962639||0|H|167907||0|H|1984||0|H
+02|78|0400000US78|United States Virgin Islands||31-33|Manufacturing||31|2017|52||175294||0|G|26071||0|G|601||0|G
+02|78|0400000US78|United States Virgin Islands||42|Wholesale trade||42|2012|64||221006||0|H|24783||0|H|686||0|H
+02|78|0400000US78|United States Virgin Islands||42|Wholesale trade||42|2017|62||527485||0|G|47221||0|G|872||0|G
+02|78|0400000US78|United States Virgin Islands||44-45|Retail trade||44|2012|560||1318244||0|G|142445||0|G|6596||0|G
+02|78|0400000US78|United States Virgin Islands||44-45|Retail trade||44|2017|489||1205381||0|G|128385||0|G|6118||0|G
+02|78|0400000US78|United States Virgin Islands||48-49|Transportation and warehousing||48|2012|101||333476||0|H|57460||0|G|1682||0|G
+02|78|0400000US78|United States Virgin Islands||48-49|Transportation and warehousing||48|2017|120||348008||0|G|78317||0|H|2366||0|G
+02|78|0400000US78|United States Virgin Islands||51|Information||51|2012|46||155438||0|G|44709||0|H|918||0|H
+02|78|0400000US78|United States Virgin Islands||51|Information||51|2017|50||123087||0|H|35196||0|H|870||0|G
+02|78|0400000US78|United States Virgin Islands||52|Finance and insurance||52|2012|107||492552||0|G|61694||0|H|1156||0|G
+02|78|0400000US78|United States Virgin Islands||52|Finance and insurance||52|2017|122||1153834||0|G|69989||0|G|1078||0|G
+02|78|0400000US78|United States Virgin Islands||53|Real estate and rental and leasing||53|2012|180||168337||0|G|32677||0|G|961||0|G
+02|78|0400000US78|United States Virgin Islands||53|Real estate and rental and leasing||53|2017|196||180052||0|G|39519||0|G|1112||0|G
+02|78|0400000US78|United States Virgin Islands||54|Professional, scientific, and technical services||54|2012|232||306886||0|G|95193||0|H|2108||0|H
+02|78|0400000US78|United States Virgin Islands||54|Professional, scientific, and technical services||54|2017|254||239734||0|G|58500||0|G|1134||0|G
+02|78|0400000US78|United States Virgin Islands||55|Management of companies and enterprises||55|2012|5||4725||0|H|2481||0|H|68||0|H
+02|78|0400000US78|United States Virgin Islands||55|Management of companies and enterprises||55|2017|9||38305||0|G|6277||0|G|128||0|G
+02|78|0400000US78|United States Virgin Islands||56|Administrative and support and waste management and remediation services||56|2012|146||174834||0|G|53476||0|G|1904||0|H
+02|78|0400000US78|United States Virgin Islands||56|Administrative and support and waste management and remediation services||56|2017|162||236349||0|G|87258||0|G|2108||0|H
+02|78|0400000US78|United States Virgin Islands||61|Educational services||61|2012|17||3611||0|G|976||0|G|65||0|G
+02|78|0400000US78|United States Virgin Islands||61|Educational services||61|2017|16||3704||0|G|907||0|G|50||0|H
+02|78|0400000US78|United States Virgin Islands||62|Health care and social assistance||62|2012|236||313883||0|G|102531||0|G|2639||0|G
+02|78|0400000US78|United States Virgin Islands||62|Health care and social assistance||62|2017|228||411635||0|G|142951||0|G|3262||0|G
+02|78|0400000US78|United States Virgin Islands||71|Arts, entertainment, and recreation||71|2012|50||76348||0|G|16488||0|G|743||0|G
+02|78|0400000US78|United States Virgin Islands||71|Arts, entertainment, and recreation||71|2017|50||113312||0|G|21987||0|G|936||0|H
+02|78|0400000US78|United States Virgin Islands||72|Accommodation and food services||72|2012|279||539442||0|G|160542||0|G|6864||0|G
+02|78|0400000US78|United States Virgin Islands||72|Accommodation and food services||72|2017|304||520417||0|G|149735||0|G|6737||0|G
+02|78|0400000US78|United States Virgin Islands||81|Other services (except public administration)||81|2012|160||152599||0|G|58256||0|G|1539||0|G
+02|78|0400000US78|United States Virgin Islands||81|Other services (except public administration)||81|2017|160||129364||0|G|39616||0|H|1193||0|G
+02|72|04000G0US72|Puerto Rico -- Not in metropolitan or micropolitan statistical area||00|Total for all sectors||00|2017|221||288293||0|H|40656||0|H|2263||0|G
+02|72|04000G0US72|Puerto Rico -- Not in metropolitan or micropolitan statistical area||44-45|Retail trade||44|2017|54||58429||0|G|4757||0|G|364||0|H
+02|72|04000G0US72|Puerto Rico -- Not in metropolitan or micropolitan statistical area||441|Motor vehicle and parts dealers||44|2017|3||1076||0|G|163||0|H|16||0|H
+02|72|04000G0US72|Puerto Rico -- Not in metropolitan or micropolitan statistical area||444|Building material and garden equipment and supplies dealers||44|2017|9||5440||0|H|602||0|H|49||0|H
+02|72|04000G0US72|Puerto Rico -- Not in metropolitan or micropolitan statistical area||445|Food and beverage stores||44|2017|21||34678||0|H|2986||0|H|225||0|H
+02|72|04000G0US72|Puerto Rico -- Not in metropolitan or micropolitan statistical area||446|Health and personal care stores||44|2017|4||3263||0|G|345||0|G|27||0|H
+02|72|04000G0US72|Puerto Rico -- Not in metropolitan or micropolitan statistical area||447|Gasoline stations||44|2017|7||8443||0|G|280||0|G|29||0|H
+02|72|04000G0US72|Puerto Rico -- Not in metropolitan or micropolitan statistical area||454|Nonstore retailers||44|2017|3||3516||0|H|140||0|H|7||0|J
+02|72|04000G0US72|Puerto Rico -- Not in metropolitan or micropolitan statistical area||48-49|Transportation and warehousing||48|2017|13||14016||0|H|2064||0|H|114||0|H
+02|72|04000G0US72|Puerto Rico -- Not in metropolitan or micropolitan statistical area||481|Air transportation||48|2017|6||0|S|0|S|0|S|0|S|0|b|0|S
+02|72|04000G0US72|Puerto Rico -- Not in metropolitan or micropolitan statistical area||485|Transit and ground passenger transportation||48|2017|3||0|S|0|S|0|S|0|S|0|b|0|S
+02|72|04000G0US72|Puerto Rico -- Not in metropolitan or micropolitan statistical area||52|Finance and insurance||52|2017|7||3928||0|G|1014||0|H|37||0|H
+02|72|04000G0US72|Puerto Rico -- Not in metropolitan or micropolitan statistical area||522|Credit intermediation and related activities||52|2017|7||3928||0|G|1014||0|H|37||0|H
+02|72|04000G0US72|Puerto Rico -- Not in metropolitan or micropolitan statistical area||53|Real estate and rental and leasing||53|2017|22||9751||0|H|1637||0|H|125||0|H
+02|72|04000G0US72|Puerto Rico -- Not in metropolitan or micropolitan statistical area||531|Real estate||53|2017|15||3086||0|G|693||0|G|57||0|G
+02|72|04000G0US72|Puerto Rico -- Not in metropolitan or micropolitan statistical area||532|Rental and leasing services||53|2017|7||6664||0|H|944||0|H|68||0|H
+02|72|04000G0US72|Puerto Rico -- Not in metropolitan or micropolitan statistical area||54|Professional, scientific, and technical services||54|2017|6||2986||0|H|1370||0|H|66||0|H
+02|72|04000G0US72|Puerto Rico -- Not in metropolitan or micropolitan statistical area||541|Professional, scientific, and technical services||54|2017|6||2986||0|H|1370||0|H|66||0|H
+02|72|04000G0US72|Puerto Rico -- Not in metropolitan or micropolitan statistical area||56|Administrative and support and waste management and remediation services||56|2017|11||2681||0|H|1244||0|H|78||0|H
+02|72|04000G0US72|Puerto Rico -- Not in metropolitan or micropolitan statistical area||561|Administrative and support services||56|2017|9||2329||0|H|1149||0|H|59||0|H
+02|72|04000G0US72|Puerto Rico -- Not in metropolitan or micropolitan statistical area||62|Health care and social assistance||62|2017|24||10557||0|H|2350||0|H|140||0|H
+02|72|04000G0US72|Puerto Rico -- Not in metropolitan or micropolitan statistical area||621|Ambulatory health care services||62|2017|17||9232||0|H|1862||0|H|95||0|H
+02|72|04000G0US72|Puerto Rico -- Not in metropolitan or micropolitan statistical area||623|Nursing and residential care facilities||62|2017|3||368||0|H|148||0|H|10||0|J
+02|72|04000G0US72|Puerto Rico -- Not in metropolitan or micropolitan statistical area||624|Social assistance||62|2017|4||957||0|H|340||0|H|36||0|J
+02|72|04000G0US72|Puerto Rico -- Not in metropolitan or micropolitan statistical area||71|Arts, entertainment, and recreation||71|2017|3||732||0|H|235||0|J|14||0|J
+02|72|04000G0US72|Puerto Rico -- Not in metropolitan or micropolitan statistical area||72|Accommodation and food services||72|2017|53||25516||0|H|7184||0|H|545||0|G
+02|72|04000G0US72|Puerto Rico -- Not in metropolitan or micropolitan statistical area||721|Accommodation||72|2017|16||13299||0|H|4656||0|H|277||0|H
+02|72|04000G0US72|Puerto Rico -- Not in metropolitan or micropolitan statistical area||722|Food services and drinking places||72|2017|37||12217||0|G|2528||0|G|268||0|G
+02|72|04000G0US72|Puerto Rico -- Not in metropolitan or micropolitan statistical area||81|Other services (except public administration)||81|2017|7||1550||0|H|317||0|H|51||0|J
+02|72|04000G0US72|Puerto Rico -- Not in metropolitan or micropolitan statistical area||812|Personal and laundry services||81|2017|3||869||0|H|139||0|H|28||0|H

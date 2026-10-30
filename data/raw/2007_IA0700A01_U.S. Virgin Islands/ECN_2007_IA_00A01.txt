@@ -1,0 +1,98 @@
+IA0700A01
+All Island Area Sectors: Geographic Area Series: Comparative Statistics by Kind of Business for American Samoa, Guam, Northern Mariana Islands, Puerto Rico, and U.S. Virgin Islands: 2007 and 2002
+
+Note: Includes only establishments or firms with payroll.
+Only American Samoa includes establishments without annual payroll.
+Data based on the 2007 Economic Census of Island Areas. Figures may
+not add due to rounding. 
+For comparability purposes, the 2007 Economic Census of the U.S.
+Virgin Islands includes, for the first time since 1992, the
+Petroleum Refineries (NAICS 32411). For information on
+confidentiality protection, sampling error, nonsampling, and
+definitions, see 
+Methodology.
+
+
+
+Note: Data for 2007 are based on the 
+2007 NAICS Manual, whereas data for 2002 were based on the 
+2002 NAICS Manual.
+
+
+
+H	Medium noise infusion
+
+G	Low noise infusion
+
+D	Withheld to avoid disclosing data for individual companies; data are included in higher level totals
+
+a	0 to 19 employees
+
+f	500 to 999 employees
+
+g	1,000 to 2,499 employees
+
+Universe Description
+The universe includes all establishments with payroll at any
+time during 2007 and 2002, and classified in NAICS sectors 21 - 81,
+with exceptions for:
+
+  American Samoa (Includes establishments without annual
+  payroll.)
+  Puerto Rico (Excludes NAICS sectors 23 and 31 - 33.)
+
+Data for 2007 are based on the 
+2007 NAICS Manual, whereas data for 2002 were based on the 
+2002 NAICS Manual.
+Data Items
+This file contains data on:
+
+  Number of establishments
+  Sales, receipts, revenue, or shipments
+  Annual payroll
+  Number of paid employees
+
+Geographic Coverage
+The data are shown at the state-equivalent level for:
+
+  American Samoa
+  Guam
+  Northern Mariana Islands
+  Puerto Rico
+  U.S. Virgin Islands
+
+Industry Detail
+For American Samoa, Guam, Northern Mariana Islands, and the U.S.
+Virgin Islands, the data for 2007 and 2002 are shown for:
+
+  Total of all sectors (00) level
+  Selected 2-digit NAICS code level
+
+For Puerto Rico, the data for 2007 and 2002 are shown for:
+
+  Wholesale (total), retail, and selected kinds of business for
+  selected 2-digit through 3-digit NAICS code levels
+  Type of operation (merchant wholesalers kinds of business and
+  other operating types) for wholesale trade (NAICS 42)
+
+Other Variables Identifying Records
+For Puerto Rico, the data for wholesale kinds of business are
+shown for type of operation.
+Release Schedule
+The data in this file are scheduled for release on a flow basis
+beginning March 2009 through September 2010.
+Related Data Files
+None.
+Data Limitations
+Refer to 
+Survey Methodology for additional information.
+File Sequence
+Data are presented in ascending NAICS code by year sequence. For
+Puerto Rico only, data for wholesale kinds of business are
+presented by type-of-operation sequence.
+Estimated File Size
+Approx. 80K
+
+
+
+

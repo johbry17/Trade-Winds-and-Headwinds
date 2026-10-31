@@ -1,0 +1,8 @@
+---
+title: "Exploratory Data Analysis"
+subtitle: "Trade Winds & Headwinds — USVI Tourism Economy, 2000–2025"
+date: last-modified
+---
+
+*Full EDA in preparation.*
+Sections will cover visitor activity, employment, accommodation capacity, and broader economic context.

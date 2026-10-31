@@ -1,0 +1,5 @@
+year,census_vintage,naics,naics_label,rooms,estab,rcptot_k,methodology_note
+2007,2007,7211,Traveler accommodation,4065,47,308481,A10 industry total (PSCODE 20000)
+2012,2012,7211,Traveler accommodation,5027,54,319049,A10 industry total (first USVI row)
+2017,2017,7211,Traveler accommodation,2624,46,237838,"NAPCS02 product 7003825000 (Room or unit accommodation for travelers). Guestroom reference date = Dec 31, 2017, post-hurricane."
+2022,2022,7211,Traveler accommodation,2039,51,135204,NAPCS02 product 7003825000 (Room or unit accommodation for travelers)

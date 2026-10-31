@@ -1,0 +1,7 @@
+---
+title: "Sources & Methodology"
+subtitle: "Citations, limitations, crosswalks, and analytical decisions"
+date: last-modified
+---
+
+*Methodology documentation in preparation.*

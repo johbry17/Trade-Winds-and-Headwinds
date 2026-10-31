@@ -1,0 +1,40 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Trade Winds & Headwinds"
+  description: "Twenty-Five Years of Tourism and Economic Change in the U.S. Virgin Islands"
+  navbar:
+    left:
+      - href: reports/index.qmd
+        text: Field Note
+      - href: reports/eda.qmd
+        text: Analysis
+      - href: reports/data-dictionary.qmd
+        text: Data Dictionary
+      - href: reports/methodology.qmd
+        text: Methodology
+  sidebar: false
+  page-footer:
+    left: "Data sources: USVIBER, FRED, NPS, U.S. Census Bureau, BEA, World Bank"
+    right: "Trade Winds & Headwinds"
+
+format:
+  html:
+    theme:
+      light: [cosmo, reports/custom.scss]
+    toc: true
+    toc-depth: 3
+    code-fold: true
+    code-tools: false
+    fig-width: 9
+    fig-height: 5.5
+    fig-dpi: 150
+    embed-resources: false
+
+execute:
+  freeze: auto
+  cache: true
+
+jupyter: python3

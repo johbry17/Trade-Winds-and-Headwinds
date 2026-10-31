@@ -1,0 +1,15 @@
+---
+title: "After the Storm"
+subtitle: "A Data Portrait of Tourism Recovery in the U.S. Virgin Islands, 2000–2025"
+author: ""
+date: last-modified
+format:
+  html:
+    toc: false
+---
+
+*Coming soon — Field Note in preparation.*
+
+The full exploratory analysis is available in the [Analysis](eda.qmd) section.
+Data definitions are documented in the [Data Dictionary](data-dictionary.qmd).
+Methodological choices and source notes are in [Methodology](methodology.qmd).

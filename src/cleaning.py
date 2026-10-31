@@ -103,6 +103,8 @@ def load_nps_annual(park_code: str) -> pd.DataFrame:
     df["year"] = df["year"].astype(int)
     df["recreation_visitors"] = df["recreation_visitors"].astype("Int64")
     df["park"] = park_code
+    # 2026 VIIS data is anomalous (Jan–Jun show ~3× normal counts); exclude entirely
+    df = df[df["year"] <= 2025]
     return df.sort_values("year").reset_index(drop=True)
 
 
@@ -156,6 +158,8 @@ def load_nps_monthly(park_code: str) -> pd.DataFrame:
     long["park"] = park_code
     long = long.dropna(subset=["month"])
     long["month"] = long["month"].astype(int)
+    # 2026 VIIS data is anomalous (Jan–Jun show ~3× normal counts); exclude entirely
+    long = long[long["year"] <= 2025]
     return (
         long[["date", "year", "month", "recreation_visitors", "park"]]
         .sort_values(["year", "month"])

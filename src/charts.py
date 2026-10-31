@@ -52,10 +52,10 @@ _BASE_LAYOUT = dict(
     font=dict(family=FONT_FAMILY, size=13, color="#1a1a2e"),
     plot_bgcolor="#fafafa",
     paper_bgcolor="#ffffff",
-    margin=dict(l=60, r=30, t=80, b=60),
+    margin=dict(l=60, r=30, t=100, b=60),
     legend=dict(
         orientation="h",
-        yanchor="bottom",
+        yanchor="top",
         y=1.02,
         xanchor="right",
         x=1.0,

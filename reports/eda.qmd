@@ -1,8 +1,463 @@
 ---
 title: "Exploratory Data Analysis"
 subtitle: "Trade Winds & Headwinds — USVI Tourism Economy, 2000–2025"
-date: last-modified
+date: "2026-10-31"
 ---
 
-*Full EDA in preparation.*
-Sections will cover visitor activity, employment, accommodation capacity, and broader economic context.
+This companion to the [Field Note](index.qmd) documents the full exploratory analysis.
+All charts are generated from the cleaned datasets in `data/interim/`.
+The complete analytical notebooks — including detailed tables, validation checks,
+and additional charts — are in the `notebooks/` directory.
+
+::: {.callout-note}
+**No CPI deflation.** All monetary series are nominal USD.
+Real-dollar comparisons use BEA's own chained-dollar measures (Table 2.3).
+:::
+
+```{python}
+#| echo: false
+#| output: false
+import sys
+from pathlib import Path
+import os
+
+PROJ_ROOT = Path("..").resolve()
+if str(PROJ_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJ_ROOT))
+os.chdir(PROJ_ROOT)
+
+import pandas as pd
+import plotly.graph_objects as go
+import src.cleaning as c, src.charts as ch
+import importlib
+importlib.reload(c); importlib.reload(ch)
+
+from src.cleaning import (
+    load_usviber_tour24, load_fred_employment,
+    load_bea, load_nps_annual, load_nps_monthly,
+    load_census_2007, load_census_2012_basic,
+    load_census_2017_basic, load_census_2022_basic,
+    load_census_rooms,
+)
+from src.charts import PALETTE
+
+tour     = load_usviber_tour24()
+fred     = load_fred_employment()
+bea_real = load_bea("2.3")
+bea_nom  = load_bea("2.1")
+bea_gdp  = load_bea("1.1")
+viis_ann = load_nps_annual("VIIS")
+buis_ann = load_nps_annual("BUIS")
+viis_mo  = load_nps_monthly("VIIS")
+rooms    = load_census_rooms()
+
+c07 = load_census_2007()
+c12 = load_census_2012_basic()
+c17 = load_census_2017_basic()
+c22 = load_census_2022_basic()
+
+fred_ann = (
+    fred.groupby("year")["emp_sa"].mean()
+    .reset_index().rename(columns={"emp_sa": "emp_sa_avg"})
+)
+
+frames = []
+for df, v in [(c07,2007),(c12,2012),(c17,2017),(c22,2022)]:
+    sub = df[df["naics"].astype(str).isin(["72","721","722"])].copy()
+    sub["vintage"] = v
+    frames.append(sub)
+census = pd.concat(frames).drop_duplicates(subset=["year","naics"]).sort_values(["naics","year"])
+
+def _shocks(fig):
+    for x_val, label in [(2017, "Irma & Maria"), (2020, "COVID-19")]:
+        fig.add_vline(x=x_val, line=dict(color="#aaa", width=1.5, dash="dash"),
+                      annotation_text=label, annotation_position="top",
+                      annotation_font=dict(size=10, color="#666"))
+    return fig
+
+def _src(text):
+    return dict(xref="paper", yref="paper", x=0, y=-0.10,
+        text=f"<span style='color:#888;font-size:11px'>{text}</span>",
+        showarrow=False, xanchor="left")
+```
+
+## Section 1 — Visitor Activity
+
+### Total arrivals and visitor composition
+
+```{python}
+#| echo: false
+#| label: fig-eda-arrivals
+#| fig-cap: "Total USVI visitor arrivals by type, 2000–2024."
+
+fig = go.Figure()
+for col, name, color, dash in [
+    ("total_visitors",   "Total visitors",           PALETTE["total"],    "solid"),
+    ("tourists",         "Overnight tourists",        PALETTE["tourists"], "solid"),
+    ("cruise_passengers","Cruise passengers",         PALETTE["cruise"],   "dash"),
+    ("air_excursionists","Air excursionists",         PALETTE["air_excursionist"], "dot"),
+]:
+    sub = tour[["year", col]].dropna()
+    fig.add_trace(go.Scatter(x=sub["year"], y=sub[col], mode="lines",
+        name=name, line=dict(color=color, width=2, dash=dash)))
+
+fig.update_layout(yaxis_title="Visitors (thousands)", height=440,
+    legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
+    margin=dict(l=60,r=30,t=60,b=50), annotations=[_src("USVIBER Annual Tourism Indicator 2024")])
+_shocks(fig).show()
+```
+
+### Visitor expenditures (nominal)
+
+```{python}
+#| echo: false
+#| label: fig-eda-spend
+
+fig = go.Figure()
+for col, name, color in [
+    ("expenditures_total",         "Total",    PALETTE["total"]),
+    ("expenditures_tourists",      "Tourists", PALETTE["tourists"]),
+    ("expenditures_excursionists", "Excursionists", PALETTE["cruise"]),
+]:
+    sub = tour[["year",col]].dropna()
+    fig.add_trace(go.Scatter(x=sub["year"], y=sub[col], mode="lines+markers",
+        name=name, line=dict(color=color, width=2), marker=dict(size=4)))
+
+fig.update_layout(title="Visitor Expenditures — Nominal",
+    yaxis_title=" (nominal)", height=400,
+    legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
+    margin=dict(l=60,r=30,t=60,b=50), annotations=[_src("USVIBER Annual Tourism Indicator 2024")])
+_shocks(fig).show()
+```
+
+### Hotel occupancy rate
+
+```{python}
+#| echo: false
+#| label: fig-eda-occupancy
+
+fig = go.Figure(go.Scatter(
+    x=tour["year"], y=tour["occupancy_rate_pct"],
+    mode="lines+markers", name="Occupancy rate (%)",
+    line=dict(color=PALETTE["occupancy"], width=2.5),
+    marker=dict(size=5),
+))
+fig.update_layout(title="Hotel Occupancy Rate",
+    yaxis_title="Occupancy rate (%)", yaxis_range=[0,100], height=380,
+    margin=dict(l=60,r=30,t=60,b=50), annotations=[_src("USVIBER Annual Tourism Indicator 2024")])
+_shocks(fig).show()
+```
+
+### NPS park visitation
+
+```{python}
+#| echo: false
+#| label: fig-eda-nps
+
+nps = pd.concat([viis_ann, buis_ann]).query("year >= 2000")
+fig = go.Figure()
+for park, color, name in [
+    ("VIIS", PALETTE["nps_viis"], "Virgin Islands NP (St. John)"),
+    ("BUIS", PALETTE["nps_buis"], "Buck Island Reef NM (St. Croix)"),
+]:
+    sub = nps[nps["park"]==park]
+    fig.add_trace(go.Scatter(x=sub["year"], y=sub["recreation_visitors"],
+        mode="lines+markers", name=name,
+        line=dict(color=color, width=2), marker=dict(size=4)))
+fig.update_layout(title="NPS Recreation Visitation",
+    yaxis_title="Recreation visitors", yaxis_tickformat=",", height=420,
+    legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
+    margin=dict(l=60,r=30,t=60,b=50),
+    annotations=[_src("NPS IRMA Public Use Statistics. BUIS gap 1999–2001.")])
+_shocks(fig).show()
+```
+
+### VIIS seasonal heatmap
+
+```{python}
+#| echo: false
+#| label: fig-viis-heat
+
+from src.charts import monthly_heatmap
+viis_mo_plot = viis_mo.query("year >= 2000").copy()
+viis_mo_plot["year_int"]  = viis_mo_plot["year"].astype(int)
+viis_mo_plot["month_int"] = viis_mo_plot["month"].astype(int)
+viis_mo_plot["visits"]    = viis_mo_plot["recreation_visitors"].astype(float)
+fig = monthly_heatmap(
+    viis_mo_plot.dropna(subset=["visits"]),
+    year_col="year_int", month_col="month_int", value_col="visits",
+    title="VIIS — Monthly Recreation Visitors",
+    subtitle="Newest year at top. Hurricane September 2017 and COVID March 2020 visible.",
+    source="NPS IRMA Public Use Statistics",
+    colorscale="Blues", height=640,
+)
+fig.show()
+```
+
+
+## Section 2 — Employment
+
+### FRED monthly SA employment
+
+```{python}
+#| echo: false
+#| label: fig-fred-monthly
+
+import datetime
+fred_plot = fred.copy()
+# Convert Period to datetime for vline compatibility
+fred_plot["dt"] = fred_plot["year"].astype(str) + "-" + fred_plot["month"].astype(str).str.zfill(2) + "-01"
+fred_plot["dt"] = pd.to_datetime(fred_plot["dt"])
+
+fig = go.Figure(go.Scatter(
+    x=fred_plot["dt"], y=fred_plot["emp_sa"],
+    mode="lines", name="SA employment",
+    line=dict(color=PALETTE["employment"], width=1.8),
+))
+fig.update_layout(title="USVI L&H Employment — Seasonally Adjusted",
+    yaxis_title="Employees (thousands)", height=420,
+    margin=dict(l=60,r=30,t=60,b=50),
+    annotations=[_src("FRED SMS78000007000000001 (BLS)")])
+for x_str, label in [("2017-09-01", "Irma & Maria"), ("2020-03-01", "COVID-19")]:
+    fig.add_vline(x=pd.Timestamp(x_str).value/1e6,
+                 line=dict(color="#aaa",width=1.5,dash="dash"),
+                 annotation_text=label, annotation_position="top",
+                 annotation_font=dict(size=10, color="#666"))
+fig.show()
+```
+
+### FRED annual averages
+
+```{python}
+#| echo: false
+#| label: fig-fred-annual
+
+from src.charts import bar_chart
+fig = bar_chart(
+    fred_ann.query("year >= 2000"), x="year", y="emp_sa_avg",
+    title="L&H Employment — Annual Average (SA)",
+    subtitle="Mean of 12 monthly SA observations.",
+    y_label="Avg. annual employees (thousands)",
+    color=PALETTE["employment"],
+    source="FRED SMS78000007000000001 — author calculations",
+    shock_x=[2017, 2020],
+)
+fig.show()
+```
+
+### Census employment snapshots
+
+```{python}
+#| echo: false
+#| label: fig-census-emp
+
+fig = go.Figure()
+for naics_code, name, color in [
+    ("72",  "NAICS 72 (Accommodation + food)",  PALETTE["total"]),
+    ("721", "NAICS 721 (Accommodation only)",    PALETTE["tourists"]),
+    ("722", "NAICS 722 (Food services)",         PALETTE["cruise"]),
+]:
+    sub = census[census["naics"]==naics_code].dropna(subset=["emp"]).sort_values("year")
+    fig.add_trace(go.Scatter(x=sub["year"], y=sub["emp"],
+        mode="markers+lines", name=name,
+        line=dict(color=color, width=2, dash="dot"),
+        marker=dict(size=10, symbol="diamond")))
+fig.update_layout(title="Census Employment Snapshots",
+    yaxis_title="Paid employees (point-in-time)", yaxis_tickformat=",", height=420,
+    legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
+    margin=dict(l=60,r=30,t=60,b=50),
+    annotations=[_src("U.S. Census Economic Census 2007–2022")])
+_shocks(fig).show()
+```
+
+
+## Section 3 — Accommodation Capacity
+
+### Room inventory
+
+```{python}
+#| echo: false
+#| label: fig-room-inventory
+
+fig = go.Figure()
+fig.add_trace(go.Bar(x=tour["year"], y=tour["hotel_rooms"],
+    name="Hotel rooms", marker_color=PALETTE["rooms"]))
+fig.add_trace(go.Bar(x=tour["year"], y=tour["condo_units"],
+    name="Condo & other units", marker_color=PALETTE["cruise"]))
+fig.update_layout(barmode="stack", title="Accommodation Inventory — USVIBER Survey",
+    yaxis_title="Rooms or units", yaxis_tickformat=",", height=420, bargap=0.2,
+    legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
+    margin=dict(l=60,r=30,t=60,b=50),
+    annotations=[_src("USVIBER Annual Tourism Indicator 2024")])
+_shocks(fig).show()
+```
+
+### Census guestroom crosswalk
+
+```{python}
+#| echo: false
+#| label: fig-census-rooms
+
+fig = go.Figure()
+fig.add_trace(go.Scatter(x=tour["year"], y=tour["hotel_rooms"],
+    mode="lines", name="USVIBER hotel rooms (survey)",
+    line=dict(color=PALETTE["rooms"], width=2)))
+fig.add_trace(go.Scatter(x=rooms["year"], y=rooms["rooms"],
+    mode="markers", name="Census NAICS 7211 rooms (Dec 31)",
+    marker=dict(color=PALETTE["cruise"], size=12, symbol="diamond")))
+fig.update_layout(title="Room Inventory: USVIBER vs. Census",
+    yaxis_title="Rooms", yaxis_tickformat=",", height=400,
+    legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
+    margin=dict(l=60,r=30,t=60,b=50),
+    annotations=[_src("USVIBER Annual Tourism Indicator 2024; U.S. Census Economic Census 2007–2022")])
+_shocks(fig).show()
+print("Census guestroom crosswalk:")
+print(rooms[["year","rooms","estab","rcptot_k","methodology_note"]].to_string(index=False))
+```
+
+
+## Section 4 — Economic Context
+
+### Accommodation & food services value added
+
+```{python}
+#| echo: false
+#| label: fig-bea-va
+
+def _get(df, pattern):
+    return (df[df["label"].str.contains(pattern, case=False, na=False)]
+              .drop_duplicates(subset="year").sort_values("year"))
+
+af_nom_s  = _get(bea_nom,  "Accommodation")
+af_real_s = _get(bea_real, "Accommodation")
+gdp_nom_s = _get(bea_gdp,  "Gross domestic")
+
+fig = go.Figure()
+fig.add_trace(go.Scatter(x=af_nom_s["year"], y=af_nom_s["value"],
+    mode="lines+markers", name="Nominal value added ()",
+    line=dict(color=PALETTE["value_added"], width=2.5), marker=dict(size=4)))
+fig.add_trace(go.Scatter(x=af_real_s["year"], y=af_real_s["value"],
+    mode="lines+markers", name="Real value added (chained )",
+    line=dict(color=PALETTE["cruise"], width=2.5, dash="dash"), marker=dict(size=4)))
+fig.update_layout(title="A&F Value Added (BEA)",
+    yaxis_title="", height=420,
+    legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
+    margin=dict(l=60,r=30,t=60,b=50),
+    annotations=[_src("BEA USVI GDP data. Coverage ends 2021. A&F ≠ tourism GDP.")])
+_shocks(fig).show()
+```
+
+### GDP share
+
+```{python}
+#| echo: false
+#| label: fig-gdp-share
+
+share = af_nom_s[["year","value"]].merge(gdp_nom_s[["year","value"]].rename(columns={"value":"gdp"}),on="year")
+share["pct"] = (share["value"]/share["gdp"]*100).round(1)
+
+fig = go.Figure(go.Scatter(x=share["year"], y=share["pct"],
+    mode="lines+markers", name="A&F % of GDP",
+    line=dict(color=PALETTE["value_added"], width=2.5),
+    fill="tozeroy", fillcolor="rgba(26,79,114,0.08)", marker=dict(size=4)))
+fig.update_layout(title="Accommodation & Food Services as Share of USVI GDP",
+    yaxis_title="% of nominal GDP", yaxis_range=[0,18], height=380,
+    margin=dict(l=60,r=30,t=60,b=50),
+    annotations=[_src("BEA USVI GDP data — author calculations")])
+_shocks(fig).show()
+```
+
+
+## Section 5 — Recovery Comparisons
+
+### Full recovery index (2016 = 100)
+
+```{python}
+#| echo: false
+#| label: fig-eda-index
+
+BASE = 2016
+
+def _index(df, year_col, val_col, base=BASE):
+    bv = df.loc[df[year_col]==base, val_col]
+    if bv.empty or bv.values[0] == 0: return None
+    base_val = bv.values[0]
+    out = df[[year_col, val_col]].copy()
+    out["idx"] = out[val_col]/base_val*100
+    return out
+
+all_series = {
+    "Total arrivals":        _index(tour, "year", "total_visitors"),
+    "Overnight tourists":    _index(tour, "year", "tourists"),
+    "Cruise passengers":     _index(tour, "year", "cruise_passengers"),
+    "Hotel rooms":           _index(tour, "year", "hotel_rooms"),
+    "L&H employment":        _index(fred_ann, "year", "emp_sa_avg"),
+    "A&F real VA (–2021)":   _index(af_real_s, "year", "value"),
+    "VIIS NP visits":        _index(viis_ann.query("year>=2000"), "year", "recreation_visitors"),
+}
+styles = {
+    "Total arrivals":      (PALETTE["total"],       "solid",    2.5),
+    "Overnight tourists":  (PALETTE["tourists"],    "solid",    2.5),
+    "Cruise passengers":   (PALETTE["cruise"],      "dash",     2),
+    "Hotel rooms":         (PALETTE["rooms"],       "dot",      2),
+    "L&H employment":      (PALETTE["employment"],  "longdash", 2),
+    "A&F real VA (–2021)": (PALETTE["value_added"], "dash",     1.5),
+    "VIIS NP visits":      (PALETTE["nps_viis"],    "dashdot",  1.5),
+}
+
+fig = go.Figure()
+for name, df in all_series.items():
+    if df is None: continue
+    color, dash, width = styles[name]
+    sub = df[["year","idx"]].dropna()
+    fig.add_trace(go.Scatter(x=sub["year"], y=sub["idx"],
+        mode="lines", name=name,
+        line=dict(color=color, dash=dash, width=width)))
+fig.add_hline(y=100, line=dict(color="#ccc", width=1, dash="dot"),
+    annotation_text="2016 = 100", annotation_position="right",
+    annotation_font=dict(size=10, color="#999"))
+fig.update_layout(title="Recovery Index (2016 = 100)",
+    yaxis_title="Index (2016 = 100)", height=520,
+    legend=dict(orientation="v", yanchor="top", y=1, xanchor="left", x=1.01,
+        bgcolor="rgba(255,255,255,0.85)", bordercolor="#ddd", borderwidth=1),
+    margin=dict(l=60,r=185,t=60,b=50),
+    annotations=[_src("USVIBER, FRED, BEA, NPS IRMA — author calculations")])
+_shocks(fig).show()
+```
+
+### Recovery scorecard
+
+```{python}
+#| echo: false
+#| label: fig-eda-scorecard
+
+latest_map = {
+    "Total arrivals":      ("2024", _index(tour, "year", "total_visitors")),
+    "Overnight tourists":  ("2024", _index(tour, "year", "tourists")),
+    "Cruise passengers":   ("2024", _index(tour, "year", "cruise_passengers")),
+    "Hotel rooms":         ("2024", _index(tour, "year", "hotel_rooms")),
+    "Hotel occupancy (pp)":("2024", _index(tour, "year", "occupancy_rate_pct")),
+    "L&H employment":      ("2025", _index(fred_ann, "year", "emp_sa_avg")),
+    "A&F real VA (2021)":  ("2021", _index(af_real_s, "year", "value")),
+    "VIIS NP visits":      ("2025", _index(viis_ann.query("year>=2000"), "year", "recreation_visitors")),
+}
+names, labels, values = [], [], []
+for name, (yr_str, df) in latest_map.items():
+    if df is None: continue
+    row = df[df["year"]==int(yr_str)]
+    if row.empty: continue
+    val = row["idx"].values[0]
+    names.append(name); labels.append(f"{name} ({yr_str})"); values.append(round(val, 1))
+
+bar_colors = [PALETTE["rooms"] if v>=100 else PALETTE["cruise"] for v in values]
+fig = go.Figure(go.Bar(x=values, y=labels, orientation="h",
+    marker_color=bar_colors, text=[f"{v:.0f}" for v in values], textposition="outside"))
+fig.add_vline(x=100, line=dict(color="#333", width=1.5),
+    annotation_text="2016 = 100", annotation_position="top",
+    annotation_font=dict(size=10))
+fig.update_layout(xaxis_title="Index (2016 = 100)",
+    xaxis_range=[0, max(values)*1.15], height=400,
+    margin=dict(l=220,r=60,t=40,b=50),
+    annotations=[_src("USVIBER, FRED, BEA, NPS IRMA — author calculations")])
+fig.show()
+```

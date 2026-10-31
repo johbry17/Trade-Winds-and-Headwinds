@@ -1,7 +1,196 @@
 ---
 title: "Data Dictionary"
 subtitle: "Sources, variables, units, coverage, and transformations"
-date: last-modified
+date: "2026-10-31"
 ---
 
-*Data dictionary in preparation following completion of cleaning scripts.*
+## Primary sources
+
+### A. USVIBER Annual Tourism Indicators
+
+| Field | Value |
+|---|---|
+| **Files** | `TOUR20-revised.pdf`, `TOUR22.pdf`, `TOUR24.pdf` |
+| **Source** | U.S. Virgin Islands Bureau of Economic Research |
+| **URL** | [usviber.org](https://usviber.org/document/usvi-tourism-indicator-2024/) |
+| **Coverage** | 2000, 2010–2024 (TOUR24); earlier reports extend backward |
+| **Frequency** | Annual |
+| **Geography** | USVI territory; some variables by island (St. Thomas/St. John, St. Croix) |
+
+**Key variables:**
+
+| Variable | Units | Definition |
+|---|---|---|
+| `total_visitors` | Thousands | All visitors: tourists + excursionists |
+| `tourists` | Thousands | Overnight visitors (stay ≥ 1 night) |
+| `excursionists` | Thousands | Same-day visitors (cruise + air day-trip) |
+| `air_excursionists` | Thousands | Same-day visitors arriving by air |
+| `cruise_passengers` | Thousands | Cruise ship day visitors |
+| `air_visitors` | Thousands | All arrivals by air (tourists by air + air excursionists) — **not** all tourists |
+| `cruise_ships` | Count | Cruise ship calls |
+| `expenditures_total` | $M, nominal | Total visitor spending in-territory |
+| `expenditures_tourists` | $M, nominal | Overnight-visitor spending only |
+| `expenditures_excursionists` | $M, nominal | Same-day visitor spending only |
+| `total_rooms` | Count | Hotel rooms + condo/vacation rental units |
+| `hotel_rooms` | Count | Hotel rooms only |
+| `hotel_count` | Count | Number of operating hotels |
+| `occupancy_rate_pct` | Percent | Territory-wide average hotel occupancy |
+| `emp_tourism_total` | Jobs | Tourism-related employment (DOL survey; ends 2022) |
+
+**Data quality flags:**
+
+- `air_excursionists` (2020): value of 216.7k is identical to year 2000 — physically implausible for a COVID year. Cross-check with TOUR20-revised.pdf pending.
+- `excursionists` (2000, 2010): does not equal `air_excursionists + cruise_passengers` within rounding (discrepancies of −14.9k and +149.7k respectively). Likely definitional residuals or data revisions between report editions.
+- `air_visitors` is **not** equal to `tourists + air_excursionists` because not all tourists arrive by air. Do not use as an arrival-mode identity.
+
+
+
+### B. FRED Leisure & Hospitality Employment
+
+| Field | Value |
+|---|---|
+| **Files** | `fred_SMS78000007000000001.csv` (SA), `fred_SMU78000007000000001.csv` (NSA) |
+| **Source** | U.S. Bureau of Labor Statistics via FRED |
+| **Coverage** | January 1990 – September 2026 |
+| **Frequency** | Monthly |
+| **Units** | **Thousands of persons** (e.g., 8.0 = 8,000 workers) |
+| **Scope** | NAICS 71 + 72 — Arts, entertainment, recreation, accommodation, and food services |
+
+**Aggregation rule:** Use the **mean** of monthly SA observations for annual comparisons. Do not sum monthly values to compute annual employment.
+
+**Limitation:** Leisure & Hospitality is broader than tourism-specific employment. It includes museums, performing arts, casinos (NAICS 71) alongside hotels and restaurants (NAICS 72).
+
+
+
+### C. NPS Recreation Visitation
+
+| Field | Value |
+|---|---|
+| **Files** | `VIIS_*.csv`, `BUIS_*.csv` (annual and monthly) |
+| **Source** | NPS IRMA Public Use Statistics |
+| **URL** | [irma.nps.gov/Stats](https://irma.nps.gov/Stats/) |
+| **Parks** | Virgin Islands NP (VIIS, St. John); Buck Island Reef NM (BUIS, St. Croix) |
+| **Coverage** | VIIS: 1957–2025 annual; BUIS: 1962–2025 annual (gap 1999–2001) |
+| **Frequency** | Annual and monthly |
+| **Units** | Recreation visits (individual visits, not unique visitors) |
+
+**Important definitions:**
+- NPS recreation visits ≠ territory-wide tourist arrivals
+- A person may visit multiple times; the park counts each visit separately
+- Park closures and access conditions affect counts (October–December 2017: near-zero counts due to hurricane damage and closure)
+- Cruise passengers rarely enter either park; visitation is dominated by independent overnight visitors
+
+**2026 exclusion:** 2026 monthly VIIS data shows 100,000–170,000 visits per month (January–June), approximately three times the 2025 equivalent months. This anomaly has not been explained; 2026 data is excluded from all analysis.
+
+**Aggregation rule:** Sum monthly observations for annual totals; do not use the annual-file total directly if computing from monthly data (sums match exactly for all available years).
+
+
+
+### D. World Bank WDI
+
+| Field | Value |
+|---|---|
+| **Files** | `VIR.ST.INT.ARVL.json`, `VIR.ST.INT.RCPT.CD.json` |
+| **Indicators** | International tourism arrivals (ST.INT.ARVL); receipts in current USD (ST.INT.RCPT.CD) |
+| **Coverage** | 1995–2020 (non-null values) |
+| **Frequency** | Annual |
+
+**Arrivals:** 2020 value of 8,612,000 is physically impossible (COVID year; normal range ~1.7–2.8M). Set to NaN. Use USVIBER as primary arrivals source.
+
+**Receipts vs. USVIBER expenditures:** World Bank receipts run approximately 70–80% of USVIBER total expenditures in overlapping years. This is a definitional difference, not a data error. World Bank receipts likely exclude some in-territory spending categories that USVIBER captures. Do not use interchangeably.
+
+
+
+### E. U.S. Census Bureau — Economic Census
+
+| Vintage | Files | Census years | Key table |
+|---|---|---|---|
+| 2007 | `ECN_2007_IA_00A01_with_ann.csv` | 2002 + 2007 | A01 (2-digit) |
+| 2007 | `ECN_2007_IA_00A10_with_ann.csv` | 2007 | A10 (rooms, NAICS 7211) |
+| 2012 | `IA1200A02.dat` | 2012 | A02 (2–5 digit) |
+| 2012 | `IA1200A10.dat` | 2012 | A10 (rooms, NAICS 7211) |
+| 2017 | `IA1700BASIC02.dat` | 2012 + 2017 | BASIC02 |
+| 2017 | `IA1700NAPCS02.dat` | 2017 | NAPCS02 (product breakdown) |
+| 2022 | `IA2200BASIC02.dat` | 2017 + 2022 | BASIC02 |
+| 2022 | `IA2200NAPCS02.dat` | 2022 | NAPCS02 |
+
+**Geographic filter:** Filter to `GEOTYPE = 2` (territory level) for all .dat files. Island- and town-level rows (GEOTYPE 3, 5) will otherwise inflate territory totals.
+
+**Employment reference date:** March pay period of the census year.
+
+**Guestrooms (RMRTRAN):** Reference date is December 31 of the census year.
+
+- 2007 and 2012: use A10 industry-total row (PSCODE/NAPCS = industry total)
+- 2017 and 2022: use NAPCS product code 7003825000 ("Room or unit accommodation for travelers") — the NAPCS Total row RMRTRAN is inconsistent across vintages and should not be used for guestroom counts.
+
+**Critical note on 2017:** The Economic Census guestroom reference date is December 31, 2017 — approximately three months after Hurricanes Irma and Maria (September 6 and 19). The 2017 guestroom count (2,624) reflects post-hurricane inventory, not the pre-hurricane baseline. It should be labeled accordingly and not used as a pre-storm benchmark.
+
+**Monetary units:** All Census monetary variables (`RCPTOT`, `PAYANN`) are in **thousands of dollars** ($1,000). Divide by 1,000 for millions.
+
+**Suppression flags:** Cells with flag `D` are withheld to avoid disclosing individual company data. `S` = withheld for reliability. Do not treat suppressed cells as zero.
+
+
+
+### F. BEA — U.S. Virgin Islands GDP
+
+| Field | Value |
+|---|---|
+| **File** | `vigdp0624.xlsx` |
+| **Source** | U.S. Bureau of Economic Analysis |
+| **URL** | [bea.gov](https://www.bea.gov/data/gdp/gdp-us-virgin-islands-usvi) |
+| **Coverage** | GDP (Table 1.1): 2002–2022; Industry value added (Tables 2.1–2.3): 2002–2021 |
+| **Frequency** | Annual |
+| **Units** | Millions of dollars (nominal) or millions of chained (2012) dollars (real) |
+
+**Note:** BEA discontinued regular USVI territory GDP updates after 2022 when Office of Insular Affairs funding ended.
+
+**Table guide:**
+
+| Table | Content | Coverage |
+|---|---|---|
+| 1.1 | Nominal GDP by expenditure component | 2002–2022 |
+| 1.2 | Real GDP (chained 2012 $) | 2002–2022 |
+| 2.1 | Nominal value added by industry | 2002–2021 |
+| 2.3 | Real value added by industry (chained) | 2002–2021 |
+
+**Important:** "Accommodation and food services" value added is **not** equivalent to tourism GDP. It excludes tourism-related retail, transportation, and recreation, and includes consumption by residents.
+
+**Do not deflate BEA real series** — they are already expressed in constant (2012) dollars using BEA's own price indexes.
+
+
+
+### G. USVI CPI
+
+| Field | Value |
+|---|---|
+| **File** | `Econ21.pdf` (USVIBER Annual Economic Indicators 2021) |
+| **Coverage** | 2009–2021, annual |
+| **Base year** | 2009 = 100 |
+
+**Known issue:** The 2018 value (99.8) represents a sharp drop from 2017 (130.0), which is implausible as a true price deflation. The 2017 hurricanes may have caused statistical complications, or there may be a column alignment error in the PDF. Do not use for deflation across the 2017–2018 boundary without verifying directly with USVIBER.
+
+**Coverage gap:** No reliable USVI CPI series is available for 2022–2025. All nominal monetary series in this analysis are presented without deflation for years after 2021.
+
+
+
+## Interim datasets
+
+Cleaned intermediate files are saved in `data/interim/` as CSV. These are generated by `src/cleaning.py` and should be regenerated from raw files if raw data is updated.
+
+| File | Source | Key variables |
+|---|---|---|
+| `usviber_tour24.csv` | USVIBER TOUR24.pdf | visitor arrivals, expenditures, rooms, occupancy |
+| `fred_employment.csv` | FRED | emp_sa, emp_nsa (thousands) |
+| `nps_viis_annual.csv` | NPS IRMA | year, recreation_visitors |
+| `nps_buis_annual.csv` | NPS IRMA | year, recreation_visitors |
+| `nps_viis_monthly.csv` | NPS IRMA | date (Period), year, month, recreation_visitors |
+| `nps_buis_monthly.csv` | NPS IRMA | date (Period), year, month, recreation_visitors |
+| `worldbank_arrivals.csv` | World Bank WDI | year, value (arrivals, with dq_flag for 2020) |
+| `worldbank_receipts.csv` | World Bank WDI | year, value (receipts, current USD) |
+| `census_rooms.csv` | Census A10/NAPCS02 | year, rooms, estab, methodology_note |
+| `census_naics72_combined.csv` | Census all vintages | year, naics, estab, emp, rcptot_k, payann_k |
+| `bea_va_nominal.csv` | BEA Table 2.1 | year, label, value |
+| `bea_va_real.csv` | BEA Table 2.3 | year, label, value, vintage_flag |
+| `bea_af_gdp_share.csv` | BEA computed | year, af_nom, gdp_nom, af_pct_gdp |
+| `usvi_cpi.csv` | Econ21.pdf | year, cpi_usvi_2009_100 |
+

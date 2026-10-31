@@ -1,15 +1,414 @@
 ---
 title: "After the Storm"
 subtitle: "A Data Portrait of Tourism Recovery in the U.S. Virgin Islands, 2000–2025"
-author: ""
-date: last-modified
+date: "2026-10-31"
 format:
   html:
-    toc: false
+    toc: true
+    toc-depth: 2
 ---
 
-*Coming soon — Field Note in preparation.*
+```{python}
+#| echo: false
+#| output: false
+import sys
+from pathlib import Path
+import os
 
-The full exploratory analysis is available in the [Analysis](eda.qmd) section.
-Data definitions are documented in the [Data Dictionary](data-dictionary.qmd).
-Methodological choices and source notes are in [Methodology](methodology.qmd).
+PROJ_ROOT = Path("..").resolve()
+if str(PROJ_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJ_ROOT))
+os.chdir(PROJ_ROOT)
+
+import pandas as pd
+import plotly.graph_objects as go
+import src.cleaning as c, src.charts as ch
+import importlib
+importlib.reload(c); importlib.reload(ch)
+
+from src.cleaning import (
+    load_usviber_tour24, load_fred_employment,
+    load_bea, load_nps_annual,
+)
+from src.charts import PALETTE
+
+tour     = load_usviber_tour24()
+fred     = load_fred_employment()
+bea_real = load_bea("2.3")
+viis_ann = load_nps_annual("VIIS")
+
+fred_ann = (
+    fred.groupby("year")["emp_sa"].mean()
+    .reset_index().rename(columns={"emp_sa": "emp_sa_avg"})
+)
+af_real = (
+    bea_real[bea_real["label"].str.contains("ccommodation", case=False, na=False)]
+    .drop_duplicates(subset="year")[["year", "value"]]
+    .rename(columns={"value": "af_real"})
+)
+
+BASE = 2016
+
+def _index(df, year_col, val_col, base=BASE):
+    bv = df.loc[df[year_col] == base, val_col]
+    if bv.empty or bv.values[0] == 0:
+        return None
+    base_val = bv.values[0]
+    out = df[[year_col, val_col]].copy()
+    out["idx"] = out[val_col] / base_val * 100
+    return out
+```
+
+
+
+## Context
+
+In September 2017, Hurricanes Irma and Maria struck the U.S. Virgin Islands within two weeks of each other. The territory took a direct hit from two Category 5 storms, destroying hotel infrastructure, damaging or closing Virgin Islands National Park, and disrupting the economy that tourism had sustained for decades. Three years later, before recovery was complete, COVID-19 closed borders and halted cruise shipping.
+
+This Field Note uses eight years of data across six primary sources to document how the USVI tourism economy has moved through those shocks — and what recovery looks like in 2024 and 2025.
+
+One headline stands out: **total visitor arrivals have nearly returned to their 2016 level, but the composition has shifted fundamentally. Overnight visitors, who generate the large majority of tourism revenue, remain at roughly half their pre-hurricane baseline. The recovery in total arrival counts is almost entirely a cruise story.**
+
+
+
+## The two shocks
+
+```{python}
+#| echo: false
+#| label: fig-total-arrivals
+#| fig-cap: "Total visitors include overnight tourists and same-day excursionists (cruise and air day-trip). The difference in shock depth between the two series is visible: the hurricane hit cruise and overnight visitors roughly equally; COVID virtually halted cruise while overnight visitors declined less sharply."
+
+fig = go.Figure()
+for col, name, color, dash in [
+    ("total_visitors",  "Total visitors",             PALETTE["total"],    "solid"),
+    ("tourists",        "Overnight tourists",          PALETTE["tourists"], "solid"),
+    ("cruise_passengers","Cruise passengers",          PALETTE["cruise"],   "dash"),
+]:
+    sub = tour[["year", col]].dropna()
+    fig.add_trace(go.Scatter(
+        x=sub["year"], y=sub[col],
+        mode="lines+markers", name=name,
+        line=dict(color=color, width=2.5, dash=dash),
+        marker=dict(size=5),
+    ))
+
+for x_val, label in [(2017, "Irma & Maria"), (2020, "COVID-19")]:
+    fig.add_vline(x=x_val, line=dict(color="#aaa", width=1.5, dash="dash"),
+                  annotation_text=label, annotation_position="top",
+                  annotation_font=dict(size=11, color="#666"))
+
+fig.update_layout(
+    yaxis_title="Visitors (thousands)",
+    height=440,
+    legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
+    margin=dict(l=60, r=30, t=60, b=50),
+    annotations=[dict(xref="paper", yref="paper", x=0, y=-0.10,
+        text="<span style='color:#888;font-size:11px'>Source: USVIBER Annual Tourism Indicator 2024</span>",
+        showarrow=False, xanchor="left")],
+)
+fig.show()
+```
+
+The 2017 hurricane shock cut total arrivals to 76% of their 2016 level within the same calendar year — notable given that the storms struck in September, meaning the first eight months of 2017 were largely normal. By 2018, the decline deepened as the full damage to hotel inventory became apparent.
+
+COVID-19 in 2020 produced a collapse of different character: cruise shipping stopped almost entirely (cruise passengers fell to 25% of their 2019 level), while overnight tourists declined less sharply (to about 32% of 2019). The territory's isolation and the absence of large-group gatherings may have made it modestly attractive to small-party leisure travelers once borders reopened.
+
+
+
+## A recovery that isn't what it looks like
+
+```{python}
+#| echo: false
+#| label: fig-recovery-index
+#| fig-cap: "Recovery index, 2016 = 100. Total arrivals near the baseline conceals the divergence between cruise recovery and the persistent deficit in overnight tourist visits."
+
+series = {
+    "Total arrivals":        _index(tour, "year", "total_visitors"),
+    "Overnight tourists":    _index(tour, "year", "tourists"),
+    "Cruise passengers":     _index(tour, "year", "cruise_passengers"),
+    "Hotel rooms (USVIBER)": _index(tour, "year", "hotel_rooms"),
+    "L&H employment (FRED)": _index(fred_ann, "year", "emp_sa_avg"),
+    "A&F real value added":  _index(af_real, "year", "af_real"),
+    "VIIS NP visits":        _index(viis_ann.query("year >= 2000"), "year", "recreation_visitors"),
+}
+styles = {
+    "Total arrivals":        (PALETTE["total"],       "solid",    2.5),
+    "Overnight tourists":    (PALETTE["tourists"],    "solid",    2.5),
+    "Cruise passengers":     (PALETTE["cruise"],      "dash",     2),
+    "Hotel rooms (USVIBER)": (PALETTE["rooms"],       "dot",      2),
+    "L&H employment (FRED)": (PALETTE["employment"],  "longdash", 2),
+    "A&F real value added":  (PALETTE["value_added"], "dash",     1.5),
+    "VIIS NP visits":        (PALETTE["nps_viis"],    "dashdot",  1.5),
+}
+
+fig = go.Figure()
+for name, df in series.items():
+    if df is None:
+        continue
+    color, dash, width = styles[name]
+    sub = df[["year", "idx"]].dropna()
+    fig.add_trace(go.Scatter(
+        x=sub["year"], y=sub["idx"],
+        mode="lines", name=name,
+        line=dict(color=color, dash=dash, width=width),
+    ))
+
+fig.add_hline(y=100, line=dict(color="#ccc", width=1, dash="dot"),
+              annotation_text="2016 = 100", annotation_position="right",
+              annotation_font=dict(size=10, color="#999"))
+for x_val, label in [(2017, "Irma & Maria"), (2020, "COVID-19")]:
+    fig.add_vline(x=x_val, line=dict(color="#aaa", width=1.5, dash="dash"),
+                  annotation_text=label, annotation_position="top",
+                  annotation_font=dict(size=11, color="#666"))
+
+fig.update_layout(
+    yaxis_title="Index (2016 = 100)",
+    height=480,
+    legend=dict(orientation="v", yanchor="top", y=1, xanchor="left", x=1.01,
+                bgcolor="rgba(255,255,255,0.85)", bordercolor="#ddd", borderwidth=1),
+    margin=dict(l=60, r=190, t=40, b=50),
+    annotations=[dict(xref="paper", yref="paper", x=0, y=-0.10,
+        text="<span style='color:#888;font-size:11px'>Sources: USVIBER, FRED, BEA, NPS IRMA — author calculations</span>",
+        showarrow=False, xanchor="left")],
+)
+fig.show()
+```
+
+As of 2024, the index looks deceptively healthy at the top line. Total arrivals sit at 97% of their 2016 baseline. But that number is almost entirely driven by cruise — a visitor category that spends between $200 and $300 per person during a stop, compared with overnight tourists who spend an average of roughly $2,300 per trip (USVIBER 2024, nominal).
+
+Overnight tourists in 2024 stood at **57% of their 2016 level** — barely higher than immediately after the hurricanes. Employment and accommodation capacity, measured in hotel rooms, tell a compatible story: the sector is operating at roughly 80–90% of its pre-storm scale, but on a visitor base that has not recovered.
+
+
+
+## What the park shows
+
+Virgin Islands National Park on St. John covers roughly 60 percent of the island's land area and has served as an unusually clean long-run proxy for overnight tourism. Cruise passengers rarely enter the park; its visitation is dominated by independent travelers and resort guests.
+
+```{python}
+#| echo: false
+#| label: fig-viis-vs-tourists
+#| fig-cap: "VIIS NP visitation vs. overnight tourists (both indexed to 2016 = 100). The park's steep decline after 2017 reflects both the hurricane damage to trails and facilities and the collapse in overnight tourism. Its recovery to and past the 2016 level by 2024 is an unresolved divergence from the broader overnight tourist count."
+
+viis_idx = _index(viis_ann.query("year >= 2000"), "year", "recreation_visitors")
+tour_idx = _index(tour, "year", "tourists")
+
+fig = go.Figure()
+fig.add_trace(go.Scatter(
+    x=viis_idx["year"], y=viis_idx["idx"],
+    mode="lines+markers", name="VIIS NP recreation visits",
+    line=dict(color=PALETTE["nps_viis"], width=2.5),
+    marker=dict(size=5),
+))
+fig.add_trace(go.Scatter(
+    x=tour_idx["year"], y=tour_idx["idx"],
+    mode="lines+markers", name="Overnight tourists (USVIBER)",
+    line=dict(color=PALETTE["tourists"], width=2.5, dash="dash"),
+    marker=dict(size=5),
+))
+fig.add_hline(y=100, line=dict(color="#ccc", width=1, dash="dot"),
+              annotation_text="2016 = 100", annotation_position="right",
+              annotation_font=dict(size=10, color="#999"))
+for x_val, label in [(2017, "Irma & Maria"), (2020, "COVID-19")]:
+    fig.add_vline(x=x_val, line=dict(color="#aaa", width=1.5, dash="dash"),
+                  annotation_text=label, annotation_position="top",
+                  annotation_font=dict(size=11, color="#666"))
+
+fig.update_layout(
+    yaxis_title="Index (2016 = 100)",
+    height=420,
+    legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
+    margin=dict(l=60, r=30, t=40, b=50),
+    annotations=[dict(xref="paper", yref="paper", x=0, y=-0.10,
+        text="<span style='color:#888;font-size:11px'>Sources: NPS IRMA Public Use Statistics; USVIBER Annual Tourism Indicator 2024</span>",
+        showarrow=False, xanchor="left")],
+)
+fig.show()
+```
+
+VIIS NP visitation reached 103% of its 2016 level in 2024 and 115% in 2025. Overnight tourists, by USVIBER's count, remained at 57% of 2016. The divergence is substantial enough to warrant investigation. Possible explanations include: changes in how NPS counts day-use visitors, increased use of the park by short-term rental guests (not counted as hotel tourists), or different recovery trajectories across segments of the overnight market. This is an open analytical question, not a resolved finding.
+
+
+
+## Accommodation capacity
+
+```{python}
+#| echo: false
+#| label: fig-rooms-employment
+#| fig-cap: "Hotel room inventory and L&H employment indexed to 2016. Both declined sharply after the hurricanes — hotel rooms steeply in 2018 as damage became clear — and neither has fully recovered."
+
+rooms_idx = _index(tour, "year", "hotel_rooms")
+emp_idx   = _index(fred_ann, "year", "emp_sa_avg")
+
+fig = go.Figure()
+fig.add_trace(go.Scatter(
+    x=rooms_idx["year"], y=rooms_idx["idx"],
+    mode="lines+markers", name="Hotel rooms (USVIBER)",
+    line=dict(color=PALETTE["rooms"], width=2.5),
+    marker=dict(size=5),
+))
+fig.add_trace(go.Scatter(
+    x=emp_idx["year"], y=emp_idx["idx"],
+    mode="lines+markers", name="L&H employment (FRED SA avg)",
+    line=dict(color=PALETTE["employment"], width=2.5, dash="dash"),
+    marker=dict(size=5),
+))
+fig.add_hline(y=100, line=dict(color="#ccc", width=1, dash="dot"),
+              annotation_text="2016 = 100", annotation_position="right",
+              annotation_font=dict(size=10, color="#999"))
+for x_val, label in [(2017, "Irma & Maria"), (2020, "COVID-19")]:
+    fig.add_vline(x=x_val, line=dict(color="#aaa", width=1.5, dash="dash"),
+                  annotation_text=label, annotation_position="top",
+                  annotation_font=dict(size=11, color="#666"))
+
+fig.update_layout(
+    yaxis_title="Index (2016 = 100)",
+    height=420,
+    legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
+    margin=dict(l=60, r=30, t=40, b=50),
+    annotations=[dict(xref="paper", yref="paper", x=0, y=-0.10,
+        text="<span style='color:#888;font-size:11px'>Sources: USVIBER Annual Tourism Indicator 2024; FRED SMS78000007000000001</span>",
+        showarrow=False, xanchor="left")],
+)
+fig.show()
+```
+
+Hotel room inventory tracked by USVIBER's annual survey stood at 82% of its 2016 level by 2024. The U.S. Census Economic Census (which counts only payroll-filing establishments) shows a more severe contraction: 2,039 rooms in 2022 versus a 2012 peak of 5,027 — a 59% decline. The Census and USVIBER series use different methodologies and should not be directly compared, but they agree on the direction: accommodation capacity has not recovered.
+
+Leisure and Hospitality employment (FRED, seasonally adjusted) ran at 91% of its 2016 annual average in 2024 — closer to baseline than hotel rooms. This may reflect leaner staffing in surviving hotels, or expanded employment in the food and entertainment segment that comprises a large share of the L&H aggregate.
+
+**A note on hotel occupancy:** USVIBER reports a 2024 occupancy rate of 66.3%, the highest in the 25-year series. A smaller room base running at high occupancy signals that the surviving hotel stock is financially productive. It does not signal full recovery — it signals scarcity.
+
+
+
+## What the broader economy shows
+
+The U.S. Virgin Islands received approximately $8.3 billion in federal disaster recovery funds after the 2017 hurricanes — a sum larger than twice the territory's annual GDP. This influx kept both nominal and real GDP elevated through 2018–2021 even as tourism collapsed. GDP is therefore a misleading indicator of tourism-sector health across this period.
+
+```{python}
+#| echo: false
+#| label: fig-af-gdp-share
+#| fig-cap: "Accommodation and food services as a share of USVI nominal GDP, 2002–2021 (BEA data, last available year 2021). The sector's GDP share rose steadily from 2002 to 2015 as tourism grew, then fell sharply after 2017 and collapsed in 2020. The 2021 rebound reflects the post-COVID reopening, with massive federal relief spending keeping the GDP denominator elevated throughout."
+
+bea_nom  = load_bea("2.1")
+bea_gdp  = load_bea("1.1")
+
+def _get(df, pattern):
+    return (df[df["label"].str.contains(pattern, case=False, na=False)]
+              .drop_duplicates(subset="year").sort_values("year"))
+
+gdp_nom = _get(bea_gdp, "Gross domestic product")
+af_nom  = _get(bea_nom, "Accommodation")
+share   = af_nom[["year", "value"]].merge(
+    gdp_nom[["year", "value"]].rename(columns={"value": "gdp"}), on="year"
+)
+share["pct"] = (share["value"] / share["gdp"] * 100).round(1)
+
+fig = go.Figure()
+fig.add_trace(go.Scatter(
+    x=share["year"], y=share["pct"],
+    mode="lines+markers", name="A&F share of GDP (%)",
+    line=dict(color=PALETTE["value_added"], width=2.5),
+    fill="tozeroy", fillcolor="rgba(26,79,114,0.08)",
+    marker=dict(size=5),
+))
+for x_val, label in [(2017, "Irma & Maria"), (2020, "COVID-19")]:
+    fig.add_vline(x=x_val, line=dict(color="#aaa", width=1.5, dash="dash"),
+                  annotation_text=label, annotation_position="top",
+                  annotation_font=dict(size=11, color="#666"))
+
+fig.update_layout(
+    yaxis_title="A&F share of nominal GDP (%)",
+    yaxis_range=[0, 18],
+    height=400,
+    margin=dict(l=60, r=30, t=40, b=50),
+    annotations=[dict(xref="paper", yref="paper", x=0, y=-0.10,
+        text="<span style='color:#888;font-size:11px'>Source: BEA USVI GDP data. Coverage ends 2021. A&F ≠ tourism GDP.</span>",
+        showarrow=False, xanchor="left")],
+)
+fig.show()
+```
+
+Accommodation and food services value added — the broadest BEA measure of the sector's economic contribution — fell from 13% of GDP in 2015 to 11.5% in 2017, collapsed to 6% in 2020, and rebounded to 11% in 2021, the last year BEA data are available. The rebound to 11% is encouraging but still below the pre-hurricane trend, and it is set against a GDP inflated by reconstruction activity. On a normalized basis, the sector's importance to the economy had not recovered by 2021.
+
+
+
+## Summary of findings
+
+```{python}
+#| echo: false
+#| label: fig-scorecard
+#| fig-cap: "Most-recent available value for each indicator, indexed to 2016 = 100. Blue bars indicate at or above the pre-hurricane baseline; orange bars indicate a remaining deficit. Employment and VIIS NP visits show the strongest recovery; overnight tourists show the weakest."
+
+latest_map = {
+    "Total arrivals":        ("2024", _index(tour, "year", "total_visitors")),
+    "Overnight tourists":    ("2024", _index(tour, "year", "tourists")),
+    "Cruise passengers":     ("2024", _index(tour, "year", "cruise_passengers")),
+    "Hotel rooms":           ("2024", _index(tour, "year", "hotel_rooms")),
+    "Hotel occupancy (pp)":  ("2024", _index(tour, "year", "occupancy_rate_pct")),
+    "L&H employment":        ("2025", _index(fred_ann, "year", "emp_sa_avg")),
+    "A&F real value added":  ("2021", _index(af_real, "year", "af_real")),
+    "VIIS NP visits":        ("2025", _index(viis_ann.query("year>=2000"), "year", "recreation_visitors")),
+}
+
+names, labels, values = [], [], []
+for name, (yr_str, df) in latest_map.items():
+    if df is None:
+        continue
+    row = df[df["year"] == int(yr_str)]
+    if row.empty:
+        continue
+    val = row["idx"].values[0]
+    names.append(name)
+    labels.append(f"{name} ({yr_str})")
+    values.append(round(val, 1))
+
+bar_colors = [PALETTE["rooms"] if v >= 100 else PALETTE["cruise"] for v in values]
+
+fig = go.Figure(go.Bar(
+    x=values, y=labels, orientation="h",
+    marker_color=bar_colors,
+    text=[f"{v:.0f}" for v in values],
+    textposition="outside",
+))
+fig.add_vline(x=100, line=dict(color="#333", width=1.5),
+              annotation_text="2016 = 100", annotation_position="top",
+              annotation_font=dict(size=10))
+fig.update_layout(
+    xaxis_title="Index (2016 = 100)",
+    xaxis_range=[0, max(values) * 1.18],
+    height=400,
+    margin=dict(l=220, r=60, t=40, b=50),
+    annotations=[dict(xref="paper", yref="paper", x=0, y=-0.12,
+        text="<span style='color:#888;font-size:11px'>Sources: USVIBER, FRED, BEA, NPS IRMA — author calculations</span>",
+        showarrow=False, xanchor="left")],
+)
+fig.show()
+```
+
+| Indicator | Most recent year | Index vs. 2016 |
+|---|---|---|
+| Total visitor arrivals | 2024 | 97 |
+| Overnight tourists | 2024 | **57** |
+| Cruise passengers | 2024 | 90 |
+| Hotel rooms | 2024 | 82 |
+| Hotel occupancy rate | 2024 | Above baseline (66% vs. 57%) |
+| L&H employment (FRED) | 2025 | 84 |
+| A&F real value added | 2021 | 87 |
+| VIIS NP visits | 2025 | 115 |
+
+
+
+## Unresolved questions
+
+This analysis surfaces several questions that the data alone cannot resolve:
+
+**Why have overnight tourists not recovered to 2016 levels?** The hotel room deficit is real, but even occupancy-adjusted, the overnight visitor count implies structural demand changes — not just supply constraints. Possible factors include changed travel patterns, the competitive position of other Caribbean destinations, or income effects following the post-2017 inflation period.
+
+**Is the VIIS NP recovery real?** The park exceeding its 2016 baseline while overnight tourists remain at 57% is a significant divergence. Either the park is drawing more visitors per overnight tourist (higher park utilization), or there is a visitor category being counted by NPS but not by USVIBER. This deserves direct investigation with NPS staff.
+
+**What does 66% occupancy on a smaller room base actually mean for the economy?** High occupancy on reduced inventory may reflect healthy operating margins at surviving hotels while masking a smaller aggregate economic contribution. The Census 2022 data (1,650 accommodation employees vs. 3,876 in 2012) suggests the surviving hotel sector is operating at significantly reduced staffing levels.
+
+
+
+*This Field Note accompanies the full [Exploratory Data Analysis](eda.qmd). Data sources, variable definitions, and methodological choices are documented in the [Data Dictionary](data-dictionary.qmd) and [Methodology](methodology.qmd) pages.*
+

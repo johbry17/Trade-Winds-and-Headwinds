@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.20">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Bryan C. Johns">
+<meta name="dcterms.date" content="2026-10-31">
+
+<title>Data Dictionary – Trade Winds &amp; Headwinds</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../images/favicon.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-b37669aed05b3e3c696b586a8f93e09c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-a36061f0ab3e4aa2c1b3aefa36c3f2a6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Trade Winds &amp; Headwinds</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../reports/index.html"> 
+<span class="menu-text">Field Note</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../reports/eda.html"> 
+<span class="menu-text">Analysis</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../reports/data-dictionary.html" aria-current="page"> 
+<span class="menu-text">Data Dictionary</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../reports/methodology.html"> 
+<span class="menu-text">Methodology</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#primary-sources" id="toc-primary-sources" class="nav-link active" data-scroll-target="#primary-sources">Primary sources</a>
+  <ul class="collapse">
+  <li><a href="#a.-usviber-annual-tourism-indicators" id="toc-a.-usviber-annual-tourism-indicators" class="nav-link" data-scroll-target="#a.-usviber-annual-tourism-indicators">A. USVIBER Annual Tourism Indicators</a></li>
+  <li><a href="#b.-fred-leisure-hospitality-employment" id="toc-b.-fred-leisure-hospitality-employment" class="nav-link" data-scroll-target="#b.-fred-leisure-hospitality-employment">B. FRED Leisure &amp; Hospitality Employment</a></li>
+  <li><a href="#c.-nps-recreation-visitation" id="toc-c.-nps-recreation-visitation" class="nav-link" data-scroll-target="#c.-nps-recreation-visitation">C. NPS Recreation Visitation</a></li>
+  <li><a href="#d.-world-bank-wdi" id="toc-d.-world-bank-wdi" class="nav-link" data-scroll-target="#d.-world-bank-wdi">D. World Bank WDI</a></li>
+  <li><a href="#e.-u.s.-census-bureau-economic-census" id="toc-e.-u.s.-census-bureau-economic-census" class="nav-link" data-scroll-target="#e.-u.s.-census-bureau-economic-census">E. U.S. Census Bureau — Economic Census</a></li>
+  <li><a href="#f.-bea-u.s.-virgin-islands-gdp" id="toc-f.-bea-u.s.-virgin-islands-gdp" class="nav-link" data-scroll-target="#f.-bea-u.s.-virgin-islands-gdp">F. BEA — U.S. Virgin Islands GDP</a></li>
+  <li><a href="#g.-usvi-cpi" id="toc-g.-usvi-cpi" class="nav-link" data-scroll-target="#g.-usvi-cpi">G. USVI CPI</a></li>
+  </ul></li>
+  <li><a href="#interim-datasets" id="toc-interim-datasets" class="nav-link" data-scroll-target="#interim-datasets">Interim datasets</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Data Dictionary</h1>
+<p class="subtitle lead">Sources, variables, units, coverage, and transformations</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Bryan C. Johns </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 31, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="primary-sources" class="level2">
+<h2 class="anchored" data-anchor-id="primary-sources">Primary sources</h2>
+<section id="a.-usviber-annual-tourism-indicators" class="level3">
+<h3 class="anchored" data-anchor-id="a.-usviber-annual-tourism-indicators">A. USVIBER Annual Tourism Indicators</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Files</strong></td>
+<td><code>TOUR20-revised.pdf</code>, <code>TOUR22.pdf</code>, <code>TOUR24.pdf</code></td>
+</tr>
+<tr class="even">
+<td><strong>Source</strong></td>
+<td>U.S. Virgin Islands Bureau of Economic Research</td>
+</tr>
+<tr class="odd">
+<td><strong>URL</strong></td>
+<td><a href="https://usviber.org/document/usvi-tourism-indicator-2024/">usviber.org</a></td>
+</tr>
+<tr class="even">
+<td><strong>Coverage</strong></td>
+<td>2000, 2010–2024 (TOUR24); earlier reports extend backward</td>
+</tr>
+<tr class="odd">
+<td><strong>Frequency</strong></td>
+<td>Annual</td>
+</tr>
+<tr class="even">
+<td><strong>Geography</strong></td>
+<td>USVI territory; some variables by island (St.&nbsp;Thomas/St.&nbsp;John, St.&nbsp;Croix)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key variables:</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Units</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>total_visitors</code></td>
+<td>Thousands</td>
+<td>All visitors: tourists + excursionists</td>
+</tr>
+<tr class="even">
+<td><code>tourists</code></td>
+<td>Thousands</td>
+<td>Overnight visitors (stay ≥ 1 night)</td>
+</tr>
+<tr class="odd">
+<td><code>excursionists</code></td>
+<td>Thousands</td>
+<td>Same-day visitors (cruise + air day-trip)</td>
+</tr>
+<tr class="even">
+<td><code>air_excursionists</code></td>
+<td>Thousands</td>
+<td>Same-day visitors arriving by air</td>
+</tr>
+<tr class="odd">
+<td><code>cruise_passengers</code></td>
+<td>Thousands</td>
+<td>Cruise ship day visitors</td>
+</tr>
+<tr class="even">
+<td><code>air_visitors</code></td>
+<td>Thousands</td>
+<td>All arrivals by air (tourists by air + air excursionists) — <strong>not</strong> all tourists</td>
+</tr>
+<tr class="odd">
+<td><code>cruise_ships</code></td>
+<td>Count</td>
+<td>Cruise ship calls</td>
+</tr>
+<tr class="even">
+<td><code>expenditures_total</code></td>
+<td>$M, nominal</td>
+<td>Total visitor spending in-territory</td>
+</tr>
+<tr class="odd">
+<td><code>expenditures_tourists</code></td>
+<td>$M, nominal</td>
+<td>Overnight-visitor spending only</td>
+</tr>
+<tr class="even">
+<td><code>expenditures_excursionists</code></td>
+<td>$M, nominal</td>
+<td>Same-day visitor spending only</td>
+</tr>
+<tr class="odd">
+<td><code>total_rooms</code></td>
+<td>Count</td>
+<td>Hotel rooms + condo/vacation rental units</td>
+</tr>
+<tr class="even">
+<td><code>hotel_rooms</code></td>
+<td>Count</td>
+<td>Hotel rooms only</td>
+</tr>
+<tr class="odd">
+<td><code>hotel_count</code></td>
+<td>Count</td>
+<td>Number of operating hotels</td>
+</tr>
+<tr class="even">
+<td><code>occupancy_rate_pct</code></td>
+<td>Percent</td>
+<td>Territory-wide average hotel occupancy</td>
+</tr>
+<tr class="odd">
+<td><code>emp_tourism_total</code></td>
+<td>Jobs</td>
+<td>Tourism-related employment (DOL survey; ends 2022)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Data quality flags:</strong></p>
+<ul>
+<li><code>air_excursionists</code> (2020): value of 216.7k is identical to year 2000 — physically implausible for a COVID year. Cross-check with TOUR20-revised.pdf pending.</li>
+<li><code>excursionists</code> (2000, 2010): does not equal <code>air_excursionists + cruise_passengers</code> within rounding (discrepancies of −14.9k and +149.7k respectively). Likely definitional residuals or data revisions between report editions.</li>
+<li><code>air_visitors</code> is <strong>not</strong> equal to <code>tourists + air_excursionists</code> because not all tourists arrive by air. Do not use as an arrival-mode identity.</li>
+</ul>
+</section>
+<section id="b.-fred-leisure-hospitality-employment" class="level3">
+<h3 class="anchored" data-anchor-id="b.-fred-leisure-hospitality-employment">B. FRED Leisure &amp; Hospitality Employment</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Files</strong></td>
+<td><code>fred_SMS78000007000000001.csv</code> (SA), <code>fred_SMU78000007000000001.csv</code> (NSA)</td>
+</tr>
+<tr class="even">
+<td><strong>Source</strong></td>
+<td>U.S. Bureau of Labor Statistics via FRED</td>
+</tr>
+<tr class="odd">
+<td><strong>Coverage</strong></td>
+<td>January 1990 – September 2026</td>
+</tr>
+<tr class="even">
+<td><strong>Frequency</strong></td>
+<td>Monthly</td>
+</tr>
+<tr class="odd">
+<td><strong>Units</strong></td>
+<td><strong>Thousands of persons</strong> (e.g., 8.0 = 8,000 workers)</td>
+</tr>
+<tr class="even">
+<td><strong>Scope</strong></td>
+<td>NAICS 71 + 72 — Arts, entertainment, recreation, accommodation, and food services</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Aggregation rule:</strong> Use the <strong>mean</strong> of monthly SA observations for annual comparisons. Do not sum monthly values to compute annual employment.</p>
+<p><strong>Limitation:</strong> Leisure &amp; Hospitality is broader than tourism-specific employment. It includes museums, performing arts, casinos (NAICS 71) alongside hotels and restaurants (NAICS 72).</p>
+</section>
+<section id="c.-nps-recreation-visitation" class="level3">
+<h3 class="anchored" data-anchor-id="c.-nps-recreation-visitation">C. NPS Recreation Visitation</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Files</strong></td>
+<td><code>VIIS_*.csv</code>, <code>BUIS_*.csv</code> (annual and monthly)</td>
+</tr>
+<tr class="even">
+<td><strong>Source</strong></td>
+<td>NPS IRMA Public Use Statistics</td>
+</tr>
+<tr class="odd">
+<td><strong>URL</strong></td>
+<td><a href="https://irma.nps.gov/Stats/">irma.nps.gov/Stats</a></td>
+</tr>
+<tr class="even">
+<td><strong>Parks</strong></td>
+<td>Virgin Islands NP (VIIS, St.&nbsp;John); Buck Island Reef NM (BUIS, St.&nbsp;Croix)</td>
+</tr>
+<tr class="odd">
+<td><strong>Coverage</strong></td>
+<td>VIIS: 1957–2025 annual; BUIS: 1962–2025 annual (gap 1999–2001)</td>
+</tr>
+<tr class="even">
+<td><strong>Frequency</strong></td>
+<td>Annual and monthly</td>
+</tr>
+<tr class="odd">
+<td><strong>Units</strong></td>
+<td>Recreation visits (individual visits, not unique visitors)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Important definitions:</strong> - NPS recreation visits ≠ territory-wide tourist arrivals - A person may visit multiple times; the park counts each visit separately - Park closures and access conditions affect counts (October–December 2017: near-zero counts due to hurricane damage and closure) - Cruise passengers rarely enter either park; visitation is dominated by independent overnight visitors</p>
+<p><strong>2026 exclusion:</strong> 2026 monthly VIIS data shows 100,000–170,000 visits per month (January–June), approximately three times the 2025 equivalent months. This anomaly has not been explained; 2026 data is excluded from all analysis.</p>
+<p><strong>Aggregation rule:</strong> Sum monthly observations for annual totals; do not use the annual-file total directly if computing from monthly data (sums match exactly for all available years).</p>
+</section>
+<section id="d.-world-bank-wdi" class="level3">
+<h3 class="anchored" data-anchor-id="d.-world-bank-wdi">D. World Bank WDI</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Files</strong></td>
+<td><code>VIR.ST.INT.ARVL.json</code>, <code>VIR.ST.INT.RCPT.CD.json</code></td>
+</tr>
+<tr class="even">
+<td><strong>Indicators</strong></td>
+<td>International tourism arrivals (ST.INT.ARVL); receipts in current USD (ST.INT.RCPT.CD)</td>
+</tr>
+<tr class="odd">
+<td><strong>Coverage</strong></td>
+<td>1995–2020 (non-null values)</td>
+</tr>
+<tr class="even">
+<td><strong>Frequency</strong></td>
+<td>Annual</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Arrivals:</strong> 2020 value of 8,612,000 is physically impossible (COVID year; normal range ~1.7–2.8M). Set to NaN. Use USVIBER as primary arrivals source.</p>
+<p><strong>Receipts vs.&nbsp;USVIBER expenditures:</strong> World Bank receipts run approximately 70–80% of USVIBER total expenditures in overlapping years. This is a definitional difference, not a data error. World Bank receipts likely exclude some in-territory spending categories that USVIBER captures. Do not use interchangeably.</p>
+</section>
+<section id="e.-u.s.-census-bureau-economic-census" class="level3">
+<h3 class="anchored" data-anchor-id="e.-u.s.-census-bureau-economic-census">E. U.S. Census Bureau — Economic Census</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Vintage</th>
+<th>Files</th>
+<th>Census years</th>
+<th>Key table</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2007</td>
+<td><code>ECN_2007_IA_00A01_with_ann.csv</code></td>
+<td>2002 + 2007</td>
+<td>A01 (2-digit)</td>
+</tr>
+<tr class="even">
+<td>2007</td>
+<td><code>ECN_2007_IA_00A10_with_ann.csv</code></td>
+<td>2007</td>
+<td>A10 (rooms, NAICS 7211)</td>
+</tr>
+<tr class="odd">
+<td>2012</td>
+<td><code>IA1200A02.dat</code></td>
+<td>2012</td>
+<td>A02 (2–5 digit)</td>
+</tr>
+<tr class="even">
+<td>2012</td>
+<td><code>IA1200A10.dat</code></td>
+<td>2012</td>
+<td>A10 (rooms, NAICS 7211)</td>
+</tr>
+<tr class="odd">
+<td>2017</td>
+<td><code>IA1700BASIC02.dat</code></td>
+<td>2012 + 2017</td>
+<td>BASIC02</td>
+</tr>
+<tr class="even">
+<td>2017</td>
+<td><code>IA1700NAPCS02.dat</code></td>
+<td>2017</td>
+<td>NAPCS02 (product breakdown)</td>
+</tr>
+<tr class="odd">
+<td>2022</td>
+<td><code>IA2200BASIC02.dat</code></td>
+<td>2017 + 2022</td>
+<td>BASIC02</td>
+</tr>
+<tr class="even">
+<td>2022</td>
+<td><code>IA2200NAPCS02.dat</code></td>
+<td>2022</td>
+<td>NAPCS02</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Geographic filter:</strong> Filter to <code>GEOTYPE = 2</code> (territory level) for all .dat files. Island- and town-level rows (GEOTYPE 3, 5) will otherwise inflate territory totals.</p>
+<p><strong>Employment reference date:</strong> March pay period of the census year.</p>
+<p><strong>Guestrooms (RMRTRAN):</strong> Reference date is December 31 of the census year.</p>
+<ul>
+<li>2007 and 2012: use A10 industry-total row (PSCODE/NAPCS = industry total)</li>
+<li>2017 and 2022: use NAPCS product code 7003825000 (“Room or unit accommodation for travelers”) — the NAPCS Total row RMRTRAN is inconsistent across vintages and should not be used for guestroom counts.</li>
+</ul>
+<p><strong>Critical note on 2017:</strong> The Economic Census guestroom reference date is December 31, 2017 — approximately three months after Hurricanes Irma and Maria (September 6 and 19). The 2017 guestroom count (2,624) reflects post-hurricane inventory, not the pre-hurricane baseline. It should be labeled accordingly and not used as a pre-storm benchmark.</p>
+<p><strong>Monetary units:</strong> All Census monetary variables (<code>RCPTOT</code>, <code>PAYANN</code>) are in <strong>thousands of dollars</strong> ($1,000). Divide by 1,000 for millions.</p>
+<p><strong>Suppression flags:</strong> Cells with flag <code>D</code> are withheld to avoid disclosing individual company data. <code>S</code> = withheld for reliability. Do not treat suppressed cells as zero.</p>
+</section>
+<section id="f.-bea-u.s.-virgin-islands-gdp" class="level3">
+<h3 class="anchored" data-anchor-id="f.-bea-u.s.-virgin-islands-gdp">F. BEA — U.S. Virgin Islands GDP</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>File</strong></td>
+<td><code>vigdp0624.xlsx</code></td>
+</tr>
+<tr class="even">
+<td><strong>Source</strong></td>
+<td>U.S. Bureau of Economic Analysis</td>
+</tr>
+<tr class="odd">
+<td><strong>URL</strong></td>
+<td><a href="https://www.bea.gov/data/gdp/gdp-us-virgin-islands-usvi">bea.gov</a></td>
+</tr>
+<tr class="even">
+<td><strong>Coverage</strong></td>
+<td>GDP (Table 1.1): 2002–2022; Industry value added (Tables 2.1–2.3): 2002–2021</td>
+</tr>
+<tr class="odd">
+<td><strong>Frequency</strong></td>
+<td>Annual</td>
+</tr>
+<tr class="even">
+<td><strong>Units</strong></td>
+<td>Millions of dollars (nominal) or millions of chained (2012) dollars (real)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note:</strong> BEA discontinued regular USVI territory GDP updates after 2022 when Office of Insular Affairs funding ended.</p>
+<p><strong>Table guide:</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Table</th>
+<th>Content</th>
+<th>Coverage</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1.1</td>
+<td>Nominal GDP by expenditure component</td>
+<td>2002–2022</td>
+</tr>
+<tr class="even">
+<td>1.2</td>
+<td>Real GDP (chained 2012 $)</td>
+<td>2002–2022</td>
+</tr>
+<tr class="odd">
+<td>2.1</td>
+<td>Nominal value added by industry</td>
+<td>2002–2021</td>
+</tr>
+<tr class="even">
+<td>2.3</td>
+<td>Real value added by industry (chained)</td>
+<td>2002–2021</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Important:</strong> “Accommodation and food services” value added is <strong>not</strong> equivalent to tourism GDP. It excludes tourism-related retail, transportation, and recreation, and includes consumption by residents.</p>
+<p><strong>Do not deflate BEA real series</strong> — they are already expressed in constant (2012) dollars using BEA’s own price indexes.</p>
+</section>
+<section id="g.-usvi-cpi" class="level3">
+<h3 class="anchored" data-anchor-id="g.-usvi-cpi">G. USVI CPI</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>File</strong></td>
+<td><code>Econ21.pdf</code> (USVIBER Annual Economic Indicators 2021)</td>
+</tr>
+<tr class="even">
+<td><strong>Coverage</strong></td>
+<td>2009–2021, annual</td>
+</tr>
+<tr class="odd">
+<td><strong>Base year</strong></td>
+<td>2009 = 100</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Known issue:</strong> The 2018 value (99.8) represents a sharp drop from 2017 (130.0), which is implausible as a true price deflation. The 2017 hurricanes may have caused statistical complications, or there may be a column alignment error in the PDF. Do not use for deflation across the 2017–2018 boundary without verifying directly with USVIBER.</p>
+<p><strong>Coverage gap:</strong> No reliable USVI CPI series is available for 2022–2025. All nominal monetary series in this analysis are presented without deflation for years after 2021.</p>
+</section>
+</section>
+<section id="interim-datasets" class="level2">
+<h2 class="anchored" data-anchor-id="interim-datasets">Interim datasets</h2>
+<p>Cleaned intermediate files are saved in <code>data/interim/</code> as CSV. These are generated by <code>src/cleaning.py</code> and should be regenerated from raw files if raw data is updated.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>File</th>
+<th>Source</th>
+<th>Key variables</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>usviber_tour24.csv</code></td>
+<td>USVIBER TOUR24.pdf</td>
+<td>visitor arrivals, expenditures, rooms, occupancy</td>
+</tr>
+<tr class="even">
+<td><code>fred_employment.csv</code></td>
+<td>FRED</td>
+<td>emp_sa, emp_nsa (thousands)</td>
+</tr>
+<tr class="odd">
+<td><code>nps_viis_annual.csv</code></td>
+<td>NPS IRMA</td>
+<td>year, recreation_visitors</td>
+</tr>
+<tr class="even">
+<td><code>nps_buis_annual.csv</code></td>
+<td>NPS IRMA</td>
+<td>year, recreation_visitors</td>
+</tr>
+<tr class="odd">
+<td><code>nps_viis_monthly.csv</code></td>
+<td>NPS IRMA</td>
+<td>date (Period), year, month, recreation_visitors</td>
+</tr>
+<tr class="even">
+<td><code>nps_buis_monthly.csv</code></td>
+<td>NPS IRMA</td>
+<td>date (Period), year, month, recreation_visitors</td>
+</tr>
+<tr class="odd">
+<td><code>worldbank_arrivals.csv</code></td>
+<td>World Bank WDI</td>
+<td>year, value (arrivals, with dq_flag for 2020)</td>
+</tr>
+<tr class="even">
+<td><code>worldbank_receipts.csv</code></td>
+<td>World Bank WDI</td>
+<td>year, value (receipts, current USD)</td>
+</tr>
+<tr class="odd">
+<td><code>census_rooms.csv</code></td>
+<td>Census A10/NAPCS02</td>
+<td>year, rooms, estab, methodology_note</td>
+</tr>
+<tr class="even">
+<td><code>census_naics72_combined.csv</code></td>
+<td>Census all vintages</td>
+<td>year, naics, estab, emp, rcptot_k, payann_k</td>
+</tr>
+<tr class="odd">
+<td><code>bea_va_nominal.csv</code></td>
+<td>BEA Table 2.1</td>
+<td>year, label, value</td>
+</tr>
+<tr class="even">
+<td><code>bea_va_real.csv</code></td>
+<td>BEA Table 2.3</td>
+<td>year, label, value, vintage_flag</td>
+</tr>
+<tr class="odd">
+<td><code>bea_af_gdp_share.csv</code></td>
+<td>BEA computed</td>
+<td>year, af_nom, gdp_nom, af_pct_gdp</td>
+</tr>
+<tr class="even">
+<td><code>usvi_cpi.csv</code></td>
+<td>Econ21.pdf</td>
+<td>year, cpi_usvi_2009_100</td>
+</tr>
+</tbody>
+</table>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Data sources: USVIBER, FRED, NPS, U.S. Census Bureau, BEA, World Bank</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Trade Winds &amp; Headwinds</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

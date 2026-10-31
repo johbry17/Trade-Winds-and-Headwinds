@@ -1,10 +1,25 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - reports/index.qmd
+    - reports/eda.qmd
+    - reports/data-dictionary.qmd
+    - reports/methodology.qmd
+
+author: "Bryan C. Johns"
+# date: "2026-10-31"
+# date-format: "MMMM D, YYYY"
 
 website:
   title: "Trade Winds & Headwinds"
   description: "Twenty-Five Years of Tourism and Economic Change in the U.S. Virgin Islands"
+  # site-url: "https://johbry17.github.io/Trade-Winds-and-Headwinds/"
+  favicon: "images/favicon.png"
+  # image: "images/open-graph.png"
+  # image-alt: "Trade Winds & Headwinds — Tourism and Economic Change in the U.S. Virgin Islands"
+  # open-graph: true
+  # twitter-card: true
   navbar:
     left:
       - href: reports/index.qmd

@@ -1,26 +1,22 @@
-/*-- Trade Winds & Headwinds — custom Quarto theme overrides --*/
+/*-- scss:defaults --*/
 
-/*--- Typography ---*/
 $font-family-sans-serif: "Source Sans 3", "Source Sans Pro", system-ui, sans-serif !default;
 $font-family-monospace: "Source Code Pro", "Fira Code", monospace !default;
 $font-size-root: 17px !default;
 $line-height-base: 1.65 !default;
 
-/*--- Palette ---*/
-$primary:    #1a4f72;   /* deep ocean blue */
-$secondary:  #c85a1a;   /* trade-wind orange */
-$success:    #2a7a3b;
+$primary:    #1a4f72;
+$secondary:  #c85a1a;
 $body-color: #1a1a2e;
 
-/*--- Layout ---*/
-$max-width:  980px;
+/*-- scss:rules --*/
 
-/*--- Headings ---*/
 h1, h2, h3 { font-weight: 600; letter-spacing: -0.02em; }
 h1 { border-bottom: 2px solid $primary; padding-bottom: .4rem; }
 
-/*--- Navbar ---*/
 .navbar { border-bottom: 3px solid $primary; }
 
-/*--- Callouts ---*/
 div.callout-warning { border-left-color: $secondary; }
+
+.quarto-figure { margin-bottom: 2rem; }
+figcaption { font-size: 0.88rem; color: #555; margin-top: 0.4rem; }

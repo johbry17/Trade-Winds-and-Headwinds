@@ -1,7 +1,134 @@
 ---
 title: "Sources & Methodology"
-subtitle: "Citations, limitations, crosswalks, and analytical decisions"
-date: last-modified
+subtitle: "Citations, analytical choices, crosswalks, and known limitations"
+date: "2026-10-31"
 ---
 
-*Methodology documentation in preparation.*
+## Analytical periods
+
+The following periods are used as interpretive reference points throughout the analysis. They are not assumptions about what the data will show — they reflect the documented timing of major external shocks.
+
+| Period | Years | Description |
+|---|---|---|
+| Pre-hurricane baseline | 2000–2016 | Primary baseline period |
+| Hurricane shock | 2017 | Annual data mixes pre- and post-storm conditions |
+| Initial hurricane recovery | 2018–2019 | Post-storm reopening, pre-COVID |
+| COVID shock | 2020–2021 | Border closures; cruise halt |
+| Subsequent recovery | 2022–2025 | Most recent data available |
+
+**Base year for indexed comparisons:** 2016. The 2017 annual data cannot serve as a clean baseline because the hurricanes struck in September — the full-year figure mixes normal January–August activity with the post-storm collapse.
+
+
+
+## Frequency and aggregation rules
+
+These rules are applied consistently throughout all notebooks.
+
+| Data | Monthly treatment | Annual treatment |
+|---|---|---|
+| USVIBER visitor arrivals | Annual only | Preserve published annual values |
+| FRED employment | Retain monthly | **Mean** of monthly observations (not sum) |
+| NPS visitation | Retain monthly | Sum of monthly observations |
+| Hotel occupancy | Annual only | Preserve published annual rate |
+| Visitor expenditures | Annual only | Preserve published annual values |
+| Census | Annual only | Preserve quinquennial snapshots |
+| BEA | Annual only | Preserve published annual values |
+
+**Why mean for employment:** FRED employment is a stock measure (workers employed in a given pay period), not a flow. Summing monthly employment values would produce a nonsensical total. The annual average represents the typical employment level during the year.
+
+**Why sum for NPS:** Recreation visits are a flow (events that occur during a period). Summing monthly visits produces the annual total. The NPS annual-file values match the sum of monthly values exactly for all available years in this dataset.
+
+
+
+## Census NAICS crosswalk
+
+NAICS codes and table structures changed across the 2007, 2012, 2017, and 2022 Economic Census vintages. The following table classifies comparisons.
+
+| NAICS level | 2007 | 2012 | 2017 | 2022 | Comparability |
+|---|---|---|---|---|---|
+| Accommodation & food services (2-digit) | 72 | 72 | 72 | 72 | **Directly comparable** |
+| Accommodation (3-digit) | — (7211 in A10) | 721 | 721 | 721 | **Comparable after documentation** |
+| Food services (3-digit) | — | 722 | 722 | 722 | **Directly comparable** |
+| Hotels & motels (4-digit) | 7211 | 7211 | 7211 | 7211 | **Directly comparable** (small N; watch suppression) |
+| Guestrooms (RMRTRAN) | A10 industry total | A10 industry total | NAPCS 7003825000 | NAPCS 7003825000 | **Comparable after documentation** |
+
+**Do not compare fine-grained NAICS 5-digit codes across vintages without checking whether the code definition changed between the applicable NAICS revisions.** For this project, 2-digit (NAICS 72) aggregates are the most defensible cross-vintage comparisons.
+
+**2017 hurricane timing note:** The 2017 Economic Census reference date for guestrooms is December 31, 2017. This is approximately 3 months after Hurricanes Irma and Maria (September 6 and 19, 2017). The 2017 guestroom count (2,624) reflects post-hurricane inventory and cannot be treated as either a pre-storm or post-recovery benchmark.
+
+
+
+## Recovery index construction
+
+The recovery index is constructed as follows:
+
+$$\text{Index}_{s,t} = \frac{x_{s,t}}{x_{s,2016}} \times 100$$
+
+where $x_{s,t}$ is the value of series $s$ in year $t$ and $x_{s,2016}$ is the 2016 base-year value.
+
+Series with no 2016 observation are excluded from indexed comparisons.
+
+**A&F real value added** uses BEA Table 2.3 (chained 2012 dollars). This series ends in 2021. The 2021 value should not be compared directly with the 2024 values in other series.
+
+**Hotel occupancy** is an index (percent, not a count), so a 2016-rebased index of occupancy represents percentage-point changes from baseline, not proportional recovery. The occupancy rate in 2024 (66.3%) exceeds the 2016 rate (56.7%) — a level recovery — but this reflects scarcity (fewer rooms) as much as demand strength.
+
+
+
+## Data quality log
+
+| Severity | Source | Variable | Evidence | Treatment |
+|---|---|---|---|---|
+| HIGH | World Bank ARVL | 2020 arrivals | Value = 8.6M; ~4× normal range; impossible in COVID year | Set to NaN; excluded from analysis |
+| HIGH | NPS VIIS monthly | 2026 Jan–Aug | 100–167k/month vs. 40–55k in 2025; unexplained | 2026 excluded; max year = 2025 |
+| MEDIUM | USVIBER TOUR24 | air_excursionists (2020) | Identical to 2000 value (216.7k); implausible in COVID year | Retained but flagged; do not use for per-visitor calculations in 2020 |
+| MEDIUM | USVIBER TOUR24 | excursionists (2000, 2010) | Does not equal air + cruise within rounding (−14.9k; +149.7k) | Documented; use `excursionists` directly rather than summing components |
+| MEDIUM | Census NAPCS02 | RMRTRAN (Total row) | 2017 Total row: 8,735; 2022 Total row: 1,958 — inconsistent across vintages | Use product 7003825000 row (2,624 in 2017; 2,039 in 2022) |
+| MEDIUM | Census 2017 NAPCS02 | guestrooms (2017) | Reference date Dec 31, 2017 is post-hurricane | Label "end-of-2017 (post-hurricane)" everywhere |
+| MEDIUM | BUIS annual/monthly | 1999–2001 | Three years absent from both files | Note gaps in charts; do not interpolate |
+| MEDIUM | USVIBER TOUR24 | emp (2023–2024) | DOL data unavailable; shows N/A | Use FRED for post-2022 employment trend |
+| LOW | FRED employment | Units | Values in thousands (8.0 = 8,000 workers) | Label axes clearly; multiply × 1,000 when comparing with Census |
+| LOW | USVI CPI | 2018 value | 130.0 → 99.8: implausible ~23% deflation | CPI not used for deflation; flag in any future use |
+| LOW | BEA coverage | Industry tables end 2021 | Table 2.x ends 2021; Table 1.x ends 2022 | Use appropriate table; label coverage clearly |
+| LOW | World Bank JSON | Pagination | File contains page 1 only (50 of 66 records) | Pre-1995 data not needed; no action required |
+
+
+
+## Nominal vs. real series
+
+**No CPI deflation is applied in this analysis.** The USVI CPI series is available only through 2021 and has a questionable 2018 value. No alternative USVI-specific deflator is available through 2024–2025.
+
+The following series are already expressed in constant (real) dollars and are used as-is:
+
+- BEA Table 1.2: Real GDP (chained 2012 $)
+- BEA Table 2.3: Real value added by industry (chained 2012 $)
+
+All other monetary series (USVIBER expenditures, Census receipts and payroll, World Bank receipts) are presented in nominal current USD. Comparisons across years should account for general inflation; this analysis does not attempt to adjust for it.
+
+
+
+## Limitations
+
+**Tourism ≠ GDP.** BEA's accommodation and food services value added excludes tourism-related retail, air transportation, recreation, and other sectors. It also includes consumption by residents. The sector's GDP share understates the full economic footprint of tourism and overstates how much of the sector's activity is visitor-driven.
+
+**Overnight tourists ≠ hotel guests.** USVIBER's "tourists" count includes villa rentals, short-term rentals, and other non-hotel accommodation. The overnight tourist recovery at 57% of 2016 may reflect both the reduced hotel room inventory and the divergent recovery of the vacation rental segment.
+
+**FRED L&H employment is not tourism employment.** The L&H aggregate includes performing arts, museums, gambling (NAICS 71) alongside hotels and restaurants (NAICS 72). For USVI, this distinction is less critical because cultural attractions and casinos are a smaller share of the total than in mainland geographies. But the aggregate still overstates recovery in the hotel-and-restaurant segment relative to a tourism-specific series.
+
+**2017 is not a clean pre-hurricane baseline.** The hurricanes struck in September. Full-year 2017 visitor counts (1.97M total; 535k overnight tourists) mix normal January–August activity with the September–December collapse. The 2016 value is used as the pre-hurricane baseline throughout.
+
+**Census 2022 was collected during COVID recovery.** The 2022 Economic Census reference period (calendar year 2022) is a point in recovery, not a stable equilibrium. Employment (1,650 accommodation jobs) and receipts ($241M for NAICS 721) both reflect an industry still rebuilding from overlapping hurricane and pandemic shocks.
+
+
+
+## Software and reproducibility
+
+All analysis was conducted in Python 3.14 using pandas 3.1, plotly 7.1, and associated packages listed in `requirements.txt`. The project is organized as a reproducible workflow:
+
+1. Raw data in `data/raw/` — never modified
+2. Cleaning and validation in `src/cleaning.py` and `src/validation.py`
+3. Cleaned intermediate datasets in `data/interim/`
+4. Analysis notebooks in `notebooks/`
+5. Publication via Quarto 1.10 in `reports/`
+
+To reproduce: install dependencies from `requirements.txt`, run notebooks 01–06 in order, then run `quarto render` from the project root.
+

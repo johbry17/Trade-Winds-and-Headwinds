@@ -30,6 +30,9 @@ website:
         text: Data Dictionary
       - href: reports/methodology.qmd
         text: Methodology
+    right:
+      - icon: github
+        href: https://github.com/johbry17/Trade-Winds-and-Headwinds
   sidebar: false
   page-footer:
     left: "Data sources: USVIBER, FRED, NPS, U.S. Census Bureau, BEA, World Bank"

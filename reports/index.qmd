@@ -162,11 +162,13 @@ for x_val, label in [(2017, "Irma & Maria"), (2020, "COVID-19")]:
                   annotation_font=dict(size=11, color="#666"))
 
 fig.update_layout(
+    xaxis=dict(range=[2000, tour["year"].max()]),
     yaxis_title="Index (2016 = 100)",
     height=480,
-    legend=dict(orientation="v", yanchor="top", y=1, xanchor="left", x=1.01,
-                bgcolor="rgba(255,255,255,0.85)", bordercolor="#ddd", borderwidth=1),
-    margin=dict(l=60, r=190, t=40, b=50),
+    legend=dict(orientation="h", yanchor="top", y=-0.22, xanchor="center", x=0.5,
+        bgcolor="rgba(255,255,255,0)", font=dict(size=11), entrywidthmode="pixels",
+        entrywidth=125,),
+    margin=dict(l=60, r=30, t=65, b=125),
     annotations=[dict(xref="paper", yref="paper", x=0, y=-0.10,
         text="<span style='color:#888;font-size:11px'>Sources: USVIBER, FRED, BEA, NPS IRMA — author calculations</span>",
         showarrow=False, xanchor="left")],
@@ -261,6 +263,7 @@ for x_val, label in [(2017, "Irma & Maria"), (2020, "COVID-19")]:
                   annotation_font=dict(size=11, color="#666"))
 
 fig.update_layout(
+    xaxis=dict(range=[2000, tour["year"].max()]),
     yaxis_title="Index (2016 = 100)",
     height=420,
     legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),

@@ -23,13 +23,13 @@ website:
   navbar:
     left:
       - href: reports/index.qmd
-        text: Field Note
+        text: Overview
       - href: reports/eda.qmd
         text: Analysis
       - href: reports/data-dictionary.qmd
-        text: Data Dictionary
+        text: Data
       - href: reports/methodology.qmd
-        text: Methodology
+        text: Methods
     right:
       - icon: github
         href: https://github.com/johbry17/Trade-Winds-and-Headwinds
@@ -42,6 +42,7 @@ format:
   html:
     theme:
       light: [cosmo, reports/custom.scss]
+      dark: solar
     toc: true
     toc-depth: 3
     code-fold: true

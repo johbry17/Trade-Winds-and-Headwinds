@@ -36,6 +36,10 @@
   --quarto-font-monospace: "Source Code Pro", "Fira Code", monospace;
 }
 
+:root {
+  --quarto-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
 /* syntax highlight based on Pandoc's rules */
 pre > code.sourceCode > span {
   color: #003B4F;
@@ -233,4 +237,4 @@ code span.wa {
   content: "</";
 }
 
-/*# sourceMappingURL=9695dded6cafe98f253574ba1b2a4e21.css.map */
+/*# sourceMappingURL=fc81c1a64a81d1e3df49209b29b71641.css.map */

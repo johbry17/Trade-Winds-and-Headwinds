@@ -43,6 +43,7 @@ format:
     theme:
       light: [cosmo, reports/custom.scss]
       dark: solar
+    respect-user-color-scheme: true
     toc: true
     toc-depth: 3
     code-fold: true

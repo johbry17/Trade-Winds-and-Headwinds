@@ -97,15 +97,15 @@ for x_val, label in [(2017, "Irma & Maria"), (2020, "COVID-19")]:
                   annotation_text=label, annotation_position="top",
                   annotation_font=dict(size=11, color="#666"))
 
-fig.update_layout(
+fig.update_layout(title="Total Arrivals",
     yaxis_title="Visitors (thousands)",
     height=440,
-    legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
     margin=dict(l=60, r=30, t=60, b=50),
     annotations=[dict(xref="paper", yref="paper", x=0, y=-0.10,
         text="<span style='color:#888;font-size:11px'>Source: USVIBER Annual Tourism Indicator 2024</span>",
         showarrow=False, xanchor="left")],
 )
+ch.save_fig(fig, "total-arrivals", formats=("png",))
 fig.show()
 ```
 
@@ -161,8 +161,9 @@ for x_val, label in [(2017, "Irma & Maria"), (2020, "COVID-19")]:
                   annotation_text=label, annotation_position="top",
                   annotation_font=dict(size=11, color="#666"))
 
-fig.update_layout(
-    xaxis=dict(range=[2000, tour["year"].max()]),
+fig.update_layout(title="Recovery Index (2016 = 100)",
+    xaxis=dict(range=[2012, tour["year"].max()]),
+    yaxis=dict(range=[0, 120]),
     yaxis_title="Index (2016 = 100)",
     height=480,
     legend=dict(orientation="h", yanchor="top", y=-0.22, xanchor="center", x=0.5,
@@ -173,6 +174,7 @@ fig.update_layout(
         text="<span style='color:#888;font-size:11px'>Sources: USVIBER, FRED, BEA, NPS IRMA — author calculations</span>",
         showarrow=False, xanchor="left")],
 )
+ch.save_fig(fig, "recovery-index", formats=("png",))
 fig.show()
 ```
 
@@ -216,14 +218,15 @@ for x_val, label in [(2017, "Irma & Maria"), (2020, "COVID-19")]:
                   annotation_font=dict(size=11, color="#666"))
 
 fig.update_layout(
+    title="VIIS NP Visitation vs. Overnight Tourists",
     yaxis_title="Index (2016 = 100)",
     height=420,
-    legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
     margin=dict(l=60, r=30, t=40, b=50),
     annotations=[dict(xref="paper", yref="paper", x=0, y=-0.10,
         text="<span style='color:#888;font-size:11px'>Sources: NPS IRMA Public Use Statistics; USVIBER Annual Tourism Indicator 2024</span>",
         showarrow=False, xanchor="left")],
 )
+ch.save_fig(fig, "viis-np-recreation-visits", formats=("png",))
 fig.show()
 ```
 
@@ -263,15 +266,16 @@ for x_val, label in [(2017, "Irma & Maria"), (2020, "COVID-19")]:
                   annotation_font=dict(size=11, color="#666"))
 
 fig.update_layout(
+    title="Accommodation Capacity and L&H Employment",
     xaxis=dict(range=[2000, tour["year"].max()]),
     yaxis_title="Index (2016 = 100)",
     height=420,
-    legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
     margin=dict(l=60, r=30, t=40, b=50),
     annotations=[dict(xref="paper", yref="paper", x=0, y=-0.10,
         text="<span style='color:#888;font-size:11px'>Sources: USVIBER Annual Tourism Indicator 2024; FRED SMS78000007000000001</span>",
         showarrow=False, xanchor="left")],
 )
+ch.save_fig(fig, "accommodation-capacity-lh-employment", formats=("png",))
 fig.show()
 ```
 
@@ -320,6 +324,7 @@ for x_val, label in [(2017, "Irma & Maria"), (2020, "COVID-19")]:
                   annotation_font=dict(size=11, color="#666"))
 
 fig.update_layout(
+    title="Accommodation and Food Services as Share of USVI GDP",
     yaxis_title="A&F share of nominal GDP (%)",
     yaxis_range=[0, 18],
     height=400,
@@ -328,6 +333,7 @@ fig.update_layout(
         text="<span style='color:#888;font-size:11px'>Source: BEA USVI GDP data. Coverage ends 2021. A&F ≠ tourism GDP.</span>",
         showarrow=False, xanchor="left")],
 )
+ch.save_fig(fig, "af-gdp-share", formats=("png",))
 fig.show()
 ```
 
@@ -377,6 +383,7 @@ fig.add_vline(x=100, line=dict(color="#333", width=1.5),
               annotation_text="2016 = 100", annotation_position="top",
               annotation_font=dict(size=10))
 fig.update_layout(
+    title="Recovery Scorecard",
     xaxis_title="Index (2016 = 100)",
     xaxis_range=[0, max(values) * 1.18],
     height=400,
@@ -385,6 +392,7 @@ fig.update_layout(
         text="<span style='color:#888;font-size:11px'>Sources: USVIBER, FRED, BEA, NPS IRMA — author calculations</span>",
         showarrow=False, xanchor="left")],
 )
+ch.save_fig(fig, "recovery-scorecard", formats=("png",))
 fig.show()
 ```
 

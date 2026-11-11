@@ -247,25 +247,33 @@ def load_worldbank(indicator: str) -> pd.DataFrame:
 
 def load_usviber_tour24() -> pd.DataFrame:
     """
-    Return the USVIBER TOUR24 annual tourism indicators as a tidy DataFrame.
+    USVIBER Annual Tourism Indicators from TOUR24.pdf (2-page table).
 
-    These values were extracted from TOUR24.pdf (2-page table).
-    Units: thousands of visitors / millions of dollars (see 'unit' column).
-    Employment: number of jobs.
-    Rooms: actual count.
-    Occupancy: percent.
+    Coverage: 2000 and 2010–2024 (gaps in 2001–2009).
+    Use load_usviber_combined() to merge with TOUR10 historical data.
 
-    KNOWN DATA QUALITY ISSUE
-    ------------------------
-    Air excursionists in year 2000 = 216.7k; the Air visitors (tourists + excursionists)
-    total for 2000 = 604.5k; total tourists = 546.7k.
-    Arithmetic: tourists_by_air + air_excursionists must equal air_visitors.
-    604.5 - 216.7 = 387.8k tourists by air, implying ~159k tourists arrived by
-    non-air means (ferry, private yacht).  This is high (~29% of tourists) and
-    should be verified against source tables before publishing.
+    Units
+    -----
+    Visitor counts        : thousands
+    Expenditures          : millions of current USD (nominal)
+    Room counts           : units
+    Occupancy             : percent (rate, not index)
+    Employment            : number of jobs
 
-    The 2000 air_excursionists value (216.7k) also appears verbatim as the 2020
-    air_excursionists value, which is suspicious for a COVID year.  Flagged.
+    Data Quality Notes
+    ------------------
+    - air_excursionists 2020 = 216.7k: arithmetic reconciles with totals, but
+      this value represents 61.6% of 2020 air arrivals as same-day, which is
+      implausible for a COVID year. Flag retained; exclude from per-visitor
+      expenditure calculations for 2020.
+    - air_visitors 2000: air_visitors (604.5) − air_excursionists (216.7) = 387.8k
+      implied tourists by air, while total tourists = 546.7k. The difference
+      (~159k) would imply tourists arriving by non-air means (ferry, yacht).
+      The source does not define air_visitors as the strict sum of tourists-by-air
+      + air_excursionists; this identity is not established.
+    - Expenditure sub-categories: excursionist_expenditures = air_excursionist_expenditures
+      + cruise_expenditures should hold; check validate_usviber_arithmetic().
+    - Source publication: USVIBER Annual Tourism Indicator 2024 (TOUR24.pdf).
     """
     years = [2000, 2010, 2011, 2012, 2013, 2014, 2015, 2016,
              2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
@@ -281,21 +289,22 @@ def load_usviber_tour24() -> pd.DataFrame:
         "excursionists":         [1970.2, 2121.5, 2121.5, 2027.2, 2126.2, 2215.6,
                                   2011.4, 1916.7, 1430.1, 1542.5, 1668.9,  657.1,
                                    657.5, 1391.2, 1971.9, 2126.8],
-        # FLAG: 2020 value = 216.7 is identical to 2000; verify before use
+        # NOTE: 2020 value = 216.7k is flagged (see air_excursionists_dq_flag)
         "air_excursionists":     [ 216.7,  112.9,  112.5,  122.7,  127.6,  131.7,
                                     132.6,  139.9,  112.9,  111.8,  235.8,  216.7,
                                     422.0,  388.1,  402.6,  527.1],
         "cruise_passengers":     [1768.4, 1858.9, 2009.0, 1904.5, 1998.6, 2083.9,
                                   1878.8, 1776.7, 1317.2, 1430.7, 1433.1,  440.4,
                                    235.5, 1003.1, 1569.3, 1599.8],
-        # air_visitors = tourists_by_air + air_excursionists (not total tourists)
+        # air_visitors = tourists-by-air + air_excursionists (not identical to
+        # total tourists; some tourists may arrive by non-air transport)
         "air_visitors":          [ 604.5,  679.4,  679.4,  741.9,  717.9,  746.5,
                                     774.4,  807.8,  647.8,  492.6,  653.7,  352.4,
                                     818.2,  790.7,  780.7,  884.2],
         "cruise_ships":          [1014,    680,    698,    667,    626,    655,
                                    609,    569,    427,    481,    529,    163,
                                    140,    414,    495,    533],
-        # ---- Visitor expenditures (millions USD) ----
+        # ---- Visitor expenditures (millions of current USD, nominal) ----
         "expenditures_total":    [1186.1, 1568.7, 1642.4, 1732.6, 1742.5, 1853.1,
                                   1826.8, 1872.9, 1491.2, 1263.2, 1453.5,  508.3,
                                   1063.8, 1442.7, 1686.7, 1828.5],
@@ -305,6 +314,14 @@ def load_usviber_tour24() -> pd.DataFrame:
         "expenditures_excursionists": [471.4, 606.1, 669.9, 647.5, 690.7, 739.0,
                                        664.8, 649.0, 493.5, 541.2, 617.6, 240.2,
                                        244.7, 558.4, 824.2, 934.8],
+        # Day-trip-by-air excursionist expenditures (from TOUR24 "Day-trip by air")
+        "expenditures_air_excursionists": [ 17.4,   31.9,   32.8,   36.6,   39.0,   41.1,
+                                             41.3,   44.0,   35.9,   34.1,   79.2,   75.8,
+                                            152.1,  148.9,  157.7,  212.7],
+        # Cruise passenger expenditures (from TOUR24 "Cruise passengers" expenditure row)
+        "expenditures_cruise_passengers": [454.0, 574.2, 637.1, 611.0, 651.7, 697.8,
+                                           623.6, 605.0, 457.6, 507.2, 538.5, 164.4,
+                                            92.6, 409.5, 666.4, 722.0],
         # ---- Accommodations ----
         "total_rooms":           [5008, 5008, 4889, 5030, 5016, 4974,
                                   5060, 4842, 4886, 3255, 3513, 3291,
@@ -336,13 +353,139 @@ def load_usviber_tour24() -> pd.DataFrame:
     df = pd.DataFrame(data, index=years)
     df.index.name = "year"
     df = df.reset_index()
+    df["source_publication"] = "TOUR24"
 
     # Flag the suspicious 2020 air_excursionists value
     df.loc[df["year"] == 2020, "air_excursionists_dq_flag"] = (
-        "value_identical_to_2000; verify against source PDF"
+        "2020 value (216.7k) = 61.6% of air arrivals as same-day; "
+        "implausible for COVID year; arithmetic reconciles but value is suspect"
     )
 
     return df
+
+
+def load_usviber_tour10() -> pd.DataFrame:
+    """
+    USVIBER Annual Tourism Indicators from TOUR10.pdf (2-page table).
+
+    Coverage: 1980, 1990, 2000–2010.
+    For analysis purposes, use years 2001–2009 as the historical gap-fill;
+    use TOUR24 for 2000 and 2010 (revisions documented below).
+
+    Units: same as load_usviber_tour24().
+
+    REVISION WARNING
+    ----------------
+    TOUR10 and TOUR24 show material differences for the two overlapping years:
+
+    Year 2000 (TOUR10 → TOUR24):
+      total_visitors:   2,395.8 → 2,516.9  (+121.1k)
+      tourists:           545.9 →   546.7  (+0.8k,  stable)
+      air_excursionists:   81.5 →   216.7  (+135.2k, large upward revision)
+      cruise_passengers:1,768.4 → 1,768.4  (unchanged)
+      expenditures_total:1,205.9→ 1,186.1  (−19.8M)
+
+    Year 2010 (TOUR10 → TOUR24):
+      total_visitors:   2,550.5 → 2,697.7  (+147.2k)
+      tourists:           589.8 →   576.2  (−13.6k)
+      air_excursionists:  101.8 →   112.9  (+11.1k)
+      cruise_passengers:1,858.9 → 1,858.9  (unchanged)
+
+    Pattern: cruise_passengers, hotel_rooms, total_rooms, occupancy_rate_pct
+    are consistent across publications. Tourist/excursionist totals and air
+    excursionist counts were revised, likely reflecting a methodological change
+    in how same-day air arrivals are classified. The reason is not established
+    in the available source materials.
+
+    Use TOUR24 values for 2000 and 2010. Use TOUR10 values for 2001–2009
+    with discontinuity flags at the 2000/2001 and 2009/2010 boundaries.
+    Accommodation series (hotel_rooms, total_rooms, occupancy_rate_pct) is
+    consistent and may be used without the same discontinuity caveat.
+
+    Source: USVIBER Annual Tourism Indicators 2010 (TOUR10.pdf).
+    """
+    # Columns: 1980, 1990, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010
+    # Only 2001-2009 are gap-fill years; 1980, 1990, 2000, 2010 are for reference.
+    years_all = [1980, 1990, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010]
+
+    data = {
+        "total_visitors":        [1217.4, 1811.5, 2395.8, 2497.4, 2336.6, 2392.6,
+                                   2619.7, 2601.9, 2570.7, 2606.2, 2435.2, 2246.5, 2550.5],
+        "tourists":              [ 380.0,  462.5,  545.9,  527.2,  520.2,  537.9,
+                                    566.8,  593.8,  570.6,  587.1,  574.2,  562.6,  589.8],
+        "excursionists":         [ 837.4, 1349.0, 1849.9, 1970.2, 1816.4, 1854.4,
+                                  2052.9, 2008.1, 2000.1, 2019.1, 1861.0, 1683.9, 1960.7],
+        "air_excursionists":     [ 145.9,  229.4,   81.5,   78.8,   77.7,   82.9,
+                                    88.2,   95.6,   96.6,  101.2,  104.0,  101.6,  101.8],
+        "cruise_passengers":     [ 691.5, 1119.6, 1768.4, 1891.4, 1738.7, 1773.9,
+                                  1964.7, 1912.5, 1903.5, 1917.9, 1757.1, 1582.3, 1858.9],
+        "air_visitors":          [ 525.9,  691.9,  627.8,  606.0,  598.0,  620.8,
+                                    655.0,  689.4,  667.2,  688.3,  678.1,  664.2,  691.6],
+        "cruise_ships":          [ 883,   1142,   1014,    976,    845,    888,
+                                   924,    818,    782,    752,    687,    621,    680],
+        # Expenditures: 2010 is missing from TOUR10; some 2008 tourist values missing
+        "expenditures_total":    [293.5,  697.0, 1205.9, 1234.1, 1195.4, 1256.5,
+                                  1356.0, 1431.6, 1467.6, 1512.6, 1157.1, 1021.3, None],
+        "expenditures_tourists": [221.9,  498.8,  725.9,  722.1,  723.5,  765.4,
+                                   789.8,  863.8,  883.2,  929.8,   None,  687.4,  None],
+        "expenditures_excursionists": [71.6, 198.2, 480.0, 512.0, 471.9, 491.1,
+                                       566.3, 567.8, 584.3, 582.9, 470.7, 333.9, None],
+        "expenditures_air_excursionists": [13.5, 30.6, 18.2, 18.6, 18.5, 20.3,
+                                           27.6, 27.2, 25.6, 27.7, 29.7, 28.6, None],
+        "expenditures_cruise_passengers": [58.1, 167.6, 461.8, 493.4, 453.4, 470.8,
+                                           538.6, 540.6, 558.8, 555.2, 441.0, 305.3, None],
+        # Accommodation (consistent with TOUR24 for overlapping years)
+        "total_rooms":           [5102, 4520, 5008, 5053, 5138, 5045,
+                                  4959, 4761, 4812, 4757, 4857, 4948, 5008],
+        "hotel_count":           [  65,   60,   49,   48,   47,   46,
+                                    48,   47,   47,   46,   47,   46,   47],
+        "hotel_rooms":           [3457, 3487, 3947, 3987, 4036, 3985,
+                                  3906, 3687, 3739, 3678, 3782, 3809, 3878],
+        "condo_units":           [1645, 1033, 1061, 1066, 1102, 1059,
+                                  1053, 1075, 1073, 1079, 1075, 1139, 1131],
+        "occupancy_rate_pct":    [64.2, 62.5, 57.7, 56.2, 56.6, 57.2,
+                                  61.3, 63.8, 60.1, 64.4, 60.0, 54.8, 57.1],
+        # Employment
+        "emp_tourism_total":     [7200, 8640, 8660, 9020, 8910, 8379,
+                                  8723, 8695, 8593, 8778, 8683, 8038, 8316],
+    }
+
+    df = pd.DataFrame(data, index=years_all)
+    df.index.name = "year"
+    df = df.reset_index()
+    df["source_publication"] = "TOUR10"
+    return df
+
+
+def load_usviber_combined() -> pd.DataFrame:
+    """
+    Combine TOUR10 (2001–2009 gap-fill) and TOUR24 (2000, 2010–2024).
+
+    Returns a single DataFrame covering 2000–2024 with a source_publication
+    column identifying each row's origin. The accommodation series (hotel_rooms,
+    total_rooms, occupancy_rate_pct) is consistent across publications and is
+    merged seamlessly. The tourist/excursionist series carries a discontinuity
+    flag at the 2010 boundary due to revisions between publications.
+
+    See load_usviber_tour10() for a full description of the revision pattern.
+    Rows with year < 2000 from TOUR10 are excluded from the combined series.
+    """
+    t24 = load_usviber_tour24()
+    t10 = load_usviber_tour10()
+
+    # Gap-fill years: 2001-2009 from TOUR10 only
+    t10_gap = t10[t10["year"].between(2001, 2009)].copy()
+    t10_gap["visitor_series_discontinuity"] = (
+        "TOUR10 vintage; material revisions documented at 2000/2001 and 2009/2010 "
+        "boundaries for tourist and air_excursionist counts"
+    )
+
+    combined = (
+        pd.concat([t10_gap, t24], ignore_index=True)
+        .sort_values("year")
+        .reset_index(drop=True)
+    )
+    return combined
 
 
 # ---------------------------------------------------------------------------
@@ -495,12 +638,14 @@ def load_census_rooms() -> pd.DataFrame:
             "methodology_note": "A10 industry total (PSCODE 20000)",
         })
 
-    # 2012 A10
+    # 2012 A10 — filter to USVI territory total row (PSCODE2012 = 20000)
     path12 = RAW / "IA1200A10" / "IA1200A10.dat"
     a10_12 = pd.read_csv(path12, sep="|", encoding="latin-1", low_memory=False)
     a10_12.columns = a10_12.columns.str.lstrip("#").str.strip()
-    usvi_12 = a10_12[a10_12["ST"].astype(str).str.strip() == "78"]
-    # First row is the industry total
+    usvi_12 = a10_12[
+        (a10_12["ST"].astype(str).str.strip() == "78") &
+        (a10_12["PSCODE2012"].astype(str).str.strip() == "20000")
+    ]
     if not usvi_12.empty:
         r = usvi_12.iloc[0]
         records.append({
@@ -509,7 +654,7 @@ def load_census_rooms() -> pd.DataFrame:
             "rooms": pd.to_numeric(str(r.get("RMRTRAN", "")).replace(",", ""), errors="coerce"),
             "estab": pd.to_numeric(str(r.get("ESTAB", "")).replace(",", ""), errors="coerce"),
             "rcptot_k": pd.to_numeric(str(r.get("RCPTOT", "")).replace(",", ""), errors="coerce"),
-            "methodology_note": "A10 industry total (first USVI row)",
+            "methodology_note": "A10 industry total (PSCODE2012 = 20000)",
         })
 
     # 2017 NAPCS02 — use NAPCS 7003825000 (room accommodation)

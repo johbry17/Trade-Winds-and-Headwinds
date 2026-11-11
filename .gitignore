@@ -14,3 +14,7 @@ __pycache__/
 # Quarto cache (per-document execution caches — regenerate with `quarto render`)
 *_cache/
 
+# Virtual environments
+.venv/
+.venv-1/
+.venv-2/

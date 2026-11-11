@@ -4,7 +4,7 @@ subtitle: "Trade Winds & Headwinds — USVI Tourism Economy, 2000–2025"
 date: "2026-10-31"
 ---
 
-This companion to the [Field Note](index.qmd) documents the full exploratory analysis.
+This companion to the [main publication](index.qmd) documents the full exploratory analysis.
 All charts are generated from the cleaned datasets in `data/interim/`.
 The complete analytical notebooks — including detailed tables, validation checks,
 and additional charts — are in the `notebooks/` directory.

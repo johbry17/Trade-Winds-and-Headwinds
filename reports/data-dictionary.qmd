@@ -37,6 +37,23 @@ date: "2026-10-31"
 | `occupancy_rate_pct` | Percent | Territory-wide average hotel occupancy |
 | `emp_tourism_total` | Jobs | Tourism-related employment (DOL survey; ends 2022) |
 
+**Key variables (new in revised dataset):**
+
+| Variable | Units | Definition |
+|---|---|---|
+|  | $M, nominal | Day-trip-by-air excursionist spending (TOUR24: "Day-trip by air" row) |
+|  | $M, nominal | Cruise passenger spending (TOUR24: "Cruise passengers" expenditure row) |
+
+These two sub-categories reconcile to  within rounding (±0.1M).
+
+**Coverage by publication:**
+
+| Variable | TOUR10 (2001–2009) | TOUR24 (2000, 2010–2024) |
+|---|---|---|
+| Visitor arrivals | Available | Available |
+| Expenditures | Available 2001–2008; 2009 partial | Available 2000, 2010–2024 |
+| Accommodation | Available | Available |
+
 **Data quality flags:**
 
 - `air_excursionists` (2020): value of 216.7k is identical to year 2000 — physically implausible for a COVID year. Cross-check with TOUR20-revised.pdf pending.

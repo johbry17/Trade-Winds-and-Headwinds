@@ -8,6 +8,8 @@ date: "2026-10-31"
 
 The following periods are used as interpretive reference points throughout the analysis. They are not assumptions about what the data will show — they reflect the documented timing of major external shocks.
 
+**Base year:** 2016 is used as the index baseline rather than the last pre-shock year because 2017 annual data mixes pre- and post-hurricane months (the storms struck in September). Using 2016 provides a clean full-year pre-hurricane reference.
+
 | Period | Years | Description |
 |---|---|---|
 | Pre-hurricane baseline | 2000–2016 | Primary baseline period |
@@ -33,6 +35,8 @@ These rules are applied consistently throughout all notebooks.
 | Visitor expenditures | Annual only | Preserve published annual values |
 | Census | Annual only | Preserve quinquennial snapshots |
 | BEA | Annual only | Preserve published annual values |
+
+**Analysis period classification:** Period bins use right-closed intervals: (1999, 2016], (2016, 2017], (2017, 2019], (2019, 2021], (2021, 2025]. Year 2017 is assigned its own period rather than grouped with the initial recovery because annual data mixes pre- and post-hurricane months.
 
 **Why mean for employment:** FRED employment is a stock measure (workers employed in a given pay period), not a flow. Summing monthly employment values would produce a nonsensical total. The annual average represents the typical employment level during the year.
 

@@ -65,21 +65,59 @@ DATA_QUALITY_LOG: list[DQIssue] = [
         source="USVIBER TOUR24.pdf",
         variable="air_excursionists (2020)",
         evidence=(
-            "The 2020 air excursionists value (216.7k) is identical to the 2000 value "
-            "(216.7k), which is unlikely for a COVID year when air travel collapsed "
-            "(total visitors fell from 2,087k in 2019 to 793k in 2020). "
-            "TOUR22 shows different 2020 excursionist figures."
+            "The 2020 air excursionists value (216.7k) equals 61.6% of 2020 air visitors "
+            "(352.4k), implying most air arrivals were same-day visitors during COVID. "
+            "Arithmetic reconciles (216.7 + 440.4 = 657.1 = excursionists) but the "
+            "proportion is implausible for a year of severe travel restriction."
         ),
         recommended_treatment=(
-            "Cross-check against TOUR20-revised.pdf for 2020 actuals. "
-            "Flag in analysis. Do not use 2020 air excursionists for per-visitor "
-            "calculations until verified."
+            "Retain with flag. Exclude from per-visitor expenditure calculations for 2020. "
+            "Do not set to NaN because that would break the excursionist decomposition."
+        ),
+    ),
+    DQIssue(
+        severity="MEDIUM",
+        source="USVIBER TOUR24.pdf vs TOUR10.pdf",
+        variable="tourist and air_excursionist series (historical revisions)",
+        evidence=(
+            "TOUR10 and TOUR24 show material differences for overlapping years. "
+            "Year 2000: total_visitors +121k, air_excursionists +135k (81.5→216.7k), "
+            "tourists +0.8k (stable), cruise_passengers unchanged. "
+            "Year 2010: total_visitors +147k, tourists −14k, excursionists +161k, "
+            "air_excursionists +11k, cruise_passengers unchanged. "
+            "Accommodation (hotel_rooms, total_rooms, occupancy) is consistent. "
+            "Revisions likely reflect reclassification of same-day air arrivals."
+        ),
+        recommended_treatment=(
+            "Use TOUR24 for 2000 and 2010–2024; use TOUR10 for 2001–2009 with "
+            "a discontinuity flag at 2000/2001 and 2009/2010 boundaries for the "
+            "tourist/excursionist/air_visitor series. The accommodation series "
+            "(hotel_rooms, occupancy) can be merged seamlessly."
+        ),
+    ),
+    DQIssue(
+        severity="MEDIUM",
+        source="NPS VIIS Recreation Visitors By Month",
+        variable="counting methodology (three periods)",
+        evidence=(
+            "2003–2021 method: campground + Trunk Bay multipliers (8.53 persons/boat), "
+            "beach and visitor-center counts, percentage-based estimates. "
+            "2022–2025 method: Caneel Bay removed, Maho Bay removed (closed), "
+            "revised Trunk Bay and beach estimation. "
+            "2026+ method: Lind Point traffic counter (vehicles × PPV × factors), "
+            "pedestrian/trail counters — fundamentally different inputs and units; "
+            "2026 counts are ~3–4× 2025 equivalents, consistent with a methodology break."
+        ),
+        recommended_treatment=(
+            "Exclude 2026 from historical comparisons. Document the 2022 method change "
+            "as a secondary methodological break. Report visitation as 'estimated "
+            "recreation visits' rather than visitors or tourists."
         ),
     ),
     DQIssue(
         severity="MEDIUM",
         source="USVIBER TOUR24.pdf",
-        variable="air_visitors vs tourists + air_excursionists (2000)",
+        variable="air_visitors identity not established",
         evidence=(
             "Year 2000: air_visitors = 604.5k; tourists = 546.7k; "
             "air_excursionists = 216.7k. "
@@ -249,45 +287,68 @@ def validate_nps_annual_vs_monthly(
 
 def validate_usviber_arithmetic(df: pd.DataFrame) -> pd.DataFrame:
     """
-    Check internal arithmetic consistency of USVIBER TOUR24 table:
-    - total_visitors == tourists + excursionists
-    - excursionists == air_excursionists + cruise_passengers
-    - expenditures_total == expenditures_tourists + expenditures_excursionists
+    Check internal arithmetic consistency of USVIBER table.
+
+    Checks (tolerance ±0.5k for visitors, ±0.5M for expenditures):
+    - tourists + excursionists == total_visitors
+    - air_excursionists + cruise_passengers == excursionists
+    - expenditures_tourists + expenditures_excursionists == expenditures_total
+    - expenditures_air_excursionists + expenditures_cruise_passengers
+        == expenditures_excursionists  (only if both columns present)
+
+    Records where the identity cannot be tested (missing values) are marked
+    as 'untestable' rather than passed or failed.
     """
     checks = []
     df = df.copy().set_index("year")
+    has_exp_split = (
+        "expenditures_air_excursionists" in df.columns and
+        "expenditures_cruise_passengers" in df.columns
+    )
 
     for year, row in df.iterrows():
-        checks.append({
-            "year": year,
-            "check": "total = tourists + excursionists",
-            "expected": row["tourists"] + row["excursionists"],
-            "actual": row["total_visitors"],
-            "diff": round(row["total_visitors"] - row["tourists"] - row["excursionists"], 1),
-        })
-        checks.append({
-            "year": year,
-            "check": "excursionists = air + cruise",
-            "expected": row["air_excursionists"] + row["cruise_passengers"],
-            "actual": row["excursionists"],
-            "diff": round(row["excursionists"] - row["air_excursionists"] - row["cruise_passengers"], 1),
-        })
-        checks.append({
-            "year": year,
-            "check": "expenditures = tourists + excursionists",
-            "expected": row["expenditures_tourists"] + row["expenditures_excursionists"],
-            "actual": row["expenditures_total"],
-            "diff": round(
-                row["expenditures_total"]
-                - row["expenditures_tourists"]
-                - row["expenditures_excursionists"],
-                1,
-            ),
-        })
+        for lhs, rhs_parts, label in [
+            ("total_visitors",
+             ["tourists", "excursionists"],
+             "total = tourists + excursionists"),
+            ("excursionists",
+             ["air_excursionists", "cruise_passengers"],
+             "excursionists = air + cruise"),
+            ("expenditures_total",
+             ["expenditures_tourists", "expenditures_excursionists"],
+             "expenditures = tourists + excursionists"),
+        ]:
+            if any(pd.isna(row.get(c)) for c in [lhs] + rhs_parts):
+                checks.append({"year": year, "check": label,
+                                "actual": None, "expected": None,
+                                "diff": None, "status": "untestable"})
+                continue
+            actual = row[lhs]
+            expected = sum(row[c] for c in rhs_parts)
+            diff = round(actual - expected, 1)
+            checks.append({"year": year, "check": label,
+                            "actual": actual, "expected": expected,
+                            "diff": diff,
+                            "status": "ok" if abs(diff) <= 0.5 else "discrepancy"})
+
+        if has_exp_split:
+            lhs_val = row.get("expenditures_excursionists")
+            air_val = row.get("expenditures_air_excursionists")
+            cru_val = row.get("expenditures_cruise_passengers")
+            label = "excursionist_exp = air_exc_exp + cruise_exp"
+            if any(pd.isna(v) for v in [lhs_val, air_val, cru_val]):
+                checks.append({"year": year, "check": label,
+                                "actual": None, "expected": None,
+                                "diff": None, "status": "untestable"})
+            else:
+                diff = round(lhs_val - (air_val + cru_val), 1)
+                checks.append({"year": year, "check": label,
+                                "actual": lhs_val, "expected": air_val + cru_val,
+                                "diff": diff,
+                                "status": "ok" if abs(diff) <= 0.5 else "discrepancy"})
 
     result = pd.DataFrame(checks)
-    flagged = result[result["diff"].abs() > 0.5]
-    return flagged
+    return result[result["status"] != "ok"].sort_values(["year", "check"])
 
 
 def print_dq_log(severity_filter: Severity | None = None) -> None:

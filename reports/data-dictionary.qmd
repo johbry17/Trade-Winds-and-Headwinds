@@ -1,7 +1,6 @@
 ---
 title: "Data Dictionary"
 subtitle: "Sources, variables, units, coverage, and transformations"
-date: "2026-10-31"
 ---
 
 ## Primary sources

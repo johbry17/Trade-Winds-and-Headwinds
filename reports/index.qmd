@@ -1,7 +1,6 @@
 ---
 title: "After the Storm"
 subtitle: "A Data Portrait of Tourism Recovery in the U.S. Virgin Islands, 2000–2025"
-date: "2026-10-31"
 format:
   html:
     toc: true
@@ -76,35 +75,30 @@ One headline stands out: **total visitor arrivals have nearly returned to their 
 ```{python}
 #| echo: false
 #| label: fig-total-arrivals
-#| fig-cap: "Air visitors (all USVI arrivals by air) versus cruise passengers. Total visitors shown as context. COVID virtually halted cruise shipping while air arrivals declined less sharply. 2001–2009 from USVIBER 2010 publication."
+#| fig-cap: "Air visitors (all USVI arrivals by air) versus cruise passengers. Total visitors shown as context. 2001–2009 from USVIBER 2010 publication."
 
-fig = go.Figure()
-for col, name, color, dash in [
-    ("air_visitors",    "Air visitors (reported total)", PALETTE["air_visitors"], "solid"),
-    ("cruise_passengers","Cruise passengers",             PALETTE["cruise"],       "dash"),
-    ("total_visitors",  "Total visitors",                PALETTE["total"],        "dot"),
+fig = go.Figure() 
+for col, name, color, dash, lw, op in [
+    ("air_visitors",     "Air visitors",     PALETTE["air_visitors"], "solid", 2.4, 1.0),
+    ("cruise_passengers","Cruise passengers", PALETTE["cruise"],       "solid", 2.4, 1.0),
+    ("total_visitors",   "Total visitors",   PALETTE["total"],        "dash",  1.4, 0.55),
 ]:
     sub = tour[["year", col]].dropna()
     fig.add_trace(go.Scatter(
         x=sub["year"], y=sub[col],
-        mode="lines+markers", name=name,
-        line=dict(color=color, width=2.5, dash=dash),
-        marker=dict(size=5),
+        mode="lines", name=name, opacity=op,
+        line=dict(color=color, width=lw, dash=dash),
     ))
 
-for x_val, label in [(2017, "Irma & Maria"), (2020, "COVID-19")]:
-    fig.add_vline(x=x_val, line=dict(color="#aaa", width=1.5, dash="dash"),
-                  annotation_text=label, annotation_position="top",
-                  annotation_font=dict(size=11, color="#666"))
-
-fig.update_layout(title="Air Visitors vs. Cruise Passengers",
+fig.update_layout(
+    title=dict(text="<b>Air Visitors vs. Cruise Passengers</b>", font=dict(size=16), x=0.0),
     yaxis_title="Visitors (thousands)",
-    height=440,
-    margin=dict(l=60, r=30, t=60, b=50),
-    annotations=[dict(xref="paper", yref="paper", x=0, y=-0.10,
-        text="<span style='color:#888;font-size:11px'>Sources: USVIBER Annual Tourism Indicator 2024; 2001–2009 from USVIBER Annual Tourism Indicators 2010</span>",
-        showarrow=False, xanchor="left")],
+    height=400,
+    annotations=[ch.source_note(
+        "USVIBER Annual Tourism Indicator 2024; 2001–2009 from USVIBER 2010"
+    )],
 )
+ch.add_shocks(fig)
 ch.save_fig(fig, "total-arrivals", formats=("png",))
 fig.show()
 ```
@@ -120,60 +114,52 @@ COVID-19 in 2020 produced a collapse of different character: cruise shipping sto
 ```{python}
 #| echo: false
 #| label: fig-recovery-index
-#| fig-cap: "Recovery index, 2016 = 100. Air visitors and cruise passengers are the primary arrival-mode comparison. Overnight tourists show the largest remaining deficit."
+#| fig-cap: "Recovery index, 2016 = 100. Air visitors and cruise passengers (thick solid lines) are the primary arrival-mode comparison. Overnight tourists and context indicators (thin lines, reduced opacity) are shown for reference."
 
-series = {
-    "Air visitors":          _index(tour, "year", "air_visitors"),
-    "Cruise passengers":     _index(tour, "year", "cruise_passengers"),
-    "Overnight tourists":    _index(tour, "year", "tourists"),
-    "Hotel rooms (USVIBER)": _index(tour, "year", "hotel_rooms"),
-    "L&H employment (FRED)": _index(fred_ann, "year", "emp_sa_avg"),
-    "A&F real value added":  _index(af_real, "year", "af_real"),
-    "VIIS NP visits":        _index(viis_ann.query("year >= 2000"), "year", "recreation_visitors"),
-}
-styles = {
-    "Air visitors":          (PALETTE["air_visitors"], "solid",    2.5),
-    "Cruise passengers":     (PALETTE["cruise"],       "solid",    2.5),
-    "Overnight tourists":    (PALETTE["tourists"],     "dash",     2),
-    "Hotel rooms (USVIBER)": (PALETTE["rooms"],        "dot",      1.5),
-    "L&H employment (FRED)": (PALETTE["employment"],   "longdash", 1.5),
-    "A&F real value added":  (PALETTE["value_added"],  "dash",     1.5),
-    "VIIS NP visits":        (PALETTE["nps_viis"],     "dashdot",  1.5),
-}
+SERIES = [
+    # name, col, source_df, color, dash, line_width, opacity
+    ("Air visitors",     "air_visitors",        tour,                     PALETTE["air_visitors"], "solid",    2.6, 1.00),
+    ("Cruise passengers","cruise_passengers",   tour,                     PALETTE["cruise"],       "solid",    2.6, 1.00),
+    ("Overnight tourists","tourists",           tour,                     PALETTE["tourists"],     "dash",     1.8, 0.80),
+    ("Hotel rooms",      "hotel_rooms",         tour,                     PALETTE["rooms"],        "dot",      1.2, 0.48),
+    ("L&H employment",   "emp_sa_avg",          fred_ann,                 PALETTE["employment"],   "longdash", 1.2, 0.48),
+    ("A&F real VA",      "af_real",             af_real,                  PALETTE["value_added"],  "dash",     1.2, 0.48),
+    ("VIIS NP visits",   "recreation_visitors", viis_ann.query("year>=2000"), PALETTE["nps_viis"], "dashdot",  1.2, 0.48),
+]
 
 fig = go.Figure()
-for name, df in series.items():
-    if df is None:
+for name, col, df_src, color, dash, lw, op in SERIES:
+    idx_df = _index(df_src, "year", col)
+    if idx_df is None:
         continue
-    color, dash, width = styles[name]
-    sub = df[["year", "idx"]].dropna()
+    sub = idx_df[idx_df["year"] >= 2012][["year", "idx"]].dropna()
     fig.add_trace(go.Scatter(
         x=sub["year"], y=sub["idx"],
-        mode="lines", name=name,
-        line=dict(color=color, dash=dash, width=width),
+        mode="lines", name=name, opacity=op,
+        line=dict(color=color, dash=dash, width=lw),
     ))
 
-fig.add_hline(y=100, line=dict(color="#ccc", width=1, dash="dot"),
-              annotation_text="2016 = 100", annotation_position="right",
-              annotation_font=dict(size=10, color="#999"))
-for x_val, label in [(2017, "Irma & Maria"), (2020, "COVID-19")]:
-    fig.add_vline(x=x_val, line=dict(color="#aaa", width=1.5, dash="dash"),
-                  annotation_text=label, annotation_position="top",
-                  annotation_font=dict(size=11, color="#666"))
-
-fig.update_layout(title="Recovery Index (2016 = 100)",
-    xaxis=dict(range=[2012, tour["year"].max()]),
-    yaxis=dict(range=[0, 120]),
-    yaxis_title="Index (2016 = 100)",
-    height=480,
-    legend=dict(orientation="h", yanchor="top", y=-0.22, xanchor="center", x=0.5,
-        bgcolor="rgba(255,255,255,0)", font=dict(size=11), entrywidthmode="pixels",
-        entrywidth=125,),
-    margin=dict(l=60, r=30, t=65, b=125),
-    annotations=[dict(xref="paper", yref="paper", x=0, y=-0.10,
-        text="<span style='color:#888;font-size:11px'>Sources: USVIBER, FRED, BEA, NPS IRMA — author calculations</span>",
-        showarrow=False, xanchor="left")],
+fig.add_hline(
+    y=100, line=dict(color="#d1d5db", width=1.0, dash="dot"),
+    annotation_text="2016 = 100", annotation_position="right",
+    annotation_font=dict(size=9, color="#aaaaaa"),
 )
+fig.update_layout(
+    title=dict(text="<b>Recovery Index</b>", font=dict(size=16), x=0.0),
+    yaxis=dict(title="Index (2016 = 100)", range=[0, 125]),
+    xaxis=dict(range=[2012, tour["year"].max()]),
+    height=440,
+    legend=dict(
+        orientation="h", yanchor="bottom", y=-0.30,
+        xanchor="center", x=0.5,
+        font=dict(size=10), tracegroupgap=0,
+    ),
+    margin=dict(l=60, r=24, t=52, b=100),
+    annotations=[ch.source_note(
+        "USVIBER, FRED, BEA, NPS IRMA — author calculations"
+    )],
+)
+ch.add_shocks(fig)
 ch.save_fig(fig, "recovery-index", formats=("png",))
 fig.show()
 ```
@@ -191,7 +177,7 @@ Virgin Islands National Park on St. John covers roughly 60 percent of the island
 ```{python}
 #| echo: false
 #| label: fig-viis-vs-tourists
-#| fig-cap: "VIIS NP visitation vs. overnight tourists (both indexed to 2016 = 100). The park's steep decline after 2017 reflects both the hurricane damage to trails and facilities and the collapse in overnight tourism. Its recovery to and past the 2016 level by 2024 is an unresolved divergence from the broader overnight tourist count."
+#| fig-cap: "VIIS NP estimated recreation visits vs. overnight tourists, both indexed to 2016 = 100. The park recovered to its 2016 level by 2024; overnight tourist arrivals remain at roughly 57%. This divergence is an open question, not a resolved finding."
 
 viis_idx = _index(viis_ann.query("year >= 2000"), "year", "recreation_visitors")
 tour_idx = _index(tour, "year", "tourists")
@@ -199,33 +185,28 @@ tour_idx = _index(tour, "year", "tourists")
 fig = go.Figure()
 fig.add_trace(go.Scatter(
     x=viis_idx["year"], y=viis_idx["idx"],
-    mode="lines+markers", name="VIIS NP recreation visits",
-    line=dict(color=PALETTE["nps_viis"], width=2.5),
-    marker=dict(size=5),
+    mode="lines", name="VIIS NP recreation visits",
+    line=dict(color=PALETTE["nps_viis"], width=2.4),
 ))
 fig.add_trace(go.Scatter(
     x=tour_idx["year"], y=tour_idx["idx"],
-    mode="lines+markers", name="Overnight tourists (USVIBER)",
-    line=dict(color=PALETTE["tourists"], width=2.5, dash="dash"),
-    marker=dict(size=5),
+    mode="lines", name="Overnight tourists (USVIBER)",
+    line=dict(color=PALETTE["tourists"], width=2.4, dash="dash"),
 ))
-fig.add_hline(y=100, line=dict(color="#ccc", width=1, dash="dot"),
-              annotation_text="2016 = 100", annotation_position="right",
-              annotation_font=dict(size=10, color="#999"))
-for x_val, label in [(2017, "Irma & Maria"), (2020, "COVID-19")]:
-    fig.add_vline(x=x_val, line=dict(color="#aaa", width=1.5, dash="dash"),
-                  annotation_text=label, annotation_position="top",
-                  annotation_font=dict(size=11, color="#666"))
-
-fig.update_layout(
-    title="VIIS NP Visitation vs. Overnight Tourists",
-    yaxis_title="Index (2016 = 100)",
-    height=420,
-    margin=dict(l=60, r=30, t=40, b=50),
-    annotations=[dict(xref="paper", yref="paper", x=0, y=-0.10,
-        text="<span style='color:#888;font-size:11px'>Sources: NPS IRMA Public Use Statistics; USVIBER Annual Tourism Indicator 2024</span>",
-        showarrow=False, xanchor="left")],
+fig.add_hline(
+    y=100, line=dict(color="#d1d5db", width=1.0, dash="dot"),
+    annotation_text="2016 = 100", annotation_position="right",
+    annotation_font=dict(size=9, color="#aaaaaa"),
 )
+fig.update_layout(
+    title=dict(text="<b>VIIS NP Visits vs. Overnight Tourists</b>", font=dict(size=16), x=0.0),
+    yaxis_title="Index (2016 = 100)",
+    height=400,
+    annotations=[ch.source_note(
+        "NPS IRMA Public Use Statistics; USVIBER Annual Tourism Indicator 2024"
+    )],
+)
+ch.add_shocks(fig)
 ch.save_fig(fig, "viis-np-recreation-visits", formats=("png",))
 fig.show()
 ```
@@ -239,7 +220,7 @@ VIIS NP visitation reached 103% of its 2016 level in 2024 and 115% in 2025. Over
 ```{python}
 #| echo: false
 #| label: fig-rooms-employment
-#| fig-cap: "Hotel room inventory and L&H employment indexed to 2016. Both declined sharply after the hurricanes — hotel rooms steeply in 2018 as damage became clear — and neither has fully recovered."
+#| fig-cap: "Hotel room inventory (USVIBER survey) and L&H employment (FRED seasonally adjusted annual average), both indexed to 2016. Neither has fully recovered; rooms remain more constrained than employment."
 
 rooms_idx = _index(tour, "year", "hotel_rooms")
 emp_idx   = _index(fred_ann, "year", "emp_sa_avg")
@@ -247,34 +228,29 @@ emp_idx   = _index(fred_ann, "year", "emp_sa_avg")
 fig = go.Figure()
 fig.add_trace(go.Scatter(
     x=rooms_idx["year"], y=rooms_idx["idx"],
-    mode="lines+markers", name="Hotel rooms (USVIBER)",
-    line=dict(color=PALETTE["rooms"], width=2.5),
-    marker=dict(size=5),
+    mode="lines", name="Hotel rooms",
+    line=dict(color=PALETTE["rooms"], width=2.4),
 ))
 fig.add_trace(go.Scatter(
     x=emp_idx["year"], y=emp_idx["idx"],
-    mode="lines+markers", name="L&H employment (FRED SA avg)",
-    line=dict(color=PALETTE["employment"], width=2.5, dash="dash"),
-    marker=dict(size=5),
+    mode="lines", name="L&H employment",
+    line=dict(color=PALETTE["employment"], width=2.4, dash="dash"),
 ))
-fig.add_hline(y=100, line=dict(color="#ccc", width=1, dash="dot"),
-              annotation_text="2016 = 100", annotation_position="right",
-              annotation_font=dict(size=10, color="#999"))
-for x_val, label in [(2017, "Irma & Maria"), (2020, "COVID-19")]:
-    fig.add_vline(x=x_val, line=dict(color="#aaa", width=1.5, dash="dash"),
-                  annotation_text=label, annotation_position="top",
-                  annotation_font=dict(size=11, color="#666"))
-
+fig.add_hline(
+    y=100, line=dict(color="#d1d5db", width=1.0, dash="dot"),
+    annotation_text="2016 = 100", annotation_position="right",
+    annotation_font=dict(size=9, color="#aaaaaa"),
+)
 fig.update_layout(
-    title="Accommodation Capacity and L&H Employment",
+    title=dict(text="<b>Accommodation Capacity and L&H Employment</b>", font=dict(size=16), x=0.0),
     xaxis=dict(range=[2000, tour["year"].max()]),
     yaxis_title="Index (2016 = 100)",
-    height=420,
-    margin=dict(l=60, r=30, t=40, b=50),
-    annotations=[dict(xref="paper", yref="paper", x=0, y=-0.10,
-        text="<span style='color:#888;font-size:11px'>Sources: USVIBER Annual Tourism Indicator 2024; FRED SMS78000007000000001</span>",
-        showarrow=False, xanchor="left")],
+    height=400,
+    annotations=[ch.source_note(
+        "USVIBER Annual Tourism Indicator 2024; FRED SMS78000007000000001"
+    )],
 )
+ch.add_shocks(fig)
 ch.save_fig(fig, "accommodation-capacity-lh-employment", formats=("png",))
 fig.show()
 ```
@@ -294,7 +270,7 @@ Aggregate GDP and tourism activity tell different stories about the post-hurrica
 ```{python}
 #| echo: false
 #| label: fig-af-gdp-share
-#| fig-cap: "Accommodation and food services as a share of USVI nominal GDP, 2002–2021 (BEA data). The sector's GDP share fell from roughly 13% in 2015 to 6% in 2020 before rebounding to 11% in 2021. Important caveat: Accommodation and food services value added is not equivalent to tourism GDP — it includes resident consumption and excludes tourism-related retail, transportation, and recreation."
+#| fig-cap: "Accommodation and food services as a share of USVI nominal GDP (BEA data, through 2021). A&F value added is not equivalent to tourism GDP: it includes resident consumption and excludes tourism-related retail, transportation, and recreation."
 
 bea_nom  = load_bea("2.1")
 bea_gdp  = load_bea("1.1")
@@ -313,26 +289,23 @@ share["pct"] = (share["value"] / share["gdp"] * 100).round(1)
 fig = go.Figure()
 fig.add_trace(go.Scatter(
     x=share["year"], y=share["pct"],
-    mode="lines+markers", name="A&F share of GDP (%)",
-    line=dict(color=PALETTE["value_added"], width=2.5),
-    fill="tozeroy", fillcolor="rgba(26,79,114,0.08)",
-    marker=dict(size=5),
+    mode="lines", name="A&F share of GDP",
+    line=dict(color=PALETTE["value_added"], width=2.4),
+    fill="tozeroy",
+    fillcolor="rgba(26,79,114,0.07)",
 ))
-for x_val, label in [(2017, "Irma & Maria"), (2020, "COVID-19")]:
-    fig.add_vline(x=x_val, line=dict(color="#aaa", width=1.5, dash="dash"),
-                  annotation_text=label, annotation_position="top",
-                  annotation_font=dict(size=11, color="#666"))
-
 fig.update_layout(
-    title="Accommodation and Food Services as Share of USVI GDP",
+    title=dict(text="<b>Accommodation & Food Services as Share of USVI GDP</b>",
+               font=dict(size=16), x=0.0),
     yaxis_title="A&F share of nominal GDP (%)",
     yaxis_range=[0, 18],
-    height=400,
-    margin=dict(l=60, r=30, t=40, b=50),
-    annotations=[dict(xref="paper", yref="paper", x=0, y=-0.10,
-        text="<span style='color:#888;font-size:11px'>Source: BEA USVI GDP data. Coverage ends 2021. A&F ≠ tourism GDP.</span>",
-        showarrow=False, xanchor="left")],
+    height=380,
+    showlegend=False,
+    annotations=[ch.source_note(
+        "BEA USVI GDP data. Coverage ends 2021. A&F ≠ tourism GDP."
+    )],
 )
+ch.add_shocks(fig)
 ch.save_fig(fig, "af-gdp-share", formats=("png",))
 fig.show()
 ```
@@ -346,55 +319,65 @@ Accommodation and food services value added — the broadest BEA measure of the 
 ```{python}
 #| echo: false
 #| label: fig-scorecard
-#| fig-cap: "Most-recent available value for each indicator, indexed to 2016 = 100. Blue bars indicate at or above the pre-hurricane baseline; orange bars indicate a remaining deficit. Employment and VIIS NP visits show the strongest recovery; overnight tourists show the weakest."
+#| fig-cap: "Recovery scorecard. Air visitors and cruise passengers use their palette colours; all other series use green (at or above 2016 baseline) or blue-grey (below baseline). Year in parentheses is the latest available observation for each series."
 
 latest_map = {
-    "Total arrivals":        ("2024", _index(tour, "year", "total_visitors")),
-    "Air visitors":          ("2024", _index(tour, "year", "air_visitors")),
-    # "Overnight tourists":    ("2024", _index(tour, "year", "tourists")),
-    "Cruise passengers":     ("2024", _index(tour, "year", "cruise_passengers")),
-    "Hotel rooms":           ("2024", _index(tour, "year", "hotel_rooms")),
-    # "Hotel Occupancy":       ("2024", _index(tour, "year", "occupancy_rate_pct")),
-    "L&H employment":        ("2025", _index(fred_ann, "year", "emp_sa_avg")),
-    "A&F real value added":  ("2021", _index(af_real, "year", "af_real")),
-    "VIIS NP visits":        ("2025", _index(viis_ann.query("year>=2000"), "year", "recreation_visitors")),
+    "Total arrivals":    ("2024", _index(tour, "year", "total_visitors")),
+    "Air visitors":      ("2024", _index(tour, "year", "air_visitors")),
+    "Cruise passengers": ("2024", _index(tour, "year", "cruise_passengers")),
+    "Hotel rooms":       ("2024", _index(tour, "year", "hotel_rooms")),
+    "L&H employment":    ("2025", _index(fred_ann, "year", "emp_sa_avg")),
+    "A&F real VA":       ("2021", _index(af_real, "year", "af_real")),
+    "VIIS NP visits":    ("2025", _index(viis_ann.query("year>=2000"), "year", "recreation_visitors")),
 }
-# Occupancy is a rate, not a count — not in the common recovery index.
-occ_2016 = tour.loc[tour["year"]==2016, "occupancy_rate_pct"].values[0]
-occ_2024 = tour.loc[tour["year"]==2024, "occupancy_rate_pct"].values[0]
 
-names, labels, values = [], [], []
+def _bar_color(name, value):
+    if name == "Air visitors":      return PALETTE["air_visitors"]
+    if name == "Cruise passengers": return PALETTE["cruise"]
+    return PALETTE["above_baseline"] if value >= 100 else PALETTE["below_baseline"]
+
+rows = []
 for name, (yr_str, df) in latest_map.items():
-    if df is None:
-        continue
+    if df is None: continue
     row = df[df["year"] == int(yr_str)]
-    if row.empty:
-        continue
-    val = row["idx"].values[0]
-    names.append(name)
-    labels.append(f"{name} ({yr_str})")
-    values.append(round(val, 1))
+    if row.empty: continue
+    rows.append((name, yr_str, round(row["idx"].values[0], 1)))
 
-bar_colors = [PALETTE["rooms"] if v >= 100 else PALETTE["cruise"] for v in values]
+rows.sort(key=lambda r: r[2])   # ascending: highest value at top of horizontal chart
+labels = [f"{r[0]} ({r[1]})" for r in rows]
+values = [r[2] for r in rows]
+colors = [_bar_color(r[0], r[2]) for r in rows]
 
 fig = go.Figure(go.Bar(
-    x=values, y=labels, orientation="h",
-    marker_color=bar_colors,
+    x=values, y=labels,
+    orientation="h",
+    marker_color=colors,
     text=[f"{v:.0f}" for v in values],
     textposition="outside",
+    textfont=dict(size=11),
+    cliponaxis=False,
 ))
-fig.add_vline(x=100, line=dict(color="#333", width=1.5),
-              annotation_text="2016 = 100", annotation_position="top",
-              annotation_font=dict(size=10))
+fig.add_vline(
+    x=100,
+    line=dict(color="#555", width=1.2),
+    annotation_text="2016 = 100",
+    annotation_position="top",
+    annotation_font=dict(size=9, color="#777"),
+)
 fig.update_layout(
-    title="Recovery Scorecard",
-    xaxis_title="Index (2016 = 100)",
-    xaxis_range=[0, max(values) * 1.18],
-    height=400,
-    margin=dict(l=220, r=60, t=40, b=50),
-    annotations=[dict(xref="paper", yref="paper", x=0, y=-0.12,
-        text="<span style='color:#888;font-size:11px'>Sources: USVIBER, FRED, BEA, NPS IRMA — author calculations</span>",
-        showarrow=False, xanchor="left")],
+    title=dict(text="<b>Recovery Scorecard</b>", font=dict(size=16), x=0.0),
+    xaxis=dict(
+        title="Index (2016 = 100)",
+        range=[0, max(values) * 1.14],
+        showgrid=True, gridcolor="#eeeeee",
+    ),
+    yaxis=dict(tickfont=dict(size=11)),
+    height=360,
+    showlegend=False,
+    margin=dict(l=180, r=56, t=52, b=56),
+    annotations=[ch.source_note(
+        "USVIBER, FRED, BEA, NPS IRMA — author calculations", y=-0.12
+    )],
 )
 ch.save_fig(fig, "recovery-scorecard", formats=("png",))
 fig.show()
@@ -420,11 +403,7 @@ fig.show()
 
 ## Unresolved questions
 
-This analysis surfaces several questions that the data alone cannot resolve:
-
-**Why have overnight tourists not recovered to 2016 levels?** The hotel room deficit is real and constrains overnight capacity. Whether demand has also changed — in ways that would persist even if full capacity were restored — cannot be established from the available data. Possible factors worth investigating include the competitive position of other Caribbean destinations, traveler preference shifts following the pandemic, and long-term income effects from the post-hurricane period. These are open questions, not demonstrated findings.
-
-**Is the VIIS NP recovery real?** The park exceeding its 2016 baseline while overnight tourists remain at 57% is a significant divergence. Either the park is drawing more visitors per overnight tourist (higher park utilization), or there is a visitor category being counted by NPS but not by USVIBER. This deserves direct investigation with NPS staff.
+This analysis surfaces some questions that the data alone cannot resolve:
 
 **What does 66% occupancy on a smaller room base actually mean for the economy?** High occupancy on reduced inventory may reflect healthy operating margins at surviving hotels while masking a smaller aggregate economic contribution. The Census 2022 data (1,650 accommodation employees vs. 3,876 in 2012) suggests the surviving hotel sector is operating at significantly reduced staffing levels.
 

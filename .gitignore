@@ -10,6 +10,7 @@ __pycache__/
 # Quarto
 /.quarto/
 **/*.quarto_ipynb
+_freeze/
 
 # Quarto cache (per-document execution caches — regenerate with `quarto render`)
 *_cache/

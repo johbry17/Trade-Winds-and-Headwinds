@@ -1,7 +1,6 @@
 ---
 title: "Sources & Methodology"
 subtitle: "Citations, analytical choices, crosswalks, and known limitations"
-date: "2026-10-31"
 ---
 
 ## Analytical periods

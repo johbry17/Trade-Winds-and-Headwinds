@@ -1,22 +1,208 @@
 /*-- scss:defaults --*/
 
+/* ── Typeface ─────────────────────────────────────────────────────────── */
 $font-family-sans-serif: "Source Sans 3", "Source Sans Pro", system-ui, sans-serif !default;
-$font-family-monospace: "Source Code Pro", "Fira Code", monospace !default;
-$font-size-root: 17px !default;
-$line-height-base: 1.65 !default;
+$font-family-monospace:  "Source Code Pro", "Fira Code", ui-monospace, monospace !default;
 
-$primary:    #1a4f72;
-$secondary:  #c85a1a;
-$body-color: #1a1a2e;
+/* ── Scale ────────────────────────────────────────────────────────────── */
+$font-size-root:   17px !default;
+$line-height-base: 1.70 !default;
+
+/* ── Colour tokens ────────────────────────────────────────────────────── */
+$primary:        #1a4f72;   /* ocean blue  — links, headings, navbar */
+$secondary:      #c85a1a;   /* trade-wind orange — accents            */
+$body-color:     #1f2937;   /* near-black — body text                 */
+$body-bg:        #ffffff;
+$light:          #f8f9fa;
+$border-color:   #e5e7eb;
+
+/* ── Page width ───────────────────────────────────────────────────────── */
+$grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1400px) !default;
+$container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1060px, xxl: 1060px) !default;
 
 /*-- scss:rules --*/
 
-h1, h2, h3 { font-weight: 600; letter-spacing: -0.02em; }
-h1 { border-bottom: 2px solid $primary; padding-bottom: .4rem; }
+/* ── Global ──────────────────────────────────────────────────────────── */
 
-.navbar { border-bottom: 3px solid $primary; }
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
 
+/* ── Headings ────────────────────────────────────────────────────────── */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin-top: 2rem;
+  margin-bottom: 0.6rem;
+}
+
+h1 {
+  font-size: 2rem;
+  color: $primary;
+  border-bottom: 2px solid $primary;
+  padding-bottom: 0.35rem;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 1.45rem;
+  color: $primary;
+  border-bottom: 1px solid $border-color;
+  padding-bottom: 0.25rem;
+  margin-top: 2.5rem;
+}
+
+h3 {
+  font-size: 1.15rem;
+  color: $body-color;
+}
+
+/* ── Navbar ──────────────────────────────────────────────────────────── */
+
+.navbar {
+  border-bottom: 2px solid $primary;
+  padding-top:    0.55rem;
+  padding-bottom: 0.55rem;
+}
+
+.navbar-brand { font-weight: 700; letter-spacing: -0.01em; }
+
+/* ── Main content column ─────────────────────────────────────────────── */
+
+#quarto-content { padding-top: 1.5rem; }
+
+/* ── TOC ─────────────────────────────────────────────────────────────── */
+
+#TOC {
+  font-size: 0.88rem;
+  border-left: 2px solid $border-color;
+  padding-left: 1rem;
+
+  .toc-active > a { color: $primary; font-weight: 600; }
+  a { color: lighten($body-color, 20%); text-decoration: none; }
+  a:hover { color: $primary; }
+}
+
+/* ── Prose / body text ───────────────────────────────────────────────── */
+
+.quarto-document-content p {
+  max-width: 68ch;
+  color: $body-color;
+}
+
+/* Narrow lead paragraph */
+.lead {
+  font-size: 1.08rem;
+  font-weight: 400;
+  color: lighten($body-color, 10%);
+}
+
+/* ── Figures ─────────────────────────────────────────────────────────── */
+
+.quarto-figure {
+  margin-top:    1.75rem;
+  margin-bottom: 2.25rem;
+}
+
+/* Plotly iframe / div fill its container */
+.plotly-graph-div,
+.js-plotly-plot { width: 100% !important; }
+
+/* Captions */
+figcaption,
+.quarto-figure-caption,
+.figure-caption {
+  font-size:   0.84rem;
+  color:       #6b7280;
+  line-height: 1.5;
+  margin-top:  0.5rem;
+  font-style:  italic;
+}
+
+/* ── Tables ──────────────────────────────────────────────────────────── */
+
+.table {
+  font-size: 0.92rem;
+  border-collapse: collapse;
+}
+
+.table th {
+  font-weight: 600;
+  border-bottom: 2px solid $border-color;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  background: $light;
+}
+
+.table td {
+  padding: 0.4rem 0.75rem;
+  border-bottom: 1px solid $border-color;
+  vertical-align: top;
+}
+
+.table tr:last-child td { border-bottom: none; }
+
+.table-sm th,
+.table-sm td { padding: 0.3rem 0.6rem; }
+
+/* ── Callouts ────────────────────────────────────────────────────────── */
+
+.callout {
+  border-radius: 3px;
+  font-size: 0.93rem;
+}
+div.callout-note    { border-left-color: $primary; }
 div.callout-warning { border-left-color: $secondary; }
+div.callout-tip     { border-left-color: #2a7a3b; }
 
-.quarto-figure { margin-bottom: 2rem; }
-figcaption { font-size: 0.88rem; color: #555; margin-top: 0.4rem; }
+/* ── Inline code ─────────────────────────────────────────────────────── */
+
+code:not([class]) {
+  background: #f3f4f6;
+  border: 1px solid $border-color;
+  border-radius: 3px;
+  padding: 0.1em 0.35em;
+  font-size: 0.88em;
+  color: $primary;
+}
+
+/* ── Links ───────────────────────────────────────────────────────────── */
+
+a {
+  color: $primary;
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+/* ── Footer ──────────────────────────────────────────────────────────── */
+
+.quarto-page-footer {
+  font-size:  0.82rem;
+  color:      #9ca3af;
+  border-top: 1px solid $border-color;
+  padding:    0.75rem 0;
+  margin-top: 3rem;
+}
+
+/* ── Section dividers ────────────────────────────────────────────────── */
+
+.section-divider {
+  border: none;
+  border-top: 1px solid $border-color;
+  margin: 2.5rem 0;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  h1 { font-size: 1.6rem; }
+  h2 { font-size: 1.25rem; }
+
+  .quarto-document-content p { max-width: 100%; }
+
+  #TOC { display: none; }
+}
+

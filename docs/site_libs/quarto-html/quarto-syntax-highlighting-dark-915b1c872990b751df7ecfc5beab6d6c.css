@@ -34,7 +34,7 @@
 
 /* other quarto variables */
 :root {
-  --quarto-font-monospace: "Source Code Pro", "Fira Code", monospace;
+  --quarto-font-monospace: "Source Code Pro", "Fira Code", ui-monospace, monospace;
 }
 
 :root {
@@ -220,4 +220,4 @@ code span.wa {
   content: "</";
 }
 
-/*# sourceMappingURL=7f6d40f10af56c86bc6e996343fac5f2.css.map */
+/*# sourceMappingURL=714b526edc36c54e2461a996ecc11a87.css.map */

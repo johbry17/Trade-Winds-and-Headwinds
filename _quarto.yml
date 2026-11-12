@@ -6,10 +6,13 @@ project:
     - reports/eda.qmd
     - reports/data-dictionary.qmd
     - reports/methodology.qmd
+  resources: 
+    - src/charts.py
+    - src/cleaning.py
 
 author: "Bryan C. Johns"
-# date: "2026-10-31"
-# date-format: "MMMM D, YYYY"
+date: today
+date-format: "MMMM D, YYYY"
 
 website:
   title: "Trade Winds & Headwinds"

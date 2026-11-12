@@ -30,7 +30,7 @@ These rules are applied consistently throughout all notebooks.
 |---|---|---|
 | USVIBER visitor arrivals | Annual only | Preserve published annual values |
 | FRED employment | Retain monthly | **Mean** of monthly observations (not sum) |
-| NPS visitation | Retain monthly | Sum of monthly observations |
+| NPS visitation | Retain monthly | Use published annual values |
 | Hotel occupancy | Annual only | Preserve published annual rate |
 | Visitor expenditures | Annual only | Preserve published annual values |
 | Census | Annual only | Preserve quinquennial snapshots |
@@ -39,8 +39,6 @@ These rules are applied consistently throughout all notebooks.
 **Analysis period classification:** Period bins use right-closed intervals: (1999, 2016], (2016, 2017], (2017, 2019], (2019, 2021], (2021, 2025]. Year 2017 is assigned its own period rather than grouped with the initial recovery because annual data mixes pre- and post-hurricane months.
 
 **Why mean for employment:** FRED employment is a stock measure (workers employed in a given pay period), not a flow. Summing monthly employment values would produce a nonsensical total. The annual average represents the typical employment level during the year.
-
-**Why sum for NPS:** Recreation visits are a flow (events that occur during a period). Summing monthly visits produces the annual total. The NPS annual-file values match the sum of monthly values exactly for all available years in this dataset.
 
 
 
@@ -83,8 +81,7 @@ Series with no 2016 observation are excluded from indexed comparisons.
 | Severity | Source | Variable | Evidence | Treatment |
 |---|---|---|---|---|
 | HIGH | World Bank ARVL | 2020 arrivals | Value = 8.6M; ~4× normal range; impossible in COVID year | Set to NaN; excluded from analysis |
-| HIGH | NPS VIIS monthly | 2026 Jan–Aug | 100–167k/month vs. 40–55k in 2025; unexplained | 2026 excluded; max year = 2025 |
-| MEDIUM | USVIBER TOUR24 | air_excursionists (2020) | Identical to 2000 value (216.7k); implausible in COVID year | Retained but flagged; do not use for per-visitor calculations in 2020 |
+| HIGH | NPS VIIS monthly | 2026 Jan–Aug | 100–167k/month vs. 40–55k in 2025; NPS changed reporting methodology | 2026 excluded; max year = 2025 |
 | MEDIUM | USVIBER TOUR24 | excursionists (2000, 2010) | Does not equal air + cruise within rounding (−14.9k; +149.7k) | Documented; use `excursionists` directly rather than summing components |
 | MEDIUM | Census NAPCS02 | RMRTRAN (Total row) | 2017 Total row: 8,735; 2022 Total row: 1,958 — inconsistent across vintages | Use product 7003825000 row (2,624 in 2017; 2,039 in 2022) |
 | MEDIUM | Census 2017 NAPCS02 | guestrooms (2017) | Reference date Dec 31, 2017 is post-hurricane | Label "end-of-2017 (post-hurricane)" everywhere |

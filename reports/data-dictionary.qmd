@@ -26,7 +26,7 @@ date: "2026-10-31"
 | `excursionists` | Thousands | Same-day visitors (cruise + air day-trip) |
 | `air_excursionists` | Thousands | Same-day visitors arriving by air |
 | `cruise_passengers` | Thousands | Cruise ship day visitors |
-| `air_visitors` | Thousands | All arrivals by air (tourists by air + air excursionists) — **not** all tourists |
+| `air_visitors` | Thousands | Reported total arrivals by air. Used as the primary arrival-mode series alongside cruise_passengers. Not reconstructed from components. |
 | `cruise_ships` | Count | Cruise ship calls |
 | `expenditures_total` | $M, nominal | Total visitor spending in-territory |
 | `expenditures_tourists` | $M, nominal | Overnight-visitor spending only |

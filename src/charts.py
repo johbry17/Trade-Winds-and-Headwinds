@@ -26,18 +26,22 @@ import plotly.io as pio
 # ---------------------------------------------------------------------------
 
 PALETTE = {
-    "tourists":        "#1a4f72",   # deep ocean blue
-    "cruise":          "#c85a1a",   # trade-wind orange
-    "air_excursionist":"#2a7a3b",   # green
-    "total":           "#4a4e69",   # slate purple
-    "employment":      "#c85a1a",
-    "rooms":           "#2a7a3b",
-    "occupancy":       "#1a4f72",
+    # Primary arrival-mode series
+    "air_visitors":    "#1b7a8a",   # Caribbean teal  — reported air arrivals
+    "cruise":          "#c85a1a",   # trade-wind orange — cruise passengers
+    # Secondary visitor-type series
+    "tourists":        "#1a4f72",   # deep ocean blue   — overnight tourists
+    "air_excursionist":"#2d9e6b",   # sea-green         — air same-day
+    "total":           "#4a4e69",   # slate purple      — aggregate totals
+    # Context series
+    "employment":      "#7b4f9e",   # violet            — labour/employment
+    "rooms":           "#2a7a3b",   # dark green        — accommodation
+    "occupancy":       "#0d6b7a",   # deep teal
     "receipts":        "#1a4f72",
     "gdp":             "#4a4e69",
     "value_added":     "#1a4f72",
-    "nps_viis":        "#1a4f72",
-    "nps_buis":        "#c85a1a",
+    "nps_viis":        "#2d9e6b",   # sea-green — matches St. John park
+    "nps_buis":        "#c85a1a",   # orange    — matches St. Croix/cruise
     "sa":              "#1a4f72",
     "nsa":             "#c85a1a",
     "annotation_line": "#888888",

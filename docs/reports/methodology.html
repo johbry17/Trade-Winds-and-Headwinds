@@ -465,7 +465,7 @@ window.Quarto = {
 <tr class="odd">
 <td>NPS visitation</td>
 <td>Retain monthly</td>
-<td>Sum of monthly observations</td>
+<td>Use published annual values</td>
 </tr>
 <tr class="even">
 <td>Hotel occupancy</td>
@@ -491,7 +491,6 @@ window.Quarto = {
 </table>
 <p><strong>Analysis period classification:</strong> Period bins use right-closed intervals: (1999, 2016], (2016, 2017], (2017, 2019], (2019, 2021], (2021, 2025]. Year 2017 is assigned its own period rather than grouped with the initial recovery because annual data mixes pre- and post-hurricane months.</p>
 <p><strong>Why mean for employment:</strong> FRED employment is a stock measure (workers employed in a given pay period), not a flow. Summing monthly employment values would produce a nonsensical total. The annual average represents the typical employment level during the year.</p>
-<p><strong>Why sum for NPS:</strong> Recreation visits are a flow (events that occur during a period). Summing monthly visits produces the annual total. The NPS annual-file values match the sum of monthly values exactly for all available years in this dataset.</p>
 </section>
 <section id="census-naics-crosswalk" class="level2">
 <h2 class="anchored" data-anchor-id="census-naics-crosswalk">Census NAICS crosswalk</h2>
@@ -601,73 +600,66 @@ window.Quarto = {
 <td>HIGH</td>
 <td>NPS VIIS monthly</td>
 <td>2026 Jan–Aug</td>
-<td>100–167k/month vs.&nbsp;40–55k in 2025; unexplained</td>
+<td>100–167k/month vs.&nbsp;40–55k in 2025; NPS changed reporting methodology</td>
 <td>2026 excluded; max year = 2025</td>
 </tr>
 <tr class="odd">
-<td>MEDIUM</td>
-<td>USVIBER TOUR24</td>
-<td>air_excursionists (2020)</td>
-<td>Identical to 2000 value (216.7k); implausible in COVID year</td>
-<td>Retained but flagged; do not use for per-visitor calculations in 2020</td>
-</tr>
-<tr class="even">
 <td>MEDIUM</td>
 <td>USVIBER TOUR24</td>
 <td>excursionists (2000, 2010)</td>
 <td>Does not equal air + cruise within rounding (−14.9k; +149.7k)</td>
 <td>Documented; use <code>excursionists</code> directly rather than summing components</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>MEDIUM</td>
 <td>Census NAPCS02</td>
 <td>RMRTRAN (Total row)</td>
 <td>2017 Total row: 8,735; 2022 Total row: 1,958 — inconsistent across vintages</td>
 <td>Use product 7003825000 row (2,624 in 2017; 2,039 in 2022)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>MEDIUM</td>
 <td>Census 2017 NAPCS02</td>
 <td>guestrooms (2017)</td>
 <td>Reference date Dec 31, 2017 is post-hurricane</td>
 <td>Label “end-of-2017 (post-hurricane)” everywhere</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>MEDIUM</td>
 <td>BUIS annual/monthly</td>
 <td>1999–2001</td>
 <td>Three years absent from both files</td>
 <td>Note gaps in charts; do not interpolate</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>MEDIUM</td>
 <td>USVIBER TOUR24</td>
 <td>emp (2023–2024)</td>
 <td>DOL data unavailable; shows N/A</td>
 <td>Use FRED for post-2022 employment trend</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>LOW</td>
 <td>FRED employment</td>
 <td>Units</td>
 <td>Values in thousands (8.0 = 8,000 workers)</td>
 <td>Label axes clearly; multiply × 1,000 when comparing with Census</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>LOW</td>
 <td>USVI CPI</td>
 <td>2018 value</td>
 <td>130.0 → 99.8: implausible ~23% deflation</td>
 <td>CPI not used for deflation; flag in any future use</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>LOW</td>
 <td>BEA coverage</td>
 <td>Industry tables end 2021</td>
 <td>Table 2.x ends 2021; Table 1.x ends 2022</td>
 <td>Use appropriate table; label coverage clearly</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>LOW</td>
 <td>World Bank JSON</td>
 <td>Pagination</td>

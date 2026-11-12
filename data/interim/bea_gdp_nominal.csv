@@ -1,0 +1,526 @@
+year,line,label,value,vintage_flag,sheet
+2002,1,Gross domestic product,3262.0,,Table 1.1.
+2003,1,Gross domestic product,3443.0,,Table 1.1.
+2004,1,Gross domestic product,3797.0,,Table 1.1.
+2005,1,Gross domestic product,4428.0,,Table 1.1.
+2006,1,Gross domestic product,4484.0,,Table 1.1.
+2007,1,Gross domestic product,4784.0,,Table 1.1.
+2008,1,Gross domestic product,4244.0,,Table 1.1.
+2009,1,Gross domestic product,4201.0,,Table 1.1.
+2010,1,Gross domestic product,4324.0,,Table 1.1.
+2011,1,Gross domestic product,4223.0,,Table 1.1.
+2012,1,Gross domestic product,4089.0,,Table 1.1.
+2013,1,Gross domestic product,3738.0,,Table 1.1.
+2014,1,Gross domestic product,3565.0,,Table 1.1.
+2015,1,Gross domestic product,3663.0,,Table 1.1.
+2016,1,Gross domestic product,3798.0,,Table 1.1.
+2017,1,Gross domestic product,3794.0,,Table 1.1.
+2018,1,Gross domestic product,3923.0,r,Table 1.1.
+2019,1,Gross domestic product,4121.0,r,Table 1.1.
+2020,1,Gross domestic product,4229.0,r,Table 1.1.
+2021,1,Gross domestic product,4507.0,r,Table 1.1.
+2022,1,Gross domestic product,4672.0,p,Table 1.1.
+2002,2,Personal consumption expenditures,1651.0,,Table 1.1.
+2003,2,Personal consumption expenditures,1738.0,,Table 1.1.
+2004,2,Personal consumption expenditures,1872.0,,Table 1.1.
+2005,2,Personal consumption expenditures,2096.0,,Table 1.1.
+2006,2,Personal consumption expenditures,2280.0,,Table 1.1.
+2007,2,Personal consumption expenditures,2280.0,,Table 1.1.
+2008,2,Personal consumption expenditures,2311.0,,Table 1.1.
+2009,2,Personal consumption expenditures,2368.0,,Table 1.1.
+2010,2,Personal consumption expenditures,2428.0,,Table 1.1.
+2011,2,Personal consumption expenditures,2524.0,,Table 1.1.
+2012,2,Personal consumption expenditures,2528.0,,Table 1.1.
+2013,2,Personal consumption expenditures,2515.0,,Table 1.1.
+2014,2,Personal consumption expenditures,2493.0,,Table 1.1.
+2015,2,Personal consumption expenditures,2564.0,,Table 1.1.
+2016,2,Personal consumption expenditures,2582.0,,Table 1.1.
+2017,2,Personal consumption expenditures,2578.0,,Table 1.1.
+2018,2,Personal consumption expenditures,2657.0,r,Table 1.1.
+2019,2,Personal consumption expenditures,2853.0,r,Table 1.1.
+2020,2,Personal consumption expenditures,2770.0,r,Table 1.1.
+2021,2,Personal consumption expenditures,2952.0,r,Table 1.1.
+2022,2,Personal consumption expenditures,3221.0,p,Table 1.1.
+2002,3,Goods,977.0,,Table 1.1.
+2003,3,Goods,997.0,,Table 1.1.
+2004,3,Goods,1113.0,,Table 1.1.
+2005,3,Goods,1257.0,,Table 1.1.
+2006,3,Goods,1392.0,,Table 1.1.
+2007,3,Goods,1319.0,,Table 1.1.
+2008,3,Goods,1262.0,,Table 1.1.
+2009,3,Goods,1215.0,,Table 1.1.
+2010,3,Goods,1205.0,,Table 1.1.
+2011,3,Goods,1233.0,,Table 1.1.
+2012,3,Goods,1206.0,,Table 1.1.
+2013,3,Goods,1195.0,,Table 1.1.
+2014,3,Goods,1198.0,,Table 1.1.
+2015,3,Goods,1199.0,,Table 1.1.
+2016,3,Goods,1198.0,,Table 1.1.
+2017,3,Goods,1087.0,,Table 1.1.
+2018,3,Goods,1176.0,r,Table 1.1.
+2019,3,Goods,1287.0,r,Table 1.1.
+2020,3,Goods,981.0,r,Table 1.1.
+2021,3,Goods,1178.0,r,Table 1.1.
+2022,3,Goods,1343.0,p,Table 1.1.
+2002,4,Durable goods,672.0,,Table 1.1.
+2003,4,Durable goods,688.0,,Table 1.1.
+2004,4,Durable goods,766.0,,Table 1.1.
+2005,4,Durable goods,874.0,,Table 1.1.
+2006,4,Durable goods,945.0,,Table 1.1.
+2007,4,Durable goods,822.0,,Table 1.1.
+2008,4,Durable goods,741.0,,Table 1.1.
+2009,4,Durable goods,688.0,,Table 1.1.
+2010,4,Durable goods,664.0,,Table 1.1.
+2011,4,Durable goods,677.0,,Table 1.1.
+2012,4,Durable goods,666.0,,Table 1.1.
+2013,4,Durable goods,723.0,,Table 1.1.
+2014,4,Durable goods,737.0,,Table 1.1.
+2015,4,Durable goods,731.0,,Table 1.1.
+2016,4,Durable goods,747.0,,Table 1.1.
+2017,4,Durable goods,607.0,,Table 1.1.
+2018,4,Durable goods,694.0,r,Table 1.1.
+2019,4,Durable goods,795.0,r,Table 1.1.
+2020,4,Durable goods,507.0,r,Table 1.1.
+2021,4,Durable goods,572.0,r,Table 1.1.
+2022,4,Durable goods,728.0,p,Table 1.1.
+2002,5,Nondurable goods,305.0,,Table 1.1.
+2003,5,Nondurable goods,309.0,,Table 1.1.
+2004,5,Nondurable goods,347.0,,Table 1.1.
+2005,5,Nondurable goods,383.0,,Table 1.1.
+2006,5,Nondurable goods,447.0,,Table 1.1.
+2007,5,Nondurable goods,497.0,,Table 1.1.
+2008,5,Nondurable goods,520.0,,Table 1.1.
+2009,5,Nondurable goods,527.0,,Table 1.1.
+2010,5,Nondurable goods,541.0,,Table 1.1.
+2011,5,Nondurable goods,556.0,,Table 1.1.
+2012,5,Nondurable goods,540.0,,Table 1.1.
+2013,5,Nondurable goods,472.0,,Table 1.1.
+2014,5,Nondurable goods,462.0,,Table 1.1.
+2015,5,Nondurable goods,468.0,,Table 1.1.
+2016,5,Nondurable goods,451.0,,Table 1.1.
+2017,5,Nondurable goods,479.0,,Table 1.1.
+2018,5,Nondurable goods,482.0,r,Table 1.1.
+2019,5,Nondurable goods,492.0,r,Table 1.1.
+2020,5,Nondurable goods,474.0,r,Table 1.1.
+2021,5,Nondurable goods,606.0,r,Table 1.1.
+2022,5,Nondurable goods,614.0,p,Table 1.1.
+2002,6,"Foods, feeds, and beverages",193.0,,Table 1.1.
+2003,6,"Foods, feeds, and beverages",192.0,,Table 1.1.
+2004,6,"Foods, feeds, and beverages",220.0,,Table 1.1.
+2005,6,"Foods, feeds, and beverages",229.0,,Table 1.1.
+2006,6,"Foods, feeds, and beverages",243.0,,Table 1.1.
+2007,6,"Foods, feeds, and beverages",258.0,,Table 1.1.
+2008,6,"Foods, feeds, and beverages",264.0,,Table 1.1.
+2009,6,"Foods, feeds, and beverages",277.0,,Table 1.1.
+2010,6,"Foods, feeds, and beverages",288.0,,Table 1.1.
+2011,6,"Foods, feeds, and beverages",305.0,,Table 1.1.
+2012,6,"Foods, feeds, and beverages",322.0,,Table 1.1.
+2013,6,"Foods, feeds, and beverages",319.0,,Table 1.1.
+2014,6,"Foods, feeds, and beverages",324.0,,Table 1.1.
+2015,6,"Foods, feeds, and beverages",332.0,,Table 1.1.
+2016,6,"Foods, feeds, and beverages",322.0,,Table 1.1.
+2017,6,"Foods, feeds, and beverages",327.0,,Table 1.1.
+2018,6,"Foods, feeds, and beverages",332.0,r,Table 1.1.
+2019,6,"Foods, feeds, and beverages",361.0,r,Table 1.1.
+2020,6,"Foods, feeds, and beverages",360.0,r,Table 1.1.
+2021,6,"Foods, feeds, and beverages",430.0,r,Table 1.1.
+2022,6,"Foods, feeds, and beverages",424.0,p,Table 1.1.
+2002,7,Other nondurable goods,112.0,,Table 1.1.
+2003,7,Other nondurable goods,117.0,,Table 1.1.
+2004,7,Other nondurable goods,126.0,,Table 1.1.
+2005,7,Other nondurable goods,154.0,,Table 1.1.
+2006,7,Other nondurable goods,204.0,,Table 1.1.
+2007,7,Other nondurable goods,239.0,,Table 1.1.
+2008,7,Other nondurable goods,257.0,,Table 1.1.
+2009,7,Other nondurable goods,250.0,,Table 1.1.
+2010,7,Other nondurable goods,253.0,,Table 1.1.
+2011,7,Other nondurable goods,251.0,,Table 1.1.
+2012,7,Other nondurable goods,219.0,,Table 1.1.
+2013,7,Other nondurable goods,153.0,,Table 1.1.
+2014,7,Other nondurable goods,138.0,,Table 1.1.
+2015,7,Other nondurable goods,136.0,,Table 1.1.
+2016,7,Other nondurable goods,129.0,,Table 1.1.
+2017,7,Other nondurable goods,153.0,,Table 1.1.
+2018,7,Other nondurable goods,150.0,r,Table 1.1.
+2019,7,Other nondurable goods,131.0,r,Table 1.1.
+2020,7,Other nondurable goods,114.0,r,Table 1.1.
+2021,7,Other nondurable goods,176.0,r,Table 1.1.
+2022,7,Other nondurable goods,190.0,p,Table 1.1.
+2002,8,Services,1552.0,,Table 1.1.
+2003,8,Services,1665.0,,Table 1.1.
+2004,8,Services,1753.0,,Table 1.1.
+2005,8,Services,1891.0,,Table 1.1.
+2006,8,Services,1964.0,,Table 1.1.
+2007,8,Services,2075.0,,Table 1.1.
+2008,8,Services,2184.0,,Table 1.1.
+2009,8,Services,2156.0,,Table 1.1.
+2010,8,Services,2233.0,,Table 1.1.
+2011,8,Services,2323.0,,Table 1.1.
+2012,8,Services,2402.0,,Table 1.1.
+2013,8,Services,2437.0,,Table 1.1.
+2014,8,Services,2455.0,,Table 1.1.
+2015,8,Services,2554.0,,Table 1.1.
+2016,8,Services,2577.0,,Table 1.1.
+2017,8,Services,2468.0,,Table 1.1.
+2018,8,Services,2304.0,r,Table 1.1.
+2019,8,Services,2598.0,r,Table 1.1.
+2020,8,Services,2375.0,r,Table 1.1.
+2021,8,Services,2894.0,r,Table 1.1.
+2022,8,Services,3157.0,p,Table 1.1.
+2002,9,Housing and utilities,407.0,,Table 1.1.
+2003,9,Housing and utilities,432.0,,Table 1.1.
+2004,9,Housing and utilities,461.0,,Table 1.1.
+2005,9,Housing and utilities,498.0,,Table 1.1.
+2006,9,Housing and utilities,526.0,,Table 1.1.
+2007,9,Housing and utilities,587.0,,Table 1.1.
+2008,9,Housing and utilities,632.0,,Table 1.1.
+2009,9,Housing and utilities,653.0,,Table 1.1.
+2010,9,Housing and utilities,655.0,,Table 1.1.
+2011,9,Housing and utilities,710.0,,Table 1.1.
+2012,9,Housing and utilities,745.0,,Table 1.1.
+2013,9,Housing and utilities,789.0,,Table 1.1.
+2014,9,Housing and utilities,791.0,,Table 1.1.
+2015,9,Housing and utilities,829.0,,Table 1.1.
+2016,9,Housing and utilities,826.0,,Table 1.1.
+2017,9,Housing and utilities,829.0,,Table 1.1.
+2018,9,Housing and utilities,862.0,r,Table 1.1.
+2019,9,Housing and utilities,872.0,r,Table 1.1.
+2020,9,Housing and utilities,910.0,r,Table 1.1.
+2021,9,Housing and utilities,967.0,r,Table 1.1.
+2022,9,Housing and utilities,1092.0,p,Table 1.1.
+2002,10,Health care,121.0,,Table 1.1.
+2003,10,Health care,131.0,,Table 1.1.
+2004,10,Health care,150.0,,Table 1.1.
+2005,10,Health care,163.0,,Table 1.1.
+2006,10,Health care,175.0,,Table 1.1.
+2007,10,Health care,189.0,,Table 1.1.
+2008,10,Health care,216.0,,Table 1.1.
+2009,10,Health care,231.0,,Table 1.1.
+2010,10,Health care,243.0,,Table 1.1.
+2011,10,Health care,268.0,,Table 1.1.
+2012,10,Health care,288.0,,Table 1.1.
+2013,10,Health care,292.0,,Table 1.1.
+2014,10,Health care,285.0,,Table 1.1.
+2015,10,Health care,305.0,,Table 1.1.
+2016,10,Health care,315.0,,Table 1.1.
+2017,10,Health care,293.0,,Table 1.1.
+2018,10,Health care,253.0,r,Table 1.1.
+2019,10,Health care,295.0,r,Table 1.1.
+2020,10,Health care,311.0,r,Table 1.1.
+2021,10,Health care,337.0,r,Table 1.1.
+2022,10,Health care,367.0,p,Table 1.1.
+2002,11,Food services and accommodations,389.0,,Table 1.1.
+2003,11,Food services and accommodations,428.0,,Table 1.1.
+2004,11,Food services and accommodations,459.0,,Table 1.1.
+2005,11,Food services and accommodations,491.0,,Table 1.1.
+2006,11,Food services and accommodations,510.0,,Table 1.1.
+2007,11,Food services and accommodations,515.0,,Table 1.1.
+2008,11,Food services and accommodations,538.0,,Table 1.1.
+2009,11,Food services and accommodations,507.0,,Table 1.1.
+2010,11,Food services and accommodations,542.0,,Table 1.1.
+2011,11,Food services and accommodations,551.0,,Table 1.1.
+2012,11,Food services and accommodations,568.0,,Table 1.1.
+2013,11,Food services and accommodations,577.0,,Table 1.1.
+2014,11,Food services and accommodations,599.0,,Table 1.1.
+2015,11,Food services and accommodations,623.0,,Table 1.1.
+2016,11,Food services and accommodations,623.0,,Table 1.1.
+2017,11,Food services and accommodations,566.0,,Table 1.1.
+2018,11,Food services and accommodations,374.0,r,Table 1.1.
+2019,11,Food services and accommodations,533.0,r,Table 1.1.
+2020,11,Food services and accommodations,396.0,r,Table 1.1.
+2021,11,Food services and accommodations,774.0,r,Table 1.1.
+2022,11,Food services and accommodations,824.0,p,Table 1.1.
+2002,12,Other services,636.0,,Table 1.1.
+2003,12,Other services,674.0,,Table 1.1.
+2004,12,Other services,682.0,,Table 1.1.
+2005,12,Other services,739.0,,Table 1.1.
+2006,12,Other services,753.0,,Table 1.1.
+2007,12,Other services,784.0,,Table 1.1.
+2008,12,Other services,797.0,,Table 1.1.
+2009,12,Other services,764.0,,Table 1.1.
+2010,12,Other services,792.0,,Table 1.1.
+2011,12,Other services,793.0,,Table 1.1.
+2012,12,Other services,801.0,,Table 1.1.
+2013,12,Other services,780.0,,Table 1.1.
+2014,12,Other services,780.0,,Table 1.1.
+2015,12,Other services,797.0,,Table 1.1.
+2016,12,Other services,814.0,,Table 1.1.
+2017,12,Other services,780.0,,Table 1.1.
+2018,12,Other services,814.0,r,Table 1.1.
+2019,12,Other services,898.0,r,Table 1.1.
+2020,12,Other services,759.0,r,Table 1.1.
+2021,12,Other services,816.0,r,Table 1.1.
+2022,12,Other services,875.0,p,Table 1.1.
+2002,13,Net foreign travel,-878.0,,Table 1.1.
+2003,13,Net foreign travel,-925.0,,Table 1.1.
+2004,13,Net foreign travel,-994.0,,Table 1.1.
+2005,13,Net foreign travel,-1052.0,,Table 1.1.
+2006,13,Net foreign travel,-1077.0,,Table 1.1.
+2007,13,Net foreign travel,-1114.0,,Table 1.1.
+2008,13,Net foreign travel,-1135.0,,Table 1.1.
+2009,13,Net foreign travel,-1004.0,,Table 1.1.
+2010,13,Net foreign travel,-1011.0,,Table 1.1.
+2011,13,Net foreign travel,-1032.0,,Table 1.1.
+2012,13,Net foreign travel,-1080.0,,Table 1.1.
+2013,13,Net foreign travel,-1117.0,,Table 1.1.
+2014,13,Net foreign travel,-1160.0,,Table 1.1.
+2015,13,Net foreign travel,-1188.0,,Table 1.1.
+2016,13,Net foreign travel,-1193.0,,Table 1.1.
+2017,13,Net foreign travel,-976.0,,Table 1.1.
+2018,13,Net foreign travel,-823.0,r,Table 1.1.
+2019,13,Net foreign travel,-1031.0,r,Table 1.1.
+2020,13,Net foreign travel,-586.0,r,Table 1.1.
+2021,13,Net foreign travel,-1120.0,r,Table 1.1.
+2022,13,Net foreign travel,-1279.0,p,Table 1.1.
+2002,14,Private fixed investment,516.0,,Table 1.1.
+2003,14,Private fixed investment,399.0,,Table 1.1.
+2004,14,Private fixed investment,461.0,,Table 1.1.
+2005,14,Private fixed investment,578.0,,Table 1.1.
+2006,14,Private fixed investment,633.0,,Table 1.1.
+2007,14,Private fixed investment,569.0,,Table 1.1.
+2008,14,Private fixed investment,521.0,,Table 1.1.
+2009,14,Private fixed investment,437.0,,Table 1.1.
+2010,14,Private fixed investment,411.0,,Table 1.1.
+2011,14,Private fixed investment,390.0,,Table 1.1.
+2012,14,Private fixed investment,292.0,,Table 1.1.
+2013,14,Private fixed investment,298.0,,Table 1.1.
+2014,14,Private fixed investment,300.0,,Table 1.1.
+2015,14,Private fixed investment,286.0,,Table 1.1.
+2016,14,Private fixed investment,274.0,,Table 1.1.
+2017,14,Private fixed investment,303.0,,Table 1.1.
+2018,14,Private fixed investment,480.0,r,Table 1.1.
+2019,14,Private fixed investment,999.0,r,Table 1.1.
+2020,14,Private fixed investment,746.0,r,Table 1.1.
+2021,14,Private fixed investment,499.0,r,Table 1.1.
+2022,14,Private fixed investment,448.0,p,Table 1.1.
+2002,15,Change in private inventories,-73.0,,Table 1.1.
+2003,15,Change in private inventories,27.0,,Table 1.1.
+2004,15,Change in private inventories,33.0,,Table 1.1.
+2005,15,Change in private inventories,-5.0,,Table 1.1.
+2006,15,Change in private inventories,-30.0,,Table 1.1.
+2007,15,Change in private inventories,-540.0,,Table 1.1.
+2008,15,Change in private inventories,180.0,,Table 1.1.
+2009,15,Change in private inventories,210.0,,Table 1.1.
+2010,15,Change in private inventories,-267.0,,Table 1.1.
+2011,15,Change in private inventories,104.0,,Table 1.1.
+2012,15,Change in private inventories,114.0,,Table 1.1.
+2013,15,Change in private inventories,149.0,,Table 1.1.
+2014,15,Change in private inventories,-6.0,,Table 1.1.
+2015,15,Change in private inventories,-168.0,,Table 1.1.
+2016,15,Change in private inventories,625.0,,Table 1.1.
+2017,15,Change in private inventories,878.0,,Table 1.1.
+2018,15,Change in private inventories,1168.0,r,Table 1.1.
+2019,15,Change in private inventories,617.0,r,Table 1.1.
+2020,15,Change in private inventories,807.0,r,Table 1.1.
+2021,15,Change in private inventories,-484.0,r,Table 1.1.
+2022,15,Change in private inventories,-95.0,p,Table 1.1.
+2002,16,Net exports of goods and services,381.0,,Table 1.1.
+2003,16,Net exports of goods and services,542.0,,Table 1.1.
+2004,16,Net exports of goods and services,685.0,,Table 1.1.
+2005,16,Net exports of goods and services,983.0,,Table 1.1.
+2006,16,Net exports of goods and services,703.0,,Table 1.1.
+2007,16,Net exports of goods and services,1474.0,,Table 1.1.
+2008,16,Net exports of goods and services,190.0,,Table 1.1.
+2009,16,Net exports of goods and services,76.0,,Table 1.1.
+2010,16,Net exports of goods and services,534.0,,Table 1.1.
+2011,16,Net exports of goods and services,58.0,,Table 1.1.
+2012,16,Net exports of goods and services,129.0,,Table 1.1.
+2013,16,Net exports of goods and services,-267.0,,Table 1.1.
+2014,16,Net exports of goods and services,-269.0,,Table 1.1.
+2015,16,Net exports of goods and services,-54.0,,Table 1.1.
+2016,16,Net exports of goods and services,-730.0,,Table 1.1.
+2017,16,Net exports of goods and services,-1178.0,,Table 1.1.
+2018,16,Net exports of goods and services,-2078.0,r,Table 1.1.
+2019,16,Net exports of goods and services,-1875.0,r,Table 1.1.
+2020,16,Net exports of goods and services,-1565.0,r,Table 1.1.
+2021,16,Net exports of goods and services,12.0,r,Table 1.1.
+2022,16,Net exports of goods and services,-509.0,p,Table 1.1.
+2002,17,Exports,4809.0,,Table 1.1.
+2003,17,Exports,6520.0,,Table 1.1.
+2004,17,Exports,8604.0,,Table 1.1.
+2005,17,Exports,11632.0,,Table 1.1.
+2006,17,Exports,12730.0,,Table 1.1.
+2007,17,Exports,14141.0,,Table 1.1.
+2008,17,Exports,18412.0,,Table 1.1.
+2009,17,Exports,10717.0,,Table 1.1.
+2010,17,Exports,12945.0,,Table 1.1.
+2011,17,Exports,14371.0,,Table 1.1.
+2012,17,Exports,3278.0,,Table 1.1.
+2013,17,Exports,2525.0,,Table 1.1.
+2014,17,Exports,2794.0,,Table 1.1.
+2015,17,Exports,1525.0,,Table 1.1.
+2016,17,Exports,1786.0,,Table 1.1.
+2017,17,Exports,2403.0,,Table 1.1.
+2018,17,Exports,2084.0,r,Table 1.1.
+2019,17,Exports,2265.0,r,Table 1.1.
+2020,17,Exports,1620.0,r,Table 1.1.
+2021,17,Exports,4069.0,r,Table 1.1.
+2022,17,Exports,4549.0,p,Table 1.1.
+2002,18,Goods,3911.0,,Table 1.1.
+2003,18,Goods,5575.0,,Table 1.1.
+2004,18,Goods,7587.0,,Table 1.1.
+2005,18,Goods,10556.0,,Table 1.1.
+2006,18,Goods,11628.0,,Table 1.1.
+2007,18,Goods,13002.0,,Table 1.1.
+2008,18,Goods,17255.0,,Table 1.1.
+2009,18,Goods,9696.0,,Table 1.1.
+2010,18,Goods,11922.0,,Table 1.1.
+2011,18,Goods,13329.0,,Table 1.1.
+2012,18,Goods,2186.0,,Table 1.1.
+2013,18,Goods,1395.0,,Table 1.1.
+2014,18,Goods,1623.0,,Table 1.1.
+2015,18,Goods,329.0,,Table 1.1.
+2016,18,Goods,585.0,,Table 1.1.
+2017,18,Goods,1418.0,,Table 1.1.
+2018,18,Goods,1252.0,r,Table 1.1.
+2019,18,Goods,1226.0,r,Table 1.1.
+2020,18,Goods,1027.0,r,Table 1.1.
+2021,18,Goods,2944.0,r,Table 1.1.
+2022,18,Goods,3257.0,p,Table 1.1.
+2002,19,Services,898.0,,Table 1.1.
+2003,19,Services,945.0,,Table 1.1.
+2004,19,Services,1017.0,,Table 1.1.
+2005,19,Services,1076.0,,Table 1.1.
+2006,19,Services,1102.0,,Table 1.1.
+2007,19,Services,1139.0,,Table 1.1.
+2008,19,Services,1157.0,,Table 1.1.
+2009,19,Services,1021.0,,Table 1.1.
+2010,19,Services,1023.0,,Table 1.1.
+2011,19,Services,1043.0,,Table 1.1.
+2012,19,Services,1091.0,,Table 1.1.
+2013,19,Services,1130.0,,Table 1.1.
+2014,19,Services,1171.0,,Table 1.1.
+2015,19,Services,1196.0,,Table 1.1.
+2016,19,Services,1201.0,,Table 1.1.
+2017,19,Services,985.0,,Table 1.1.
+2018,19,Services,833.0,r,Table 1.1.
+2019,19,Services,1039.0,r,Table 1.1.
+2020,19,Services,592.0,r,Table 1.1.
+2021,19,Services,1125.0,r,Table 1.1.
+2022,19,Services,1292.0,p,Table 1.1.
+2002,20,Imports,4428.0,,Table 1.1.
+2003,20,Imports,5977.0,,Table 1.1.
+2004,20,Imports,7919.0,,Table 1.1.
+2005,20,Imports,10650.0,,Table 1.1.
+2006,20,Imports,12027.0,,Table 1.1.
+2007,20,Imports,12667.0,,Table 1.1.
+2008,20,Imports,18222.0,,Table 1.1.
+2009,20,Imports,10641.0,,Table 1.1.
+2010,20,Imports,12411.0,,Table 1.1.
+2011,20,Imports,14313.0,,Table 1.1.
+2012,20,Imports,3149.0,,Table 1.1.
+2013,20,Imports,2792.0,,Table 1.1.
+2014,20,Imports,3063.0,,Table 1.1.
+2015,20,Imports,1580.0,,Table 1.1.
+2016,20,Imports,2517.0,,Table 1.1.
+2017,20,Imports,3580.0,,Table 1.1.
+2018,20,Imports,4163.0,r,Table 1.1.
+2019,20,Imports,4140.0,r,Table 1.1.
+2020,20,Imports,3184.0,r,Table 1.1.
+2021,20,Imports,4057.0,r,Table 1.1.
+2022,20,Imports,5058.0,p,Table 1.1.
+2002,21,Goods,4140.0,,Table 1.1.
+2003,21,Goods,5651.0,,Table 1.1.
+2004,21,Goods,7547.0,,Table 1.1.
+2005,21,Goods,10243.0,,Table 1.1.
+2006,21,Goods,11615.0,,Table 1.1.
+2007,21,Goods,12251.0,,Table 1.1.
+2008,21,Goods,17861.0,,Table 1.1.
+2009,21,Goods,10310.0,,Table 1.1.
+2010,21,Goods,12067.0,,Table 1.1.
+2011,21,Goods,13943.0,,Table 1.1.
+2012,21,Goods,2932.0,,Table 1.1.
+2013,21,Goods,2570.0,,Table 1.1.
+2014,21,Goods,2843.0,,Table 1.1.
+2015,21,Goods,1367.0,,Table 1.1.
+2016,21,Goods,2291.0,,Table 1.1.
+2017,21,Goods,3268.0,,Table 1.1.
+2018,21,Goods,3680.0,r,Table 1.1.
+2019,21,Goods,3650.0,r,Table 1.1.
+2020,21,Goods,2762.0,r,Table 1.1.
+2021,21,Goods,3688.0,r,Table 1.1.
+2022,21,Goods,4697.0,p,Table 1.1.
+2002,22,Services,288.0,,Table 1.1.
+2003,22,Services,326.0,,Table 1.1.
+2004,22,Services,372.0,,Table 1.1.
+2005,22,Services,407.0,,Table 1.1.
+2006,22,Services,412.0,,Table 1.1.
+2007,22,Services,415.0,,Table 1.1.
+2008,22,Services,361.0,,Table 1.1.
+2009,22,Services,331.0,,Table 1.1.
+2010,22,Services,343.0,,Table 1.1.
+2011,22,Services,371.0,,Table 1.1.
+2012,22,Services,217.0,,Table 1.1.
+2013,22,Services,222.0,,Table 1.1.
+2014,22,Services,220.0,,Table 1.1.
+2015,22,Services,213.0,,Table 1.1.
+2016,22,Services,226.0,,Table 1.1.
+2017,22,Services,313.0,,Table 1.1.
+2018,22,Services,482.0,r,Table 1.1.
+2019,22,Services,490.0,r,Table 1.1.
+2020,22,Services,422.0,r,Table 1.1.
+2021,22,Services,369.0,r,Table 1.1.
+2022,22,Services,360.0,p,Table 1.1.
+2002,23,Government consumption expenditures and gross investment,788.0,,Table 1.1.
+2003,23,Government consumption expenditures and gross investment,737.0,,Table 1.1.
+2004,23,Government consumption expenditures and gross investment,746.0,,Table 1.1.
+2005,23,Government consumption expenditures and gross investment,777.0,,Table 1.1.
+2006,23,Government consumption expenditures and gross investment,898.0,,Table 1.1.
+2007,23,Government consumption expenditures and gross investment,1000.0,,Table 1.1.
+2008,23,Government consumption expenditures and gross investment,1043.0,,Table 1.1.
+2009,23,Government consumption expenditures and gross investment,1110.0,,Table 1.1.
+2010,23,Government consumption expenditures and gross investment,1218.0,,Table 1.1.
+2011,23,Government consumption expenditures and gross investment,1147.0,,Table 1.1.
+2012,23,Government consumption expenditures and gross investment,1026.0,,Table 1.1.
+2013,23,Government consumption expenditures and gross investment,1043.0,,Table 1.1.
+2014,23,Government consumption expenditures and gross investment,1048.0,,Table 1.1.
+2015,23,Government consumption expenditures and gross investment,1035.0,,Table 1.1.
+2016,23,Government consumption expenditures and gross investment,1048.0,,Table 1.1.
+2017,23,Government consumption expenditures and gross investment,1212.0,,Table 1.1.
+2018,23,Government consumption expenditures and gross investment,1696.0,r,Table 1.1.
+2019,23,Government consumption expenditures and gross investment,1527.0,r,Table 1.1.
+2020,23,Government consumption expenditures and gross investment,1469.0,r,Table 1.1.
+2021,23,Government consumption expenditures and gross investment,1528.0,r,Table 1.1.
+2022,23,Government consumption expenditures and gross investment,1606.0,p,Table 1.1.
+2002,24,Federal,77.0,,Table 1.1.
+2003,24,Federal,92.0,,Table 1.1.
+2004,24,Federal,104.0,,Table 1.1.
+2005,24,Federal,107.0,,Table 1.1.
+2006,24,Federal,110.0,,Table 1.1.
+2007,24,Federal,115.0,,Table 1.1.
+2008,24,Federal,121.0,,Table 1.1.
+2009,24,Federal,136.0,,Table 1.1.
+2010,24,Federal,175.0,,Table 1.1.
+2011,24,Federal,166.0,,Table 1.1.
+2012,24,Federal,161.0,,Table 1.1.
+2013,24,Federal,159.0,,Table 1.1.
+2014,24,Federal,141.0,,Table 1.1.
+2015,24,Federal,150.0,,Table 1.1.
+2016,24,Federal,147.0,,Table 1.1.
+2017,24,Federal,208.0,,Table 1.1.
+2018,24,Federal,238.0,r,Table 1.1.
+2019,24,Federal,188.0,r,Table 1.1.
+2020,24,Federal,231.0,r,Table 1.1.
+2021,24,Federal,225.0,r,Table 1.1.
+2022,24,Federal,204.0,p,Table 1.1.
+2002,25,Territorial,711.0,,Table 1.1.
+2003,25,Territorial,645.0,,Table 1.1.
+2004,25,Territorial,641.0,,Table 1.1.
+2005,25,Territorial,670.0,,Table 1.1.
+2006,25,Territorial,789.0,,Table 1.1.
+2007,25,Territorial,885.0,,Table 1.1.
+2008,25,Territorial,922.0,,Table 1.1.
+2009,25,Territorial,974.0,,Table 1.1.
+2010,25,Territorial,1043.0,,Table 1.1.
+2011,25,Territorial,981.0,,Table 1.1.
+2012,25,Territorial,865.0,,Table 1.1.
+2013,25,Territorial,884.0,,Table 1.1.
+2014,25,Territorial,907.0,,Table 1.1.
+2015,25,Territorial,884.0,,Table 1.1.
+2016,25,Territorial,901.0,,Table 1.1.
+2017,25,Territorial,1004.0,,Table 1.1.
+2018,25,Territorial,1457.0,r,Table 1.1.
+2019,25,Territorial,1339.0,r,Table 1.1.
+2020,25,Territorial,1239.0,r,Table 1.1.
+2021,25,Territorial,1303.0,r,Table 1.1.
+2022,25,Territorial,1402.0,p,Table 1.1.

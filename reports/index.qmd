@@ -27,12 +27,12 @@ import importlib
 importlib.reload(c); importlib.reload(ch)
 
 from src.cleaning import (
-    load_usviber_tour24, load_fred_employment,
+    load_usviber_combined, load_fred_employment,
     load_bea, load_nps_annual,
 )
 from src.charts import PALETTE
 
-tour     = load_usviber_tour24()
+tour     = load_usviber_combined()
 fred     = load_fred_employment()
 bea_real = load_bea("2.3")
 viis_ann = load_nps_annual("VIIS")
@@ -65,9 +65,9 @@ def _index(df, year_col, val_col, base=BASE):
 
 In September 2017, Hurricanes Irma and Maria struck the U.S. Virgin Islands within two weeks of each other. The territory took a direct hit from two Category 5 storms, destroying hotel infrastructure, damaging or closing Virgin Islands National Park, and disrupting the economy that tourism had sustained for decades. Three years later, before recovery was complete, COVID-19 closed borders and halted cruise shipping.
 
-This study draws on data spanning roughly 25 years across six primary sources to document how the USVI tourism economy has moved through those shocks — and what recovery looks like in 2024 and 2025. Source coverage varies: USVIBER provides selected years from 2000 and annual data from 2010; FRED employment begins in 1990; BEA data run 2002–2021/2022.
+This study draws on data spanning roughly 25 years across six primary sources to document how the USVI tourism economy has moved through those shocks — and what recovery looks like in 2024 and 2025. Source coverage varies: USVIBER provides annual data from 2000, with 2001–2009 from an earlier publication vintage and 2010–2024 from the current edition; FRED employment begins in 1990; BEA data run 2002–2021/2022.
 
-One headline stands out: **total visitor arrivals have nearly returned to their 2016 level, but the composition has shifted fundamentally. Overnight visitors, who generate the large majority of tourism revenue, remain at roughly half their pre-hurricane baseline. Total air arrivals have recovered past their 2016 level, but that recovery is concentrated in same-day air excursionists — the overnight segment of air travel has not recovered in step.**
+One headline stands out: **total visitor arrivals have nearly returned to their 2016 level, but the composition has shifted fundamentally. Overnight visitors, who generate substantially higher per-trip expenditure than same-day visitors, remain at roughly half their pre-hurricane baseline. Total air arrivals have recovered past their 2016 level, but that recovery is concentrated in same-day air excursionists — the overnight segment of air travel has not recovered in step.**
 
 
 
@@ -76,13 +76,13 @@ One headline stands out: **total visitor arrivals have nearly returned to their 
 ```{python}
 #| echo: false
 #| label: fig-total-arrivals
-#| fig-cap: "Total visitors include overnight tourists and same-day excursionists (cruise and air day-trip). The difference in shock depth between the two series is visible: the hurricane hit cruise and overnight visitors roughly equally; COVID virtually halted cruise while overnight visitors declined less sharply."
+#| fig-cap: "Air visitors (all USVI arrivals by air) versus cruise passengers. Total visitors shown as context. COVID virtually halted cruise shipping while air arrivals declined less sharply. 2001–2009 from USVIBER 2010 publication."
 
 fig = go.Figure()
 for col, name, color, dash in [
-    ("total_visitors",  "Total visitors",             PALETTE["total"],    "solid"),
-    ("tourists",        "Overnight tourists",          PALETTE["tourists"], "solid"),
-    ("cruise_passengers","Cruise passengers",          PALETTE["cruise"],   "dash"),
+    ("air_visitors",    "Air visitors (reported total)", PALETTE["air_visitors"], "solid"),
+    ("cruise_passengers","Cruise passengers",             PALETTE["cruise"],       "dash"),
+    ("total_visitors",  "Total visitors",                PALETTE["total"],        "dot"),
 ]:
     sub = tour[["year", col]].dropna()
     fig.add_trace(go.Scatter(
@@ -97,12 +97,12 @@ for x_val, label in [(2017, "Irma & Maria"), (2020, "COVID-19")]:
                   annotation_text=label, annotation_position="top",
                   annotation_font=dict(size=11, color="#666"))
 
-fig.update_layout(title="Total Arrivals",
+fig.update_layout(title="Air Visitors vs. Cruise Passengers",
     yaxis_title="Visitors (thousands)",
     height=440,
     margin=dict(l=60, r=30, t=60, b=50),
     annotations=[dict(xref="paper", yref="paper", x=0, y=-0.10,
-        text="<span style='color:#888;font-size:11px'>Source: USVIBER Annual Tourism Indicator 2024</span>",
+        text="<span style='color:#888;font-size:11px'>Sources: USVIBER Annual Tourism Indicator 2024; 2001–2009 from USVIBER Annual Tourism Indicators 2010</span>",
         showarrow=False, xanchor="left")],
 )
 ch.save_fig(fig, "total-arrivals", formats=("png",))
@@ -120,25 +120,25 @@ COVID-19 in 2020 produced a collapse of different character: cruise shipping sto
 ```{python}
 #| echo: false
 #| label: fig-recovery-index
-#| fig-cap: "Recovery index, 2016 = 100. Total arrivals near the baseline conceals the divergence between cruise recovery and the persistent deficit in overnight tourist visits."
+#| fig-cap: "Recovery index, 2016 = 100. Air visitors and cruise passengers are the primary arrival-mode comparison. Overnight tourists show the largest remaining deficit."
 
 series = {
-    "Total arrivals":        _index(tour, "year", "total_visitors"),
-    "Overnight tourists":    _index(tour, "year", "tourists"),
+    "Air visitors":          _index(tour, "year", "air_visitors"),
     "Cruise passengers":     _index(tour, "year", "cruise_passengers"),
+    "Overnight tourists":    _index(tour, "year", "tourists"),
     "Hotel rooms (USVIBER)": _index(tour, "year", "hotel_rooms"),
     "L&H employment (FRED)": _index(fred_ann, "year", "emp_sa_avg"),
     "A&F real value added":  _index(af_real, "year", "af_real"),
     "VIIS NP visits":        _index(viis_ann.query("year >= 2000"), "year", "recreation_visitors"),
 }
 styles = {
-    "Total arrivals":        (PALETTE["total"],       "solid",    2.5),
-    "Overnight tourists":    (PALETTE["tourists"],    "solid",    2.5),
-    "Cruise passengers":     (PALETTE["cruise"],      "dash",     2),
-    "Hotel rooms (USVIBER)": (PALETTE["rooms"],       "dot",      2),
-    "L&H employment (FRED)": (PALETTE["employment"],  "longdash", 2),
-    "A&F real value added":  (PALETTE["value_added"], "dash",     1.5),
-    "VIIS NP visits":        (PALETTE["nps_viis"],    "dashdot",  1.5),
+    "Air visitors":          (PALETTE["air_visitors"], "solid",    2.5),
+    "Cruise passengers":     (PALETTE["cruise"],       "solid",    2.5),
+    "Overnight tourists":    (PALETTE["tourists"],     "dash",     2),
+    "Hotel rooms (USVIBER)": (PALETTE["rooms"],        "dot",      1.5),
+    "L&H employment (FRED)": (PALETTE["employment"],   "longdash", 1.5),
+    "A&F real value added":  (PALETTE["value_added"],  "dash",     1.5),
+    "VIIS NP visits":        (PALETTE["nps_viis"],     "dashdot",  1.5),
 }
 
 fig = go.Figure()
@@ -180,7 +180,7 @@ fig.show()
 
 As of 2024, the index looks deceptively healthy at the top line. Total arrivals sit at 97% of their 2016 baseline. But that recovery in total arrivals masks a stark difference in visitor value. USVIBER data for 2024 imply an average of approximately $2,350 per overnight tourist trip, compared with roughly $450 per cruise passenger stop and roughly $400 per air excursionist — both in nominal 2024 dollars. These are implied averages per arrival in their respective categories, not daily spending estimates.
 
-Air visitor arrivals — tourists plus same-day air excursionists — actually reached **109% of their 2016 level** by 2024. But this recovery is concentrated in air excursionists (day-trippers), which rose from about 140k in 2016 to 527k in 2024. Overnight tourists in 2024 stood at **57% of their 2016 level** — barely higher than immediately after the hurricanes. Employment and accommodation capacity, measured in hotel rooms, tell a compatible story: the sector is operating at roughly 80–90% of its pre-storm scale, but on a visitor base that has not recovered.
+Air visitors — USVIBER's reported total of all arrivals by air — reached **109% of their 2016 level** by 2024. Cruise passengers reached **90% of their 2016 level**. These two arrival-mode series have followed divergent trajectories since 2017. Within the air total, overnight tourists drove the air recovery before 2017 but have not recovered since: in 2024 they stood at **57% of their 2016 level**, while air excursionists (same-day air arrivals) have grown substantially. Employment and accommodation capacity, measured in hotel rooms, tell a compatible story: the sector is operating at roughly 80–90% of its pre-storm scale, but on a visitor base that has not recovered.
 
 
 
@@ -351,15 +351,15 @@ Accommodation and food services value added — the broadest BEA measure of the 
 latest_map = {
     "Total arrivals":        ("2024", _index(tour, "year", "total_visitors")),
     "Air visitors":          ("2024", _index(tour, "year", "air_visitors")),
-    "Overnight tourists":    ("2024", _index(tour, "year", "tourists")),
+    # "Overnight tourists":    ("2024", _index(tour, "year", "tourists")),
     "Cruise passengers":     ("2024", _index(tour, "year", "cruise_passengers")),
     "Hotel rooms":           ("2024", _index(tour, "year", "hotel_rooms")),
+    # "Hotel Occupancy":       ("2024", _index(tour, "year", "occupancy_rate_pct")),
     "L&H employment":        ("2025", _index(fred_ann, "year", "emp_sa_avg")),
     "A&F real value added":  ("2021", _index(af_real, "year", "af_real")),
     "VIIS NP visits":        ("2025", _index(viis_ann.query("year>=2000"), "year", "recreation_visitors")),
 }
-# Hotel occupancy (66.3% in 2024 vs. 56.7% in 2016) is shown as a note below.
-# It is a rate, not a count — not appropriate for the common recovery index.
+# Occupancy is a rate, not a count — not in the common recovery index.
 occ_2016 = tour.loc[tour["year"]==2016, "occupancy_rate_pct"].values[0]
 occ_2024 = tour.loc[tour["year"]==2024, "occupancy_rate_pct"].values[0]
 
@@ -402,17 +402,19 @@ fig.show()
 
 | Indicator | Most recent year | Index vs. 2016 |
 |---|---|---|
+| **Air visitors** | 2024 | **109** |
+| **Cruise passengers** | 2024 | **90** |
 | Total visitor arrivals | 2024 | 97 |
-| Air visitors (all air arrivals) | 2024 | 109 |
-| Overnight tourists | 2024 | **57** |
-| Cruise passengers | 2024 | 90 |
 | Hotel rooms | 2024 | 82 |
 | Hotel occupancy (rate) | 2024 | 66.3% (+9.6 pp vs. 56.7% in 2016) |
 | L&H employment (FRED) | 2025 | 84 |
 | A&F real value added | 2021 | 87 |
 | VIIS NP visits | 2025 | 115 |
+<!-- | Overnight tourists | 2024 | 57 | -->
 
-*Index values: 2016 = 100. Occupancy shown as rate and percentage-point change; it is not an index.*
+*Index values: 2016 = 100. Air visitors and cruise passengers are the primary arrival-mode comparison.*
+*Occupancy shown as rate and pp change; not an index.*
+*USVIBER employment ends 2022; FRED L&H employment used for post-2022.*
 
 
 

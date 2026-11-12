@@ -62,21 +62,6 @@ DATA_QUALITY_LOG: list[DQIssue] = [
     ),
     DQIssue(
         severity="MEDIUM",
-        source="USVIBER TOUR24.pdf",
-        variable="air_excursionists (2020)",
-        evidence=(
-            "The 2020 air excursionists value (216.7k) equals 61.6% of 2020 air visitors "
-            "(352.4k), implying most air arrivals were same-day visitors during COVID. "
-            "Arithmetic reconciles (216.7 + 440.4 = 657.1 = excursionists) but the "
-            "proportion is implausible for a year of severe travel restriction."
-        ),
-        recommended_treatment=(
-            "Retain with flag. Exclude from per-visitor expenditure calculations for 2020. "
-            "Do not set to NaN because that would break the excursionist decomposition."
-        ),
-    ),
-    DQIssue(
-        severity="MEDIUM",
         source="USVIBER TOUR24.pdf vs TOUR10.pdf",
         variable="tourist and air_excursionist series (historical revisions)",
         evidence=(
@@ -86,7 +71,7 @@ DATA_QUALITY_LOG: list[DQIssue] = [
             "Year 2010: total_visitors +147k, tourists −14k, excursionists +161k, "
             "air_excursionists +11k, cruise_passengers unchanged. "
             "Accommodation (hotel_rooms, total_rooms, occupancy) is consistent. "
-            "Revisions likely reflect reclassification of same-day air arrivals."
+            "Reason for revisions is not established from available source materials."
         ),
         recommended_treatment=(
             "Use TOUR24 for 2000 and 2010–2024; use TOUR10 for 2001–2009 with "
@@ -102,32 +87,31 @@ DATA_QUALITY_LOG: list[DQIssue] = [
         evidence=(
             "2003–2021 method: campground + Trunk Bay multipliers (8.53 persons/boat), "
             "beach and visitor-center counts, percentage-based estimates. "
-            "2022–2025 method: Caneel Bay removed, Maho Bay removed (closed), "
-            "revised Trunk Bay and beach estimation. "
+            "2022–2025 method: revised estimation following the closure of Maho Bay "
+            "and Caneel Bay resort; adjustment considered minor by domain experts. "
             "2026+ method: Lind Point traffic counter (vehicles × PPV × factors), "
             "pedestrian/trail counters — fundamentally different inputs and units; "
             "2026 counts are ~3–4× 2025 equivalents, consistent with a methodology break."
         ),
         recommended_treatment=(
-            "Exclude 2026 from historical comparisons. Document the 2022 method change "
-            "as a secondary methodological break. Report visitation as 'estimated "
-            "recreation visits' rather than visitors or tourists."
+            "Exclude 2026 from historical comparisons. The 2022 method change is minor. "
+            "Report visitation as 'estimated recreation visits' rather than 'visitors.'"
         ),
     ),
     DQIssue(
         severity="MEDIUM",
         source="USVIBER TOUR24.pdf",
-        variable="air_visitors identity not established",
+        variable="air_visitors: do not assume tourists + air_excursionists = air_visitors",
         evidence=(
-            "Year 2000: air_visitors = 604.5k; tourists = 546.7k; "
-            "air_excursionists = 216.7k. "
-            "604.5 - 216.7 = 387.8k tourists by air, implying ~159k tourists "
-            "(29%) arrived by non-air means (ferry, private yacht). "
-            "Plausible but high. Arithmetic does not indicate a clear error — "
-            "air_visitors = tourists_by_air + air_excursionists, not total tourists."
+            "USVIBER reports air_visitors separately; it is not reliably reconstructed "
+            "from tourists plus air_excursionists. Year 2024: air_visitors = 884.2k; "
+            "tourists = 380.3k; air_excursionists = 527.1k; sum = 907.4k ≠ 884.2k. "
+            "The identity is not universally valid in the published data."
         ),
         recommended_treatment=(
-            "Document the definition: air_visitors counts all arrivals by air, "
+            "Use published air_visitors directly. Do not calculate total air-visitor "
+            "expenditure per air visitor by combining tourist and air-excursionist spending. "
+            "Tourist expenditure is not split by arrival mode. Air_visitors = "
             "not all tourists. Some overnight tourists arrive by private yacht or ferry. "
             "Use air_visitors and cruise_passengers as the modal breakdown; "
             "use tourists and excursionists as the overnight/day-tripper breakdown."

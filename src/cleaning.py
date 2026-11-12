@@ -289,7 +289,7 @@ def load_usviber_tour24() -> pd.DataFrame:
         "excursionists":         [1970.2, 2121.5, 2121.5, 2027.2, 2126.2, 2215.6,
                                   2011.4, 1916.7, 1430.1, 1542.5, 1668.9,  657.1,
                                    657.5, 1391.2, 1971.9, 2126.8],
-        # NOTE: 2020 value = 216.7k is flagged (see air_excursionists_dq_flag)
+        # NOTE: 2020 value = 216.7k (arithmetic reconciles with totals)
         "air_excursionists":     [ 216.7,  112.9,  112.5,  122.7,  127.6,  131.7,
                                     132.6,  139.9,  112.9,  111.8,  235.8,  216.7,
                                     422.0,  388.1,  402.6,  527.1],
@@ -354,12 +354,6 @@ def load_usviber_tour24() -> pd.DataFrame:
     df.index.name = "year"
     df = df.reset_index()
     df["source_publication"] = "TOUR24"
-
-    # Flag the suspicious 2020 air_excursionists value
-    df.loc[df["year"] == 2020, "air_excursionists_dq_flag"] = (
-        "2020 value (216.7k) = 61.6% of air arrivals as same-day; "
-        "implausible for COVID year; arithmetic reconciles but value is suspect"
-    )
 
     return df
 

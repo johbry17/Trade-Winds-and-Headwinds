@@ -1,10 +1,8 @@
 ---
 title: "After the Storm"
 subtitle: "A Data Portrait of Tourism Recovery in the U.S. Virgin Islands, 2000–2025"
-format:
-  html:
-    toc: true
-    toc-depth: 2
+author: "Bryan Johns"
+date: today
 ---
 
 ```{python}

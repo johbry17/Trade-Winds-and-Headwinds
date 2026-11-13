@@ -10,10 +10,6 @@ project:
     - src/charts.py
     - src/cleaning.py
 
-author: "Bryan C. Johns"
-date: today
-date-format: "MMMM D, YYYY"
-
 website:
   title: "Trade Winds & Headwinds"
   description: "Twenty-Five Years of Tourism and Economic Change in the U.S. Virgin Islands"
@@ -39,10 +35,20 @@ website:
   sidebar: false
   page-footer:
     left: "Data sources: USVIBER, FRED, NPS, U.S. Census Bureau, BEA, World Bank"
-    right: "Trade Winds & Headwinds"
+    center: "© {{< current-year >}} Bryan C. Johns"
+    right:
+      - text: Portfolio
+        href: https://informedwanderer.com
+      - text: LinkedIn
+        href: https://www.linkedin.com/in/b-johns/
+      - text: GitHub
+        href: https://github.com/johbry17
 
 format:
   html:
+    author-meta: "Bryan C. Johns"
+    shortcodes: 
+      - year.lua
     theme:
       light: [cosmo, reports/custom.scss]
       dark: solar

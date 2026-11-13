@@ -456,7 +456,7 @@ def save_fig(
     fig: go.Figure,
     name: str,
     formats: Sequence[str] = ("png",),
-    width: int = 1300,
+    width: int | None = None,
     height: int | None = None,
     scale: float = 2.0,
 ) -> None:
@@ -471,11 +471,12 @@ def save_fig(
     PUB_DIR.mkdir(parents=True, exist_ok=True)
     stem = PUB_DIR / name
     fig_height = height or fig.layout.height or 440
+    fig_width = width or fig.layout.width or 760
 
     if "html" in formats:
         fig.write_html(str(stem) + ".html", include_plotlyjs="cdn")
     if "png" in formats:
-        fig.write_image(str(stem) + ".png", width=width, height=fig_height, scale=scale)
+        fig.write_image(str(stem) + ".png", width=fig_width, height=fig_height, scale=scale)
     if "svg" in formats:
-        fig.write_image(str(stem) + ".svg", width=width, height=fig_height)
+        fig.write_image(str(stem) + ".svg", width=fig_width, height=fig_height)
 

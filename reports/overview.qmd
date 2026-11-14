@@ -407,5 +407,5 @@ This analysis surfaces some questions that the data alone cannot resolve:
 
 
 
-*The full exploratory analysis is in the [Analysis companion](eda.qmd). Data sources, variable definitions, and methodological choices are documented in the [Data Dictionary](data-dictionary.qmd) and [Methodology](methodology.qmd) pages.*
+*The full exploratory analysis is in the [Analysis companion](analysis.qmd). Data sources, variable definitions, and methodological choices are documented in the [Data Dictionary](data-dictionary.qmd) and [Methodology](methodology.qmd) pages.*
 

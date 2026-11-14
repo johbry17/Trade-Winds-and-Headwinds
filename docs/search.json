@@ -63,106 +63,106 @@
     "text": "Software and reproducibility\nAll analysis was conducted in Python 3.14 using pandas 3.1, plotly 7.1, and associated packages listed in requirements.txt. The project is organized as a reproducible workflow:\n\nRaw data in data/raw/ — never modified\nCleaning and validation in src/cleaning.py and src/validation.py\nCleaned intermediate datasets in data/interim/\nAnalysis notebooks in notebooks/\nPublication via Quarto 1.10 in reports/\n\nTo reproduce: install dependencies from requirements.txt, run notebooks 01–06 in order, then run quarto render from the project root."
   },
   {
-    "objectID": "reports/eda.html",
-    "href": "reports/eda.html",
+    "objectID": "reports/analysis.html",
+    "href": "reports/analysis.html",
     "title": "Exploratory Data Analysis",
     "section": "",
     "text": "This companion to the main publication documents the full exploratory analysis. All charts are generated from the cleaned datasets in data/interim/. The complete analytical notebooks — including detailed tables, validation checks, and additional charts — are in the notebooks/ directory."
   },
   {
-    "objectID": "reports/eda.html#section-1-visitor-activity",
-    "href": "reports/eda.html#section-1-visitor-activity",
+    "objectID": "reports/analysis.html#section-1-visitor-activity",
+    "href": "reports/analysis.html#section-1-visitor-activity",
     "title": "Exploratory Data Analysis",
     "section": "Section 1 — Visitor Activity",
     "text": "Section 1 — Visitor Activity\n\nTotal arrivals and visitor composition\n\n\n\n\n                            \n                                            \n\n\nFigure 1: Air visitors (all USVI arrivals by air) versus cruise passengers. Total visitors shown as context. 2001–2009 from USVIBER 2010 publication.\n\n\n\n\n\n\nVisitor expenditures (nominal)\n\n\n\n\n                            \n                                            \n\n\nFigure 2\n\n\n\n\n\n\nHotel occupancy rate\n\n\n\n\n                            \n                                            \n\n\nFigure 3\n\n\n\n\n\n\nNPS park visitation\n\n\n\n\n                            \n                                            \n\n\nFigure 4\n\n\n\n\n\n\nVIIS seasonal heatmap\n\n\n\n\n                            \n                                            \n\n\nFigure 5"
   },
   {
-    "objectID": "reports/eda.html#section-2-employment",
-    "href": "reports/eda.html#section-2-employment",
+    "objectID": "reports/analysis.html#section-2-employment",
+    "href": "reports/analysis.html#section-2-employment",
     "title": "Exploratory Data Analysis",
     "section": "Section 2 — Employment",
     "text": "Section 2 — Employment\n\nFRED monthly SA employment\n\n\n\n\n                            \n                                            \n\n\nFigure 6\n\n\n\n\n\n\nFRED annual averages\n\n\n\n\n                            \n                                            \n\n\nFigure 7\n\n\n\n\n\n\nCensus employment snapshots\n\n\n\n\n                            \n                                            \n\n\nFigure 8"
   },
   {
-    "objectID": "reports/eda.html#section-3-accommodation-capacity",
-    "href": "reports/eda.html#section-3-accommodation-capacity",
+    "objectID": "reports/analysis.html#section-3-accommodation-capacity",
+    "href": "reports/analysis.html#section-3-accommodation-capacity",
     "title": "Exploratory Data Analysis",
     "section": "Section 3 — Accommodation Capacity",
     "text": "Section 3 — Accommodation Capacity\n\nRoom inventory\n\n\n\n\n                            \n                                            \n\n\nFigure 9\n\n\n\n\n\n\nCensus guestroom crosswalk\n\n\n\n\n                            \n                                            \n\n\nFigure 10\n\n\n\n\n\n\nCensus guestroom capacity\n\n\n\n\n\n\n\n\n\n\nYear\nGuestrooms\nEstablishments\nReported receipts (thousands USD)\nMeasurement basis\n\n\n\n\n2007\n4,065\n47\n$308,481\nA10 accommodation-industry total\n\n\n2012\n5,027\n54\n$319,049\nA10 accommodation-industry total\n\n\n2017\n2,624\n46\n$237,838\nNAPCS02 product 7003825000\n\n\n2022\n2,039\n51\n$135,204\nNAPCS02 product 7003825000\n\n\n\nGuestroom counts come from the Census Bureau’s Economic Census. The 2007 and 2012 figures use accommodation-industry totals (A10); 2017 and 2022 use NAPCS02 product code 7003825000, covering room or unit accommodation for travelers. These are the closest available measures across the four census years, but the change in measurement basis means they are not a perfectly consistent time series. The 2017 count is dated December 31, after Hurricanes Irma and Maria, and represents post-hurricane capacity."
   },
   {
-    "objectID": "reports/eda.html#section-4-economic-context",
-    "href": "reports/eda.html#section-4-economic-context",
+    "objectID": "reports/analysis.html#section-4-economic-context",
+    "href": "reports/analysis.html#section-4-economic-context",
     "title": "Exploratory Data Analysis",
     "section": "Section 4 — Economic Context",
     "text": "Section 4 — Economic Context\n\nAccommodation & food services value added\n\n\n\n\n                            \n                                            \n\n\nFigure 11\n\n\n\n\n\n\nGDP share\n\n\n\n\n                            \n                                            \n\n\nFigure 12"
   },
   {
-    "objectID": "reports/eda.html#section-5-recovery-comparisons",
-    "href": "reports/eda.html#section-5-recovery-comparisons",
+    "objectID": "reports/analysis.html#section-5-recovery-comparisons",
+    "href": "reports/analysis.html#section-5-recovery-comparisons",
     "title": "Exploratory Data Analysis",
     "section": "Section 5 — Recovery Comparisons",
     "text": "Section 5 — Recovery Comparisons\n\nFull recovery index (2016 = 100)\n\n\n\n\n                            \n                                            \n\n\nFigure 13\n\n\n\n\n\n\nRecovery scorecard\n\n\n\n\n                            \n                                            \n\n\nFigure 14: Recovery scorecard. Air visitors and cruise passengers use their palette colours; all other series use green (at or above 2016 baseline) or blue-grey (below baseline). Year in parentheses is the latest available observation for each series."
   },
   {
-    "objectID": "reports/index.html",
-    "href": "reports/index.html",
+    "objectID": "reports/overview.html",
+    "href": "reports/overview.html",
     "title": "After the Storm",
     "section": "",
     "text": "In September 2017, Hurricanes Irma and Maria struck the U.S. Virgin Islands within two weeks of each other. The territory took a direct hit from two Category 5 storms, destroying hotel infrastructure, damaging or closing Virgin Islands National Park, and disrupting the economy that tourism had sustained for decades. Three years later, before recovery was complete, COVID-19 closed borders and halted cruise shipping.\nThis study draws on data spanning roughly 25 years across six primary sources to document how the USVI tourism economy has moved through those shocks — and what recovery looks like in 2024 and 2025. Source coverage varies: USVIBER provides annual data from 2000, with 2001–2009 from an earlier publication vintage and 2010–2024 from the current edition; FRED employment begins in 1990; BEA data run 2002–2021/2022.\nOne headline stands out: total visitor arrivals have nearly returned to their 2016 level, but the composition has shifted fundamentally. Overnight visitors, who generate substantially higher per-trip expenditure than same-day visitors, remain at roughly half their pre-hurricane baseline. Total air arrivals have recovered past their 2016 level, but that recovery is concentrated in same-day air excursionists — the overnight segment of air travel has not recovered in step."
   },
   {
-    "objectID": "reports/index.html#context",
-    "href": "reports/index.html#context",
+    "objectID": "reports/overview.html#context",
+    "href": "reports/overview.html#context",
     "title": "After the Storm",
     "section": "",
     "text": "In September 2017, Hurricanes Irma and Maria struck the U.S. Virgin Islands within two weeks of each other. The territory took a direct hit from two Category 5 storms, destroying hotel infrastructure, damaging or closing Virgin Islands National Park, and disrupting the economy that tourism had sustained for decades. Three years later, before recovery was complete, COVID-19 closed borders and halted cruise shipping.\nThis study draws on data spanning roughly 25 years across six primary sources to document how the USVI tourism economy has moved through those shocks — and what recovery looks like in 2024 and 2025. Source coverage varies: USVIBER provides annual data from 2000, with 2001–2009 from an earlier publication vintage and 2010–2024 from the current edition; FRED employment begins in 1990; BEA data run 2002–2021/2022.\nOne headline stands out: total visitor arrivals have nearly returned to their 2016 level, but the composition has shifted fundamentally. Overnight visitors, who generate substantially higher per-trip expenditure than same-day visitors, remain at roughly half their pre-hurricane baseline. Total air arrivals have recovered past their 2016 level, but that recovery is concentrated in same-day air excursionists — the overnight segment of air travel has not recovered in step."
   },
   {
-    "objectID": "reports/index.html#the-two-shocks",
-    "href": "reports/index.html#the-two-shocks",
+    "objectID": "reports/overview.html#the-two-shocks",
+    "href": "reports/overview.html#the-two-shocks",
     "title": "After the Storm",
     "section": "The two shocks",
     "text": "The two shocks\n\n\n\n\n                            \n                                            \n\n\nFigure 1: Air visitors (all USVI arrivals by air) versus cruise passengers. Total visitors shown as context. 2001–2009 from USVIBER 2010 publication.\n\n\n\n\nThe 2017 hurricane shock cut total arrivals to 76% of their 2016 level within the same calendar year — notable given that the storms struck in September, meaning the first eight months of 2017 were largely normal. By 2018, the decline deepened as the full damage to hotel inventory became apparent.\nCOVID-19 in 2020 produced a collapse of different character: cruise shipping stopped almost entirely (cruise passengers fell to 25% of their 2019 level), while overnight tourists declined less sharply (to about 32% of 2019). The territory’s isolation and the absence of large-group gatherings may have made it modestly attractive to small-party leisure travelers once borders reopened."
   },
   {
-    "objectID": "reports/index.html#a-recovery-that-isnt-what-it-looks-like",
-    "href": "reports/index.html#a-recovery-that-isnt-what-it-looks-like",
+    "objectID": "reports/overview.html#a-recovery-that-isnt-what-it-looks-like",
+    "href": "reports/overview.html#a-recovery-that-isnt-what-it-looks-like",
     "title": "After the Storm",
     "section": "A recovery that isn’t what it looks like",
     "text": "A recovery that isn’t what it looks like\n\n\n\n\n                            \n                                            \n\n\nFigure 2: Recovery index, 2016 = 100. Air visitors and cruise passengers (thick solid lines) are the primary arrival-mode comparison. Overnight tourists and context indicators (thin lines, reduced opacity) are shown for reference.\n\n\n\n\nAs of 2024, the index looks deceptively healthy at the top line. Total arrivals sit at 97% of their 2016 baseline. But that recovery in total arrivals masks a stark difference in visitor value. USVIBER data for 2024 imply an average of approximately $2,350 per overnight tourist trip, compared with roughly $450 per cruise passenger stop and roughly $400 per air excursionist — both in nominal 2024 dollars. These are implied averages per arrival in their respective categories, not daily spending estimates.\nAir visitors — USVIBER’s reported total of all arrivals by air — reached 109% of their 2016 level by 2024. Cruise passengers reached 90% of their 2016 level. These two arrival-mode series have followed divergent trajectories since 2017. Within the air total, overnight tourists drove the air recovery before 2017 but have not recovered since: in 2024 they stood at 57% of their 2016 level, while air excursionists (same-day air arrivals) have grown substantially. Employment and accommodation capacity, measured in hotel rooms, tell a compatible story: the sector is operating at roughly 80–90% of its pre-storm scale, but on a visitor base that has not recovered."
   },
   {
-    "objectID": "reports/index.html#what-the-park-shows",
-    "href": "reports/index.html#what-the-park-shows",
+    "objectID": "reports/overview.html#what-the-park-shows",
+    "href": "reports/overview.html#what-the-park-shows",
     "title": "After the Storm",
     "section": "What the park shows",
     "text": "What the park shows\nVirgin Islands National Park on St. John covers roughly 60 percent of the island’s land area. Its visitation has followed a markedly different trajectory than territory-wide overnight tourist arrivals, making the two series an interesting comparative indicator — though they measure different things and cannot be treated as equivalent.\n\n\n\n\n                            \n                                            \n\n\nFigure 3: VIIS NP estimated recreation visits vs. overnight tourists, both indexed to 2016 = 100. The park recovered to its 2016 level by 2024; overnight tourist arrivals remain at roughly 57%. This divergence is an open question, not a resolved finding.\n\n\n\n\nVIIS NP visitation reached 103% of its 2016 level in 2024 and 115% in 2025. Overnight tourists, by USVIBER’s count, remained at 57% of 2016. The divergence is substantial enough to warrant investigation. Possible explanations include: changes in how NPS counts day-use visitors, increased use of the park by short-term rental guests (not counted as hotel tourists), or different recovery trajectories across segments of the overnight market. This is an open analytical question, not a resolved finding."
   },
   {
-    "objectID": "reports/index.html#accommodation-capacity",
-    "href": "reports/index.html#accommodation-capacity",
+    "objectID": "reports/overview.html#accommodation-capacity",
+    "href": "reports/overview.html#accommodation-capacity",
     "title": "After the Storm",
     "section": "Accommodation capacity",
     "text": "Accommodation capacity\n\n\n\n\n                            \n                                            \n\n\nFigure 4: Hotel room inventory (USVIBER survey) and L&H employment (FRED seasonally adjusted annual average), both indexed to 2016. Neither has fully recovered; rooms remain more constrained than employment.\n\n\n\n\nHotel room inventory tracked by USVIBER’s annual survey stood at 82% of its 2016 level by 2024. The U.S. Census Economic Census (which counts only payroll-filing establishments) shows a more severe contraction: 2,039 rooms in 2022 versus a 2012 peak of 5,027 — a 59% decline. The Census and USVIBER series use different methodologies and should not be directly compared, but they agree on the direction: accommodation capacity has not recovered.\nLeisure and Hospitality employment (FRED, seasonally adjusted) ran at 91% of its 2016 annual average in 2024 — closer to baseline than hotel rooms. This may reflect leaner staffing in surviving hotels, or expanded employment in the food and entertainment segment that comprises a large share of the L&H aggregate.\nA note on hotel occupancy: USVIBER reports a 2024 occupancy rate of 66.3%, the highest in the available annual series since at least 2000. High occupancy on a reduced room base means the remaining hotels are operating at high utilization; it does not, by itself, establish their financial performance, since room rates, operating costs, and revenue data are not available. This pattern is consistent with either intensive use of surviving capacity, or with constrained supply relative to demand — or both."
   },
   {
-    "objectID": "reports/index.html#what-the-broader-economy-shows",
-    "href": "reports/index.html#what-the-broader-economy-shows",
+    "objectID": "reports/overview.html#what-the-broader-economy-shows",
+    "href": "reports/overview.html#what-the-broader-economy-shows",
     "title": "After the Storm",
     "section": "What the broader economy shows",
     "text": "What the broader economy shows\nAggregate GDP and tourism activity tell different stories about the post-hurricane economy. BEA data show that USVI real GDP remained relatively stable in 2017 and grew in 2018–2021, even as visitor arrivals and accommodation revenue remained severely depressed. BEA attributed some of this growth to government spending and private fixed investment, which likely reflect hurricane response and reconstruction activity. These patterns illustrate how economic production can recover through activity outside the visitor economy while tourism itself remains impaired. This analysis does not estimate the contribution of federal disaster assistance to GDP.\n\n\n\n\n                            \n                                            \n\n\nFigure 5: Accommodation and food services as a share of USVI nominal GDP (BEA data, through 2021). A&F value added is not equivalent to tourism GDP: it includes resident consumption and excludes tourism-related retail, transportation, and recreation.\n\n\n\n\nAccommodation and food services value added — the broadest BEA measure of the sector’s economic contribution — fell from 13% of GDP in 2015 to 11.5% in 2017, collapsed to 6% in 2020, and rebounded to 11% in 2021, the last year BEA data are available. The rebound to 11% is encouraging but still below the pre-hurricane trend, and the GDP denominator during 2018–2021 likely reflects activity beyond the visitor economy. The sector had not returned to its pre-hurricane GDP share by 2021."
   },
   {
-    "objectID": "reports/index.html#summary-of-findings",
-    "href": "reports/index.html#summary-of-findings",
+    "objectID": "reports/overview.html#summary-of-findings",
+    "href": "reports/overview.html#summary-of-findings",
     "title": "After the Storm",
     "section": "Summary of findings",
     "text": "Summary of findings\n\n\n\n\n                            \n                                            \n\n\nFigure 6: Recovery scorecard. Air visitors and cruise passengers use their palette colours; all other series use green (at or above 2016 baseline) or blue-grey (below baseline). Year in parentheses is the latest available observation for each series.\n\n\n\n\n\n\n\nIndicator\nMost recent year\nIndex vs. 2016\n\n\n\n\nAir visitors\n2024\n109\n\n\nCruise passengers\n2024\n90\n\n\nTotal visitor arrivals\n2024\n97\n\n\nHotel rooms\n2024\n82\n\n\nHotel occupancy (rate)\n2024\n66.3% (+9.6 pp vs. 56.7% in 2016)\n\n\nL&H employment (FRED)\n2025\n84\n\n\nA&F real value added\n2021\n87\n\n\nVIIS NP visits\n2025\n115\n\n\n\n\nIndex values: 2016 = 100. Air visitors and cruise passengers are the primary arrival-mode comparison. Occupancy shown as rate and pp change; not an index. USVIBER employment ends 2022; FRED L&H employment used for post-2022."
   },
   {
-    "objectID": "reports/index.html#unresolved-questions",
-    "href": "reports/index.html#unresolved-questions",
+    "objectID": "reports/overview.html#unresolved-questions",
+    "href": "reports/overview.html#unresolved-questions",
     "title": "After the Storm",
     "section": "Unresolved questions",
     "text": "Unresolved questions\nThis analysis surfaces some questions that the data alone cannot resolve:\nWhat does 66% occupancy on a smaller room base actually mean for the economy? High occupancy on reduced inventory may reflect healthy operating margins at surviving hotels while masking a smaller aggregate economic contribution. The Census 2022 data (1,650 accommodation employees vs. 3,876 in 2012) suggests the surviving hotel sector is operating at significantly reduced staffing levels.\nThe full exploratory analysis is in the Analysis companion. Data sources, variable definitions, and methodological choices are documented in the Data Dictionary and Methodology pages."

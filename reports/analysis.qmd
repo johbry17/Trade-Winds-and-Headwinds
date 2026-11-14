@@ -434,7 +434,7 @@ ch.add_shocks(fig).show()
 
 ### Recovery scorecard
 
-```{python}
+<!-- ```{python}
 #| echo: false
 #| label: fig-eda-scorecard
 #| fig-cap: "Recovery scorecard. Air visitors and cruise passengers use their palette colours; all other series use green (at or above 2016 baseline) or blue-grey (below baseline). Year in parentheses is the latest available observation for each series."
@@ -498,4 +498,109 @@ fig.update_layout(
     )],
 )
 fig.show()
+``` -->
+
+```{python}
+
+#| echo: false
+#| label: fig-eda-scorecard-2021
+
+def make_scorecard(year, include_af=False):
+
+    series_map = {
+        "Total arrivals":     _index(tour, "year", "total_visitors"),
+        "Air visitors":        _index(tour, "year", "air_visitors"),
+        "Cruise passengers": _index(tour, "year", "cruise_passengers"),
+        "Hotel rooms":       _index(tour, "year", "hotel_rooms"),
+        "L&H employment":    _index(fred_ann, "year", "emp_sa_avg"),
+        "VIIS NP visits":    _index(
+            viis_ann.query("year >= 2000"),
+            "year",
+            "recreation_visitors"
+        ),
+    }
+
+    if include_af:
+        series_map["A&F real VA"] = _index(af_real, "year", "af_real")
+
+    rows = []
+
+    for name, df in series_map.items():
+        if df is None:
+            continue
+
+        row = df[df["year"] == year]
+        if row.empty:
+            continue
+
+        rows.append((name, round(row["idx"].values[0], 1)))
+
+    rows.sort(key=lambda r: r[1])
+
+    labels = [r[0] for r in rows]
+    values = [r[1] for r in rows]
+
+    def bar_color(name, value):
+        if name == "Cruise passengers":
+            return PALETTE["cruise"]
+        if name == "Air visitors":
+            return PALETTE["air_visitors"]
+        if name == "A&F real VA":
+            return PALETTE["value_added"]
+        return (
+            PALETTE["above_baseline"]
+            if value >= 100
+            else PALETTE["below_baseline"]
+        )
+
+    colors = [bar_color(name, value) for name, value in rows]
+
+    fig = go.Figure(go.Bar(
+        x=values,
+        y=labels,
+        orientation="h",
+        marker_color=colors,
+        text=[f"{v:.0f}" for v in values],
+        textposition="outside",
+        textfont=dict(size=11),
+        cliponaxis=False,
+    ))
+
+    fig.add_vline(
+        x=100,
+        line=dict(color="#555", width=1.2),
+        annotation_text="2016 = 100",
+        annotation_position="top",
+        annotation_font=dict(size=9, color="#777"),
+    )
+
+    fig.update_layout(
+        title=dict(
+            text=f"<b>Recovery Scorecard: {year}</b>",
+            font=dict(size=16),
+            x=0.0,
+        ),
+        xaxis=dict(
+            title="Index (2016 = 100)",
+            range=[0, max(values) * 1.14],
+            showgrid=True,
+            gridcolor="#eeeeee",
+        ),
+        yaxis=dict(tickfont=dict(size=11)),
+        height=max(300, len(rows) * 48 + 100),
+        showlegend=False,
+        margin=dict(l=180, r=56, t=52, b=56),
+        annotations=[ch.source_note(
+            "USVIBER, FRED, BEA, NPS IRMA — author calculations",
+            y=-0.12
+        )],
+    )
+
+    return fig
+
+
+make_scorecard(2021, include_af=True).show()
+
+#| label: fig-eda-scorecard-2024
+make_scorecard(2024, include_af=False).show()
 ```

@@ -110,6 +110,7 @@ quarto render    # build to docs/
 
 - [FRED: L&H Employment SA](https://fred.stlouisfed.org/series/SMS78000007000000001)
 - [FRED: L&H Employment NSA](https://fred.stlouisfed.org/series/SMU78000007000000001)
+- [BLS: Quarterly Census of Employment and Wages (QCEW)](https://www.bls.gov/cew/) — Annual employment, establishments, payroll, and wage data for USVI accommodation and food services (NAICS 72, 721, 722), 2000–2025.
 - [USVIBER Tourism Indicator 2024](https://usviber.org/document/usvi-tourism-indicator-2024/)
 - [USVIBER Tourism Indicator 2022](https://usviber.org/wp-content/uploads/2023/12/Tourism-indicator-2022-12-28-23-1.pdf)
 - [USVIBER Tourism Indicator 2020](https://usviber.org/wp-content/uploads/2022/04/TOUR20-revised.pdf)

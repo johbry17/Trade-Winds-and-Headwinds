@@ -319,7 +319,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#d.-world-bank-wdi" id="toc-d.-world-bank-wdi" class="nav-link" data-scroll-target="#d.-world-bank-wdi">D. World Bank WDI</a></li>
   <li><a href="#e.-u.s.-census-bureau-economic-census" id="toc-e.-u.s.-census-bureau-economic-census" class="nav-link" data-scroll-target="#e.-u.s.-census-bureau-economic-census">E. U.S. Census Bureau — Economic Census</a></li>
   <li><a href="#f.-bea-u.s.-virgin-islands-gdp" id="toc-f.-bea-u.s.-virgin-islands-gdp" class="nav-link" data-scroll-target="#f.-bea-u.s.-virgin-islands-gdp">F. BEA — U.S. Virgin Islands GDP</a></li>
-  <li><a href="#g.-usvi-cpi" id="toc-g.-usvi-cpi" class="nav-link" data-scroll-target="#g.-usvi-cpi">G. USVI CPI</a></li>
+  <li><a href="#g.-u.s.-bureau-of-labor-statistics-quarterly-census-of-employment-and-wages-qcew" id="toc-g.-u.s.-bureau-of-labor-statistics-quarterly-census-of-employment-and-wages-qcew" class="nav-link" data-scroll-target="#g.-u.s.-bureau-of-labor-statistics-quarterly-census-of-employment-and-wages-qcew">G. U.S. Bureau of Labor Statistics — Quarterly Census of Employment and Wages (QCEW)</a></li>
+  <li><a href="#h.-usvi-cpi" id="toc-h.-usvi-cpi" class="nav-link" data-scroll-target="#h.-usvi-cpi">H. USVI CPI</a></li>
   </ul></li>
   <li><a href="#interim-datasets" id="toc-interim-datasets" class="nav-link" data-scroll-target="#interim-datasets">Interim datasets</a></li>
   </ul>
@@ -541,9 +542,7 @@ ul.task-list li input[type="checkbox"] {
 </table>
 <p><strong>Data quality flags:</strong></p>
 <ul>
-<li><code>air_excursionists</code> (2020): value of 216.7k is identical to year 2000 — physically implausible for a COVID year. Cross-check with TOUR20-revised.pdf pending.</li>
 <li><code>excursionists</code> (2000, 2010): does not equal <code>air_excursionists + cruise_passengers</code> within rounding (discrepancies of −14.9k and +149.7k respectively). Likely definitional residuals or data revisions between report editions.</li>
-<li><code>air_visitors</code> is <strong>not</strong> equal to <code>tourists + air_excursionists</code> because not all tourists arrive by air. Do not use as an arrival-mode identity.</li>
 </ul>
 </section>
 <section id="b.-fred-leisure-hospitality-employment" class="level3">
@@ -819,8 +818,130 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Important:</strong> “Accommodation and food services” value added is <strong>not</strong> equivalent to tourism GDP. It excludes tourism-related retail, transportation, and recreation, and includes consumption by residents.</p>
 <p><strong>Do not deflate BEA real series</strong> — they are already expressed in constant (2012) dollars using BEA’s own price indexes.</p>
 </section>
-<section id="g.-usvi-cpi" class="level3">
-<h3 class="anchored" data-anchor-id="g.-usvi-cpi">G. USVI CPI</h3>
+<section id="g.-u.s.-bureau-of-labor-statistics-quarterly-census-of-employment-and-wages-qcew" class="level3">
+<h3 class="anchored" data-anchor-id="g.-u.s.-bureau-of-labor-statistics-quarterly-census-of-employment-and-wages-qcew">G. U.S. Bureau of Labor Statistics — Quarterly Census of Employment and Wages (QCEW)</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>File</strong></td>
+<td><code>qcew_usvi_accommodation_food_services_2000_2025.csv</code></td>
+</tr>
+<tr class="even">
+<td><strong>Source</strong></td>
+<td>U.S. Bureau of Labor Statistics</td>
+</tr>
+<tr class="odd">
+<td><strong>URL</strong></td>
+<td><a href="https://www.bls.gov/cew/">BLS QCEW</a></td>
+</tr>
+<tr class="even">
+<td><strong>Coverage</strong></td>
+<td>2000–2025</td>
+</tr>
+<tr class="odd">
+<td><strong>Frequency</strong></td>
+<td>Annual averages</td>
+</tr>
+<tr class="even">
+<td><strong>Geography</strong></td>
+<td>Virgin Islands statewide (area FIPS 78000)</td>
+</tr>
+<tr class="odd">
+<td><strong>Ownership</strong></td>
+<td>Private sector (ownership code 5)</td>
+</tr>
+<tr class="even">
+<td><strong>Establishment size</strong></td>
+<td>All sizes (size code 0)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Industry coverage:</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>NAICS</th>
+<th>Industry</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>72</td>
+<td>Accommodation and food services</td>
+</tr>
+<tr class="even">
+<td>721</td>
+<td>Accommodation</td>
+</tr>
+<tr class="odd">
+<td>722</td>
+<td>Food services and drinking places</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key variables:</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Units</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>annual_avg_estabs</code></td>
+<td>Establishments</td>
+<td>Average number of establishments during the year</td>
+</tr>
+<tr class="even">
+<td><code>annual_avg_emplvl</code></td>
+<td>Jobs</td>
+<td>Annual average employment</td>
+</tr>
+<tr class="odd">
+<td><code>total_annual_wages</code></td>
+<td>Dollars</td>
+<td>Total wages paid during the year</td>
+</tr>
+<tr class="even">
+<td><code>annual_avg_wkly_wage</code></td>
+<td>Dollars</td>
+<td>Average weekly wage</td>
+</tr>
+<tr class="odd">
+<td><code>avg_annual_pay</code></td>
+<td>Dollars</td>
+<td>Average annual pay per job</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Industry aggregation:</strong></p>
+<p>NAICS 72 is the aggregate of NAICS 721 and 722. The dataset retains all three industry levels for comparison. Do not sum NAICS 72 with its component industries.</p>
+<p><strong>Interpretation and limitations:</strong></p>
+<ul>
+<li>QCEW is based on employment and wage records reported by employers covered by state unemployment insurance programs and the federal unemployment compensation program.</li>
+<li>Employment represents jobs, not unique individuals. A person holding multiple covered jobs may be counted more than once.</li>
+<li>QCEW does not capture self-employment and some other work outside its covered employer universe.</li>
+<li>Average annual pay is an average per covered job, not median earnings or the earnings of a typical individual worker. Changes can reflect shifts in employment composition as well as changes in compensation.</li>
+<li>Accommodation and food services employment is not synonymous with tourism employment. It includes food-service businesses serving residents as well as visitors.</li>
+<li>Annual averages should be used for comparisons with other annual indicators. Do not sum annual average employment across years or treat it as a cumulative count.</li>
+<li>Historical industry classifications and reporting practices may affect comparability across years; investigate apparent discontinuities before interpreting them as economic changes.</li>
+</ul>
+</section>
+<section id="h.-usvi-cpi" class="level3">
+<h3 class="anchored" data-anchor-id="h.-usvi-cpi">H. USVI CPI</h3>
 <table class="caption-top table">
 <thead>
 <tr class="header">

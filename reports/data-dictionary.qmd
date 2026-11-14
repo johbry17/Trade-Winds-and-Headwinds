@@ -220,7 +220,48 @@ NAICS 72 is the aggregate of NAICS 721 and 722. The dataset retains all three in
 
 
 
-### H. USVI CPI
+**### H. U.S. Bureau of Labor Statistics — Consumer Price Index (CPI-U)**
+
+| Field | Value |
+|---|---|
+| **File** | `CPIAUCNS.csv` |
+| **Source** | U.S. Bureau of Labor Statistics, distributed via Federal Reserve Bank of St. Louis (FRED) |
+| **URL** | [FRED CPIAUCNS](https://fred.stlouisfed.org/series/CPIAUCNS) |
+| **Series ID** | `CPIAUCNS` |
+| **Coverage** | Monthly, 1913–present (subject to updates) |
+| **Frequency** | Monthly |
+| **Geography** | U.S. City Average |
+| **Population** | All Urban Consumers (CPI-U) |
+| **Measure** | All Items |
+| **Seasonal adjustment** | Not seasonally adjusted |
+| **Units** | Index, 1982–1984 = 100 |
+
+**Purpose:**
+
+Used as a mainland U.S. inflation proxy to adjust nominal wage and compensation measures for changes in consumer prices. The series provides a consistent price-index reference for comparisons across the study period.
+
+**Aggregation and transformation:**
+
+- Calculate annual CPI values as the arithmetic mean of the 12 monthly observations.
+- Rebase annual values to 2016 = 100 when constructing real-value comparisons.
+- Convert nominal values to approximate 2016 dollars using:
+
+  `real_value = nominal_value × (CPI_2016 / CPI_year)`
+
+- Retain the original monthly observations; calculate annual averages during analysis rather than modifying the raw file.
+
+**Interpretation and limitations:**
+
+- CPI-U measures price changes experienced by urban consumers across the United States. It is not a USVI-specific cost-of-living or inflation measure.
+- The U.S. City Average is used because a continuous, reliable USVI CPI series is not currently available for the full study period.
+- The USVI has distinct price dynamics, including its dependence on imported goods, transportation costs, and energy. Mainland CPI-U may therefore misrepresent changes in local purchasing power.
+- Real wage estimates using this series should be interpreted as approximate inflation-adjusted comparisons using a mainland proxy, not as definitive measures of changes in USVI residents' purchasing power.
+- CPI-U is a consumer-price index, not an output-price deflator. It is conceptually appropriate for adjusting wages and household purchasing power, but should not automatically be applied to every nominal economic measure.
+- The CPI-U series is retained in its original 1982–1984 = 100 index units. Rebasing to 2016 = 100 is performed during analysis.
+
+
+
+### I. USVI CPI
 
 | Field | Value |
 |---|---|

@@ -38,26 +38,31 @@ DATA_QUALITY_LOG: list[DQIssue] = [
             "and physically impossible in a COVID year when cruise ships were halted. "
             "All other non-null years range 1,741,000–2,814,000."
         ),
-        recommended_treatment=(
-            "Set to NaN. Do not use for analysis until verified against "
-            "World Bank source API or USVIBER. The JSON file is a cached "
-            "single-page export (50 records); a data entry error is plausible."
-        ),
+        recommended_treatment=("Set to NaN. Do not use 2020 value for analysis."),
     ),
     DQIssue(
         severity="HIGH",
-        source="VIIS Recreation Visitors By Month (2026)",
-        variable="monthly recreation visitors (Jan–Aug 2026)",
+        source="NPS VIIS Recreation Visitors By Month",
+        variable="recreation_visits (counting methodology, 2003–2026)",
         evidence=(
-            "Jan–Jun 2026 each show 100,000–170,000 visitors, roughly 3× the "
-            "corresponding 2025 months (40,000–55,000). Jul–Aug drop to ~500 and ~366. "
-            "The partial-year total column (890,179) would far exceed 2025's full-year "
-            "total (471,074) if the Jan–Jun pattern continued. "
-            "Likely a methodology change or data entry error."
+            "NPS archived counting instructions document three methodological "
+            "periods. 2003–2021: campground and Trunk Bay multipliers "
+            "(including 8.53 persons per boat), beach and visitor-center "
+            "counts, and percentage-based estimates. 2022–2025: revised "
+            "estimation following changes in site operations, including "
+            "the closure of Maho Bay and Caneel Bay resort; the adjustment "
+            "was considered minor by domain experts. 2026 onward: a "
+            "fundamentally different approach using Lind Point traffic "
+            "counters, vehicle and pedestrian counts, and associated "
+            "estimation factors. The resulting 2026 counts are not "
+            "comparable with the historical series. Counting instructions "
+            "are archived in archive/VIIS Park Counting Instructions/."
         ),
         recommended_treatment=(
-            "Exclude 2026 from any trend analysis until the source NPS portal "
-            "is re-checked for a methodology note. Do not extrapolate 2026 figures."
+            "Exclude 2026 from historical trend analysis. Treat 2003–2021 "
+            "and 2022–2025 as distinct methodological periods, noting the "
+            "minor 2022 revision. Report the measure as estimated recreation "
+            "visits, not unique visitors."
         ),
     ),
     DQIssue(
@@ -82,24 +87,6 @@ DATA_QUALITY_LOG: list[DQIssue] = [
     ),
     DQIssue(
         severity="MEDIUM",
-        source="NPS VIIS Recreation Visitors By Month",
-        variable="counting methodology (three periods)",
-        evidence=(
-            "2003–2021 method: campground + Trunk Bay multipliers (8.53 persons/boat), "
-            "beach and visitor-center counts, percentage-based estimates. "
-            "2022–2025 method: revised estimation following the closure of Maho Bay "
-            "and Caneel Bay resort; adjustment considered minor by domain experts. "
-            "2026+ method: Lind Point traffic counter (vehicles × PPV × factors), "
-            "pedestrian/trail counters — fundamentally different inputs and units; "
-            "2026 counts are ~3–4× 2025 equivalents, consistent with a methodology break."
-        ),
-        recommended_treatment=(
-            "Exclude 2026 from historical comparisons. The 2022 method change is minor. "
-            "Report visitation as 'estimated recreation visits' rather than 'visitors.'"
-        ),
-    ),
-    DQIssue(
-        severity="MEDIUM",
         source="USVIBER TOUR24.pdf",
         variable="air_visitors: do not assume tourists + air_excursionists = air_visitors",
         evidence=(
@@ -109,12 +96,25 @@ DATA_QUALITY_LOG: list[DQIssue] = [
             "The identity is not universally valid in the published data."
         ),
         recommended_treatment=(
-            "Use published air_visitors directly. Do not calculate total air-visitor "
-            "expenditure per air visitor by combining tourist and air-excursionist spending. "
-            "Tourist expenditure is not split by arrival mode. Air_visitors = "
-            "not all tourists. Some overnight tourists arrive by private yacht or ferry. "
-            "Use air_visitors and cruise_passengers as the modal breakdown; "
-            "use tourists and excursionists as the overnight/day-tripper breakdown."
+            "Use published air_visitors directly. Use air_visitors and "
+            "cruise_passengers as the modal breakdown; use tourists and "
+            "excursionists as the overnight/day-tripper breakdown."
+        ),
+    ),
+    DQIssue(
+        severity="MEDIUM",
+        source="USVIBER TOUR24.pdf",
+        variable="excursionists (2000, 2010)",
+        evidence=(
+            "Published excursionist totals do not equal the sum of "
+            "air_excursionists and cruise_passengers within rounding. "
+            "Discrepancies are approximately -14.9k in 2000 and +149.7k "
+            "in 2010."
+        ),
+        recommended_treatment=(
+            "Use the published excursionists total directly. Do not "
+            "reconstruct it by summing arrival-mode components. Preserve "
+            "the discrepancy as a documented source inconsistency."
         ),
     ),
     DQIssue(
@@ -143,10 +143,7 @@ DATA_QUALITY_LOG: list[DQIssue] = [
             "Years 1999, 2000, and 2001 are absent from both BUIS annual and "
             "monthly files. The monthly file jumps from 1998 to 2002 in annual rows."
         ),
-        recommended_treatment=(
-            "Note gap in visualisations. Do not interpolate. "
-            "The NPS IRMA portal may have data; consider manual re-export."
-        ),
+        recommended_treatment=("Note gap in visualisations. Do not interpolate."),
     ),
     DQIssue(
         severity="MEDIUM",
@@ -217,7 +214,8 @@ DATA_QUALITY_LOG: list[DQIssue] = [
         ),
         recommended_treatment=(
             "Flag in data dictionary. Do not use CPI-deflated series spanning "
-            "2017–2018 without verifying the 2018 value with USVIBER directly."
+            "2017–2018 without verifying the 2018 value with USVIBER directly. "
+            "Consider using mainland US CPI as a fallback with explicit caveats."
         ),
     ),
     DQIssue(
@@ -242,6 +240,7 @@ DATA_QUALITY_LOG: list[DQIssue] = [
 # ---------------------------------------------------------------------------
 # Validation helpers
 # ---------------------------------------------------------------------------
+
 
 def validate_nps_annual_vs_monthly(
     annual: pd.DataFrame, monthly: pd.DataFrame, park: str
@@ -286,34 +285,53 @@ def validate_usviber_arithmetic(df: pd.DataFrame) -> pd.DataFrame:
     checks = []
     df = df.copy().set_index("year")
     has_exp_split = (
-        "expenditures_air_excursionists" in df.columns and
-        "expenditures_cruise_passengers" in df.columns
+        "expenditures_air_excursionists" in df.columns
+        and "expenditures_cruise_passengers" in df.columns
     )
 
     for year, row in df.iterrows():
         for lhs, rhs_parts, label in [
-            ("total_visitors",
-             ["tourists", "excursionists"],
-             "total = tourists + excursionists"),
-            ("excursionists",
-             ["air_excursionists", "cruise_passengers"],
-             "excursionists = air + cruise"),
-            ("expenditures_total",
-             ["expenditures_tourists", "expenditures_excursionists"],
-             "expenditures = tourists + excursionists"),
+            (
+                "total_visitors",
+                ["tourists", "excursionists"],
+                "total = tourists + excursionists",
+            ),
+            (
+                "excursionists",
+                ["air_excursionists", "cruise_passengers"],
+                "excursionists = air + cruise",
+            ),
+            (
+                "expenditures_total",
+                ["expenditures_tourists", "expenditures_excursionists"],
+                "expenditures = tourists + excursionists",
+            ),
         ]:
             if any(pd.isna(row.get(c)) for c in [lhs] + rhs_parts):
-                checks.append({"year": year, "check": label,
-                                "actual": None, "expected": None,
-                                "diff": None, "status": "untestable"})
+                checks.append(
+                    {
+                        "year": year,
+                        "check": label,
+                        "actual": None,
+                        "expected": None,
+                        "diff": None,
+                        "status": "untestable",
+                    }
+                )
                 continue
             actual = row[lhs]
             expected = sum(row[c] for c in rhs_parts)
             diff = round(actual - expected, 1)
-            checks.append({"year": year, "check": label,
-                            "actual": actual, "expected": expected,
-                            "diff": diff,
-                            "status": "ok" if abs(diff) <= 0.5 else "discrepancy"})
+            checks.append(
+                {
+                    "year": year,
+                    "check": label,
+                    "actual": actual,
+                    "expected": expected,
+                    "diff": diff,
+                    "status": "ok" if abs(diff) <= 0.5 else "discrepancy",
+                }
+            )
 
         if has_exp_split:
             lhs_val = row.get("expenditures_excursionists")
@@ -321,15 +339,28 @@ def validate_usviber_arithmetic(df: pd.DataFrame) -> pd.DataFrame:
             cru_val = row.get("expenditures_cruise_passengers")
             label = "excursionist_exp = air_exc_exp + cruise_exp"
             if any(pd.isna(v) for v in [lhs_val, air_val, cru_val]):
-                checks.append({"year": year, "check": label,
-                                "actual": None, "expected": None,
-                                "diff": None, "status": "untestable"})
+                checks.append(
+                    {
+                        "year": year,
+                        "check": label,
+                        "actual": None,
+                        "expected": None,
+                        "diff": None,
+                        "status": "untestable",
+                    }
+                )
             else:
                 diff = round(lhs_val - (air_val + cru_val), 1)
-                checks.append({"year": year, "check": label,
-                                "actual": lhs_val, "expected": air_val + cru_val,
-                                "diff": diff,
-                                "status": "ok" if abs(diff) <= 0.5 else "discrepancy"})
+                checks.append(
+                    {
+                        "year": year,
+                        "check": label,
+                        "actual": lhs_val,
+                        "expected": air_val + cru_val,
+                        "diff": diff,
+                        "status": "ok" if abs(diff) <= 0.5 else "discrepancy",
+                    }
+                )
 
     result = pd.DataFrame(checks)
     return result[result["status"] != "ok"].sort_values(["year", "check"])

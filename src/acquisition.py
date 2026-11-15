@@ -23,6 +23,28 @@ SOURCES = {
         "frequency": "monthly",
         "coverage": "1990-01 to 2026-09",
     },
+    "cpi_us": {
+        "url": "https://fred.stlouisfed.org/series/CPIAUCNS",
+        "local": "data/raw/CPIAUCNS.csv",
+        "description": "U.S. CPI-U, All Items, not seasonally adjusted; BLS source.",
+        "frequency": "monthly",
+        "coverage": "monthly; downloaded coverage in local file",
+        "notes": (
+            "Used as a mainland inflation proxy for approximate 2016-dollar "
+            "wage measures. Not a USVI-specific price index."
+        ),
+    },
+    "qcew_usvi": {
+        "url": "https://www.bls.gov/cew/",
+        "local": "data/raw/qcew_usvi_accommodation_food_services_2000_2025.csv",
+        "description": (
+            "BLS QCEW employment, establishments, payroll, and wages "
+            "for USVI accommodation and food services."
+        ),
+        "frequency": "annual",
+        "coverage": "2000–2025",
+        "notes": "NAICS 72, 721, and 722.",
+    },
     "wb_arrivals": {
         "url": "https://api.worldbank.org/v2/country/VI/indicator/ST.INT.ARVL?format=json&per_page=100",
         "local": "data/raw/VIR.ST.INT.ARVL.json",
@@ -59,12 +81,48 @@ SOURCES = {
         "frequency": "annual",
         "coverage": "historical through 2020",
     },
+    "tour10": {
+        "url": "https://usviber.org/archived-data/",
+        "local": "data/raw/TOUR10.pdf",
+        "description": "USVIBER Annual Tourism Indicator 2010.",
+        "frequency": "annual",
+        "coverage": "historical through 2010",
+        "notes": (
+            "Used for historical tourism series where later publications "
+            "do not provide consistent coverage. Historical figures may "
+            "differ from subsequent revisions in TOUR24."
+        ),
+    },
     "econ21": {
         "url": "https://usviber.org/archived-data/",
         "local": "data/raw/Econ21.pdf",
         "description": "USVIBER Annual Economic Indicators 2021 (includes CPI)",
         "frequency": "annual",
         "coverage": "CPI 2009–2021",
+    },
+    "hotel_occupancy": {
+        "url": "https://usviber.org/archived-data/",
+        "local": "data/raw/USVIBER-Hotel/Occupancy/",
+        "description": "USVIBER annual hotel occupancy reports.",
+        "frequency": "annual",
+        "coverage": "2001–2025; gaps in archived reports",
+        "notes": "PDF reports; several years have revised editions.",
+    },
+    "hotel_nights_occupied": {
+        "url": "https://usviber.org/archived-data/",
+        "local": "data/raw/USVIBER-Hotel/Nights-Occupied/",
+        "description": "USVIBER annual hotel room-nights occupied reports.",
+        "frequency": "annual",
+        "coverage": "2001–2025; gaps in archived reports",
+        "notes": "PDF reports; several years have revised editions.",
+    },
+    "hotel_nights_available": {
+        "url": "https://usviber.org/archived-data/",
+        "local": "data/raw/USVIBER-Hotel/Nights-Available/",
+        "description": "USVIBER annual hotel room-nights available reports.",
+        "frequency": "annual",
+        "coverage": "2007–2025",
+        "notes": "PDF reports; several years have revised editions.",
     },
     "bea_gdp": {
         "url": "https://www.bea.gov/data/gdp/gdp-us-virgin-islands-usvi",
@@ -123,6 +181,13 @@ SOURCES = {
         "frequency": "quinquennial",
         "coverage": "2012",
     },
+    "census_2012_a10": {
+        "url": "https://www.census.gov/data/tables/2012/econ/census/virgin-islands.html",
+        "local": "data/raw/IA1200A10/",
+        "description": ("2012 Economic Census — USVI accommodation industry detail."),
+        "frequency": "quinquennial",
+        "coverage": "2012",
+    },
     "census_2017_basic02": {
         "url": "https://www.census.gov/data/tables/2017/econ/economic-census/virgin-islands.html",
         "local": "data/raw/IA1700BASIC02/IA1700BASIC02.dat",
@@ -131,12 +196,32 @@ SOURCES = {
         "coverage": "2012 and 2017",
         "notes": "2017 data reflects post-hurricane conditions (Sep 2017 hurricanes).",
     },
+    "census_2017_napcs02": {
+        "url": "https://www.census.gov/data/tables/2017/econ/economic-census/virgin-islands.html",
+        "local": "data/raw/IA1700NAPCS02/",
+        "description": (
+            "2017 Economic Census — USVI accommodation product detail, "
+            "including guestroom counts."
+        ),
+        "frequency": "quinquennial",
+        "coverage": "2017",
+    },
     "census_2022_basic02": {
         "url": "https://www.census.gov/data/tables/2022/econ/economic-census/virgin-islands.html",
         "local": "data/raw/IA2200BASIC02/IA2200BASIC02.dat",
         "description": "2022 Economic Census — USVI industry summary. Contains both 2017 and 2022.",
         "frequency": "quinquennial",
         "coverage": "2017 and 2022",
+    },
+    "census_2022_napcs02": {
+        "url": "https://www.census.gov/data/tables/2022/econ/economic-census/virgin-islands.html",
+        "local": "data/raw/IA2200NAPCS02/",
+        "description": (
+            "2022 Economic Census — USVI accommodation product detail, "
+            "including guestroom counts."
+        ),
+        "frequency": "quinquennial",
+        "coverage": "2022",
     },
 }
 
@@ -154,25 +239,14 @@ GAPS = [
         ),
     },
     {
-        "gap": "USVIBER monthly data 2001–2021",
-        "impact": "Only annual USVIBER figures available for much of the analysis period",
-        "suggested_action": (
-            "USVIBER archived monthly PDFs may be available at usviber.org/archived-data/. "
-            "Manual extraction of key monthly series (occupancy, air arrivals) would be valuable."
-        ),
-    },
-    {
         "gap": "BUIS annual/monthly 1999–2001",
         "impact": "Three years of data missing from Buck Island Reef NM series",
-        "suggested_action": "Re-export from NPS IRMA portal; the data likely exists.",
+        "suggested_action": "No action required; the data does not exist in the source.",
     },
     {
-        "gap": "VIIS 2026 methodology verification",
+        "gap": "VIIS 2026 methodology changed",
         "impact": "Cannot use 2026 partial-year data for trend analysis",
-        "suggested_action": (
-            "Re-check NPS IRMA portal for methodology notes or revised counts. "
-            "The 100k+/month figures may reflect a new counting method."
-        ),
+        "suggested_action": ("Exclude 2026; use prior years for trend analysis."),
     },
     {
         "gap": "BEA industry data 2022+",

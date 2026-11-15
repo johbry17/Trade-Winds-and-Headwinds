@@ -79,6 +79,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<style>html{ scroll-behavior: smooth; }</style>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
@@ -110,6 +111,12 @@ window.Quarto = {
 };
 </script>
 
+<meta property="og:title" content="Sources &amp; Methodology – Trade Winds &amp; Headwinds">
+<meta property="og:description" content="Citations, analytical choices, crosswalks, and known limitations">
+<meta property="og:site_name" content="Trade Winds &amp; Headwinds">
+<meta name="twitter:title" content="Sources &amp; Methodology – Trade Winds &amp; Headwinds">
+<meta name="twitter:description" content="Citations, analytical choices, crosswalks, and known limitations">
+<meta name="twitter:card" content="summary">
 </head>
 
 <body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -599,6 +606,20 @@ window.Quarto = {
 </tr>
 <tr class="even">
 <td>MEDIUM</td>
+<td>USVIBER TOUR10 vs.&nbsp;TOUR24</td>
+<td>tourist, excursionist, and air-arrival (2000, 2010)</td>
+<td>Different figures; historical revisions.</td>
+<td>Use TOUR24 for 2000 and 2010–2024; TOUR10 for 2001–2009.</td>
+</tr>
+<tr class="odd">
+<td>MEDIUM</td>
+<td>USVIBER TOUR24</td>
+<td>air_visitors (2024)</td>
+<td>Does not equal tourists + air_excursionists (-23.2k)</td>
+<td>Documented; use <code>air_visitors</code> directly.</td>
+</tr>
+<tr class="even">
+<td>MEDIUM</td>
 <td>Census NAPCS02</td>
 <td>RMRTRAN (Total row)</td>
 <td>2017 Total row: 8,735; 2022 Total row: 1,958 — inconsistent across vintages</td>
@@ -689,7 +710,7 @@ window.Quarto = {
 
 </section>
 
-</main> <!-- /main -->
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -776,7 +797,7 @@ window.Quarto = {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/johbry17\.github\.io\/Trade-Winds-and-Headwinds\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -1110,7 +1131,7 @@ window.Quarto = {
 <p>Data sources: USVIBER, FRED, NPS, U.S. Census Bureau, BEA, World Bank</p>
 </div>   
     <div class="nav-footer-center">
-<p>© 2026 Bryan C. Johns</p>
+<p>© <span id="copyright-year">2026</span> Bryan C. Johns</p>
 </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
@@ -1133,8 +1154,10 @@ window.Quarto = {
     </div>
   </div>
 </footer>
+<script src="scripts/site.js"></script>
 
 
 
 
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

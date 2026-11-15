@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Bryan C. Johns">
-<meta name="dcterms.date" content="2026-11-13">
+<meta name="dcterms.date" content="2026-11-15">
 
 <title>After the Storm – Trade Winds &amp; Headwinds</title>
 <style>
@@ -80,6 +80,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<style>html{ scroll-behavior: smooth; }</style>
 <script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
 
 
@@ -100,6 +101,12 @@ if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.M
 
 
 
+<meta property="og:title" content="After the Storm – Trade Winds &amp; Headwinds">
+<meta property="og:description" content="A Data Portrait of Tourism Recovery in the U.S. Virgin Islands, 2000–2025">
+<meta property="og:site_name" content="Trade Winds &amp; Headwinds">
+<meta name="twitter:title" content="After the Storm – Trade Winds &amp; Headwinds">
+<meta name="twitter:description" content="A Data Portrait of Tourism Recovery in the U.S. Virgin Islands, 2000–2025">
+<meta name="twitter:card" content="summary">
 </head>
 
 <body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -365,7 +372,7 @@ if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.M
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 13, 2026</p>
+      <p class="date">November 15, 2026</p>
     </div>
   </div>
   
@@ -696,7 +703,7 @@ Figure&nbsp;6: Recovery scorecard. Air visitors and cruise passengers use their 
 
 </section>
 
-</main> <!-- /main -->
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -783,7 +790,7 @@ Figure&nbsp;6: Recovery scorecard. Air visitors and cruise passengers use their 
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/johbry17\.github\.io\/Trade-Winds-and-Headwinds\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -1117,7 +1124,7 @@ Figure&nbsp;6: Recovery scorecard. Air visitors and cruise passengers use their 
 <p>Data sources: USVIBER, FRED, NPS, U.S. Census Bureau, BEA, World Bank</p>
 </div>   
     <div class="nav-footer-center">
-<p>© 2026 Bryan C. Johns</p>
+<p>© <span id="copyright-year">2026</span> Bryan C. Johns</p>
 </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
@@ -1140,8 +1147,10 @@ Figure&nbsp;6: Recovery scorecard. Air visitors and cruise passengers use their 
     </div>
   </div>
 </footer>
+<script src="scripts/site.js"></script>
 
 
 
 
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

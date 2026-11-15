@@ -220,7 +220,7 @@ NAICS 72 is the aggregate of NAICS 721 and 722. The dataset retains all three in
 
 
 
-**### H. U.S. Bureau of Labor Statistics — Consumer Price Index (CPI-U)**
+### H. U.S. Bureau of Labor Statistics — Consumer Price Index (CPI-U)
 
 | Field | Value |
 |---|---|

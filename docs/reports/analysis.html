@@ -79,17 +79,33 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<style>html{ scroll-behavior: smooth; }</style>
 <script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
 
+
+
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
 <script>
+
 window.PlotlyConfig = {MathJaxConfig: 'local'};
+
 if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+
 </script>
+
 <script type="module">import "https://cdn.plot.ly/plotly-4.1.1.min"</script>
 
 
 
+
+
+<meta property="og:title" content="Exploratory Data Analysis – Trade Winds &amp; Headwinds">
+<meta property="og:description" content="Trade Winds &amp; Headwinds — USVI Tourism Economy, 2000–2025">
+<meta property="og:site_name" content="Trade Winds &amp; Headwinds">
+<meta name="twitter:title" content="Exploratory Data Analysis – Trade Winds &amp; Headwinds">
+<meta name="twitter:description" content="Trade Winds &amp; Headwinds — USVI Tourism Economy, 2000–2025">
+<meta name="twitter:card" content="summary">
 </head>
 
 <body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -1130,7 +1146,7 @@ Figure&nbsp;14
 </section>
 </section>
 
-</main> <!-- /main -->
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -1217,7 +1233,7 @@ Figure&nbsp;14
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/johbry17\.github\.io\/Trade-Winds-and-Headwinds\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -1551,7 +1567,7 @@ Figure&nbsp;14
 <p>Data sources: USVIBER, FRED, NPS, U.S. Census Bureau, BEA, World Bank</p>
 </div>   
     <div class="nav-footer-center">
-<p>© 2026 Bryan C. Johns</p>
+<p>© <span id="copyright-year">2026</span> Bryan C. Johns</p>
 </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
@@ -1574,8 +1590,10 @@ Figure&nbsp;14
     </div>
   </div>
 </footer>
+<script src="scripts/site.js"></script>
 
 
 
 
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

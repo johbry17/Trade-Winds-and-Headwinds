@@ -82,6 +82,8 @@ Series with no 2016 observation are excluded from indexed comparisons.
 | HIGH | World Bank ARVL | 2020 arrivals | Value = 8.6M; ~4× normal range; impossible in COVID year | Set to NaN; excluded from analysis |
 | HIGH | NPS VIIS monthly | 2026 Jan–Aug | 100–167k/month vs. 40–55k in 2025; NPS changed reporting methodology | 2026 excluded; max year = 2025 |
 | MEDIUM | USVIBER TOUR24 | excursionists (2000, 2010) | Does not equal air + cruise within rounding (−14.9k; +149.7k) | Documented; use `excursionists` directly rather than summing components |
+| MEDIUM | USVIBER TOUR10 vs. TOUR24 | tourist, excursionist, and air-arrival (2000, 2010) | Different figures; historical revisions. | Use TOUR24 for 2000 and 2010–2024; TOUR10 for 2001–2009. |
+| MEDIUM | USVIBER TOUR24 | air_visitors (2024) | Does not equal tourists + air_excursionists (-23.2k) | Documented; use `air_visitors` directly. |
 | MEDIUM | Census NAPCS02 | RMRTRAN (Total row) | 2017 Total row: 8,735; 2022 Total row: 1,958 — inconsistent across vintages | Use product 7003825000 row (2,624 in 2017; 2,039 in 2022) |
 | MEDIUM | Census 2017 NAPCS02 | guestrooms (2017) | Reference date Dec 31, 2017 is post-hurricane | Label "end-of-2017 (post-hurricane)" everywhere |
 | MEDIUM | BUIS annual/monthly | 1999–2001 | Three years absent from both files | Note gaps in charts; do not interpolate |

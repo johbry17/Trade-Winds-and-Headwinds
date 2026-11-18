@@ -64,8 +64,6 @@ In September 2017, Hurricanes Irma and Maria struck the U.S. Virgin Islands with
 
 This study draws on data spanning roughly 25 years across six primary sources to document how the USVI tourism economy has moved through those shocks — and what recovery looks like in 2024 and 2025. Source coverage varies: USVIBER provides annual data from 2000, with 2001–2009 from an earlier publication vintage and 2010–2024 from the current edition; FRED employment begins in 1990; BEA data run 2002–2021/2022.
 
-One headline stands out: **total visitor arrivals have nearly returned to their 2016 level, but the composition has shifted fundamentally. Overnight visitors, who generate substantially higher per-trip expenditure than same-day visitors, remain at roughly half their pre-hurricane baseline. Total air arrivals have recovered past their 2016 level, but that recovery is concentrated in same-day air excursionists — the overnight segment of air travel has not recovered in step.**
-
 
 
 ## The two shocks
@@ -164,7 +162,7 @@ fig.show()
 
 As of 2024, the index looks deceptively healthy at the top line. Total arrivals sit at 97% of their 2016 baseline. But that recovery in total arrivals masks a stark difference in visitor value. USVIBER data for 2024 imply an average of approximately $2,350 per overnight tourist trip, compared with roughly $450 per cruise passenger stop and roughly $400 per air excursionist — both in nominal 2024 dollars. These are implied averages per arrival in their respective categories, not daily spending estimates.
 
-Air visitors — USVIBER's reported total of all arrivals by air — reached **109% of their 2016 level** by 2024. Cruise passengers reached **90% of their 2016 level**. These two arrival-mode series have followed divergent trajectories since 2017. Within the air total, overnight tourists drove the air recovery before 2017 but have not recovered since: in 2024 they stood at **57% of their 2016 level**, while air excursionists (same-day air arrivals) have grown substantially. Employment and accommodation capacity, measured in hotel rooms, tell a compatible story: the sector is operating at roughly 80–90% of its pre-storm scale, but on a visitor base that has not recovered.
+Air visitors — USVIBER's reported total of all arrivals by air — reached **109% of their 2016 level** by 2024. Cruise passengers reached **90% of their 2016 level**. These two arrival-mode series have followed divergent trajectories since 2017. Employment and accommodation capacity, measured in hotel rooms, tell a compatible story: the sector is operating at roughly 80–90% of its pre-storm scale, but on a visitor base that has not recovered.
 
 
 
@@ -256,8 +254,6 @@ fig.show()
 Hotel room inventory tracked by USVIBER's annual survey stood at 82% of its 2016 level by 2024. The U.S. Census Economic Census (which counts only payroll-filing establishments) shows a more severe contraction: 2,039 rooms in 2022 versus a 2012 peak of 5,027 — a 59% decline. The Census and USVIBER series use different methodologies and should not be directly compared, but they agree on the direction: accommodation capacity has not recovered.
 
 Leisure and Hospitality employment (FRED, seasonally adjusted) ran at 91% of its 2016 annual average in 2024 — closer to baseline than hotel rooms. This may reflect leaner staffing in surviving hotels, or expanded employment in the food and entertainment segment that comprises a large share of the L&H aggregate.
-
-**A note on hotel occupancy:** USVIBER reports a 2024 occupancy rate of 66.3%, the highest in the available annual series since at least 2000. High occupancy on a reduced room base means the remaining hotels are operating at high utilization; it does not, by itself, establish their financial performance, since room rates, operating costs, and revenue data are not available. This pattern is consistent with either intensive use of surviving capacity, or with constrained supply relative to demand — or both.
 
 
 
@@ -391,7 +387,6 @@ fig.show()
 | L&H employment (FRED) | 2025 | 84 |
 | A&F real value added | 2021 | 87 |
 | VIIS NP visits | 2025 | 115 |
-<!-- | Overnight tourists | 2024 | 57 | -->
 
 *Index values: 2016 = 100. Air visitors and cruise passengers are the primary arrival-mode comparison.*
 *Occupancy shown as rate and pp change; not an index.*

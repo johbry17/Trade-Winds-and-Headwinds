@@ -830,3 +830,120 @@ def load_usvi_cpi() -> pd.DataFrame:
     df["source"] = "USVIBER Econ21.pdf"
     df["note"] = "Hand-parsed; verify 2018 drop against original PDF table layout"
     return df
+
+
+# ---------------------------------------------------------------------------
+# BLS CPI-U (national proxy for deflation)
+# ---------------------------------------------------------------------------
+
+def load_cpi_annual(base_year: int = 2016) -> pd.DataFrame:
+    """
+    Load BLS CPI-U (All Urban Consumers, All Items, NSA) and compute annual averages.
+
+    Source: data/raw/CPIAUCNS.csv downloaded from FRED.
+    Coverage: 1913–present (monthly).
+
+    Parameters
+    ----------
+    base_year : int
+        Year to use as 100 in the index.  Defaults to 2016 to match the
+        project-wide recovery-index baseline.
+
+    Returns
+    -------
+    DataFrame with columns:
+        year (int), cpi_monthly_avg (float), cpi_index (float, base_year=100)
+
+    Notes
+    -----
+    CPI-U is a mainland U.S. price index, not a USVI-specific measure.
+    Label all CPI-adjusted values as "approximate YYYY dollars (CPI-U proxy)".
+    Do not describe them as definitive USVI purchasing-power or real-receipts measures.
+
+    Deflation formula applied downstream:
+        real_value = nominal_value × (cpi_base_year / cpi_year)
+    """
+    path = RAW / "CPIAUCNS.csv"
+    raw = pd.read_csv(path, parse_dates=["observation_date"])
+    raw["year"] = raw["observation_date"].dt.year
+
+    annual = (
+        raw.groupby("year")["CPIAUCNS"]
+        .mean()
+        .reset_index()
+        .rename(columns={"CPIAUCNS": "cpi_monthly_avg"})
+    )
+
+    base_cpi = annual.loc[annual["year"] == base_year, "cpi_monthly_avg"].values
+    if len(base_cpi) == 0:
+        raise ValueError(f"Base year {base_year} not found in CPI data")
+    annual["cpi_index"] = annual["cpi_monthly_avg"] / base_cpi[0] * 100
+    annual["cpi_base_year"] = base_year
+    return annual.astype({"year": int})
+
+
+# ---------------------------------------------------------------------------
+# BLS QCEW — USVI Accommodation & Food Services
+# ---------------------------------------------------------------------------
+
+def load_qcew(deflate: bool = True, cpi_base_year: int = 2016) -> pd.DataFrame:
+    """
+    Load BLS Quarterly Census of Employment and Wages (QCEW) for USVI
+    Accommodation and Food Services (NAICS 72, 721, 722).
+
+    Source: data/raw/qcew_usvi_accommodation_food_services_2000_2025.csv
+    Coverage: 2000–2025, annual.
+    Sector: Private (own_code = 5), all sizes (size_code = 0).
+    Geography: USVI (area_fips = 78000).
+
+    Returns
+    -------
+    DataFrame with columns (per industry and year):
+        year, naics (str), naics_label,
+        annual_avg_estabs, annual_avg_emplvl,
+        total_annual_wages (nominal $),
+        avg_annual_pay (nominal $),
+        avg_annual_pay_real (approximate base_year $, if deflate=True),
+        total_annual_wages_real (approximate base_year $, if deflate=True)
+
+    Notes
+    -----
+    QCEW employment counts covered jobs, not unique individuals.
+    It excludes self-employment and workers not covered by UI laws.
+    'avg_annual_pay' is total wages divided by average employment —
+    not the earnings of a typical individual worker.
+    NAICS 72 is the sum of 721 + 722 plus any residual; do not add them.
+    """
+    path = RAW / "qcew_usvi_accommodation_food_services_2000_2025.csv"
+    raw = pd.read_csv(path)
+
+    naics_labels = {72: "Accommodation & food services", 721: "Accommodation", 722: "Food services & drinking places"}
+    raw["naics_label"] = raw["industry_code"].map(naics_labels)
+
+    df = raw.rename(columns={
+        "industry_code": "naics",
+        "annual_avg_emplvl": "annual_avg_emplvl",
+        "total_annual_wages": "total_annual_wages",
+        "avg_annual_pay": "avg_annual_pay",
+        "annual_avg_estabs": "annual_avg_estabs",
+    }).copy()
+    df["naics"] = df["naics"].astype(str)
+
+    if deflate:
+        cpi = load_cpi_annual(base_year=cpi_base_year)[["year", "cpi_index"]]
+        # cpi_index = 100 at base_year → deflate: multiply by (100 / cpi_index)
+        df = df.merge(cpi, on="year", how="left")
+        deflator = 100.0 / df["cpi_index"]
+        df["avg_annual_pay_real"] = (df["avg_annual_pay"] * deflator).round(0)
+        df["total_annual_wages_real"] = (df["total_annual_wages"] * deflator).round(0)
+        df["cpi_base_year"] = cpi_base_year
+        df = df.drop(columns=["cpi_index"])
+
+    keep_cols = [
+        "year", "naics", "naics_label",
+        "annual_avg_estabs", "annual_avg_emplvl",
+        "total_annual_wages", "avg_annual_pay",
+    ]
+    if deflate:
+        keep_cols += ["avg_annual_pay_real", "total_annual_wages_real", "cpi_base_year"]
+    return df[keep_cols].sort_values(["naics", "year"]).reset_index(drop=True)

@@ -1,0 +1,739 @@
+source_file,source_dir,page,vintage,reporting_period,year,geo,value,note
+RA07.pdf,nights_available,1,original,Annual_Total,2006,STJ,1294.6,Annual_Total from RA07.pdf (prior year)
+RA07.pdf,nights_available,1,original,YTD_December,2006,STJ,1294.6,YTD_Dec prior from RA07.pdf
+RA07.pdf,nights_available,1,original,Annual_Total,2007,STJ,1265.4,Annual_Total from RA07.pdf
+RA08.pdf,nights_available,1,original,Annual_Total,2007,STJ,1278.1,Annual_Total from RA08.pdf (prior year)
+RA07.pdf,nights_available,1,original,YTD_December,2007,STJ,1265.4,YTD_Dec current from RA07.pdf
+RA08.pdf,nights_available,1,original,YTD_December,2007,STJ,1265.5,YTD_Dec prior from RA08.pdf
+RA08.pdf,nights_available,1,original,Annual_Total,2008,STJ,1265.5,Annual_Total from RA08.pdf
+RA08.pdf,nights_available,1,original,YTD_December,2008,STJ,1278.1,YTD_Dec current from RA08.pdf
+RA09.pdf,nights_available,1,original,YTD_December,2008,STJ,115.9,YTD_Dec prior from RA09.pdf
+RA09.pdf,nights_available,1,original,YTD_December,2009,STJ,116.7,YTD_Dec current from RA09.pdf
+RA10-1.pdf,nights_available,1,original,YTD_December,2009,STJ,1368.6,YTD_Dec prior from RA10-1.pdf
+RA11.pdf,nights_available,1,original,Annual_Total,2010,STJ,1386.7,Annual_Total from RA11.pdf (prior year)
+RA10-1.pdf,nights_available,1,original,YTD_December,2010,STJ,1386.7,YTD_Dec current from RA10-1.pdf
+RA11.pdf,nights_available,1,original,YTD_December,2010,STJ,1386.7,YTD_Dec prior from RA11.pdf
+RA11.pdf,nights_available,1,original,Annual_Total,2011,STJ,1336.0,Annual_Total from RA11.pdf
+RA12.pdf,nights_available,1,original,Annual_Total,2011,STJ,1336.0,Annual_Total from RA12.pdf (prior year)
+RA11.pdf,nights_available,1,original,YTD_December,2011,STJ,1336.0,YTD_Dec current from RA11.pdf
+RA12.pdf,nights_available,1,original,YTD_December,2011,STJ,115.8,YTD_Dec prior from RA12.pdf
+RA12.pdf,nights_available,1,original,Annual_Total,2012,STJ,1385.8,Annual_Total from RA12.pdf
+RA13.pdf,nights_available,1,original,Annual_Total,2012,STJ,1385.8,Annual_Total from RA13.pdf (prior year)
+RA12.pdf,nights_available,1,original,YTD_December,2012,STJ,118.5,YTD_Dec current from RA12.pdf
+RA13.pdf,nights_available,1,original,YTD_December,2012,STJ,1385.8,YTD_Dec prior from RA13.pdf
+RA13.pdf,nights_available,1,original,Annual_Total,2013,STJ,1366.6,Annual_Total from RA13.pdf
+RA14-revised.pdf,nights_available,1,revised,Annual_Total,2013,STJ,1366.6,Annual_Total from RA14-revised.pdf (prior year)
+RA13.pdf,nights_available,1,original,YTD_December,2013,STJ,1366.6,YTD_Dec current from RA13.pdf
+RA14-revised.pdf,nights_available,1,revised,YTD_December,2013,STJ,1366.6,YTD_Dec prior from RA14-revised.pdf
+RA14-revised.pdf,nights_available,1,revised,Annual_Total,2014,STJ,1333.8,Annual_Total from RA14-revised.pdf
+RA15-revised.pdf,nights_available,1,revised,Annual_Total,2014,STJ,1333.8,Annual_Total from RA15-revised.pdf (prior year)
+RA14-revised.pdf,nights_available,1,revised,YTD_December,2014,STJ,1333.8,YTD_Dec current from RA14-revised.pdf
+RA15-revised.pdf,nights_available,1,revised,YTD_December,2014,STJ,1333.8,YTD_Dec prior from RA15-revised.pdf
+RA15-revised.pdf,nights_available,1,revised,Annual_Total,2015,STJ,1321.9,Annual_Total from RA15-revised.pdf
+RA16-revised.pdf,nights_available,1,revised,Annual_Total,2015,STJ,1321.9,Annual_Total from RA16-revised.pdf (prior year)
+RA15-revised.pdf,nights_available,1,revised,YTD_December,2015,STJ,1321.9,YTD_Dec current from RA15-revised.pdf
+RA16-revised.pdf,nights_available,1,revised,YTD_December,2015,STJ,1321.9,YTD_Dec prior from RA16-revised.pdf
+RA16-revised.pdf,nights_available,1,revised,Annual_Total,2016,STJ,1328.9,Annual_Total from RA16-revised.pdf
+RA17-revised.pdf,nights_available,1,revised,Annual_Total,2016,STJ,1328.9,Annual_Total from RA17-revised.pdf (prior year)
+RA16-revised.pdf,nights_available,1,revised,YTD_December,2016,STJ,1328.9,YTD_Dec current from RA16-revised.pdf
+RA17-revised.pdf,nights_available,1,revised,YTD_December,2016,STJ,1328.9,YTD_Dec prior from RA17-revised.pdf
+RA17-revised.pdf,nights_available,1,revised,Annual_Total,2017,STJ,1282.6,Annual_Total from RA17-revised.pdf
+RA18-revised.pdf,nights_available,1,revised,Annual_Total,2017,STJ,1282.6,Annual_Total from RA18-revised.pdf (prior year)
+RA17-revised.pdf,nights_available,1,revised,YTD_December,2017,STJ,1282.6,YTD_Dec current from RA17-revised.pdf
+RA18-revised.pdf,nights_available,1,revised,YTD_December,2017,STJ,1282.6,YTD_Dec prior from RA18-revised.pdf
+RA18-revised.pdf,nights_available,1,revised,Annual_Total,2018,STJ,439.6,Annual_Total from RA18-revised.pdf
+RA19-revised.pdf,nights_available,1,revised,Annual_Total,2018,STJ,439.6,Annual_Total from RA19-revised.pdf (prior year)
+RA18-revised.pdf,nights_available,1,revised,YTD_December,2018,STJ,439.6,YTD_Dec current from RA18-revised.pdf
+RA19-revised.pdf,nights_available,1,revised,YTD_December,2018,STJ,439.6,YTD_Dec prior from RA19-revised.pdf
+RA19-revised.pdf,nights_available,1,revised,Annual_Total,2019,STJ,629.9,Annual_Total from RA19-revised.pdf
+RA20-revised.pdf,nights_available,1,revised,Annual_Total,2019,STJ,629.9,Annual_Total from RA20-revised.pdf (prior year)
+RA19-revised.pdf,nights_available,1,revised,YTD_December,2019,STJ,629.9,YTD_Dec current from RA19-revised.pdf
+RA20-revised.pdf,nights_available,1,revised,YTD_December,2019,STJ,629.9,YTD_Dec prior from RA20-revised.pdf
+RA-21-DEC-1.pdf,nights_available,1,original,Annual_Total,2020,STJ,845.9,Annual_Total from RA-21-DEC-1.pdf (prior year)
+RA20-revised.pdf,nights_available,1,revised,Annual_Total,2020,STJ,843.2,Annual_Total from RA20-revised.pdf
+RA-21-DEC-1.pdf,nights_available,1,original,YTD_December,2020,STJ,845.9,YTD_Dec prior from RA-21-DEC-1.pdf
+RA20-revised.pdf,nights_available,1,revised,YTD_December,2020,STJ,843.2,YTD_Dec current from RA20-revised.pdf
+RA-21-DEC-1.pdf,nights_available,1,original,Annual_Total,2021,STJ,774.7,Annual_Total from RA-21-DEC-1.pdf
+RA22-DEC-revised.pdf,nights_available,1,revised,Annual_Total,2021,STJ,756.2,Annual_Total from RA22-DEC-revised.pdf (prior year)
+RA-21-DEC-1.pdf,nights_available,1,original,YTD_December,2021,STJ,774.7,YTD_Dec current from RA-21-DEC-1.pdf
+RA22-DEC-revised.pdf,nights_available,1,revised,YTD_December,2021,STJ,756.2,YTD_Dec prior from RA22-DEC-revised.pdf
+RA22-DEC-revised.pdf,nights_available,1,revised,Annual_Total,2022,STJ,789.6,Annual_Total from RA22-DEC-revised.pdf
+RA23-DEC.pdf,nights_available,1,original,Annual_Total,2022,STJ,788.5,Annual_Total from RA23-DEC.pdf (prior year)
+RA22-DEC-revised.pdf,nights_available,1,revised,YTD_December,2022,STJ,789.6,YTD_Dec current from RA22-DEC-revised.pdf
+RA23-DEC.pdf,nights_available,1,original,YTD_December,2022,STJ,788.5,YTD_Dec prior from RA23-DEC.pdf
+RA23-DEC.pdf,nights_available,1,original,Annual_Total,2023,STJ,796.6,Annual_Total from RA23-DEC.pdf
+RA24-DEC.pdf,nights_available,1,original,Annual_Total,2023,STJ,883.6,Annual_Total from RA24-DEC.pdf (prior year)
+RA23-DEC.pdf,nights_available,1,original,YTD_December,2023,STJ,796.6,YTD_Dec current from RA23-DEC.pdf
+RA24-DEC.pdf,nights_available,1,original,YTD_December,2023,STJ,883.6,YTD_Dec prior from RA24-DEC.pdf
+RA24-DEC.pdf,nights_available,1,original,Annual_Total,2024,STJ,995.0,Annual_Total from RA24-DEC.pdf
+RA25-DEC.pdf,nights_available,1,original,Annual_Total,2024,STJ,995.0,Annual_Total from RA25-DEC.pdf (prior year)
+RA24-DEC.pdf,nights_available,1,original,YTD_December,2024,STJ,995.0,YTD_Dec current from RA24-DEC.pdf
+RA25-DEC.pdf,nights_available,1,original,YTD_December,2024,STJ,995.0,YTD_Dec prior from RA25-DEC.pdf
+RA25-DEC.pdf,nights_available,1,original,Annual_Total,2025,STJ,1025.9,Annual_Total from RA25-DEC.pdf
+RA25-DEC.pdf,nights_available,1,original,YTD_December,2025,STJ,1025.9,YTD_Dec current from RA25-DEC.pdf
+RA07.pdf,nights_available,1,original,Annual_Total,2006,STX,424.1,Annual_Total from RA07.pdf (prior year)
+RA07.pdf,nights_available,1,original,YTD_December,2006,STX,424.1,YTD_Dec prior from RA07.pdf
+RA07.pdf,nights_available,1,original,Annual_Total,2007,STX,429.7,Annual_Total from RA07.pdf
+RA08.pdf,nights_available,1,original,Annual_Total,2007,STX,429.7,Annual_Total from RA08.pdf (prior year)
+RA07.pdf,nights_available,1,original,YTD_December,2007,STX,429.7,YTD_Dec current from RA07.pdf
+RA08.pdf,nights_available,1,original,YTD_December,2007,STX,429.7,YTD_Dec prior from RA08.pdf
+RA08.pdf,nights_available,1,original,Annual_Total,2008,STX,449.6,Annual_Total from RA08.pdf
+RA08.pdf,nights_available,1,original,YTD_December,2008,STX,449.6,YTD_Dec current from RA08.pdf
+RA09.pdf,nights_available,1,original,YTD_December,2008,STX,37.2,YTD_Dec prior from RA09.pdf
+RA09.pdf,nights_available,1,original,YTD_December,2009,STX,36.8,YTD_Dec current from RA09.pdf
+RA10-1.pdf,nights_available,1,original,YTD_December,2009,STX,446.9,YTD_Dec prior from RA10-1.pdf
+RA11.pdf,nights_available,1,original,Annual_Total,2010,STX,441.4,Annual_Total from RA11.pdf (prior year)
+RA10-1.pdf,nights_available,1,original,YTD_December,2010,STX,441.4,YTD_Dec current from RA10-1.pdf
+RA11.pdf,nights_available,1,original,YTD_December,2010,STX,441.4,YTD_Dec prior from RA11.pdf
+RA11.pdf,nights_available,1,original,Annual_Total,2011,STX,445.9,Annual_Total from RA11.pdf
+RA12.pdf,nights_available,1,original,Annual_Total,2011,STX,445.9,Annual_Total from RA12.pdf (prior year)
+RA11.pdf,nights_available,1,original,YTD_December,2011,STX,445.9,YTD_Dec current from RA11.pdf
+RA12.pdf,nights_available,1,original,YTD_December,2011,STX,37.9,YTD_Dec prior from RA12.pdf
+RA12.pdf,nights_available,1,original,Annual_Total,2012,STX,435.1,Annual_Total from RA12.pdf
+RA13.pdf,nights_available,1,original,Annual_Total,2012,STX,435.1,Annual_Total from RA13.pdf (prior year)
+RA12.pdf,nights_available,1,original,YTD_December,2012,STX,36.5,YTD_Dec current from RA12.pdf
+RA13.pdf,nights_available,1,original,YTD_December,2012,STX,435.1,YTD_Dec prior from RA13.pdf
+RA13.pdf,nights_available,1,original,Annual_Total,2013,STX,425.9,Annual_Total from RA13.pdf
+RA14-revised.pdf,nights_available,1,revised,Annual_Total,2013,STX,425.9,Annual_Total from RA14-revised.pdf (prior year)
+RA13.pdf,nights_available,1,original,YTD_December,2013,STX,425.9,YTD_Dec current from RA13.pdf
+RA14-revised.pdf,nights_available,1,revised,YTD_December,2013,STX,425.9,YTD_Dec prior from RA14-revised.pdf
+RA14-revised.pdf,nights_available,1,revised,Annual_Total,2014,STX,420.3,Annual_Total from RA14-revised.pdf
+RA15-revised.pdf,nights_available,1,revised,Annual_Total,2014,STX,420.3,Annual_Total from RA15-revised.pdf (prior year)
+RA14-revised.pdf,nights_available,1,revised,YTD_December,2014,STX,420.3,YTD_Dec current from RA14-revised.pdf
+RA15-revised.pdf,nights_available,1,revised,YTD_December,2014,STX,420.3,YTD_Dec prior from RA15-revised.pdf
+RA15-revised.pdf,nights_available,1,revised,Annual_Total,2015,STX,411.8,Annual_Total from RA15-revised.pdf
+RA16-revised.pdf,nights_available,1,revised,Annual_Total,2015,STX,411.8,Annual_Total from RA16-revised.pdf (prior year)
+RA15-revised.pdf,nights_available,1,revised,YTD_December,2015,STX,411.8,YTD_Dec current from RA15-revised.pdf
+RA16-revised.pdf,nights_available,1,revised,YTD_December,2015,STX,411.8,YTD_Dec prior from RA16-revised.pdf
+RA16-revised.pdf,nights_available,1,revised,Annual_Total,2016,STX,413.8,Annual_Total from RA16-revised.pdf
+RA17-revised.pdf,nights_available,1,revised,Annual_Total,2016,STX,413.8,Annual_Total from RA17-revised.pdf (prior year)
+RA16-revised.pdf,nights_available,1,revised,YTD_December,2016,STX,413.8,YTD_Dec current from RA16-revised.pdf
+RA17-revised.pdf,nights_available,1,revised,YTD_December,2016,STX,413.8,YTD_Dec prior from RA17-revised.pdf
+RA17-revised.pdf,nights_available,1,revised,Annual_Total,2017,STX,388.1,Annual_Total from RA17-revised.pdf
+RA18-revised.pdf,nights_available,1,revised,Annual_Total,2017,STX,388.1,Annual_Total from RA18-revised.pdf (prior year)
+RA17-revised.pdf,nights_available,1,revised,YTD_December,2017,STX,388.1,YTD_Dec current from RA17-revised.pdf
+RA18-revised.pdf,nights_available,1,revised,YTD_December,2017,STX,388.1,YTD_Dec prior from RA18-revised.pdf
+RA18-revised.pdf,nights_available,1,revised,Annual_Total,2018,STX,274.6,Annual_Total from RA18-revised.pdf
+RA19-revised.pdf,nights_available,1,revised,Annual_Total,2018,STX,274.6,Annual_Total from RA19-revised.pdf (prior year)
+RA18-revised.pdf,nights_available,1,revised,YTD_December,2018,STX,274.6,YTD_Dec current from RA18-revised.pdf
+RA19-revised.pdf,nights_available,1,revised,YTD_December,2018,STX,274.6,YTD_Dec prior from RA19-revised.pdf
+RA19-revised.pdf,nights_available,1,revised,Annual_Total,2019,STX,344.3,Annual_Total from RA19-revised.pdf
+RA20-revised.pdf,nights_available,1,revised,Annual_Total,2019,STX,344.3,Annual_Total from RA20-revised.pdf (prior year)
+RA19-revised.pdf,nights_available,1,revised,YTD_December,2019,STX,344.3,YTD_Dec current from RA19-revised.pdf
+RA20-revised.pdf,nights_available,1,revised,YTD_December,2019,STX,344.3,YTD_Dec prior from RA20-revised.pdf
+RA-21-DEC-1.pdf,nights_available,1,original,Annual_Total,2020,STX,358.2,Annual_Total from RA-21-DEC-1.pdf (prior year)
+RA20-revised.pdf,nights_available,1,revised,Annual_Total,2020,STX,358.2,Annual_Total from RA20-revised.pdf
+RA-21-DEC-1.pdf,nights_available,1,original,YTD_December,2020,STX,358.2,YTD_Dec prior from RA-21-DEC-1.pdf
+RA20-revised.pdf,nights_available,1,revised,YTD_December,2020,STX,358.2,YTD_Dec current from RA20-revised.pdf
+RA-21-DEC-1.pdf,nights_available,1,original,Annual_Total,2021,STX,295.3,Annual_Total from RA-21-DEC-1.pdf
+RA22-DEC-revised.pdf,nights_available,1,revised,Annual_Total,2021,STX,292.7,Annual_Total from RA22-DEC-revised.pdf (prior year)
+RA-21-DEC-1.pdf,nights_available,1,original,YTD_December,2021,STX,295.3,YTD_Dec current from RA-21-DEC-1.pdf
+RA22-DEC-revised.pdf,nights_available,1,revised,YTD_December,2021,STX,292.7,YTD_Dec prior from RA22-DEC-revised.pdf
+RA22-DEC-revised.pdf,nights_available,1,revised,Annual_Total,2022,STX,341.8,Annual_Total from RA22-DEC-revised.pdf
+RA23-DEC.pdf,nights_available,1,original,Annual_Total,2022,STX,349.3,Annual_Total from RA23-DEC.pdf (prior year)
+RA22-DEC-revised.pdf,nights_available,1,revised,YTD_December,2022,STX,341.8,YTD_Dec current from RA22-DEC-revised.pdf
+RA23-DEC.pdf,nights_available,1,original,YTD_December,2022,STX,349.3,YTD_Dec prior from RA23-DEC.pdf
+RA23-DEC.pdf,nights_available,1,original,Annual_Total,2023,STX,385.7,Annual_Total from RA23-DEC.pdf
+RA24-DEC.pdf,nights_available,1,original,Annual_Total,2023,STX,351.1,Annual_Total from RA24-DEC.pdf (prior year)
+RA23-DEC.pdf,nights_available,1,original,YTD_December,2023,STX,385.7,YTD_Dec current from RA23-DEC.pdf
+RA24-DEC.pdf,nights_available,1,original,YTD_December,2023,STX,351.1,YTD_Dec prior from RA24-DEC.pdf
+RA24-DEC.pdf,nights_available,1,original,Annual_Total,2024,STX,392.3,Annual_Total from RA24-DEC.pdf
+RA25-DEC.pdf,nights_available,1,original,Annual_Total,2024,STX,392.3,Annual_Total from RA25-DEC.pdf (prior year)
+RA24-DEC.pdf,nights_available,1,original,YTD_December,2024,STX,392.3,YTD_Dec current from RA24-DEC.pdf
+RA25-DEC.pdf,nights_available,1,original,YTD_December,2024,STX,392.3,YTD_Dec prior from RA25-DEC.pdf
+RA25-DEC.pdf,nights_available,1,original,Annual_Total,2025,STX,369.9,Annual_Total from RA25-DEC.pdf
+RA25-DEC.pdf,nights_available,1,original,YTD_December,2025,STX,369.9,YTD_Dec current from RA25-DEC.pdf
+RA07.pdf,nights_available,1,original,Annual_Total,2006,USVI_TOTAL,1718.8,Annual_Total from RA07.pdf (prior year)
+RA07.pdf,nights_available,1,original,YTD_December,2006,USVI_TOTAL,1718.8,YTD_Dec prior from RA07.pdf
+RA07.pdf,nights_available,1,original,Annual_Total,2007,USVI_TOTAL,1695.2,Annual_Total from RA07.pdf
+RA08.pdf,nights_available,1,original,Annual_Total,2007,USVI_TOTAL,1695.2,Annual_Total from RA08.pdf (prior year)
+RA07.pdf,nights_available,1,original,YTD_December,2007,USVI_TOTAL,1695.2,YTD_Dec current from RA07.pdf
+RA08.pdf,nights_available,1,original,YTD_December,2007,USVI_TOTAL,1695.2,YTD_Dec prior from RA08.pdf
+RA08.pdf,nights_available,1,original,Annual_Total,2008,USVI_TOTAL,1727.7,Annual_Total from RA08.pdf
+RA08.pdf,nights_available,1,original,YTD_December,2008,USVI_TOTAL,1727.7,YTD_Dec current from RA08.pdf
+RA09.pdf,nights_available,1,original,YTD_December,2008,USVI_TOTAL,153.1,YTD_Dec prior from RA09.pdf
+RA09.pdf,nights_available,1,original,YTD_December,2009,USVI_TOTAL,153.5,YTD_Dec current from RA09.pdf
+RA10-1.pdf,nights_available,1,original,YTD_December,2009,USVI_TOTAL,1815.5,YTD_Dec prior from RA10-1.pdf
+RA11.pdf,nights_available,1,original,Annual_Total,2010,USVI_TOTAL,1828.1,Annual_Total from RA11.pdf (prior year)
+RA10-1.pdf,nights_available,1,original,YTD_December,2010,USVI_TOTAL,1828.1,YTD_Dec current from RA10-1.pdf
+RA11.pdf,nights_available,1,original,YTD_December,2010,USVI_TOTAL,1828.1,YTD_Dec prior from RA11.pdf
+RA11.pdf,nights_available,1,original,Annual_Total,2011,USVI_TOTAL,1781.9,Annual_Total from RA11.pdf
+RA12.pdf,nights_available,1,original,Annual_Total,2011,USVI_TOTAL,1781.9,Annual_Total from RA12.pdf (prior year)
+RA11.pdf,nights_available,1,original,YTD_December,2011,USVI_TOTAL,1781.9,YTD_Dec current from RA11.pdf
+RA12.pdf,nights_available,1,original,YTD_December,2011,USVI_TOTAL,153.7,YTD_Dec prior from RA12.pdf
+RA12.pdf,nights_available,1,original,Annual_Total,2012,USVI_TOTAL,1820.8,Annual_Total from RA12.pdf
+RA13.pdf,nights_available,1,original,Annual_Total,2012,USVI_TOTAL,1820.8,Annual_Total from RA13.pdf (prior year)
+RA12.pdf,nights_available,1,original,YTD_December,2012,USVI_TOTAL,155.0,YTD_Dec current from RA12.pdf
+RA13.pdf,nights_available,1,original,YTD_December,2012,USVI_TOTAL,1820.8,YTD_Dec prior from RA13.pdf
+RA13.pdf,nights_available,1,original,Annual_Total,2013,USVI_TOTAL,1792.4,Annual_Total from RA13.pdf
+RA14-revised.pdf,nights_available,1,revised,Annual_Total,2013,USVI_TOTAL,1792.4,Annual_Total from RA14-revised.pdf (prior year)
+RA13.pdf,nights_available,1,original,YTD_December,2013,USVI_TOTAL,1792.4,YTD_Dec current from RA13.pdf
+RA14-revised.pdf,nights_available,1,revised,YTD_December,2013,USVI_TOTAL,1792.4,YTD_Dec prior from RA14-revised.pdf
+RA14-revised.pdf,nights_available,1,revised,Annual_Total,2014,USVI_TOTAL,1754.2,Annual_Total from RA14-revised.pdf
+RA15-revised.pdf,nights_available,1,revised,Annual_Total,2014,USVI_TOTAL,1754.2,Annual_Total from RA15-revised.pdf (prior year)
+RA14-revised.pdf,nights_available,1,revised,YTD_December,2014,USVI_TOTAL,1754.2,YTD_Dec current from RA14-revised.pdf
+RA15-revised.pdf,nights_available,1,revised,YTD_December,2014,USVI_TOTAL,1754.2,YTD_Dec prior from RA15-revised.pdf
+RA15-revised.pdf,nights_available,1,revised,Annual_Total,2015,USVI_TOTAL,1733.7,Annual_Total from RA15-revised.pdf
+RA16-revised.pdf,nights_available,1,revised,Annual_Total,2015,USVI_TOTAL,1733.7,Annual_Total from RA16-revised.pdf (prior year)
+RA15-revised.pdf,nights_available,1,revised,YTD_December,2015,USVI_TOTAL,1733.7,YTD_Dec current from RA15-revised.pdf
+RA16-revised.pdf,nights_available,1,revised,YTD_December,2015,USVI_TOTAL,1733.7,YTD_Dec prior from RA16-revised.pdf
+RA16-revised.pdf,nights_available,1,revised,Annual_Total,2016,USVI_TOTAL,1742.8,Annual_Total from RA16-revised.pdf
+RA17-revised.pdf,nights_available,1,revised,Annual_Total,2016,USVI_TOTAL,1742.8,Annual_Total from RA17-revised.pdf (prior year)
+RA16-revised.pdf,nights_available,1,revised,YTD_December,2016,USVI_TOTAL,1742.8,YTD_Dec current from RA16-revised.pdf
+RA17-revised.pdf,nights_available,1,revised,YTD_December,2016,USVI_TOTAL,1742.8,YTD_Dec prior from RA17-revised.pdf
+RA17-revised.pdf,nights_available,1,revised,Annual_Total,2017,USVI_TOTAL,1670.7,Annual_Total from RA17-revised.pdf
+RA18-revised.pdf,nights_available,1,revised,Annual_Total,2017,USVI_TOTAL,1670.7,Annual_Total from RA18-revised.pdf (prior year)
+RA17-revised.pdf,nights_available,1,revised,YTD_December,2017,USVI_TOTAL,1670.7,YTD_Dec current from RA17-revised.pdf
+RA18-revised.pdf,nights_available,1,revised,YTD_December,2017,USVI_TOTAL,1670.7,YTD_Dec prior from RA18-revised.pdf
+RA18-revised.pdf,nights_available,1,revised,Annual_Total,2018,USVI_TOTAL,714.2,Annual_Total from RA18-revised.pdf
+RA19-revised.pdf,nights_available,1,revised,Annual_Total,2018,USVI_TOTAL,714.2,Annual_Total from RA19-revised.pdf (prior year)
+RA18-revised.pdf,nights_available,1,revised,YTD_December,2018,USVI_TOTAL,714.2,YTD_Dec current from RA18-revised.pdf
+RA19-revised.pdf,nights_available,1,revised,YTD_December,2018,USVI_TOTAL,714.2,YTD_Dec prior from RA19-revised.pdf
+RA19-revised.pdf,nights_available,1,revised,Annual_Total,2019,USVI_TOTAL,974.2,Annual_Total from RA19-revised.pdf
+RA20-revised.pdf,nights_available,1,revised,Annual_Total,2019,USVI_TOTAL,974.2,Annual_Total from RA20-revised.pdf (prior year)
+RA19-revised.pdf,nights_available,1,revised,YTD_December,2019,USVI_TOTAL,974.2,YTD_Dec current from RA19-revised.pdf
+RA20-revised.pdf,nights_available,1,revised,YTD_December,2019,USVI_TOTAL,974.2,YTD_Dec prior from RA20-revised.pdf
+RA-21-DEC-1.pdf,nights_available,1,original,Annual_Total,2020,USVI_TOTAL,1204.2,Annual_Total from RA-21-DEC-1.pdf (prior year)
+RA20-revised.pdf,nights_available,1,revised,Annual_Total,2020,USVI_TOTAL,1201.4,Annual_Total from RA20-revised.pdf
+RA-21-DEC-1.pdf,nights_available,1,original,YTD_December,2020,USVI_TOTAL,1204.2,YTD_Dec prior from RA-21-DEC-1.pdf
+RA20-revised.pdf,nights_available,1,revised,YTD_December,2020,USVI_TOTAL,1201.4,YTD_Dec current from RA20-revised.pdf
+RA-21-DEC-1.pdf,nights_available,1,original,Annual_Total,2021,USVI_TOTAL,1070.1,Annual_Total from RA-21-DEC-1.pdf
+RA22-DEC-revised.pdf,nights_available,1,revised,Annual_Total,2021,USVI_TOTAL,1049.0,Annual_Total from RA22-DEC-revised.pdf (prior year)
+RA-21-DEC-1.pdf,nights_available,1,original,YTD_December,2021,USVI_TOTAL,1070.1,YTD_Dec current from RA-21-DEC-1.pdf
+RA22-DEC-revised.pdf,nights_available,1,revised,YTD_December,2021,USVI_TOTAL,1049.0,YTD_Dec prior from RA22-DEC-revised.pdf
+RA22-DEC-revised.pdf,nights_available,1,revised,Annual_Total,2022,USVI_TOTAL,1131.4,Annual_Total from RA22-DEC-revised.pdf
+RA23-DEC.pdf,nights_available,1,original,Annual_Total,2022,USVI_TOTAL,1137.8,Annual_Total from RA23-DEC.pdf (prior year)
+RA22-DEC-revised.pdf,nights_available,1,revised,YTD_December,2022,USVI_TOTAL,1131.4,YTD_Dec current from RA22-DEC-revised.pdf
+RA23-DEC.pdf,nights_available,1,original,YTD_December,2022,USVI_TOTAL,1137.8,YTD_Dec prior from RA23-DEC.pdf
+RA23-DEC.pdf,nights_available,1,original,Annual_Total,2023,USVI_TOTAL,1182.4,Annual_Total from RA23-DEC.pdf
+RA24-DEC.pdf,nights_available,1,original,Annual_Total,2023,USVI_TOTAL,1234.7,Annual_Total from RA24-DEC.pdf (prior year)
+RA23-DEC.pdf,nights_available,1,original,YTD_December,2023,USVI_TOTAL,1182.4,YTD_Dec current from RA23-DEC.pdf
+RA24-DEC.pdf,nights_available,1,original,YTD_December,2023,USVI_TOTAL,1234.7,YTD_Dec prior from RA24-DEC.pdf
+RA24-DEC.pdf,nights_available,1,original,Annual_Total,2024,USVI_TOTAL,1387.3,Annual_Total from RA24-DEC.pdf
+RA25-DEC.pdf,nights_available,1,original,Annual_Total,2024,USVI_TOTAL,1387.3,Annual_Total from RA25-DEC.pdf (prior year)
+RA24-DEC.pdf,nights_available,1,original,YTD_December,2024,USVI_TOTAL,1387.3,YTD_Dec current from RA24-DEC.pdf
+RA25-DEC.pdf,nights_available,1,original,YTD_December,2024,USVI_TOTAL,1387.3,YTD_Dec prior from RA25-DEC.pdf
+RA25-DEC.pdf,nights_available,1,original,Annual_Total,2025,USVI_TOTAL,1395.8,Annual_Total from RA25-DEC.pdf
+RA25-DEC.pdf,nights_available,1,original,YTD_December,2025,USVI_TOTAL,1395.8,YTD_Dec current from RA25-DEC.pdf
+HRN01.pdf,nights_occupied,1,original,Annual_Total,2000,STJ,840.3,Annual_Total from HRN01.pdf (prior year)
+HRN01.pdf,nights_occupied,1,original,YTD_December,2000,STJ,840.6,YTD_Dec prior from HRN01.pdf
+HRN01.pdf,nights_occupied,1,original,Annual_Total,2001,STJ,843.0,Annual_Total from HRN01.pdf
+HRN01.pdf,nights_occupied,1,original,YTD_December,2001,STJ,843.0,YTD_Dec current from HRN01.pdf
+HRN03.pdf,nights_occupied,1,original,Annual_Total,2002,STJ,870.1,Annual_Total from HRN03.pdf (prior year)
+HRN03.pdf,nights_occupied,1,original,YTD_December,2002,STJ,870.2,YTD_Dec prior from HRN03.pdf
+HRN03.pdf,nights_occupied,1,original,Annual_Total,2003,STJ,875.6,Annual_Total from HRN03.pdf
+HRN04.pdf,nights_occupied,1,original,Annual_Total,2003,STJ,877.1,Annual_Total from HRN04.pdf (prior year)
+HRN03.pdf,nights_occupied,1,original,YTD_December,2003,STJ,875.5,YTD_Dec current from HRN03.pdf
+HRN04.pdf,nights_occupied,1,original,YTD_December,2003,STJ,877.0,YTD_Dec prior from HRN04.pdf
+HRN04.pdf,nights_occupied,1,original,Annual_Total,2004,STJ,892.9,Annual_Total from HRN04.pdf
+HRN05.pdf,nights_occupied,1,original,Annual_Total,2004,STJ,885.7,Annual_Total from HRN05.pdf (prior year)
+HRN04.pdf,nights_occupied,1,original,YTD_December,2004,STJ,892.9,YTD_Dec current from HRN04.pdf
+HRN05.pdf,nights_occupied,1,original,YTD_December,2004,STJ,885.7,YTD_Dec prior from HRN05.pdf
+HRN05.pdf,nights_occupied,1,original,Annual_Total,2005,STJ,856.9,Annual_Total from HRN05.pdf
+HRN06.pdf,nights_occupied,1,original,Annual_Total,2005,STJ,885.7,Annual_Total from HRN06.pdf (prior year)
+HRN05.pdf,nights_occupied,1,original,YTD_December,2005,STJ,856.9,YTD_Dec current from HRN05.pdf
+HRN06.pdf,nights_occupied,1,original,YTD_December,2005,STJ,856.5,YTD_Dec prior from HRN06.pdf
+HRN06.pdf,nights_occupied,1,original,Annual_Total,2006,STJ,823.6,Annual_Total from HRN06.pdf
+HRN06.pdf,nights_occupied,1,original,YTD_December,2006,STJ,823.6,YTD_Dec current from HRN06.pdf
+HRN07.pdf,nights_occupied,1,original,Annual_Total,2007,STJ,822.9,Annual_Total from HRN07.pdf (prior year)
+HRN07.pdf,nights_occupied,1,original,Annual_Total,2007,STJ,867.8,Annual_Total from HRN07.pdf
+RN08.pdf,nights_occupied,1,original,Annual_Total,2007,STJ,867.1,Annual_Total from RN08.pdf (prior year)
+HRN07.pdf,nights_occupied,1,original,YTD_December,2007,STJ,822.9,YTD_Dec prior from HRN07.pdf
+HRN07.pdf,nights_occupied,1,original,YTD_December,2007,STJ,867.8,YTD_Dec current from HRN07.pdf
+RN08.pdf,nights_occupied,1,original,YTD_December,2007,STJ,867.1,YTD_Dec prior from RN08.pdf
+RN08.pdf,nights_occupied,1,original,Annual_Total,2008,STJ,828.2,Annual_Total from RN08.pdf
+RN08.pdf,nights_occupied,1,original,YTD_December,2008,STJ,828.2,YTD_Dec current from RN08.pdf
+RN09.pdf,nights_occupied,1,original,YTD_December,2008,STJ,74.3,YTD_Dec prior from RN09.pdf
+RN09.pdf,nights_occupied,1,original,YTD_December,2009,STJ,81.3,YTD_Dec current from RN09.pdf
+RN10.pdf,nights_occupied,1,original,YTD_December,2009,STJ,824.6,YTD_Dec prior from RN10.pdf
+RN11.pdf,nights_occupied,1,original,Annual_Total,2010,STJ,839.8,Annual_Total from RN11.pdf (prior year)
+RN10.pdf,nights_occupied,1,original,YTD_December,2010,STJ,839.8,YTD_Dec current from RN10.pdf
+RN11.pdf,nights_occupied,1,original,YTD_December,2010,STJ,839.8,YTD_Dec prior from RN11.pdf
+RN11.pdf,nights_occupied,1,original,Annual_Total,2011,STJ,727.3,Annual_Total from RN11.pdf
+RN12.pdf,nights_occupied,1,original,Annual_Total,2011,STJ,718.8,Annual_Total from RN12.pdf (prior year)
+RN11.pdf,nights_occupied,1,original,YTD_December,2011,STJ,727.3,YTD_Dec current from RN11.pdf
+RN12.pdf,nights_occupied,1,original,YTD_December,2011,STJ,70.8,YTD_Dec prior from RN12.pdf
+RN12.pdf,nights_occupied,1,original,Annual_Total,2012,STJ,692.4,Annual_Total from RN12.pdf
+RN13.pdf,nights_occupied,1,original,Annual_Total,2012,STJ,748.7,Annual_Total from RN13.pdf (prior year)
+RN12.pdf,nights_occupied,1,original,YTD_December,2012,STJ,72.1,YTD_Dec current from RN12.pdf
+RN13.pdf,nights_occupied,1,original,YTD_December,2012,STJ,748.7,YTD_Dec prior from RN13.pdf
+RN13.pdf,nights_occupied,1,original,Annual_Total,2013,STJ,789.5,Annual_Total from RN13.pdf
+RN14-REVISED.pdf,nights_occupied,1,revised,Annual_Total,2013,STJ,789.5,Annual_Total from RN14-REVISED.pdf (prior year)
+RN13.pdf,nights_occupied,1,original,YTD_December,2013,STJ,789.5,YTD_Dec current from RN13.pdf
+RN14-REVISED.pdf,nights_occupied,1,revised,YTD_December,2013,STJ,789.5,YTD_Dec prior from RN14-REVISED.pdf
+RN14-REVISED.pdf,nights_occupied,1,revised,Annual_Total,2014,STJ,781.3,Annual_Total from RN14-REVISED.pdf
+RN15-REVISED.pdf,nights_occupied,1,revised,Annual_Total,2014,STJ,781.3,Annual_Total from RN15-REVISED.pdf (prior year)
+RN14-REVISED.pdf,nights_occupied,1,revised,YTD_December,2014,STJ,781.3,YTD_Dec current from RN14-REVISED.pdf
+RN15-REVISED.pdf,nights_occupied,1,revised,YTD_December,2014,STJ,781.3,YTD_Dec prior from RN15-REVISED.pdf
+RN15-REVISED.pdf,nights_occupied,1,revised,Annual_Total,2015,STJ,806.5,Annual_Total from RN15-REVISED.pdf
+RN16-REVISED.pdf,nights_occupied,1,revised,Annual_Total,2015,STJ,806.5,Annual_Total from RN16-REVISED.pdf (prior year)
+RN15-REVISED.pdf,nights_occupied,1,revised,YTD_December,2015,STJ,806.5,YTD_Dec current from RN15-REVISED.pdf
+RN16-REVISED.pdf,nights_occupied,1,revised,YTD_December,2015,STJ,806.5,YTD_Dec prior from RN16-REVISED.pdf
+RN16-REVISED.pdf,nights_occupied,1,revised,Annual_Total,2016,STJ,796.0,Annual_Total from RN16-REVISED.pdf
+RN17-REVISED.pdf,nights_occupied,1,revised,Annual_Total,2016,STJ,796.0,Annual_Total from RN17-REVISED.pdf (prior year)
+RN16-REVISED.pdf,nights_occupied,1,revised,YTD_December,2016,STJ,796.0,YTD_Dec current from RN16-REVISED.pdf
+RN17-REVISED.pdf,nights_occupied,1,revised,YTD_December,2016,STJ,796.0,YTD_Dec prior from RN17-REVISED.pdf
+RN17-REVISED.pdf,nights_occupied,1,revised,Annual_Total,2017,STJ,548.3,Annual_Total from RN17-REVISED.pdf
+RN18-REVISED.pdf,nights_occupied,1,revised,Annual_Total,2017,STJ,548.3,Annual_Total from RN18-REVISED.pdf (prior year)
+RN17-REVISED.pdf,nights_occupied,1,revised,YTD_December,2017,STJ,548.3,YTD_Dec current from RN17-REVISED.pdf
+RN18-REVISED.pdf,nights_occupied,1,revised,YTD_December,2017,STJ,548.3,YTD_Dec prior from RN18-REVISED.pdf
+RN18-REVISED.pdf,nights_occupied,1,revised,Annual_Total,2018,STJ,213.4,Annual_Total from RN18-REVISED.pdf
+RN19-REVISED.pdf,nights_occupied,1,revised,Annual_Total,2018,STJ,209.1,Annual_Total from RN19-REVISED.pdf (prior year)
+RN18-REVISED.pdf,nights_occupied,1,revised,YTD_December,2018,STJ,213.4,YTD_Dec current from RN18-REVISED.pdf
+RN19-REVISED.pdf,nights_occupied,1,revised,YTD_December,2018,STJ,209.1,YTD_Dec prior from RN19-REVISED.pdf
+RN19-REVISED.pdf,nights_occupied,1,revised,Annual_Total,2019,STJ,321.6,Annual_Total from RN19-REVISED.pdf
+RN20-REVISED.pdf,nights_occupied,1,revised,Annual_Total,2019,STJ,321.6,Annual_Total from RN20-REVISED.pdf (prior year)
+RN19-REVISED.pdf,nights_occupied,1,revised,YTD_December,2019,STJ,321.6,YTD_Dec current from RN19-REVISED.pdf
+RN20-REVISED.pdf,nights_occupied,1,revised,YTD_December,2019,STJ,321.6,YTD_Dec prior from RN20-REVISED.pdf
+RN20-REVISED.pdf,nights_occupied,1,revised,Annual_Total,2020,STJ,165.9,Annual_Total from RN20-REVISED.pdf
+RN21-DEC-REVISED-1.pdf,nights_occupied,1,revised,Annual_Total,2020,STJ,282.6,Annual_Total from RN21-DEC-REVISED-1.pdf (prior year)
+RN20-REVISED.pdf,nights_occupied,1,revised,YTD_December,2020,STJ,165.9,YTD_Dec current from RN20-REVISED.pdf
+RN21-DEC-REVISED-1.pdf,nights_occupied,1,revised,YTD_December,2020,STJ,282.6,YTD_Dec prior from RN21-DEC-REVISED-1.pdf
+RN21-DEC-REVISED-1.pdf,nights_occupied,1,revised,Annual_Total,2021,STJ,508.2,Annual_Total from RN21-DEC-REVISED-1.pdf
+RN22-DEC-revised.pdf,nights_occupied,1,revised,Annual_Total,2021,STJ,504.4,Annual_Total from RN22-DEC-revised.pdf (prior year)
+RN21-DEC-REVISED-1.pdf,nights_occupied,1,revised,YTD_December,2021,STJ,508.2,YTD_Dec current from RN21-DEC-REVISED-1.pdf
+RN22-DEC-revised.pdf,nights_occupied,1,revised,YTD_December,2021,STJ,504.4,YTD_Dec prior from RN22-DEC-revised.pdf
+RN22-DEC-revised.pdf,nights_occupied,1,revised,Annual_Total,2022,STJ,530.4,Annual_Total from RN22-DEC-revised.pdf
+RN23-DEC.pdf,nights_occupied,1,original,Annual_Total,2022,STJ,530.1,Annual_Total from RN23-DEC.pdf (prior year)
+RN22-DEC-revised.pdf,nights_occupied,1,revised,YTD_December,2022,STJ,530.4,YTD_Dec current from RN22-DEC-revised.pdf
+RN23-DEC.pdf,nights_occupied,1,original,YTD_December,2022,STJ,530.1,YTD_Dec prior from RN23-DEC.pdf
+RN23-DEC.pdf,nights_occupied,1,original,Annual_Total,2023,STJ,529.3,Annual_Total from RN23-DEC.pdf
+RN24-DEC.pdf,nights_occupied,1,original,Annual_Total,2023,STJ,556.6,Annual_Total from RN24-DEC.pdf (prior year)
+RN23-DEC.pdf,nights_occupied,1,original,YTD_December,2023,STJ,529.3,YTD_Dec current from RN23-DEC.pdf
+RN24-DEC.pdf,nights_occupied,1,original,YTD_December,2023,STJ,556.6,YTD_Dec prior from RN24-DEC.pdf
+RN24-DEC.pdf,nights_occupied,1,original,Annual_Total,2024,STJ,642.0,Annual_Total from RN24-DEC.pdf
+RN25-DEC.pdf,nights_occupied,1,original,PARSE_FAILURE,2024,STJ,,Annual rows not parsed
+RN24-DEC.pdf,nights_occupied,1,original,YTD_December,2024,STJ,642.0,YTD_Dec current from RN24-DEC.pdf
+HRN01.pdf,nights_occupied,1,original,Annual_Total,2000,STX,219.2,Annual_Total from HRN01.pdf (prior year)
+HRN01.pdf,nights_occupied,1,original,YTD_December,2000,STX,219.1,YTD_Dec prior from HRN01.pdf
+HRN01.pdf,nights_occupied,1,original,Annual_Total,2001,STX,208.2,Annual_Total from HRN01.pdf
+HRN01.pdf,nights_occupied,1,original,YTD_December,2001,STX,208.3,YTD_Dec current from HRN01.pdf
+HRN03.pdf,nights_occupied,1,original,Annual_Total,2002,STX,186.8,Annual_Total from HRN03.pdf (prior year)
+HRN03.pdf,nights_occupied,1,original,YTD_December,2002,STX,187.0,YTD_Dec prior from HRN03.pdf
+HRN03.pdf,nights_occupied,1,original,Annual_Total,2003,STX,175.1,Annual_Total from HRN03.pdf
+HRN04.pdf,nights_occupied,1,original,Annual_Total,2003,STX,174.7,Annual_Total from HRN04.pdf (prior year)
+HRN03.pdf,nights_occupied,1,original,YTD_December,2003,STX,175.2,YTD_Dec current from HRN03.pdf
+HRN04.pdf,nights_occupied,1,original,YTD_December,2003,STX,174.9,YTD_Dec prior from HRN04.pdf
+HRN04.pdf,nights_occupied,1,original,Annual_Total,2004,STX,210.7,Annual_Total from HRN04.pdf
+HRN05.pdf,nights_occupied,1,original,Annual_Total,2004,STX,210.5,Annual_Total from HRN05.pdf (prior year)
+HRN04.pdf,nights_occupied,1,original,YTD_December,2004,STX,210.6,YTD_Dec current from HRN04.pdf
+HRN05.pdf,nights_occupied,1,original,YTD_December,2004,STX,210.5,YTD_Dec prior from HRN05.pdf
+HRN05.pdf,nights_occupied,1,original,Annual_Total,2005,STX,237.8,Annual_Total from HRN05.pdf
+HRN06.pdf,nights_occupied,1,original,Annual_Total,2005,STX,210.5,Annual_Total from HRN06.pdf (prior year)
+HRN05.pdf,nights_occupied,1,original,YTD_December,2005,STX,237.8,YTD_Dec current from HRN05.pdf
+HRN06.pdf,nights_occupied,1,original,YTD_December,2005,STX,237.8,YTD_Dec prior from HRN06.pdf
+HRN06.pdf,nights_occupied,1,original,Annual_Total,2006,STX,217.2,Annual_Total from HRN06.pdf
+HRN06.pdf,nights_occupied,1,original,YTD_December,2006,STX,217.2,YTD_Dec current from HRN06.pdf
+HRN07.pdf,nights_occupied,1,original,Annual_Total,2007,STX,217.2,Annual_Total from HRN07.pdf (prior year)
+HRN07.pdf,nights_occupied,1,original,Annual_Total,2007,STX,233.2,Annual_Total from HRN07.pdf
+RN08.pdf,nights_occupied,1,original,Annual_Total,2007,STX,233.0,Annual_Total from RN08.pdf (prior year)
+HRN07.pdf,nights_occupied,1,original,YTD_December,2007,STX,217.2,YTD_Dec prior from HRN07.pdf
+HRN07.pdf,nights_occupied,1,original,YTD_December,2007,STX,233.2,YTD_Dec current from HRN07.pdf
+RN08.pdf,nights_occupied,1,original,YTD_December,2007,STX,233.0,YTD_Dec prior from RN08.pdf
+RN08.pdf,nights_occupied,1,original,Annual_Total,2008,STX,207.9,Annual_Total from RN08.pdf
+RN08.pdf,nights_occupied,1,original,YTD_December,2008,STX,207.9,YTD_Dec current from RN08.pdf
+RN09.pdf,nights_occupied,1,original,YTD_December,2008,STX,16.1,YTD_Dec prior from RN09.pdf
+RN09.pdf,nights_occupied,1,original,YTD_December,2009,STX,21.2,YTD_Dec current from RN09.pdf
+RN10.pdf,nights_occupied,1,original,YTD_December,2009,STX,172.3,YTD_Dec prior from RN10.pdf
+RN11.pdf,nights_occupied,1,original,Annual_Total,2010,STX,202.3,Annual_Total from RN11.pdf (prior year)
+RN10.pdf,nights_occupied,1,original,YTD_December,2010,STX,202.3,YTD_Dec current from RN10.pdf
+RN11.pdf,nights_occupied,1,original,YTD_December,2010,STX,202.3,YTD_Dec prior from RN11.pdf
+RN11.pdf,nights_occupied,1,original,Annual_Total,2011,STX,201.2,Annual_Total from RN11.pdf
+RN12.pdf,nights_occupied,1,original,Annual_Total,2011,STX,201.2,Annual_Total from RN12.pdf (prior year)
+RN11.pdf,nights_occupied,1,original,YTD_December,2011,STX,201.2,YTD_Dec current from RN11.pdf
+RN12.pdf,nights_occupied,1,original,YTD_December,2011,STX,20.6,YTD_Dec prior from RN12.pdf
+RN12.pdf,nights_occupied,1,original,Annual_Total,2012,STX,181.2,Annual_Total from RN12.pdf
+RN13.pdf,nights_occupied,1,original,Annual_Total,2012,STX,181.2,Annual_Total from RN13.pdf (prior year)
+RN12.pdf,nights_occupied,1,original,YTD_December,2012,STX,19.2,YTD_Dec current from RN12.pdf
+RN13.pdf,nights_occupied,1,original,YTD_December,2012,STX,181.2,YTD_Dec prior from RN13.pdf
+RN13.pdf,nights_occupied,1,original,Annual_Total,2013,STX,176.6,Annual_Total from RN13.pdf
+RN14-REVISED.pdf,nights_occupied,1,revised,Annual_Total,2013,STX,176.6,Annual_Total from RN14-REVISED.pdf (prior year)
+RN13.pdf,nights_occupied,1,original,YTD_December,2013,STX,176.6,YTD_Dec current from RN13.pdf
+RN14-REVISED.pdf,nights_occupied,1,revised,YTD_December,2013,STX,176.6,YTD_Dec prior from RN14-REVISED.pdf
+RN14-REVISED.pdf,nights_occupied,1,revised,Annual_Total,2014,STX,164.8,Annual_Total from RN14-REVISED.pdf
+RN15-REVISED.pdf,nights_occupied,1,revised,Annual_Total,2014,STX,164.8,Annual_Total from RN15-REVISED.pdf (prior year)
+RN14-REVISED.pdf,nights_occupied,1,revised,YTD_December,2014,STX,164.8,YTD_Dec current from RN14-REVISED.pdf
+RN15-REVISED.pdf,nights_occupied,1,revised,YTD_December,2014,STX,164.8,YTD_Dec prior from RN15-REVISED.pdf
+RN15-REVISED.pdf,nights_occupied,1,revised,Annual_Total,2015,STX,183.4,Annual_Total from RN15-REVISED.pdf
+RN16-REVISED.pdf,nights_occupied,1,revised,Annual_Total,2015,STX,183.4,Annual_Total from RN16-REVISED.pdf (prior year)
+RN15-REVISED.pdf,nights_occupied,1,revised,YTD_December,2015,STX,183.4,YTD_Dec current from RN15-REVISED.pdf
+RN16-REVISED.pdf,nights_occupied,1,revised,YTD_December,2015,STX,183.4,YTD_Dec prior from RN16-REVISED.pdf
+RN16-REVISED.pdf,nights_occupied,1,revised,Annual_Total,2016,STX,192.7,Annual_Total from RN16-REVISED.pdf
+RN17-REVISED.pdf,nights_occupied,1,revised,Annual_Total,2016,STX,192.7,Annual_Total from RN17-REVISED.pdf (prior year)
+RN16-REVISED.pdf,nights_occupied,1,revised,YTD_December,2016,STX,192.7,YTD_Dec current from RN16-REVISED.pdf
+RN17-REVISED.pdf,nights_occupied,1,revised,YTD_December,2016,STX,192.7,YTD_Dec prior from RN17-REVISED.pdf
+RN17-REVISED.pdf,nights_occupied,1,revised,Annual_Total,2017,STX,188.0,Annual_Total from RN17-REVISED.pdf
+RN18-REVISED.pdf,nights_occupied,1,revised,Annual_Total,2017,STX,188.0,Annual_Total from RN18-REVISED.pdf (prior year)
+RN17-REVISED.pdf,nights_occupied,1,revised,YTD_December,2017,STX,188.0,YTD_Dec current from RN17-REVISED.pdf
+RN18-REVISED.pdf,nights_occupied,1,revised,YTD_December,2017,STX,188.0,YTD_Dec prior from RN18-REVISED.pdf
+RN18-REVISED.pdf,nights_occupied,1,revised,Annual_Total,2018,STX,158.0,Annual_Total from RN18-REVISED.pdf
+RN19-REVISED.pdf,nights_occupied,1,revised,Annual_Total,2018,STX,158.1,Annual_Total from RN19-REVISED.pdf (prior year)
+RN18-REVISED.pdf,nights_occupied,1,revised,YTD_December,2018,STX,158.0,YTD_Dec current from RN18-REVISED.pdf
+RN19-REVISED.pdf,nights_occupied,1,revised,YTD_December,2018,STX,158.1,YTD_Dec prior from RN19-REVISED.pdf
+RN19-REVISED.pdf,nights_occupied,1,revised,Annual_Total,2019,STX,178.0,Annual_Total from RN19-REVISED.pdf
+RN20-REVISED.pdf,nights_occupied,1,revised,Annual_Total,2019,STX,178.0,Annual_Total from RN20-REVISED.pdf (prior year)
+RN19-REVISED.pdf,nights_occupied,1,revised,YTD_December,2019,STX,178.0,YTD_Dec current from RN19-REVISED.pdf
+RN20-REVISED.pdf,nights_occupied,1,revised,YTD_December,2019,STX,178.0,YTD_Dec prior from RN20-REVISED.pdf
+RN20-REVISED.pdf,nights_occupied,1,revised,Annual_Total,2020,STX,96.5,Annual_Total from RN20-REVISED.pdf
+RN21-DEC-REVISED-1.pdf,nights_occupied,1,revised,Annual_Total,2020,STX,137.7,Annual_Total from RN21-DEC-REVISED-1.pdf (prior year)
+RN20-REVISED.pdf,nights_occupied,1,revised,YTD_December,2020,STX,96.5,YTD_Dec current from RN20-REVISED.pdf
+RN21-DEC-REVISED-1.pdf,nights_occupied,1,revised,YTD_December,2020,STX,137.7,YTD_Dec prior from RN21-DEC-REVISED-1.pdf
+RN21-DEC-REVISED-1.pdf,nights_occupied,1,revised,Annual_Total,2021,STX,161.3,Annual_Total from RN21-DEC-REVISED-1.pdf
+RN22-DEC-revised.pdf,nights_occupied,1,revised,Annual_Total,2021,STX,158.7,Annual_Total from RN22-DEC-revised.pdf (prior year)
+RN21-DEC-REVISED-1.pdf,nights_occupied,1,revised,YTD_December,2021,STX,161.3,YTD_Dec current from RN21-DEC-REVISED-1.pdf
+RN22-DEC-revised.pdf,nights_occupied,1,revised,YTD_December,2021,STX,158.7,YTD_Dec prior from RN22-DEC-revised.pdf
+RN22-DEC-revised.pdf,nights_occupied,1,revised,Annual_Total,2022,STX,158.9,Annual_Total from RN22-DEC-revised.pdf
+RN23-DEC.pdf,nights_occupied,1,original,Annual_Total,2022,STX,164.8,Annual_Total from RN23-DEC.pdf (prior year)
+RN22-DEC-revised.pdf,nights_occupied,1,revised,YTD_December,2022,STX,158.9,YTD_Dec current from RN22-DEC-revised.pdf
+RN23-DEC.pdf,nights_occupied,1,original,YTD_December,2022,STX,164.8,YTD_Dec prior from RN23-DEC.pdf
+RN23-DEC.pdf,nights_occupied,1,original,Annual_Total,2023,STX,183.1,Annual_Total from RN23-DEC.pdf
+RN24-DEC.pdf,nights_occupied,1,original,Annual_Total,2023,STX,162.0,Annual_Total from RN24-DEC.pdf (prior year)
+RN23-DEC.pdf,nights_occupied,1,original,YTD_December,2023,STX,183.1,YTD_Dec current from RN23-DEC.pdf
+RN24-DEC.pdf,nights_occupied,1,original,YTD_December,2023,STX,162.0,YTD_Dec prior from RN24-DEC.pdf
+RN24-DEC.pdf,nights_occupied,1,original,Annual_Total,2024,STX,195.1,Annual_Total from RN24-DEC.pdf
+RN25-DEC.pdf,nights_occupied,1,original,PARSE_FAILURE,2024,STX,,Annual rows not parsed
+RN24-DEC.pdf,nights_occupied,1,original,YTD_December,2024,STX,195.1,YTD_Dec current from RN24-DEC.pdf
+HRN01.pdf,nights_occupied,1,original,Annual_Total,2000,USVI_TOTAL,1059.7,Annual_Total from HRN01.pdf (prior year)
+HRN01.pdf,nights_occupied,1,original,YTD_December,2000,USVI_TOTAL,1059.7,YTD_Dec prior from HRN01.pdf
+HRN01.pdf,nights_occupied,1,original,Annual_Total,2001,USVI_TOTAL,1051.3,Annual_Total from HRN01.pdf
+HRN01.pdf,nights_occupied,1,original,YTD_December,2001,USVI_TOTAL,1051.3,YTD_Dec current from HRN01.pdf
+HRN03.pdf,nights_occupied,1,original,Annual_Total,2002,USVI_TOTAL,1056.9,Annual_Total from HRN03.pdf (prior year)
+HRN03.pdf,nights_occupied,1,original,YTD_December,2002,USVI_TOTAL,1056.9,YTD_Dec prior from HRN03.pdf
+HRN03.pdf,nights_occupied,1,original,Annual_Total,2003,USVI_TOTAL,1050.6,Annual_Total from HRN03.pdf
+HRN04.pdf,nights_occupied,1,original,Annual_Total,2003,USVI_TOTAL,1051.8,Annual_Total from HRN04.pdf (prior year)
+HRN03.pdf,nights_occupied,1,original,YTD_December,2003,USVI_TOTAL,1050.6,YTD_Dec current from HRN03.pdf
+HRN04.pdf,nights_occupied,1,original,YTD_December,2003,USVI_TOTAL,1051.6,YTD_Dec prior from HRN04.pdf
+HRN04.pdf,nights_occupied,1,original,Annual_Total,2004,USVI_TOTAL,1103.6,Annual_Total from HRN04.pdf
+HRN05.pdf,nights_occupied,1,original,Annual_Total,2004,USVI_TOTAL,1096.2,Annual_Total from HRN05.pdf (prior year)
+HRN04.pdf,nights_occupied,1,original,YTD_December,2004,USVI_TOTAL,1103.6,YTD_Dec current from HRN04.pdf
+HRN05.pdf,nights_occupied,1,original,YTD_December,2004,USVI_TOTAL,1096.2,YTD_Dec prior from HRN05.pdf
+HRN05.pdf,nights_occupied,1,original,Annual_Total,2005,USVI_TOTAL,1094.7,Annual_Total from HRN05.pdf
+HRN06.pdf,nights_occupied,1,original,Annual_Total,2005,USVI_TOTAL,1096.2,Annual_Total from HRN06.pdf (prior year)
+HRN05.pdf,nights_occupied,1,original,YTD_December,2005,USVI_TOTAL,1094.7,YTD_Dec current from HRN05.pdf
+HRN06.pdf,nights_occupied,1,original,YTD_December,2005,USVI_TOTAL,1094.3,YTD_Dec prior from HRN06.pdf
+HRN06.pdf,nights_occupied,1,original,Annual_Total,2006,USVI_TOTAL,1040.8,Annual_Total from HRN06.pdf
+HRN06.pdf,nights_occupied,1,original,YTD_December,2006,USVI_TOTAL,1040.8,YTD_Dec current from HRN06.pdf
+HRN07.pdf,nights_occupied,1,original,Annual_Total,2007,USVI_TOTAL,1040.1,Annual_Total from HRN07.pdf (prior year)
+HRN07.pdf,nights_occupied,1,original,Annual_Total,2007,USVI_TOTAL,1101.0,Annual_Total from HRN07.pdf
+RN08.pdf,nights_occupied,1,original,Annual_Total,2007,USVI_TOTAL,1100.1,Annual_Total from RN08.pdf (prior year)
+HRN07.pdf,nights_occupied,1,original,YTD_December,2007,USVI_TOTAL,1040.1,YTD_Dec prior from HRN07.pdf
+HRN07.pdf,nights_occupied,1,original,YTD_December,2007,USVI_TOTAL,1101.0,YTD_Dec current from HRN07.pdf
+RN08.pdf,nights_occupied,1,original,YTD_December,2007,USVI_TOTAL,1100.1,YTD_Dec prior from RN08.pdf
+RN08.pdf,nights_occupied,1,original,Annual_Total,2008,USVI_TOTAL,1036.2,Annual_Total from RN08.pdf
+RN08.pdf,nights_occupied,1,original,YTD_December,2008,USVI_TOTAL,1036.2,YTD_Dec current from RN08.pdf
+RN09.pdf,nights_occupied,1,original,YTD_December,2008,USVI_TOTAL,90.3,YTD_Dec prior from RN09.pdf
+RN09.pdf,nights_occupied,1,original,YTD_December,2009,USVI_TOTAL,102.4,YTD_Dec current from RN09.pdf
+RN10.pdf,nights_occupied,1,original,YTD_December,2009,USVI_TOTAL,996.8,YTD_Dec prior from RN10.pdf
+RN11.pdf,nights_occupied,1,original,Annual_Total,2010,USVI_TOTAL,1042.2,Annual_Total from RN11.pdf (prior year)
+RN10.pdf,nights_occupied,1,original,YTD_December,2010,USVI_TOTAL,1042.2,YTD_Dec current from RN10.pdf
+RN11.pdf,nights_occupied,1,original,YTD_December,2010,USVI_TOTAL,1042.2,YTD_Dec prior from RN11.pdf
+RN11.pdf,nights_occupied,1,original,Annual_Total,2011,USVI_TOTAL,928.5,Annual_Total from RN11.pdf
+RN12.pdf,nights_occupied,1,original,Annual_Total,2011,USVI_TOTAL,920.0,Annual_Total from RN12.pdf (prior year)
+RN11.pdf,nights_occupied,1,original,YTD_December,2011,USVI_TOTAL,928.5,YTD_Dec current from RN11.pdf
+RN12.pdf,nights_occupied,1,original,YTD_December,2011,USVI_TOTAL,91.4,YTD_Dec prior from RN12.pdf
+RN12.pdf,nights_occupied,1,original,Annual_Total,2012,USVI_TOTAL,873.6,Annual_Total from RN12.pdf
+RN13.pdf,nights_occupied,1,original,Annual_Total,2012,USVI_TOTAL,929.9,Annual_Total from RN13.pdf (prior year)
+RN12.pdf,nights_occupied,1,original,YTD_December,2012,USVI_TOTAL,91.3,YTD_Dec current from RN12.pdf
+RN13.pdf,nights_occupied,1,original,YTD_December,2012,USVI_TOTAL,929.9,YTD_Dec prior from RN13.pdf
+RN13.pdf,nights_occupied,1,original,Annual_Total,2013,USVI_TOTAL,966.1,Annual_Total from RN13.pdf
+RN14-REVISED.pdf,nights_occupied,1,revised,Annual_Total,2013,USVI_TOTAL,966.1,Annual_Total from RN14-REVISED.pdf (prior year)
+RN13.pdf,nights_occupied,1,original,YTD_December,2013,USVI_TOTAL,966.1,YTD_Dec current from RN13.pdf
+RN14-REVISED.pdf,nights_occupied,1,revised,YTD_December,2013,USVI_TOTAL,966.1,YTD_Dec prior from RN14-REVISED.pdf
+RN14-REVISED.pdf,nights_occupied,1,revised,Annual_Total,2014,USVI_TOTAL,946.0,Annual_Total from RN14-REVISED.pdf
+RN15-REVISED.pdf,nights_occupied,1,revised,Annual_Total,2014,USVI_TOTAL,946.0,Annual_Total from RN15-REVISED.pdf (prior year)
+RN14-REVISED.pdf,nights_occupied,1,revised,YTD_December,2014,USVI_TOTAL,946.0,YTD_Dec current from RN14-REVISED.pdf
+RN15-REVISED.pdf,nights_occupied,1,revised,YTD_December,2014,USVI_TOTAL,946.0,YTD_Dec prior from RN15-REVISED.pdf
+RN15-REVISED.pdf,nights_occupied,1,revised,Annual_Total,2015,USVI_TOTAL,989.9,Annual_Total from RN15-REVISED.pdf
+RN16-REVISED.pdf,nights_occupied,1,revised,Annual_Total,2015,USVI_TOTAL,989.9,Annual_Total from RN16-REVISED.pdf (prior year)
+RN15-REVISED.pdf,nights_occupied,1,revised,YTD_December,2015,USVI_TOTAL,989.9,YTD_Dec current from RN15-REVISED.pdf
+RN16-REVISED.pdf,nights_occupied,1,revised,YTD_December,2015,USVI_TOTAL,989.9,YTD_Dec prior from RN16-REVISED.pdf
+RN16-REVISED.pdf,nights_occupied,1,revised,Annual_Total,2016,USVI_TOTAL,988.8,Annual_Total from RN16-REVISED.pdf
+RN17-REVISED.pdf,nights_occupied,1,revised,Annual_Total,2016,USVI_TOTAL,988.8,Annual_Total from RN17-REVISED.pdf (prior year)
+RN16-REVISED.pdf,nights_occupied,1,revised,YTD_December,2016,USVI_TOTAL,988.8,YTD_Dec current from RN16-REVISED.pdf
+RN17-REVISED.pdf,nights_occupied,1,revised,YTD_December,2016,USVI_TOTAL,988.8,YTD_Dec prior from RN17-REVISED.pdf
+RN17-REVISED.pdf,nights_occupied,1,revised,Annual_Total,2017,USVI_TOTAL,736.3,Annual_Total from RN17-REVISED.pdf
+RN18-REVISED.pdf,nights_occupied,1,revised,Annual_Total,2017,USVI_TOTAL,736.3,Annual_Total from RN18-REVISED.pdf (prior year)
+RN17-REVISED.pdf,nights_occupied,1,revised,YTD_December,2017,USVI_TOTAL,736.3,YTD_Dec current from RN17-REVISED.pdf
+RN18-REVISED.pdf,nights_occupied,1,revised,YTD_December,2017,USVI_TOTAL,736.3,YTD_Dec prior from RN18-REVISED.pdf
+RN18-REVISED.pdf,nights_occupied,1,revised,Annual_Total,2018,USVI_TOTAL,371.5,Annual_Total from RN18-REVISED.pdf
+RN19-REVISED.pdf,nights_occupied,1,revised,Annual_Total,2018,USVI_TOTAL,367.2,Annual_Total from RN19-REVISED.pdf (prior year)
+RN18-REVISED.pdf,nights_occupied,1,revised,YTD_December,2018,USVI_TOTAL,371.5,YTD_Dec current from RN18-REVISED.pdf
+RN19-REVISED.pdf,nights_occupied,1,revised,YTD_December,2018,USVI_TOTAL,367.2,YTD_Dec prior from RN19-REVISED.pdf
+RN19-REVISED.pdf,nights_occupied,1,revised,Annual_Total,2019,USVI_TOTAL,499.6,Annual_Total from RN19-REVISED.pdf
+RN20-REVISED.pdf,nights_occupied,1,revised,Annual_Total,2019,USVI_TOTAL,499.6,Annual_Total from RN20-REVISED.pdf (prior year)
+RN19-REVISED.pdf,nights_occupied,1,revised,YTD_December,2019,USVI_TOTAL,499.6,YTD_Dec current from RN19-REVISED.pdf
+RN20-REVISED.pdf,nights_occupied,1,revised,YTD_December,2019,USVI_TOTAL,499.6,YTD_Dec prior from RN20-REVISED.pdf
+RN20-REVISED.pdf,nights_occupied,1,revised,Annual_Total,2020,USVI_TOTAL,262.5,Annual_Total from RN20-REVISED.pdf
+RN21-DEC-REVISED-1.pdf,nights_occupied,1,revised,Annual_Total,2020,USVI_TOTAL,420.3,Annual_Total from RN21-DEC-REVISED-1.pdf (prior year)
+RN20-REVISED.pdf,nights_occupied,1,revised,YTD_December,2020,USVI_TOTAL,262.5,YTD_Dec current from RN20-REVISED.pdf
+RN21-DEC-REVISED-1.pdf,nights_occupied,1,revised,YTD_December,2020,USVI_TOTAL,420.3,YTD_Dec prior from RN21-DEC-REVISED-1.pdf
+RN21-DEC-REVISED-1.pdf,nights_occupied,1,revised,Annual_Total,2021,USVI_TOTAL,669.5,Annual_Total from RN21-DEC-REVISED-1.pdf
+RN22-DEC-revised.pdf,nights_occupied,1,revised,Annual_Total,2021,USVI_TOTAL,663.1,Annual_Total from RN22-DEC-revised.pdf (prior year)
+RN21-DEC-REVISED-1.pdf,nights_occupied,1,revised,YTD_December,2021,USVI_TOTAL,669.5,YTD_Dec current from RN21-DEC-REVISED-1.pdf
+RN22-DEC-revised.pdf,nights_occupied,1,revised,YTD_December,2021,USVI_TOTAL,663.1,YTD_Dec prior from RN22-DEC-revised.pdf
+RN22-DEC-revised.pdf,nights_occupied,1,revised,Annual_Total,2022,USVI_TOTAL,689.3,Annual_Total from RN22-DEC-revised.pdf
+RN23-DEC.pdf,nights_occupied,1,original,Annual_Total,2022,USVI_TOTAL,695.0,Annual_Total from RN23-DEC.pdf (prior year)
+RN22-DEC-revised.pdf,nights_occupied,1,revised,YTD_December,2022,USVI_TOTAL,689.3,YTD_Dec current from RN22-DEC-revised.pdf
+RN23-DEC.pdf,nights_occupied,1,original,YTD_December,2022,USVI_TOTAL,695.0,YTD_Dec prior from RN23-DEC.pdf
+RN23-DEC.pdf,nights_occupied,1,original,Annual_Total,2023,USVI_TOTAL,712.4,Annual_Total from RN23-DEC.pdf
+RN24-DEC.pdf,nights_occupied,1,original,Annual_Total,2023,USVI_TOTAL,718.5,Annual_Total from RN24-DEC.pdf (prior year)
+RN23-DEC.pdf,nights_occupied,1,original,YTD_December,2023,USVI_TOTAL,712.4,YTD_Dec current from RN23-DEC.pdf
+RN24-DEC.pdf,nights_occupied,1,original,YTD_December,2023,USVI_TOTAL,718.5,YTD_Dec prior from RN24-DEC.pdf
+RN24-DEC.pdf,nights_occupied,1,original,Annual_Total,2024,USVI_TOTAL,837.1,Annual_Total from RN24-DEC.pdf
+RN25-DEC.pdf,nights_occupied,1,original,PARSE_FAILURE,2024,USVI_TOTAL,,Annual rows not parsed
+RN24-DEC.pdf,nights_occupied,1,original,YTD_December,2024,USVI_TOTAL,837.1,YTD_Dec current from RN24-DEC.pdf
+H01.pdf,occupancy,1,original,Annual_Total,2000,STJ,56.6,Annual_Total from H01.pdf; SUSPECT: identical values across all three geographies (prior year)
+H01.pdf,occupancy,1,original,YTD_December,2000,STJ,55.2,YTD_Dec prior from H01.pdf
+H01.pdf,occupancy,1,original,Annual_Total,2001,STJ,60.8,Annual_Total from H01.pdf; SUSPECT: identical values across all three geographies
+H02.pdf,occupancy,1,original,Annual_Total,2001,STJ,59.5,Annual_Total from H02.pdf (prior year)
+H01.pdf,occupancy,1,original,YTD_December,2001,STJ,60.8,YTD_Dec current from H01.pdf
+H02.pdf,occupancy,1,original,YTD_December,2001,STJ,59.5,YTD_Dec prior from H02.pdf
+H02.pdf,occupancy,1,original,Annual_Total,2002,STJ,61.1,Annual_Total from H02.pdf
+H02.pdf,occupancy,1,original,YTD_December,2002,STJ,61.1,YTD_Dec current from H02.pdf
+H04.pdf,occupancy,1,original,Annual_Total,2003,STJ,62.2,Annual_Total from H04.pdf (prior year)
+H04.pdf,occupancy,1,original,YTD_December,2003,STJ,62.2,YTD_Dec prior from H04.pdf
+H04.pdf,occupancy,1,original,Annual_Total,2004,STJ,65.8,Annual_Total from H04.pdf
+H05.pdf,occupancy,1,original,Annual_Total,2004,STJ,65.7,Annual_Total from H05.pdf (prior year)
+H04.pdf,occupancy,1,original,YTD_December,2004,STJ,65.8,YTD_Dec current from H04.pdf
+H05.pdf,occupancy,1,original,YTD_December,2004,STJ,65.7,YTD_Dec prior from H05.pdf
+H05.pdf,occupancy,1,original,Annual_Total,2005,STJ,66.8,Annual_Total from H05.pdf
+H06.pdf,occupancy,1,original,Annual_Total,2005,STJ,66.8,Annual_Total from H06.pdf (prior year)
+H05.pdf,occupancy,1,original,YTD_December,2005,STJ,66.8,YTD_Dec current from H05.pdf
+H06.pdf,occupancy,1,original,YTD_December,2005,STJ,66.8,YTD_Dec prior from H06.pdf
+H06.pdf,occupancy,1,original,Annual_Total,2006,STJ,63.7,Annual_Total from H06.pdf
+H07.pdf,occupancy,1,original,Annual_Total,2006,STJ,63.6,Annual_Total from H07.pdf (prior year)
+H06.pdf,occupancy,1,original,YTD_December,2006,STJ,63.7,YTD_Dec current from H06.pdf
+H07.pdf,occupancy,1,original,YTD_December,2006,STJ,63.6,YTD_Dec prior from H07.pdf
+H07.pdf,occupancy,1,original,Annual_Total,2007,STJ,68.6,Annual_Total from H07.pdf
+H08.pdf,occupancy,1,original,Annual_Total,2007,STJ,68.5,Annual_Total from H08.pdf (prior year)
+H07.pdf,occupancy,1,original,YTD_December,2007,STJ,68.6,YTD_Dec current from H07.pdf
+H08.pdf,occupancy,1,original,YTD_December,2007,STJ,68.5,YTD_Dec prior from H08.pdf
+H08.pdf,occupancy,1,original,Annual_Total,2008,STJ,64.8,Annual_Total from H08.pdf
+H08.pdf,occupancy,1,original,YTD_December,2008,STJ,64.8,YTD_Dec current from H08.pdf
+H09.pdf,occupancy,1,original,YTD_December,2008,STJ,64.1,YTD_Dec prior from H09.pdf
+H09.pdf,occupancy,1,original,YTD_December,2009,STJ,69.6,YTD_Dec current from H09.pdf
+H10.pdf,occupancy,1,original,YTD_December,2009,STJ,60.3,YTD_Dec prior from H10.pdf
+H11.pdf,occupancy,1,original,Annual_Total,2010,STJ,60.6,Annual_Total from H11.pdf (prior year)
+H10.pdf,occupancy,1,original,YTD_December,2010,STJ,60.6,YTD_Dec current from H10.pdf
+H11.pdf,occupancy,1,original,YTD_December,2010,STJ,60.6,YTD_Dec prior from H11.pdf
+H11.pdf,occupancy,1,original,Annual_Total,2011,STJ,54.4,Annual_Total from H11.pdf
+H12.pdf,occupancy,1,original,Annual_Total,2011,STJ,53.8,Annual_Total from H12.pdf (prior year)
+H11.pdf,occupancy,1,original,YTD_December,2011,STJ,54.4,YTD_Dec current from H11.pdf
+H12.pdf,occupancy,1,original,YTD_December,2011,STJ,61.1,YTD_Dec prior from H12.pdf
+H12.pdf,occupancy,1,original,Annual_Total,2012,STJ,50.0,Annual_Total from H12.pdf
+H13.pdf,occupancy,1,original,Annual_Total,2012,STJ,54.0,Annual_Total from H13.pdf (prior year)
+H12.pdf,occupancy,1,original,YTD_December,2012,STJ,60.9,YTD_Dec current from H12.pdf
+H13.pdf,occupancy,1,original,YTD_December,2012,STJ,54.0,YTD_Dec prior from H13.pdf
+H13.pdf,occupancy,1,original,Annual_Total,2013,STJ,57.8,Annual_Total from H13.pdf
+H14.pdf,occupancy,1,original,Annual_Total,2013,STJ,57.8,Annual_Total from H14.pdf (prior year)
+H13.pdf,occupancy,1,original,YTD_December,2013,STJ,57.8,YTD_Dec current from H13.pdf
+H14.pdf,occupancy,1,original,YTD_December,2013,STJ,57.9,YTD_Dec prior from H14.pdf
+H14.pdf,occupancy,1,original,Annual_Total,2014,STJ,57.9,Annual_Total from H14.pdf
+H15-REVISED.pdf,occupancy,1,revised,Annual_Total,2014,STJ,58.6,Annual_Total from H15-REVISED.pdf (prior year)
+H14.pdf,occupancy,1,original,YTD_December,2014,STJ,58.3,YTD_Dec current from H14.pdf
+H15-REVISED.pdf,occupancy,1,revised,YTD_December,2014,STJ,58.6,YTD_Dec prior from H15-REVISED.pdf
+H15-REVISED.pdf,occupancy,1,revised,Annual_Total,2015,STJ,61.0,Annual_Total from H15-REVISED.pdf
+H16-REVISED.pdf,occupancy,1,revised,Annual_Total,2015,STJ,61.0,Annual_Total from H16-REVISED.pdf (prior year)
+H15-REVISED.pdf,occupancy,1,revised,YTD_December,2015,STJ,61.0,YTD_Dec current from H15-REVISED.pdf
+H16-REVISED.pdf,occupancy,1,revised,YTD_December,2015,STJ,61.0,YTD_Dec prior from H16-REVISED.pdf
+H16-REVISED.pdf,occupancy,1,revised,Annual_Total,2016,STJ,59.9,Annual_Total from H16-REVISED.pdf
+H17-REVISED.pdf,occupancy,1,revised,Annual_Total,2016,STJ,59.9,Annual_Total from H17-REVISED.pdf (prior year)
+H16-REVISED.pdf,occupancy,1,revised,YTD_December,2016,STJ,59.9,YTD_Dec current from H16-REVISED.pdf
+H17-REVISED.pdf,occupancy,1,revised,YTD_December,2016,STJ,59.9,YTD_Dec prior from H17-REVISED.pdf
+H17-REVISED.pdf,occupancy,1,revised,Annual_Total,2017,STJ,42.7,Annual_Total from H17-REVISED.pdf
+H17-REVISED.pdf,occupancy,1,revised,YTD_December,2017,STJ,51.2,YTD_Dec current from H17-REVISED.pdf
+H19-REVISED.pdf,occupancy,1,revised,Annual_Total,2018,STJ,47.6,Annual_Total from H19-REVISED.pdf (prior year)
+H19-REVISED.pdf,occupancy,1,revised,YTD_December,2018,STJ,47.6,YTD_Dec prior from H19-REVISED.pdf
+H19-REVISED.pdf,occupancy,1,revised,Annual_Total,2019,STJ,51.0,Annual_Total from H19-REVISED.pdf
+H20-REVISED.pdf,occupancy,1,revised,Annual_Total,2019,STJ,51.0,Annual_Total from H20-REVISED.pdf (prior year)
+H19-REVISED.pdf,occupancy,1,revised,YTD_December,2019,STJ,51.0,YTD_Dec current from H19-REVISED.pdf
+H20-REVISED.pdf,occupancy,1,revised,YTD_December,2019,STJ,51.0,YTD_Dec prior from H20-REVISED.pdf
+H20-REVISED.pdf,occupancy,1,revised,Annual_Total,2020,STJ,16.4,Annual_Total from H20-REVISED.pdf
+H21-DEC-REVISED-1.pdf,occupancy,1,revised,Annual_Total,2020,STJ,33.4,Annual_Total from H21-DEC-REVISED-1.pdf (prior year)
+H20-REVISED.pdf,occupancy,1,revised,YTD_December,2020,STJ,16.4,YTD_Dec current from H20-REVISED.pdf
+H21-DEC-REVISED-1.pdf,occupancy,1,revised,YTD_December,2020,STJ,33.4,YTD_Dec prior from H21-DEC-REVISED-1.pdf
+H21-DEC-REVISED-1.pdf,occupancy,1,revised,Annual_Total,2021,STJ,65.6,Annual_Total from H21-DEC-REVISED-1.pdf
+H22-DEC-revised-1.pdf,occupancy,1,revised,Annual_Total,2021,STJ,66.7,Annual_Total from H22-DEC-revised-1.pdf (prior year)
+H21-DEC-REVISED-1.pdf,occupancy,1,revised,YTD_December,2021,STJ,65.6,YTD_Dec current from H21-DEC-REVISED-1.pdf
+H22-DEC-revised-1.pdf,occupancy,1,revised,YTD_December,2021,STJ,66.7,YTD_Dec prior from H22-DEC-revised-1.pdf
+H22-DEC-revised-1.pdf,occupancy,1,revised,Annual_Total,2022,STJ,67.2,Annual_Total from H22-DEC-revised-1.pdf
+h23-decR.pdf,occupancy,1,original,Annual_Total,2022,STJ,69.9,Annual_Total from h23-decR.pdf (prior year)
+H22-DEC-revised-1.pdf,occupancy,1,revised,YTD_December,2022,STJ,67.2,YTD_Dec current from H22-DEC-revised-1.pdf
+h23-decR.pdf,occupancy,1,original,YTD_December,2022,STJ,69.9,YTD_Dec prior from h23-decR.pdf
+H24-DECr.pdf,occupancy,1,original,Annual_Total,2023,STJ,63.0,Annual_Total from H24-DECr.pdf (prior year)
+h23-decR.pdf,occupancy,1,original,Annual_Total,2023,STJ,63.0,Annual_Total from h23-decR.pdf
+H24-DECr.pdf,occupancy,1,original,YTD_December,2023,STJ,63.0,YTD_Dec prior from H24-DECr.pdf
+h23-decR.pdf,occupancy,1,original,YTD_December,2023,STJ,63.0,YTD_Dec current from h23-decR.pdf
+H24-DECr.pdf,occupancy,1,original,Annual_Total,2024,STJ,64.5,Annual_Total from H24-DECr.pdf
+H25-DEC.pdf,occupancy,1,original,PARSE_FAILURE,2024,STJ,,Annual rows not parsed
+H24-DECr.pdf,occupancy,1,original,YTD_December,2024,STJ,64.5,YTD_Dec current from H24-DECr.pdf
+H01.pdf,occupancy,1,original,Annual_Total,2000,STX,56.6,Annual_Total from H01.pdf; SUSPECT: identical values across all three geographies (prior year)
+H01.pdf,occupancy,1,original,YTD_December,2000,STX,54.7,YTD_Dec prior from H01.pdf
+H01.pdf,occupancy,1,original,Annual_Total,2001,STX,60.8,Annual_Total from H01.pdf; SUSPECT: identical values across all three geographies
+H02.pdf,occupancy,1,original,Annual_Total,2001,STX,47.2,Annual_Total from H02.pdf (prior year)
+H01.pdf,occupancy,1,original,YTD_December,2001,STX,50.2,YTD_Dec current from H01.pdf
+H02.pdf,occupancy,1,original,YTD_December,2001,STX,47.2,YTD_Dec prior from H02.pdf
+H02.pdf,occupancy,1,original,Annual_Total,2002,STX,43.1,Annual_Total from H02.pdf
+H02.pdf,occupancy,1,original,YTD_December,2002,STX,43.1,YTD_Dec current from H02.pdf
+H04.pdf,occupancy,1,original,Annual_Total,2003,STX,40.6,Annual_Total from H04.pdf (prior year)
+H04.pdf,occupancy,1,original,YTD_December,2003,STX,40.6,YTD_Dec prior from H04.pdf
+H04.pdf,occupancy,1,original,Annual_Total,2004,STX,49.1,Annual_Total from H04.pdf
+H05.pdf,occupancy,1,original,Annual_Total,2004,STX,49.1,Annual_Total from H05.pdf (prior year)
+H04.pdf,occupancy,1,original,YTD_December,2004,STX,49.2,YTD_Dec current from H04.pdf
+H05.pdf,occupancy,1,original,YTD_December,2004,STX,49.1,YTD_Dec prior from H05.pdf
+H05.pdf,occupancy,1,original,Annual_Total,2005,STX,56.7,Annual_Total from H05.pdf
+H06.pdf,occupancy,1,original,Annual_Total,2005,STX,56.7,Annual_Total from H06.pdf (prior year)
+H05.pdf,occupancy,1,original,YTD_December,2005,STX,56.7,YTD_Dec current from H05.pdf
+H06.pdf,occupancy,1,original,YTD_December,2005,STX,56.7,YTD_Dec prior from H06.pdf
+H06.pdf,occupancy,1,original,Annual_Total,2006,STX,51.2,Annual_Total from H06.pdf
+H07.pdf,occupancy,1,original,Annual_Total,2006,STX,51.2,Annual_Total from H07.pdf (prior year)
+H06.pdf,occupancy,1,original,YTD_December,2006,STX,51.2,YTD_Dec current from H06.pdf
+H07.pdf,occupancy,1,original,YTD_December,2006,STX,51.2,YTD_Dec prior from H07.pdf
+H07.pdf,occupancy,1,original,Annual_Total,2007,STX,54.3,Annual_Total from H07.pdf
+H08.pdf,occupancy,1,original,Annual_Total,2007,STX,54.2,Annual_Total from H08.pdf (prior year)
+H07.pdf,occupancy,1,original,YTD_December,2007,STX,54.3,YTD_Dec current from H07.pdf
+H08.pdf,occupancy,1,original,YTD_December,2007,STX,54.2,YTD_Dec prior from H08.pdf
+H08.pdf,occupancy,1,original,Annual_Total,2008,STX,46.3,Annual_Total from H08.pdf
+H08.pdf,occupancy,1,original,YTD_December,2008,STX,46.3,YTD_Dec current from H08.pdf
+H09.pdf,occupancy,1,original,YTD_December,2008,STX,43.2,YTD_Dec prior from H09.pdf
+H09.pdf,occupancy,1,original,YTD_December,2009,STX,57.6,YTD_Dec current from H09.pdf
+H10.pdf,occupancy,1,original,YTD_December,2009,STX,38.5,YTD_Dec prior from H10.pdf
+H11.pdf,occupancy,1,original,Annual_Total,2010,STX,45.8,Annual_Total from H11.pdf (prior year)
+H10.pdf,occupancy,1,original,YTD_December,2010,STX,45.8,YTD_Dec current from H10.pdf
+H11.pdf,occupancy,1,original,YTD_December,2010,STX,45.8,YTD_Dec prior from H11.pdf
+H11.pdf,occupancy,1,original,Annual_Total,2011,STX,45.1,Annual_Total from H11.pdf
+H12.pdf,occupancy,1,original,Annual_Total,2011,STX,45.1,Annual_Total from H12.pdf (prior year)
+H11.pdf,occupancy,1,original,YTD_December,2011,STX,45.1,YTD_Dec current from H11.pdf
+H12.pdf,occupancy,1,original,YTD_December,2011,STX,54.5,YTD_Dec prior from H12.pdf
+H12.pdf,occupancy,1,original,Annual_Total,2012,STX,41.7,Annual_Total from H12.pdf
+H13.pdf,occupancy,1,original,Annual_Total,2012,STX,41.7,Annual_Total from H13.pdf (prior year)
+H12.pdf,occupancy,1,original,YTD_December,2012,STX,52.6,YTD_Dec current from H12.pdf
+H13.pdf,occupancy,1,original,YTD_December,2012,STX,41.7,YTD_Dec prior from H13.pdf
+H13.pdf,occupancy,1,original,Annual_Total,2013,STX,41.5,Annual_Total from H13.pdf
+H14.pdf,occupancy,1,original,Annual_Total,2013,STX,41.5,Annual_Total from H14.pdf (prior year)
+H13.pdf,occupancy,1,original,YTD_December,2013,STX,41.5,YTD_Dec current from H13.pdf
+H14.pdf,occupancy,1,original,YTD_December,2013,STX,38.1,YTD_Dec prior from H14.pdf
+H14.pdf,occupancy,1,original,Annual_Total,2014,STX,38.7,Annual_Total from H14.pdf
+H15-REVISED.pdf,occupancy,1,revised,Annual_Total,2014,STX,39.2,Annual_Total from H15-REVISED.pdf (prior year)
+H14.pdf,occupancy,1,original,YTD_December,2014,STX,39.7,YTD_Dec current from H14.pdf
+H15-REVISED.pdf,occupancy,1,revised,YTD_December,2014,STX,39.2,YTD_Dec prior from H15-REVISED.pdf
+H15-REVISED.pdf,occupancy,1,revised,Annual_Total,2015,STX,44.5,Annual_Total from H15-REVISED.pdf
+H16-REVISED.pdf,occupancy,1,revised,Annual_Total,2015,STX,44.5,Annual_Total from H16-REVISED.pdf (prior year)
+H15-REVISED.pdf,occupancy,1,revised,YTD_December,2015,STX,44.5,YTD_Dec current from H15-REVISED.pdf
+H16-REVISED.pdf,occupancy,1,revised,YTD_December,2015,STX,44.5,YTD_Dec prior from H16-REVISED.pdf
+H16-REVISED.pdf,occupancy,1,revised,Annual_Total,2016,STX,46.6,Annual_Total from H16-REVISED.pdf
+H17-REVISED.pdf,occupancy,1,revised,Annual_Total,2016,STX,46.6,Annual_Total from H17-REVISED.pdf (prior year)
+H16-REVISED.pdf,occupancy,1,revised,YTD_December,2016,STX,46.6,YTD_Dec current from H16-REVISED.pdf
+H17-REVISED.pdf,occupancy,1,revised,YTD_December,2016,STX,46.6,YTD_Dec prior from H17-REVISED.pdf
+H17-REVISED.pdf,occupancy,1,revised,Annual_Total,2017,STX,48.4,Annual_Total from H17-REVISED.pdf
+H17-REVISED.pdf,occupancy,1,revised,YTD_December,2017,STX,51.5,YTD_Dec current from H17-REVISED.pdf
+H19-REVISED.pdf,occupancy,1,revised,Annual_Total,2018,STX,57.6,Annual_Total from H19-REVISED.pdf (prior year)
+H19-REVISED.pdf,occupancy,1,revised,YTD_December,2018,STX,57.6,YTD_Dec prior from H19-REVISED.pdf
+H19-REVISED.pdf,occupancy,1,revised,Annual_Total,2019,STX,51.7,Annual_Total from H19-REVISED.pdf
+H20-REVISED.pdf,occupancy,1,revised,Annual_Total,2019,STX,51.7,Annual_Total from H20-REVISED.pdf (prior year)
+H19-REVISED.pdf,occupancy,1,revised,YTD_December,2019,STX,51.7,YTD_Dec current from H19-REVISED.pdf
+H20-REVISED.pdf,occupancy,1,revised,YTD_December,2019,STX,51.7,YTD_Dec prior from H20-REVISED.pdf
+H20-REVISED.pdf,occupancy,1,revised,Annual_Total,2020,STX,27.0,Annual_Total from H20-REVISED.pdf
+H21-DEC-REVISED-1.pdf,occupancy,1,revised,Annual_Total,2020,STX,38.4,Annual_Total from H21-DEC-REVISED-1.pdf (prior year)
+H20-REVISED.pdf,occupancy,1,revised,YTD_December,2020,STX,27.0,YTD_Dec current from H20-REVISED.pdf
+H21-DEC-REVISED-1.pdf,occupancy,1,revised,YTD_December,2020,STX,38.4,YTD_Dec prior from H21-DEC-REVISED-1.pdf
+H21-DEC-REVISED-1.pdf,occupancy,1,revised,Annual_Total,2021,STX,54.6,Annual_Total from H21-DEC-REVISED-1.pdf
+H22-DEC-revised-1.pdf,occupancy,1,revised,Annual_Total,2021,STX,54.2,Annual_Total from H22-DEC-revised-1.pdf (prior year)
+H21-DEC-REVISED-1.pdf,occupancy,1,revised,YTD_December,2021,STX,54.6,YTD_Dec current from H21-DEC-REVISED-1.pdf
+H22-DEC-revised-1.pdf,occupancy,1,revised,YTD_December,2021,STX,54.2,YTD_Dec prior from H22-DEC-revised-1.pdf
+H22-DEC-revised-1.pdf,occupancy,1,revised,Annual_Total,2022,STX,46.5,Annual_Total from H22-DEC-revised-1.pdf
+h23-decR.pdf,occupancy,1,original,Annual_Total,2022,STX,47.2,Annual_Total from h23-decR.pdf (prior year)
+H22-DEC-revised-1.pdf,occupancy,1,revised,YTD_December,2022,STX,46.5,YTD_Dec current from H22-DEC-revised-1.pdf
+h23-decR.pdf,occupancy,1,original,YTD_December,2022,STX,47.2,YTD_Dec prior from h23-decR.pdf
+H24-DECr.pdf,occupancy,1,original,Annual_Total,2023,STX,46.2,Annual_Total from H24-DECr.pdf (prior year)
+h23-decR.pdf,occupancy,1,original,Annual_Total,2023,STX,46.2,Annual_Total from h23-decR.pdf
+H24-DECr.pdf,occupancy,1,original,YTD_December,2023,STX,46.2,YTD_Dec prior from H24-DECr.pdf
+h23-decR.pdf,occupancy,1,original,YTD_December,2023,STX,46.2,YTD_Dec current from h23-decR.pdf
+H24-DECr.pdf,occupancy,1,original,Annual_Total,2024,STX,52.0,Annual_Total from H24-DECr.pdf
+H25-DEC.pdf,occupancy,1,original,PARSE_FAILURE,2024,STX,,Annual rows not parsed
+H24-DECr.pdf,occupancy,1,original,YTD_December,2024,STX,52.0,YTD_Dec current from H24-DECr.pdf
+H01.pdf,occupancy,1,original,Annual_Total,2000,USVI_TOTAL,56.6,Annual_Total from H01.pdf; SUSPECT: identical values across all three geographies (prior year)
+H01.pdf,occupancy,1,original,YTD_December,2000,USVI_TOTAL,55.1,YTD_Dec prior from H01.pdf
+H01.pdf,occupancy,1,original,Annual_Total,2001,USVI_TOTAL,60.8,Annual_Total from H01.pdf; SUSPECT: identical values across all three geographies
+H02.pdf,occupancy,1,original,Annual_Total,2001,USVI_TOTAL,56.5,Annual_Total from H02.pdf (prior year)
+H01.pdf,occupancy,1,original,YTD_December,2001,USVI_TOTAL,58.2,YTD_Dec current from H01.pdf
+H02.pdf,occupancy,1,original,YTD_December,2001,USVI_TOTAL,56.5,YTD_Dec prior from H02.pdf
+H02.pdf,occupancy,1,original,Annual_Total,2002,USVI_TOTAL,56.9,Annual_Total from H02.pdf
+H02.pdf,occupancy,1,original,YTD_December,2002,USVI_TOTAL,56.9,YTD_Dec current from H02.pdf
+H04.pdf,occupancy,1,original,Annual_Total,2003,USVI_TOTAL,57.1,Annual_Total from H04.pdf (prior year)
+H04.pdf,occupancy,1,original,YTD_December,2003,USVI_TOTAL,57.1,YTD_Dec prior from H04.pdf
+H04.pdf,occupancy,1,original,Annual_Total,2004,USVI_TOTAL,61.8,Annual_Total from H04.pdf
+H05.pdf,occupancy,1,original,Annual_Total,2004,USVI_TOTAL,61.7,Annual_Total from H05.pdf (prior year)
+H04.pdf,occupancy,1,original,YTD_December,2004,USVI_TOTAL,61.8,YTD_Dec current from H04.pdf
+H05.pdf,occupancy,1,original,YTD_December,2004,USVI_TOTAL,61.7,YTD_Dec prior from H05.pdf
+H05.pdf,occupancy,1,original,Annual_Total,2005,USVI_TOTAL,64.3,Annual_Total from H05.pdf
+H06.pdf,occupancy,1,original,Annual_Total,2005,USVI_TOTAL,64.3,Annual_Total from H06.pdf (prior year)
+H05.pdf,occupancy,1,original,YTD_December,2005,USVI_TOTAL,64.3,YTD_Dec current from H05.pdf
+H06.pdf,occupancy,1,original,YTD_December,2005,USVI_TOTAL,64.3,YTD_Dec prior from H06.pdf
+H06.pdf,occupancy,1,original,Annual_Total,2006,USVI_TOTAL,60.6,Annual_Total from H06.pdf
+H07.pdf,occupancy,1,original,Annual_Total,2006,USVI_TOTAL,60.5,Annual_Total from H07.pdf (prior year)
+H06.pdf,occupancy,1,original,YTD_December,2006,USVI_TOTAL,60.6,YTD_Dec current from H06.pdf
+H07.pdf,occupancy,1,original,YTD_December,2006,USVI_TOTAL,60.5,YTD_Dec prior from H07.pdf
+H07.pdf,occupancy,1,original,Annual_Total,2007,USVI_TOTAL,64.9,Annual_Total from H07.pdf
+H08.pdf,occupancy,1,original,Annual_Total,2007,USVI_TOTAL,64.9,Annual_Total from H08.pdf (prior year)
+H07.pdf,occupancy,1,original,YTD_December,2007,USVI_TOTAL,64.9,YTD_Dec current from H07.pdf
+H08.pdf,occupancy,1,original,YTD_December,2007,USVI_TOTAL,64.9,YTD_Dec prior from H08.pdf
+H08.pdf,occupancy,1,original,Annual_Total,2008,USVI_TOTAL,60.0,Annual_Total from H08.pdf
+H08.pdf,occupancy,1,original,YTD_December,2008,USVI_TOTAL,60.0,YTD_Dec current from H08.pdf
+H09.pdf,occupancy,1,original,YTD_December,2008,USVI_TOTAL,59.0,YTD_Dec prior from H09.pdf
+H09.pdf,occupancy,1,original,YTD_December,2009,USVI_TOTAL,66.7,YTD_Dec current from H09.pdf
+H10.pdf,occupancy,1,original,YTD_December,2009,USVI_TOTAL,54.9,YTD_Dec prior from H10.pdf
+H11.pdf,occupancy,1,original,Annual_Total,2010,USVI_TOTAL,57.0,Annual_Total from H11.pdf (prior year)
+H10.pdf,occupancy,1,original,YTD_December,2010,USVI_TOTAL,57.0,YTD_Dec current from H10.pdf
+H11.pdf,occupancy,1,original,YTD_December,2010,USVI_TOTAL,57.0,YTD_Dec prior from H11.pdf
+H11.pdf,occupancy,1,original,Annual_Total,2011,USVI_TOTAL,52.1,Annual_Total from H11.pdf
+H12.pdf,occupancy,1,original,Annual_Total,2011,USVI_TOTAL,51.6,Annual_Total from H12.pdf (prior year)
+H11.pdf,occupancy,1,original,YTD_December,2011,USVI_TOTAL,52.1,YTD_Dec current from H11.pdf
+H12.pdf,occupancy,1,original,YTD_December,2011,USVI_TOTAL,59.5,YTD_Dec prior from H12.pdf
+H12.pdf,occupancy,1,original,Annual_Total,2012,USVI_TOTAL,48.0,Annual_Total from H12.pdf
+H13.pdf,occupancy,1,original,Annual_Total,2012,USVI_TOTAL,51.1,Annual_Total from H13.pdf (prior year)
+H12.pdf,occupancy,1,original,YTD_December,2012,USVI_TOTAL,58.9,YTD_Dec current from H12.pdf
+H13.pdf,occupancy,1,original,YTD_December,2012,USVI_TOTAL,51.1,YTD_Dec prior from H13.pdf
+H13.pdf,occupancy,1,original,Annual_Total,2013,USVI_TOTAL,53.9,Annual_Total from H13.pdf
+H14.pdf,occupancy,1,original,Annual_Total,2013,USVI_TOTAL,53.9,Annual_Total from H14.pdf (prior year)
+H13.pdf,occupancy,1,original,YTD_December,2013,USVI_TOTAL,53.9,YTD_Dec current from H13.pdf
+H14.pdf,occupancy,1,original,YTD_December,2013,USVI_TOTAL,53.2,YTD_Dec prior from H14.pdf
+H14.pdf,occupancy,1,original,Annual_Total,2014,USVI_TOTAL,53.2,Annual_Total from H14.pdf
+H15-REVISED.pdf,occupancy,1,revised,Annual_Total,2014,USVI_TOTAL,53.9,Annual_Total from H15-REVISED.pdf (prior year)
+H14.pdf,occupancy,1,original,YTD_December,2014,USVI_TOTAL,53.8,YTD_Dec current from H14.pdf
+H15-REVISED.pdf,occupancy,1,revised,YTD_December,2014,USVI_TOTAL,53.9,YTD_Dec prior from H15-REVISED.pdf
+H15-REVISED.pdf,occupancy,1,revised,Annual_Total,2015,USVI_TOTAL,57.1,Annual_Total from H15-REVISED.pdf
+H16-REVISED.pdf,occupancy,1,revised,Annual_Total,2015,USVI_TOTAL,57.1,Annual_Total from H16-REVISED.pdf (prior year)
+H15-REVISED.pdf,occupancy,1,revised,YTD_December,2015,USVI_TOTAL,57.1,YTD_Dec current from H15-REVISED.pdf
+H16-REVISED.pdf,occupancy,1,revised,YTD_December,2015,USVI_TOTAL,57.1,YTD_Dec prior from H16-REVISED.pdf
+H16-REVISED.pdf,occupancy,1,revised,Annual_Total,2016,USVI_TOTAL,56.7,Annual_Total from H16-REVISED.pdf
+H17-REVISED.pdf,occupancy,1,revised,Annual_Total,2016,USVI_TOTAL,56.7,Annual_Total from H17-REVISED.pdf (prior year)
+H16-REVISED.pdf,occupancy,1,revised,YTD_December,2016,USVI_TOTAL,56.7,YTD_Dec current from H16-REVISED.pdf
+H17-REVISED.pdf,occupancy,1,revised,YTD_December,2016,USVI_TOTAL,56.7,YTD_Dec prior from H17-REVISED.pdf
+H17-REVISED.pdf,occupancy,1,revised,Annual_Total,2017,USVI_TOTAL,44.1,Annual_Total from H17-REVISED.pdf
+H17-REVISED.pdf,occupancy,1,revised,YTD_December,2017,USVI_TOTAL,51.3,YTD_Dec current from H17-REVISED.pdf
+H19-REVISED.pdf,occupancy,1,revised,Annual_Total,2018,USVI_TOTAL,51.4,Annual_Total from H19-REVISED.pdf (prior year)
+H19-REVISED.pdf,occupancy,1,revised,YTD_December,2018,USVI_TOTAL,51.4,YTD_Dec prior from H19-REVISED.pdf
+H19-REVISED.pdf,occupancy,1,revised,Annual_Total,2019,USVI_TOTAL,51.3,Annual_Total from H19-REVISED.pdf
+H20-REVISED.pdf,occupancy,1,revised,Annual_Total,2019,USVI_TOTAL,51.3,Annual_Total from H20-REVISED.pdf (prior year)
+H19-REVISED.pdf,occupancy,1,revised,YTD_December,2019,USVI_TOTAL,51.3,YTD_Dec current from H19-REVISED.pdf
+H20-REVISED.pdf,occupancy,1,revised,YTD_December,2019,USVI_TOTAL,51.3,YTD_Dec prior from H20-REVISED.pdf
+H20-REVISED.pdf,occupancy,1,revised,Annual_Total,2020,USVI_TOTAL,19.1,Annual_Total from H20-REVISED.pdf
+H21-DEC-REVISED-1.pdf,occupancy,1,revised,Annual_Total,2020,USVI_TOTAL,34.9,Annual_Total from H21-DEC-REVISED-1.pdf (prior year)
+H20-REVISED.pdf,occupancy,1,revised,YTD_December,2020,USVI_TOTAL,19.1,YTD_Dec current from H20-REVISED.pdf
+H21-DEC-REVISED-1.pdf,occupancy,1,revised,YTD_December,2020,USVI_TOTAL,34.9,YTD_Dec prior from H21-DEC-REVISED-1.pdf
+H21-DEC-REVISED-1.pdf,occupancy,1,revised,Annual_Total,2021,USVI_TOTAL,62.6,Annual_Total from H21-DEC-REVISED-1.pdf
+H22-DEC-revised-1.pdf,occupancy,1,revised,Annual_Total,2021,USVI_TOTAL,63.2,Annual_Total from H22-DEC-revised-1.pdf (prior year)
+H21-DEC-REVISED-1.pdf,occupancy,1,revised,YTD_December,2021,USVI_TOTAL,62.6,YTD_Dec current from H21-DEC-REVISED-1.pdf
+H22-DEC-revised-1.pdf,occupancy,1,revised,YTD_December,2021,USVI_TOTAL,63.2,YTD_Dec prior from H22-DEC-revised-1.pdf
+H22-DEC-revised-1.pdf,occupancy,1,revised,Annual_Total,2022,USVI_TOTAL,60.9,Annual_Total from H22-DEC-revised-1.pdf
+h23-decR.pdf,occupancy,1,original,Annual_Total,2022,USVI_TOTAL,63.2,Annual_Total from h23-decR.pdf (prior year)
+H22-DEC-revised-1.pdf,occupancy,1,revised,YTD_December,2022,USVI_TOTAL,60.9,YTD_Dec current from H22-DEC-revised-1.pdf
+h23-decR.pdf,occupancy,1,original,YTD_December,2022,USVI_TOTAL,63.2,YTD_Dec prior from h23-decR.pdf
+H24-DECr.pdf,occupancy,1,original,Annual_Total,2023,USVI_TOTAL,58.2,Annual_Total from H24-DECr.pdf (prior year)
+h23-decR.pdf,occupancy,1,original,Annual_Total,2023,USVI_TOTAL,58.2,Annual_Total from h23-decR.pdf
+H24-DECr.pdf,occupancy,1,original,YTD_December,2023,USVI_TOTAL,58.2,YTD_Dec prior from H24-DECr.pdf
+h23-decR.pdf,occupancy,1,original,YTD_December,2023,USVI_TOTAL,58.2,YTD_Dec current from h23-decR.pdf
+H24-DECr.pdf,occupancy,1,original,Annual_Total,2024,USVI_TOTAL,61.0,Annual_Total from H24-DECr.pdf
+H25-DEC.pdf,occupancy,1,original,PARSE_FAILURE,2024,USVI_TOTAL,,Annual rows not parsed
+H24-DECr.pdf,occupancy,1,original,YTD_December,2024,USVI_TOTAL,61.0,YTD_Dec current from H24-DECr.pdf

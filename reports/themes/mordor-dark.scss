@@ -1,0 +1,225 @@
+// =============================================================================
+// mordor-dark.scss — Mordor theme, dark variant
+//
+// Near-black earth, warm parchment text, ember gold, and three journey colors.
+// Adapted from the Walk to Mordor interface for the Field Notes publication.
+// Base: Bootstrap darkly
+// =============================================================================
+
+/*-- scss:defaults --*/
+
+// ── Color palette ─────────────────────────────────────────────────────────────
+$mor-bg:          #0d0b08;   // near-black earth
+$mor-surface:     #13110d;   // raised surface
+$mor-surface-2:   #1b1711;   // card / code surface
+$mor-ink:         #f0e8d6;   // bright parchment
+$mor-text:        #d6cbba;   // warm parchment
+$mor-muted:       #8a7b6a;   // muted earth
+$mor-border:      #2a2520;   // charcoal-brown rule
+$mor-gold:        #d4a853;   // antique gold
+$mor-frodo:       #c17f40;   // ember / burnt orange
+$mor-aragorn:     #4a7c8e;   // slate blue
+$mor-bilbo:       #5f8a5a;   // moss green
+$mor-pause:       #8b5e3c;   // pause / interruption
+
+// Bootstrap dark overrides
+$primary:                  $mor-gold;
+$body-bg:                  $mor-bg;
+$body-color:               $mor-text;
+$body-secondary-color:     $mor-muted;
+$link-color:               $mor-gold;
+$link-hover-color:         lighten($mor-gold, 12%);
+$border-color:             $mor-border;
+$border-color-translucent: rgba($mor-border, 0.4);
+
+// Typography — compact sans-serif, warm and legible
+$headings-font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+$headings-font-weight: 650;
+$headings-color:        $mor-ink;
+$font-family-base:      'Segoe UI', system-ui, -apple-system, sans-serif;
+$font-size-base:        0.9375rem;
+$line-height-base:      1.68;
+
+// Navbar
+$navbar-bg:                       #0a0806;
+$navbar-dark-color:               rgba($mor-text, 0.8);
+$navbar-dark-hover-color:         $mor-ink;
+$navbar-dark-active-color:        $mor-gold;
+$navbar-dark-brand-color:         $mor-ink;
+$navbar-dark-brand-hover-color:   #ffffff;
+$navbar-dark-toggler-border-color: rgba($mor-text, 0.15);
+
+// Surfaces
+$card-bg:           $mor-surface-2;
+$card-border-color: $mor-border;
+$card-cap-bg:       $mor-surface;
+
+// Code
+$code-color: lighten($mor-gold, 8%);
+$pre-bg:     $mor-surface;
+
+// Bootstrap color-scheme hint
+$color-scheme: "dark";
+
+// Restrained geometry
+$border-radius:    4px;
+$border-radius-sm: 3px;
+$border-radius-lg: 6px;
+
+/*-- scss:rules --*/
+
+@import 'base';
+
+// ── Page and navigation ───────────────────────────────────────────────────────
+body {
+  background-color: $mor-bg;
+  color: $mor-text;
+}
+
+.navbar {
+  background-color: #0a0806 !important;
+  border-bottom: 1px solid $mor-border;
+}
+
+.navbar-brand,
+.navbar-nav .nav-link {
+  letter-spacing: 0.04em;
+}
+
+.navbar-nav .nav-link {
+  font-size: 0.88rem;
+}
+
+.navbar-nav .nav-link.active {
+  color: $mor-gold !important;
+}
+
+// ── Editorial hierarchy ───────────────────────────────────────────────────────
+h1 {
+  color: $mor-ink;
+  letter-spacing: 0.015em;
+  border-bottom: 1px solid rgba($mor-gold, 0.55);
+  padding-bottom: 0.45rem;
+}
+
+h2 {
+  color: $mor-gold;
+  font-size: 1.12rem;
+  font-weight: 650;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  border-bottom: 1px solid $mor-border;
+  padding-bottom: 0.45rem;
+}
+
+h3 {
+  color: $mor-ink;
+  font-size: 1.02rem;
+  font-weight: 650;
+  letter-spacing: 0.015em;
+}
+
+.quarto-title h1.title {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.quarto-title .subtitle {
+  color: $mor-muted;
+  font-size: 1rem;
+}
+
+// ── Rules and figures ─────────────────────────────────────────────────────────
+hr {
+  border-color: $mor-border;
+  opacity: 1;
+}
+
+.quarto-figure .cell-output-display {
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid $mor-border;
+  border-radius: 4px;
+  padding: 0.5rem;
+}
+
+// ── Tables ────────────────────────────────────────────────────────────────────
+.table {
+  color: $mor-text;
+  border-color: $mor-border;
+}
+
+.table > :not(caption) > * > * {
+  background-color: transparent;
+  color: $mor-text;
+  border-color: $mor-border;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+  background-color: rgba(255, 255, 255, 0.025);
+  color: $mor-text;
+}
+
+.table th {
+  color: $mor-muted;
+  background-color: rgba($mor-gold, 0.07);
+  border-bottom: 1px solid rgba($mor-gold, 0.35);
+  font-size: 0.75rem;
+  letter-spacing: 0.07em;
+}
+
+// ── Callouts ─────────────────────────────────────────────────────────────────
+.callout {
+  border-radius: 4px;
+}
+
+.callout-note {
+  background-color: rgba($mor-bilbo, 0.08);
+  border-color: rgba($mor-bilbo, 0.38);
+  border-left-width: 3px;
+  color: $mor-text;
+}
+
+.callout-important {
+  background-color: rgba($mor-frodo, 0.08);
+  border-color: rgba($mor-frodo, 0.4);
+  border-left-width: 3px;
+  color: $mor-text;
+}
+
+// ── TOC and sidebar ───────────────────────────────────────────────────────────
+.sidebar nav[role="doc-toc"] > ul > li > a.active {
+  color: $mor-gold;
+  border-left: 2px solid $mor-gold;
+  padding-left: 0.5rem;
+}
+
+#quarto-sidebar,
+.sidebar {
+  background-color: lighten($mor-bg, 2%);
+}
+
+// ── Code blocks ───────────────────────────────────────────────────────────────
+code {
+  color: lighten($mor-gold, 8%);
+}
+
+div.sourceCode pre {
+  background-color: $mor-surface;
+  border: 1px solid $mor-border;
+  border-radius: 4px;
+}
+
+// ── Footer ────────────────────────────────────────────────────────────────────
+.nav-footer {
+  border-top: 1px solid $mor-border;
+  background-color: darken($mor-bg, 1%);
+  color: $mor-muted;
+}
+
+.nav-footer a {
+  color: $link-color;
+}
+
+.nav-footer a:hover {
+  color: $link-hover-color;
+}

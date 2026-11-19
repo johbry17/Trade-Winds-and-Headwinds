@@ -1,0 +1,152 @@
+// =============================================================================
+// field-journal-light.scss — Field Journal theme, light variant
+//
+// Parchment, charcoal, forest green, sage, rust and ochre.
+// Naturalist editorial — not generic environmental-NGO.
+// Base: Bootstrap cosmo
+// =============================================================================
+
+/*-- scss:defaults --*/
+
+// ── Color palette ─────────────────────────────────────────────────────────────
+$fj-forest:    #2c4a2e;   // forest green — primary brand
+$fj-rust:      #9b4b1f;   // rust/terracotta — links, accents
+$fj-sage:      #5e7a53;   // sage green — secondary
+$fj-ochre:     #b8832a;   // ochre — tertiary accent
+$fj-parchment: #f6f1e7;   // parchment — page background
+$fj-cream:     #ede8da;   // slightly darker cream — surfaces
+$fj-ink:       #231c10;   // dark warm brown — body text
+$fj-muted:     #6b5a44;   // warm brown — secondary text
+$fj-border:    #d2c8b6;   // parchment border
+
+// Bootstrap overrides
+$primary:          $fj-forest;
+$body-bg:          $fj-parchment;
+$body-color:       $fj-ink;
+$link-color:       $fj-rust;
+$link-hover-color: lighten($fj-rust, 20%);
+$border-color:     $fj-border;
+
+// Typography — slightly heavier serif character
+$headings-font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif;
+$headings-font-weight: 700;
+$headings-color:        $fj-forest;
+$font-family-base:     'Segoe UI', system-ui, -apple-system, sans-serif;
+$font-size-base:       1rem;
+$line-height-base:     1.68;
+
+// Navbar — forest green bar
+$navbar-bg:                   $fj-forest;
+$navbar-dark-color:           rgba(246, 241, 231, 0.85);
+$navbar-dark-hover-color:     #ffffff;
+$navbar-dark-active-color:    lighten($fj-ochre, 20%);
+$navbar-dark-brand-color:     rgba(246, 241, 231, 0.95);
+$navbar-dark-brand-hover-color: #ffffff;
+
+// Cards / surfaces
+$card-bg:         $fj-cream;
+$card-border-color: $fj-border;
+
+// Code
+$code-color:      $fj-rust;
+$pre-bg:          darken($fj-parchment, 4%);
+
+// Border radius — slightly organic, less sharp
+$border-radius:   5px;
+$border-radius-sm: 3px;
+$border-radius-lg: 8px;
+
+/*-- scss:rules --*/
+
+@import 'base';
+
+// ── Navbar ───────────────────────────────────────────────────────────────────
+
+.navbar {
+  border-bottom: 3px solid darken($fj-forest, 5%);
+}
+
+// ── Headings ─────────────────────────────────────────────────────────────────
+
+h1 {
+  font-size: 2rem;
+  color: $fj-forest;
+  border-bottom: 2px solid $fj-sage;
+  padding-bottom: 0.4rem;
+}
+
+h2 {
+  font-size: 1.45rem;
+  color: $fj-forest;
+  border-bottom: 1px solid $fj-border;
+  padding-bottom: 0.2rem;
+}
+
+h3 {
+  font-size: 1.15rem;
+  color: $fj-sage;
+}
+
+.quarto-title h1.title { border-bottom: none; }
+.quarto-title .subtitle { font-family: $font-family-base; color: $fj-muted; font-size: 1.0rem; }
+
+// ── Accent rule ───────────────────────────────────────────────────────────────
+
+hr {
+  border-color: $fj-sage;
+  opacity: 0.3;
+  border-width: 1.5px;
+}
+
+// ── TOC ──────────────────────────────────────────────────────────────────────
+
+.sidebar nav[role="doc-toc"] > ul > li > a.active {
+  color: $fj-rust;
+  border-left: 3px solid $fj-rust;
+  padding-left: 0.5rem;
+}
+
+// ── Callouts ─────────────────────────────────────────────────────────────────
+
+.callout-note {
+  background-color: rgba($fj-sage, 0.08);
+  border-color: rgba($fj-sage, 0.35);
+  border-left-width: 3px;
+}
+
+.callout-important {
+  background-color: rgba($fj-rust, 0.07);
+  border-color: rgba($fj-rust, 0.35);
+  border-left-width: 3px;
+}
+
+// ── Figures ───────────────────────────────────────────────────────────────────
+
+.quarto-figure .cell-output-display {
+  border-top: 2px solid $fj-border;
+  padding-top: 0.75rem;
+}
+
+// ── Tables ───────────────────────────────────────────────────────────────────
+
+.table th {
+  background-color: rgba($fj-forest, 0.05);
+  color: $fj-forest;
+}
+
+// ── Footer ───────────────────────────────────────────────────────────────────
+
+.nav-footer {
+  border-top: 1px solid $fj-border;
+  background-color: darken($fj-parchment, 3%);
+  color: $fj-muted;
+}
+
+/* Footer links */
+.nav-footer a {
+  color: $link-color;
+}
+
+.nav-footer a:hover {
+  color: $link-hover-color;
+}

@@ -1,0 +1,165 @@
+// =============================================================================
+// field-journal-dark.scss — Field Journal theme, dark variant
+//
+// Deep charcoal-brown, sage green, ochre warmth.
+// Naturalist editorial under low lamplight.
+// Base: Bootstrap darkly
+// =============================================================================
+
+/*-- scss:defaults --*/
+
+// ── Color palette ─────────────────────────────────────────────────────────────
+$fj-bg:        #18160f;   // very dark warm brown
+$fj-surface:   #221e14;   // slightly lighter surface
+$fj-sage:      #8fbc72;   // sage green — primary links
+$fj-sage-dim:  #6a9458;   // dimmer sage for hover
+$fj-ochre:     #c8824a;   // warm ochre — secondary accent
+$fj-text:      #e4ddd1;   // warm off-white text
+$fj-muted:     #8a7d6a;   // muted warm grey
+$fj-border:    #2e2920;   // dark warm border
+
+// Bootstrap dark overrides
+$primary:          $fj-sage;
+$body-bg:          $fj-bg;
+$body-color:       $fj-text;
+$body-secondary-color: $fj-muted;
+$link-color:       $fj-sage;
+$link-hover-color: darken($fj-sage, 20%);
+$border-color:     $fj-border;
+$border-color-translucent: rgba($fj-border, 0.4);
+
+// Typography
+$headings-font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif;
+$headings-font-weight: 700;
+$headings-color:        lighten($fj-sage, 15%);
+$font-family-base:     'Segoe UI', system-ui, -apple-system, sans-serif;
+$line-height-base:     1.68;
+
+// Navbar
+$navbar-bg:                   #100e08;
+$navbar-dark-color:           rgba($fj-text, 0.8);
+$navbar-dark-hover-color:     $fj-text;
+$navbar-dark-active-color:    $fj-sage;
+$navbar-dark-brand-color:     $fj-text;
+
+// Surfaces
+$card-bg:         $fj-surface;
+$card-border-color: $fj-border;
+
+// Code
+$code-color:      lighten($fj-sage, 8%);
+$pre-bg:          darken($fj-bg, 3%);
+
+$color-scheme: "dark";
+
+$border-radius:   5px;
+
+/*-- scss:rules --*/
+
+@import 'base';
+
+// ── Force dark body ───────────────────────────────────────────────────────────
+
+body {
+  background-color: $fj-bg;
+  color: $fj-text;
+}
+
+// ── Navbar ───────────────────────────────────────────────────────────────────
+
+.navbar {
+  background-color: #100e08 !important;
+  border-bottom: 3px solid $fj-sage;
+}
+
+// ── Headings ─────────────────────────────────────────────────────────────────
+
+h1 {
+  color: lighten($fj-sage, 20%);
+  border-bottom: 2px solid $fj-sage;
+  padding-bottom: 0.4rem;
+}
+h2 {
+  color: $fj-text;
+  border-bottom: 1px solid $fj-border;
+  padding-bottom: 0.2rem;
+}
+h3 { color: lighten($fj-sage, 8%); }
+
+.quarto-title .subtitle { color: $fj-muted; }
+
+// ── Plot container ────────────────────────────────────────────────────────────
+
+.quarto-figure .cell-output-display,
+.cell-output-display img {
+  background-color: rgba(255, 255, 255, 0.04);
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+// ── Tables ───────────────────────────────────────────────────────────────────
+
+.table {
+  color: $fj-text;
+  border-color: $fj-border;
+}
+
+.table > :not(caption) > * > * {
+  background-color: transparent;
+  color: $fj-text;
+  border-color: $fj-border;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+  background-color: rgba(255, 255, 255, 0.025);
+  color: $fj-text;
+}
+
+.table th {
+  background-color: rgba($fj-sage, 0.08);
+  color: lighten($fj-sage, 10%);
+}
+
+// ── Callouts ─────────────────────────────────────────────────────────────────
+
+.callout-note {
+  background-color: rgba($fj-sage, 0.1);
+  border-color: rgba($fj-sage, 0.4);
+  color: $fj-text;
+}
+
+.callout-important {
+  background-color: rgba($fj-ochre, 0.1);
+  border-color: rgba($fj-ochre, 0.4);
+  color: $fj-text;
+}
+
+// ── TOC ──────────────────────────────────────────────────────────────────────
+
+.sidebar nav[role="doc-toc"] > ul > li > a.active {
+  color: $fj-sage;
+  border-left: 3px solid $fj-sage;
+  padding-left: 0.5rem;
+}
+
+#quarto-sidebar, .sidebar {
+  background-color: lighten($fj-bg, 2%);
+}
+
+// ── Footer ───────────────────────────────────────────────────────────────────
+
+.nav-footer {
+  border-top: 1px solid $fj-border;
+  background-color: darken($fj-bg, 2%);
+  color: $fj-muted;
+}
+
+/* Footer links */
+.nav-footer a {
+  color: $link-color;
+}
+
+.nav-footer a:hover {
+  color: $link-hover-color;
+}
+

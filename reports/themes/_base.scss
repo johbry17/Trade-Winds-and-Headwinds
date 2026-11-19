@@ -1,0 +1,168 @@
+// =============================================================================
+// _base.scss — Field Notes shared component styles
+//
+// This partial is included via @import in each theme's scss:rules section.
+// It assumes Bootstrap variables are already set (via scss:defaults above).
+// =============================================================================
+
+// ── Light / Dark figure switching ────────────────────────────────────────────
+// Use .light-content and .dark-content in QMD reports to show the matching
+// figure variant. Quarto's color scheme toggle adds/removes class `quarto-dark`
+// on <body> (see inline script in rendered HTML: toggleBodyColorMode).
+
+.light-content { display: block; }
+.dark-content  { display: none;  }
+
+body.quarto-dark {
+  .light-content { display: none;  }
+  .dark-content  { display: block; }
+}
+
+// ── Page Layout ───────────────────────────────────────────────────────────────
+
+#quarto-content {
+  padding-top: 1.5rem;
+}
+
+// ── Typography ───────────────────────────────────────────────────────────────
+
+// Tighter heading margins
+h2, h3, h4 {
+  margin-top: 2rem;
+  margin-bottom: 0.6rem;
+}
+
+// Subdued subtitle
+.quarto-title-meta-heading,
+.subtitle {
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+// Source / caption notes
+.figure-caption,
+.caption-text {
+  font-size: 0.8rem;
+  font-style: italic;
+  opacity: 0.75;
+  margin-top: 0.4rem;
+  line-height: 1.4;
+}
+
+// ── Figures ──────────────────────────────────────────────────────────────────
+
+.quarto-figure {
+  margin-bottom: 2rem;
+}
+
+// ── Tables ───────────────────────────────────────────────────────────────────
+
+table.table {
+  font-size: 0.875rem;
+}
+
+.table th {
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  opacity: 0.65;
+  vertical-align: bottom;
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+// ── Callout blocks ───────────────────────────────────────────────────────────
+
+.callout {
+  border-radius: 3px;
+  font-size: 0.925rem;
+}
+
+.callout.callout-important .callout-title-container {
+  font-weight: 700;
+}
+
+// ── Code ─────────────────────────────────────────────────────────────────────
+
+code {
+  font-size: 0.875em;
+}
+
+div.sourceCode pre {
+  font-size: 0.82rem;
+  border-radius: 4px;
+}
+
+// ── TOC ──────────────────────────────────────────────────────────────────────
+
+.sidebar nav[role="doc-toc"] > ul {
+  font-size: 0.85rem;
+}
+
+.sidebar nav[role="doc-toc"] > ul > li > a.active {
+  font-weight: 600;
+}
+
+// ── Navbar ───────────────────────────────────────────────────────────────────
+
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.navbar-nav .nav-link {
+  font-size: 0.9rem;
+  letter-spacing: 0.01em;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+// ── Footer ───────────────────────────────────────────────────────────────────
+
+.nav-footer {
+  font-size: 0.82rem;
+  opacity: 0.65;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  align-items: center;
+}
+
+/* Footer links */
+.nav-footer a {
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.nav-footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 767px) {
+  .nav-footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 4.5rem;
+    gap: 0.25rem;
+  }
+  .nav-footer-center { order: 1; }
+  .nav-footer-right  { order: 2; }
+  .nav-footer-left   { order: 3; }
+}
+
+// ── Horizontal rules ─────────────────────────────────────────────────────────
+
+hr {
+  opacity: 0.2;
+  margin: 2.5rem 0;
+}
+
+// ── Print ────────────────────────────────────────────────────────────────────
+
+@media print {
+  .navbar, .sidebar, .nav-footer { display: none !important; }
+  #quarto-content { padding: 0; }
+}

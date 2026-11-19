@@ -1,0 +1,175 @@
+// =============================================================================
+// observatory-dark.scss — Observatory theme, dark variant
+//
+// Deep cool black, cobalt, burnt orange on near-black.
+// Same analytical precision as the light variant — after hours.
+// Base: Bootstrap darkly
+// =============================================================================
+
+/*-- scss:defaults --*/
+
+// ── Color palette ─────────────────────────────────────────────────────────────
+$obs-bg:       #111419;   // cool near-black
+$obs-surface:  #191d24;   // slightly lighter surface
+$obs-cobalt:   #4c8de0;   // medium cobalt — primary links
+$obs-orange:   #e56030;   // brighter burnt orange — secondary accent
+$obs-text:     #e2e6ed;   // cool off-white text
+$obs-muted:    #7a8494;   // cool grey muted
+$obs-border:   #252a35;   // dark cool border
+$obs-steel:    #9aacbf;   // lighter steel for subheadings
+
+// Bootstrap dark overrides
+$primary:          $obs-cobalt;
+$body-bg:          $obs-bg;
+$body-color:       $obs-text;
+$body-secondary-color: $obs-muted;
+$link-color:       $obs-cobalt;
+$link-hover-color: darken($obs-cobalt, 20%);
+$border-color:     $obs-border;
+$border-color-translucent: rgba($obs-border, 0.4);
+
+// Typography — same clean sans as light
+$headings-font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+$headings-font-weight: 700;
+$headings-color:        $obs-text;
+$font-family-base:     'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+$font-size-base:       0.9375rem;
+$line-height-base:     1.6;
+
+// Navbar
+$navbar-bg:                   #0a0d12;
+$navbar-dark-color:           rgba($obs-text, 0.75);
+$navbar-dark-hover-color:     $obs-text;
+$navbar-dark-active-color:    $obs-cobalt;
+$navbar-dark-brand-color:     $obs-text;
+
+// Surfaces
+$card-bg:         $obs-surface;
+$card-border-color: $obs-border;
+
+// Code
+$code-color:      lighten($obs-cobalt, 15%);
+$pre-bg:          darken($obs-bg, 3%);
+
+$color-scheme: "dark";
+
+$border-radius:   3px;
+$border-radius-sm: 2px;
+$border-radius-lg: 4px;
+
+/*-- scss:rules --*/
+
+@import 'base';
+
+// ── Force dark body ───────────────────────────────────────────────────────────
+
+body {
+  background-color: $obs-bg;
+  color: $obs-text;
+}
+
+// ── Navbar ───────────────────────────────────────────────────────────────────
+
+.navbar {
+  background-color: #0a0d12 !important;
+  border-bottom: 2px solid $obs-cobalt;
+}
+
+// ── Headings ─────────────────────────────────────────────────────────────────
+
+h1 {
+  letter-spacing: -0.02em;
+  color: $obs-text;
+  border-bottom: 2px solid $obs-cobalt;
+  padding-bottom: 0.35rem;
+}
+h2 {
+  letter-spacing: -0.01em;
+  color: $obs-text;
+  border-bottom: 1px solid $obs-border;
+  padding-bottom: 0.2rem;
+}
+h3 { color: $obs-steel; letter-spacing: 0.01em; }
+
+.quarto-title .subtitle { color: $obs-muted; letter-spacing: 0.01em; }
+
+// ── Plot container ────────────────────────────────────────────────────────────
+
+.quarto-figure .cell-output-display,
+.cell-output-display img {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid $obs-border;
+  border-radius: 3px;
+  padding: 0.5rem;
+}
+
+// ── Tables ───────────────────────────────────────────────────────────────────
+
+.table {
+  color: $obs-text;
+  border-color: $obs-border;
+}
+
+.table > :not(caption) > * > * {
+  background-color: transparent;
+  color: $obs-text;
+  border-color: $obs-border;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+  background-color: rgba(255, 255, 255, 0.025);
+  color: $obs-text;
+}
+
+.table th {
+  background-color: rgba($obs-cobalt, 0.1);
+  color: $obs-cobalt;
+  border-bottom: 2px solid rgba($obs-cobalt, 0.4);
+}
+
+// ── Callouts ─────────────────────────────────────────────────────────────────
+
+.callout-note {
+  background-color: rgba($obs-cobalt, 0.08);
+  border-color: rgba($obs-cobalt, 0.4);
+  border-left-width: 2px;
+  color: $obs-text;
+}
+
+.callout-important {
+  background-color: rgba($obs-orange, 0.08);
+  border-color: rgba($obs-orange, 0.4);
+  border-left-width: 2px;
+  color: $obs-text;
+}
+
+// ── TOC ──────────────────────────────────────────────────────────────────────
+
+.sidebar nav[role="doc-toc"] > ul > li > a.active {
+  color: $obs-cobalt;
+  border-left: 2px solid $obs-cobalt;
+  padding-left: 0.5rem;
+}
+
+#quarto-sidebar, .sidebar {
+  background-color: lighten($obs-bg, 1%);
+}
+
+// ── Footer ───────────────────────────────────────────────────────────────────
+
+.nav-footer {
+  border-top: 1px solid $obs-border;
+  background-color: darken($obs-bg, 2%);
+  color: $obs-muted;
+  letter-spacing: 0.01em;
+}
+
+/* Footer links */
+.nav-footer a {
+  color: $link-color;
+}
+
+.nav-footer a:hover {
+  color: $link-hover-color;
+}
+

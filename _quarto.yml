@@ -34,7 +34,7 @@ website:
         href: https://github.com/johbry17/Trade-Winds-and-Headwinds
   sidebar: false
   page-footer:
-    left: "Data sources: USVIBER, FRED, NPS, U.S. Census Bureau, BEA, World Bank"
+    left: "Data sources: USVIBER, FRED, BLS, BEA, U.S. Census Bureau, NPS, World Bank"
     center: "© <span id='copyright-year'>2026</span> Bryan C. Johns"
     right:
       - text: Portfolio
@@ -48,8 +48,8 @@ format:
   html:
     author-meta: "Bryan C. Johns"
     theme:
-      light: [cosmo, reports/custom.scss]
-      dark: solar
+      light: [cosmo, reports/themes/archipelago-light.scss]
+      dark: [darkly, reports/themes/archipelago-dark.scss]
     respect-user-color-scheme: true
     toc: true
     toc-depth: 3

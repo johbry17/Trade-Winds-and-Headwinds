@@ -1,0 +1,162 @@
+// =============================================================================
+// archipelago-dark.scss — Archipelago theme, dark variant
+//
+// Deep ocean night, sea-glass teal, warm coral on dark navy.
+// Same editorial family as the light variant — atmospheric.
+// Base: Bootstrap darkly
+// =============================================================================
+
+/*-- scss:defaults --*/
+
+// ── Color palette ─────────────────────────────────────────────────────────────
+$archi-bg:         #0d1e2b;   // deep ocean night
+$archi-surface:    #132535;   // slightly lighter surface
+$archi-teal:       #5bbcc9;   // sea-glass teal — primary links
+$archi-teal-dim:   #3d9bab;   // dimmer teal for hover
+$archi-coral:      #d4845e;   // warm coral — secondary accent
+$archi-text:       #ddd8d0;   // warm off-white text
+$archi-muted:      #8b8077;   // muted warm grey
+$archi-border:     #233548;   // dark warm border
+
+// Bootstrap dark overrides
+$primary:          $archi-teal;
+$body-bg:          $archi-bg;
+$body-color:       $archi-text;
+$body-secondary-color: $archi-muted;
+$link-color:       $archi-teal;
+$link-hover-color: darken($archi-teal, 20%);
+$border-color:     $archi-border;
+$border-color-translucent: rgba($archi-border, 0.3);
+
+// Typography
+$headings-font-family: Georgia, 'Times New Roman', 'Palatino Linotype', serif;
+$headings-font-weight: 700;
+$headings-color:        lighten($archi-teal, 15%);
+$font-family-base:     'Segoe UI', system-ui, -apple-system, sans-serif;
+$line-height-base:     1.65;
+
+// Navbar — same deep navy but lighter text
+$navbar-bg:                   #091929;
+$navbar-dark-color:           rgba($archi-text, 0.8);
+$navbar-dark-hover-color:     $archi-text;
+$navbar-dark-active-color:    $archi-teal;
+$navbar-dark-brand-color:     $archi-text;
+
+// Surfaces
+$card-bg:         $archi-surface;
+$card-border-color: $archi-border;
+
+// Code
+$code-color:      lighten($archi-teal, 10%);
+$pre-bg:          darken($archi-bg, 3%);
+
+// Bootstrap color-scheme hint (BS5.3+)
+$color-scheme: "dark";
+
+// Border radius
+$border-radius:   4px;
+
+/*-- scss:rules --*/
+
+@import 'base';
+
+// ── Force dark body background ────────────────────────────────────────────────
+
+body {
+  background-color: $archi-bg;
+  color: $archi-text;
+}
+
+// ── Navbar ───────────────────────────────────────────────────────────────────
+
+.navbar {
+  background-color: #091929 !important;
+  border-bottom: 2px solid $archi-teal;
+}
+
+// ── Headings ─────────────────────────────────────────────────────────────────
+
+h1 {
+  color: lighten($archi-teal, 20%);
+  border-bottom: 2px solid $archi-teal;
+  padding-bottom: 0.4rem;
+}
+h2 {
+  color: $archi-text;
+  border-bottom: 1px solid $archi-border;
+  padding-bottom: 0.25rem;
+}
+h3 { color: lighten($archi-teal, 10%); }
+
+.quarto-title .subtitle { color: $archi-muted; }
+
+// ── Plot container — light box for dark bg ────────────────────────────────────
+
+.quarto-figure .cell-output-display,
+.cell-output-display img {
+  background-color: rgba(255, 255, 255, 0.04);
+  border-radius: 4px;
+  padding: 0.5rem;
+}
+
+// ── Tables ───────────────────────────────────────────────────────────────────
+
+.table {
+  color: $archi-text;
+  border-color: $archi-border;
+}
+
+.table > :not(caption) > * > * {
+  background-color: transparent;
+  color: $archi-text;
+  border-color: $archi-border;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+  background-color: rgba(255, 255, 255, 0.03);
+  color: $archi-text;
+}
+
+// ── Callouts ─────────────────────────────────────────────────────────────────
+
+.callout-note {
+  background-color: rgba($archi-teal, 0.1);
+  border-color: rgba($archi-teal, 0.4);
+  color: $archi-text;
+}
+
+.callout-important {
+  background-color: rgba($archi-coral, 0.1);
+  border-color: rgba($archi-coral, 0.4);
+  color: $archi-text;
+}
+
+// ── TOC ──────────────────────────────────────────────────────────────────────
+
+.sidebar nav[role="doc-toc"] > ul > li > a.active {
+  color: $archi-teal;
+  border-left: 2px solid $archi-teal;
+  padding-left: 0.5rem;
+}
+
+#quarto-sidebar, .sidebar {
+  background-color: lighten($archi-bg, 2%);
+}
+
+// ── Footer ───────────────────────────────────────────────────────────────────
+
+.nav-footer {
+  border-top: 1px solid $archi-border;
+  background-color: darken($archi-bg, 2%);
+  color: $archi-muted;
+}
+
+/* Footer links */
+.nav-footer a {
+  color: $link-color;
+}
+
+.nav-footer a:hover {
+  color: $link-hover-color;
+}
+

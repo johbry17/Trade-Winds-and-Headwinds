@@ -8,13 +8,6 @@ All charts are generated from the cleaned datasets in `data/interim/`.
 The complete analytical notebooks — including detailed tables, validation checks,
 and additional charts — are in the `notebooks/` directory.
 
-::: {.callout-note}
-**CPI adjustment:** Visitor expenditures are presented in nominal USD.
-QCEW wage and payroll series are available in both nominal and approximate 2016 dollars
-using BLS CPI-U as a mainland proxy — labeled as "approximate 2016 dollars (CPI-U proxy)."
-BEA value-added series are already expressed in chained 2012 dollars and are not deflated further.
-:::
-
 ```{python}
 #| echo: false
 #| output: false
@@ -96,6 +89,18 @@ def _index(df, year_col, val_col, base=BASE):
 
 ## Section 1 — Visitor Activity
 
+### Tourism returned. The visitor mix did not.
+
+By 2024, total visitor arrivals had recovered to approximately 97% of their 2016 level. That near-return to the pre-hurricane benchmark conceals a substantial difference in how visitors arrive.
+
+Air visitors reached approximately 109% of their 2016 level. Cruise passengers, by contrast, recovered to about 90%. The headline arrival total therefore suggests a tourism sector close to its former scale, but the composition of that traffic has changed.
+
+These measures count arrivals, not visitor-days or economic contribution. They cannot tell us whether the territory has recovered its former volume of overnight stays or visitor spending. They do show that recovery has been uneven across the two principal arrival modes.
+
+**Figure 1. Visitor arrivals by mode, 2000–2024.** Annual total arrivals, air visitors, and cruise passengers. The 2017 hurricanes and 2020 pandemic mark two distinct disruptions. Values are published USVIBER measures; component series are not reconstructed to force agreement with published totals.
+
+**Figure 2. Visitor arrivals relative to 2016.** Total arrivals, air visitors, and cruise passengers indexed to 2016 = 100. The index makes the difference in recovery trajectories easier to compare without implying that the measures represent equivalent visitor experiences or economic value.
+
 ### Total arrivals and visitor composition
 
 ```{python}
@@ -168,6 +173,18 @@ fig.update_layout(title="Hotel Occupancy Rate",
 ch.add_shocks(fig).show()
 ```
 
+### Park visitation tells a different story
+
+Visitor arrivals are not the only measure of activity associated with the territory's visitor economy. Virgin Islands National Park visitation provides a separate indicator of recreation activity on St. John.
+
+By 2024, reported VIIS recreation visits were approximately 103% of the 2016 level; in 2025, they reached approximately 115%. This recovery contrasts with the weaker accommodation and employment measures.
+
+Park visitation is not a count of unique visitors, and it cannot be directly compared with territory-wide arrivals. A person may generate multiple recreation visits, and park use can include residents as well as tourists. The series also crosses a change in estimation methodology: 2003–2021 estimates and 2022–2025 estimates should be interpreted as distinct measurement periods.
+
+The contrast is nevertheless useful. Park recreation activity appears to have recovered more strongly than several measures of the wider tourism economy. Whether this reflects a shift in visitor behavior, a difference in the populations being measured, or the effects of the revised visitation methodology requires further investigation.
+
+**Figure 10. Virgin Islands National Park recreation visits, 2000–2025.** Annual estimated recreation visits indexed to 2016 = 100. The 2022 methodological transition is marked; 2026 is excluded because the park adopted a different traffic-counter-based approach.
+
 ### NPS park visitation
 
 ```{python}
@@ -215,6 +232,24 @@ fig.show()
 
 
 ## Section 2 — Employment
+
+### Employment has not followed arrivals back
+
+Leisure and Hospitality employment offers a broader view of the sector's labor-market trajectory. The FRED series includes both Arts, Entertainment, and Recreation and Accommodation and Food Services; it is not a tourism-only measure.
+
+The annual average of seasonally adjusted employment reached an index value of approximately 91 in 2024 and 84 in 2025, relative to 2016 = 100. The 2025 figure therefore indicates a renewed decline from 2024, even as visitor arrivals in 2024 approached their 2016 level.
+
+This divergence is important, but the measures should not be read as a direct productivity calculation. Arrivals count visitors; employment counts jobs across a broader set of industries. Differences in seasonality, visitor mix, labor intensity, wages, and the structure of the local economy may all matter.
+
+Other employment sources provide useful detail but are not directly interchangeable. USVIBER tourism employment ends in 2022. QCEW provides annual average employment in Accommodation and Food Services, while Census employment is a March snapshot. Their differences in coverage and reference periods limit direct comparison.
+
+**Figure 5. Leisure and Hospitality employment, 2000–2025.** Monthly seasonally adjusted employment, with annual averages and major disruption markers. The annual series summarizes the monthly observations; it is not a sum of monthly employment.
+
+**Figure 6. Employment across source definitions.** FRED Leisure and Hospitality, USVIBER tourism employment, and Census/QCEW Accommodation and Food Services measures. The purpose is to show the available evidence and differences in scope, not to construct a continuous combined employment series.
+
+**Figure 7. Accommodation and Food Services employment and compensation, 2000–2025.** QCEW employment, average annual pay, and total wages, with nominal and inflation-adjusted measures where appropriate. Average annual pay is wages per covered job, not a measure of typical individual earnings.
+
+*Interpretive question:* The divergence between visitor arrivals and employment merits further investigation. In particular, the Census comparison suggests a substantial change in accommodation employment between 2012 and 2022. Before attributing this to a change in the industry's labor requirements, the underlying establishment coverage and classification differences need to be examined.
 
 ### FRED monthly SA employment
 
@@ -291,6 +326,22 @@ ch.add_shocks(fig).show()
 
 ## Section 3 — Accommodation Capacity
 
+### More visitors, fewer rooms
+
+The accommodation picture is less straightforward. By 2024, reported hotel-room inventory stood at approximately 82% of its 2016 level. The recovery in arrivals has therefore taken place alongside a smaller recorded room base.
+
+Reported hotel occupancy reached 66.3% in 2024, up from 56.7% in 2016. That is an increase of 9.6 percentage points. Higher occupancy alongside a smaller room inventory is consistent with greater utilization of the remaining capacity. It does not, by itself, establish that the accommodation sector has returned to its former scale or profitability.
+
+The distinction matters. A smaller inventory can produce higher occupancy even when the number of occupied rooms or room nights remains below its earlier level. Occupancy is a ratio, not a measure of total accommodation output.
+
+The available hotel statistics also have gaps and differences in reporting. The published USVIBER annual occupancy indicator and occupancy calculated from reported occupied and available room nights are not consistently interchangeable. The analysis should identify which measure is used in each comparison.
+
+**Figure 3. Accommodation inventory, 2000–2024.** Reported hotel rooms and other accommodation units, where available. USVIBER survey inventory and Census establishment-based counts are shown separately because they cover different populations. The 2017 Census guestroom count is a post-hurricane snapshot, not a pre-storm baseline.
+
+**Figure 4. Hotel occupancy and room-night utilization, 2000–2025.** Available and occupied room nights, with calculated occupancy where both measures are available. The 2025 observation is partial-year and should not be compared with full-year results. Missing years remain missing.
+
+*Interpretive question:* Is the higher occupancy rate evidence of a more efficiently utilized, smaller accommodation sector, or does it reflect the loss of capacity and a narrower reporting population? The available data establish the change in inventory and occupancy, but do not resolve its cause.
+
 ### Room inventory
 
 ```{python}
@@ -341,6 +392,18 @@ ch.add_shocks(fig).show()
 Guestroom counts come from the Census Bureau's Economic Census. The 2007 and 2012 figures use accommodation-industry totals (A10); 2017 and 2022 use NAPCS02 product code 7003825000, covering room or unit accommodation for travelers. These are the closest available measures across the four census years, but the change in measurement basis means they are not a perfectly consistent time series. The 2017 count is dated December 31, after Hurricanes Irma and Maria, and represents post-hurricane capacity.
 
 ## Section 4 — Economic Context
+
+### Tourism is not the whole economy
+
+The BEA data provide a broader economic context, but they do not offer a direct measure of tourism's contribution. Accommodation and Food Services value added includes activity serving residents as well as visitors. Conversely, tourism-related activity in transportation, retail, recreation, and other industries is recorded elsewhere.
+
+Real Accommodation and Food Services value added reached an index of approximately 87 in 2021, relative to 2016 = 100. Its share of nominal GDP also declined from approximately 13% in 2015 to around 6% in 2020. These figures suggest that the industry's economic position weakened during the period, but they do not isolate tourism's contribution or establish why the share changed.
+
+The wider economy also experienced extraordinary federal disaster-recovery spending after the 2017 hurricanes. That spending is relevant context when interpreting GDP during a period when tourism was severely disrupted. It should not, however, be treated as a demonstrated explanation for the trajectory of GDP without a more direct examination of the timing and channels of expenditure.
+
+**Figure 8. USVI GDP, 2002–2022.** Nominal GDP and real GDP in chained 2012 dollars. The two measures answer different questions: nominal output reflects current-dollar economic activity, while chained-dollar GDP adjusts for price changes.
+
+**Figure 9. Accommodation and Food Services value added, 2002–2021.** Nominal and real industry value added, with the industry's approximate share of nominal GDP. Industry data end in 2021, one year earlier than the GDP series.
 
 ### Accommodation & food services value added
 
@@ -393,6 +456,20 @@ ch.add_shocks(fig).show()
 
 
 ## Section 5 — Recovery Comparisons
+
+### An uneven recovery
+
+Taken together, the indicators do not describe a single recovery trajectory.
+
+- **Arrivals:** Total arrivals were close to their 2016 level by 2024, but air and cruise traffic followed different paths.
+- **Accommodation:** Reported room inventory remained below its 2016 level, while occupancy rose.
+- **Employment:** Leisure and Hospitality employment remained below its 2016 benchmark and declined between 2024 and 2025.
+- **Economic output:** Accommodation and Food Services value added remained below its 2016 level in the latest available industry data.
+- **Park activity:** VIIS recreation visits exceeded their 2016 level by 2024 and 2025.
+
+The distinction between recovery in visitor volume and recovery in the institutions, capacity, and employment that serve visitors is central to interpreting these results. A return in arrivals does not necessarily mean a return to the same tourism economy.
+
+The evidence points to a sector that has regained much of its visitor traffic, but not necessarily its former capacity or economic structure. The available data cannot yet establish whether this represents a durable change in the composition of tourism, a lingering consequence of the hurricanes and pandemic, or some combination of the two.
 
 ### Full recovery index (2016 = 100)
 
@@ -619,3 +696,90 @@ make_scorecard(2021, include_af=True).show()
 #| label: fig-eda-scorecard-2024
 make_scorecard(2024, include_af=False).show()
 ```
+
+<!-- 
+# Analysis
+
+## Tourism returned. The visitor mix did not.
+
+By 2024, total visitor arrivals had recovered to approximately 97% of their 2016 level. That near-return to the pre-hurricane benchmark conceals a substantial difference in how visitors arrive.
+
+Air visitors reached approximately 109% of their 2016 level. Cruise passengers, by contrast, recovered to about 90%. The headline arrival total therefore suggests a tourism sector close to its former scale, but the composition of that traffic has changed.
+
+These measures count arrivals, not visitor-days or economic contribution. They cannot tell us whether the territory has recovered its former volume of overnight stays or visitor spending. They do show that recovery has been uneven across the two principal arrival modes.
+
+**Figure 1. Visitor arrivals by mode, 2000–2024.** Annual total arrivals, air visitors, and cruise passengers. The 2017 hurricanes and 2020 pandemic mark two distinct disruptions. Values are published USVIBER measures; component series are not reconstructed to force agreement with published totals.
+
+**Figure 2. Visitor arrivals relative to 2016.** Total arrivals, air visitors, and cruise passengers indexed to 2016 = 100. The index makes the difference in recovery trajectories easier to compare without implying that the measures represent equivalent visitor experiences or economic value.
+
+## More visitors, fewer rooms
+
+The accommodation picture is less straightforward. By 2024, reported hotel-room inventory stood at approximately 82% of its 2016 level. The recovery in arrivals has therefore taken place alongside a smaller recorded room base.
+
+Reported hotel occupancy reached 66.3% in 2024, up from 56.7% in 2016. That is an increase of 9.6 percentage points. Higher occupancy alongside a smaller room inventory is consistent with greater utilization of the remaining capacity. It does not, by itself, establish that the accommodation sector has returned to its former scale or profitability.
+
+The distinction matters. A smaller inventory can produce higher occupancy even when the number of occupied rooms or room nights remains below its earlier level. Occupancy is a ratio, not a measure of total accommodation output.
+
+The available hotel statistics also have gaps and differences in reporting. The published USVIBER annual occupancy indicator and occupancy calculated from reported occupied and available room nights are not consistently interchangeable. The analysis should identify which measure is used in each comparison.
+
+**Figure 3. Accommodation inventory, 2000–2024.** Reported hotel rooms and other accommodation units, where available. USVIBER survey inventory and Census establishment-based counts are shown separately because they cover different populations. The 2017 Census guestroom count is a post-hurricane snapshot, not a pre-storm baseline.
+
+**Figure 4. Hotel occupancy and room-night utilization, 2000–2025.** Available and occupied room nights, with calculated occupancy where both measures are available. The 2025 observation is partial-year and should not be compared with full-year results. Missing years remain missing.
+
+*Interpretive question:* Is the higher occupancy rate evidence of a more efficiently utilized, smaller accommodation sector, or does it reflect the loss of capacity and a narrower reporting population? The available data establish the change in inventory and occupancy, but do not resolve its cause.
+
+## Employment has not followed arrivals back
+
+Leisure and Hospitality employment offers a broader view of the sector's labor-market trajectory. The FRED series includes both Arts, Entertainment, and Recreation and Accommodation and Food Services; it is not a tourism-only measure.
+
+The annual average of seasonally adjusted employment reached an index value of approximately 91 in 2024 and 84 in 2025, relative to 2016 = 100. The 2025 figure therefore indicates a renewed decline from 2024, even as visitor arrivals in 2024 approached their 2016 level.
+
+This divergence is important, but the measures should not be read as a direct productivity calculation. Arrivals count visitors; employment counts jobs across a broader set of industries. Differences in seasonality, visitor mix, labor intensity, wages, and the structure of the local economy may all matter.
+
+Other employment sources provide useful detail but are not directly interchangeable. USVIBER tourism employment ends in 2022. QCEW provides annual average employment in Accommodation and Food Services, while Census employment is a March snapshot. Their differences in coverage and reference periods limit direct comparison.
+
+**Figure 5. Leisure and Hospitality employment, 2000–2025.** Monthly seasonally adjusted employment, with annual averages and major disruption markers. The annual series summarizes the monthly observations; it is not a sum of monthly employment.
+
+**Figure 6. Employment across source definitions.** FRED Leisure and Hospitality, USVIBER tourism employment, and Census/QCEW Accommodation and Food Services measures. The purpose is to show the available evidence and differences in scope, not to construct a continuous combined employment series.
+
+**Figure 7. Accommodation and Food Services employment and compensation, 2000–2025.** QCEW employment, average annual pay, and total wages, with nominal and inflation-adjusted measures where appropriate. Average annual pay is wages per covered job, not a measure of typical individual earnings.
+
+*Interpretive question:* The divergence between visitor arrivals and employment merits further investigation. In particular, the Census comparison suggests a substantial change in accommodation employment between 2012 and 2022. Before attributing this to a change in the industry's labor requirements, the underlying establishment coverage and classification differences need to be examined.
+
+## Tourism is not the whole economy
+
+The BEA data provide a broader economic context, but they do not offer a direct measure of tourism's contribution. Accommodation and Food Services value added includes activity serving residents as well as visitors. Conversely, tourism-related activity in transportation, retail, recreation, and other industries is recorded elsewhere.
+
+Real Accommodation and Food Services value added reached an index of approximately 87 in 2021, relative to 2016 = 100. Its share of nominal GDP also declined from approximately 13% in 2015 to around 6% in 2020. These figures suggest that the industry's economic position weakened during the period, but they do not isolate tourism's contribution or establish why the share changed.
+
+The wider economy also experienced extraordinary federal disaster-recovery spending after the 2017 hurricanes. That spending is relevant context when interpreting GDP during a period when tourism was severely disrupted. It should not, however, be treated as a demonstrated explanation for the trajectory of GDP without a more direct examination of the timing and channels of expenditure.
+
+**Figure 8. USVI GDP, 2002–2022.** Nominal GDP and real GDP in chained 2012 dollars. The two measures answer different questions: nominal output reflects current-dollar economic activity, while chained-dollar GDP adjusts for price changes.
+
+**Figure 9. Accommodation and Food Services value added, 2002–2021.** Nominal and real industry value added, with the industry's approximate share of nominal GDP. Industry data end in 2021, one year earlier than the GDP series.
+
+## Park visitation tells a different story
+
+Visitor arrivals are not the only measure of activity associated with the territory's visitor economy. Virgin Islands National Park visitation provides a separate indicator of recreation activity on St. John.
+
+By 2024, reported VIIS recreation visits were approximately 103% of the 2016 level; in 2025, they reached approximately 115%. This recovery contrasts with the weaker accommodation and employment measures.
+
+Park visitation is not a count of unique visitors, and it cannot be directly compared with territory-wide arrivals. A person may generate multiple recreation visits, and park use can include residents as well as tourists. The series also crosses a change in estimation methodology: 2003–2021 estimates and 2022–2025 estimates should be interpreted as distinct measurement periods.
+
+The contrast is nevertheless useful. Park recreation activity appears to have recovered more strongly than several measures of the wider tourism economy. Whether this reflects a shift in visitor behavior, a difference in the populations being measured, or the effects of the revised visitation methodology requires further investigation.
+
+**Figure 10. Virgin Islands National Park recreation visits, 2000–2025.** Annual estimated recreation visits indexed to 2016 = 100. The 2022 methodological transition is marked; 2026 is excluded because the park adopted a different traffic-counter-based approach.
+
+## An uneven recovery
+
+Taken together, the indicators do not describe a single recovery trajectory.
+
+- **Arrivals:** Total arrivals were close to their 2016 level by 2024, but air and cruise traffic followed different paths.
+- **Accommodation:** Reported room inventory remained below its 2016 level, while occupancy rose.
+- **Employment:** Leisure and Hospitality employment remained below its 2016 benchmark and declined between 2024 and 2025.
+- **Economic output:** Accommodation and Food Services value added remained below its 2016 level in the latest available industry data.
+- **Park activity:** VIIS recreation visits exceeded their 2016 level by 2024 and 2025.
+
+The distinction between recovery in visitor volume and recovery in the institutions, capacity, and employment that serve visitors is central to interpreting these results. A return in arrivals does not necessarily mean a return to the same tourism economy.
+
+The evidence points to a sector that has regained much of its visitor traffic, but not necessarily its former capacity or economic structure. The available data cannot yet establish whether this represents a durable change in the composition of tourism, a lingering consequence of the hurricanes and pandemic, or some combination of the two. -->

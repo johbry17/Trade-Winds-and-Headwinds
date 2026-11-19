@@ -25,10 +25,10 @@ website:
         text: Overview
       - href: reports/analysis.qmd
         text: Analysis
-      - href: reports/data-dictionary.qmd
-        text: Data
       - href: reports/methodology.qmd
         text: Methods
+      - href: reports/data-dictionary.qmd
+        text: Data
     right:
       - icon: github
         href: https://github.com/johbry17/Trade-Winds-and-Headwinds

@@ -2,7 +2,8 @@
 title: "After the Storm"
 subtitle: "A Data Portrait of Tourism Recovery in the U.S. Virgin Islands, 2000–2025"
 author: "Bryan Johns"
-date: today
+date: "November 2026"
+date-format: "MMMM YYYY"
 ---
 
 ```{python}
@@ -404,3 +405,50 @@ This analysis surfaces some questions that the data alone cannot resolve:
 
 *The full exploratory analysis is in the [Analysis companion](analysis.qmd). Data sources, variable definitions, and methodological choices are documented in the [Data Dictionary](data-dictionary.qmd) and [Methodology](methodology.qmd) pages.*
 
+
+
+# Trade Winds & Headwinds (Alt.)
+
+## The uneven recovery of the U.S. Virgin Islands' tourism economy, 2000–2025
+
+Tourism is the U.S. Virgin Islands' economic lifeblood. It is also unusually exposed to forces beyond its control: hurricanes, pandemics, shifting travel patterns, and the fortunes of a handful of major visitor markets.
+
+The territory has weathered two extraordinary disruptions in less than a decade. Hurricanes Irma and Maria struck in 2017. COVID-19 brought another collapse in travel three years later. By 2024, visitor arrivals had nearly returned to their 2016 level.
+
+That sounds like a recovery. Look a little closer, and the picture gets more complicated.
+
+### The visitors came back
+
+Total visitor arrivals in 2024 were about 97% of their 2016 level. But the mix had changed. Air visitors had reached 109% of the earlier benchmark; cruise passengers were still at 90%.
+
+The headline number conceals two different trajectories. And arrivals alone tell us little about how long visitors stay, how much they spend, or how widely that spending circulates through the local economy.
+
+### The infrastructure did not
+
+Reported hotel-room inventory remained below its pre-hurricane level. By 2024, it stood at roughly 82% of the 2016 figure.
+
+Occupancy, meanwhile, had risen from 56.7% to 66.3%. More rooms were occupied as a share of a smaller available inventory. That may indicate stronger utilization of the accommodation that remains, but it is not the same as restoring lost capacity.
+
+The distinction is easy to miss: a destination can fill more of its rooms without having as many rooms to fill.
+
+### The workforce tells another story
+
+Leisure and Hospitality employment has not kept pace with the return in arrivals. Its annual average stood at about 91% of the 2016 level in 2024, falling to 84% in 2025.
+
+This is a broad employment measure, not a count of tourism workers alone. Still, its trajectory raises a question worth asking: what does a return in visitor volume mean when employment remains below its earlier level?
+
+The available data show the divergence. They do not yet explain it.
+
+### Recovery depends on what you measure
+
+Other indicators reinforce the uneven picture. Real Accommodation and Food Services value added reached about 87% of its 2016 level in 2021, the latest year available for that industry measure. Recreation visits to Virgin Islands National Park, by contrast, reached 103% of their 2016 level in 2024 and 115% in 2025.
+
+These are not interchangeable measures. Park visits are not unique tourists; industry value added is not tourism GDP. But together they show why no single number can stand in for the health of the visitor economy.
+
+### A return, but not a reset
+
+The U.S. Virgin Islands has recovered much of its visitor traffic. That is a significant achievement after two major shocks. But arrivals, accommodation capacity, employment, economic output, and park visitation tell different stories.
+
+The evidence points to a tourism economy that has regained much of its volume without clearly restoring its former scale or structure. Whether this reflects a lasting change or an incomplete recovery remains an open question.
+
+The distinction matters. Counting visitors tells us whether people are coming back. It does not, by itself, tell us what kind of economy they are coming back to.

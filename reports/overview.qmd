@@ -1,5 +1,5 @@
 ---
-title: "After the Storm"
+title: "Trade Winds & Headwinds"
 subtitle: "A Data Portrait of Tourism Recovery in the U.S. Virgin Islands, 2000–2025"
 author: "Bryan Johns"
 date: "November 2026"

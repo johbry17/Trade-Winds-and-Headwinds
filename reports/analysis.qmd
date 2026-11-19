@@ -36,7 +36,7 @@ from src.cleaning import (
 from src.hotel_extraction import load_hotel_annual
 from src.charts import PALETTE
 
-tour     = load_usviber_combined()
+tour     = load_usviber_combined(deflate=True, cpi_base_year=2016)
 fred     = load_fred_employment()
 bea_real = load_bea("2.3")
 bea_nom  = load_bea("2.1")
@@ -147,6 +147,18 @@ for col, name, color in [
     sub = tour[["year",col]].dropna()
     fig.add_trace(go.Scatter(x=sub["year"], y=sub[col], mode="lines",
         name=name, line=dict(color=color, width=2), marker=dict(size=4)))
+
+# Inflation-adjusted total expenditures
+sub = tour[["year", "expenditures_total_real"]].dropna()
+
+fig.add_trace(go.Scatter(
+    x=sub["year"],
+    y=sub["expenditures_total_real"],
+    mode="lines",
+    name=f"Total (real, {tour['cpi_base_year'].iloc[0]} USD)",
+    line=dict(color=PALETTE["total"], width=2, dash="dash"),
+    marker=dict(size=4)
+))
 
 fig.update_layout(title="Tourism Expenditure by Visitor Category",
     yaxis=dict(title="Expenditure (millions of nominal USD)", tickprefix="$",

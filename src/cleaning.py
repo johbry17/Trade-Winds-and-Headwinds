@@ -451,7 +451,10 @@ def load_usviber_tour10() -> pd.DataFrame:
     return df
 
 
-def load_usviber_combined() -> pd.DataFrame:
+def load_usviber_combined(
+    deflate: bool = True,
+    cpi_base_year: int = 2016
+) -> pd.DataFrame:
     """
     Combine TOUR10 (2001–2009 gap-fill) and TOUR24 (2000, 2010–2024).
 
@@ -479,6 +482,18 @@ def load_usviber_combined() -> pd.DataFrame:
         .sort_values("year")
         .reset_index(drop=True)
     )
+
+    if deflate:
+        cpi = load_cpi_annual(base_year=cpi_base_year)[["year", "cpi_index"]]
+        # cpi_index = 100 at base_year → deflate: multiply by (100 / cpi_index)
+        combined = combined.merge(cpi, on="year", how="left")
+        deflator = 100.0 / combined["cpi_index"]
+        combined["expenditures_total_real"] = (
+            combined["expenditures_total"] * deflator
+        ).round(1)
+        combined["cpi_base_year"] = cpi_base_year
+        combined = combined.drop(columns=["cpi_index"])
+
     return combined
 
 

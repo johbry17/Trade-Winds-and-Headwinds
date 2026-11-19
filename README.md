@@ -1,114 +1,219 @@
 # Trade Winds & Headwinds
+# Trade Winds & Headwinds
+
 ## Twenty-Five Years of Tourism and Economic Change in the U.S. Virgin Islands (2000–2025)
 
-A rigorous, reproducible exploratory data analysis of the USVI tourism economy, tracing the territory through two major shocks — Hurricanes Irma and Maria (2017) and COVID-19 (2020) — and the recoveries that followed.
+A data study of the U.S. Virgin Islands' tourism economy, examining its response to Hurricanes Irma and Maria (2017) and the COVID-19 pandemic (2020), and the uneven recovery that followed.
+
+**Author:** Bryan C. Johns  
+**Field Note:** [Read the published study](https://johbry17.github.io/Trade-Winds-and-Headwinds/)  
+**Repository:** [GitHub](https://github.com/johbry17/Trade-Winds-and-Headwinds)
 
 ---
 
-## Research Question
+## The study
 
-> **How has the USVI tourism economy changed over approximately 25 years, how did it respond to two major shocks, and what does the subsequent recovery look like across visitor activity, employment, business capacity, and economic output?**
+How has the U.S. Virgin Islands' tourism economy changed over 25 years, how did it respond to two major disruptions, and what does recovery look like across visitor activity, accommodation capacity, employment, and economic output?
 
----
+Tourism is central to the USVI economy, but the measures commonly used to describe its health do not necessarily move together. Visitor arrivals can recover while hotel capacity, employment, and industry output remain depressed. This study brings together roughly 25 years of public data to examine those differences.
 
-## Project Structure
+The analysis is descriptive rather than causal. It traces changes over time, compares indicators from different sources, and examines the territory's recovery against a common pre-hurricane baseline. It does not estimate the independent effects of either disaster or quantify the contribution of federal recovery spending.
 
-```
-trade-winds-headwinds/
+## Explore the Field Note
+
+The published study is organized as four complementary pages:
+
+| Page | Purpose |
+|---|---|
+| [Overview](https://johbry17.github.io/Trade-Winds-and-Headwinds/reports/overview.html) | The central story, principal findings, and their significance |
+| [Analysis](https://johbry17.github.io/Trade-Winds-and-Headwinds/reports/analysis.html) | Charts, comparisons, results, and interpretation |
+| [Data](https://johbry17.github.io/Trade-Winds-and-Headwinds/reports/data-dictionary.html) | Source inventory, variables, coverage, units, and data-quality qualifications |
+| [Methods](https://johbry17.github.io/Trade-Winds-and-Headwinds/reports/methodology.html) | Research design, processing, calculations, assumptions, and limitations |
+
+## Findings at a glance
+
+The indicators describe an uneven recovery rather than a return to the same tourism economy.
+
+| Indicator | Latest observation | Relative to 2016 |
+|---|---:|---:|
+| Total visitor arrivals | 2024 | 97 |
+| Air visitors | 2024 | 109 |
+| Cruise passengers | 2024 | 90 |
+| Hotel-room inventory | 2024 | 82 |
+| Leisure & Hospitality employment | 2025 | 84 |
+| Accommodation & Food Services real value added | 2021 | 87 |
+| Virgin Islands National Park recreation visits | 2025 | 115 |
+
+*Index values use 2016 = 100. Occupancy is reported separately: 66.3% in 2024, compared with 56.7% in 2016, an increase of 9.6 percentage points. Each indicator has its own coverage and definition; latest observations do not all refer to the same year.*
+
+Several findings stand out:
+
+- **Visitor arrivals nearly recovered, but the mix changed.** Total arrivals reached 97% of their 2016 level in 2024. Air visitors reached 109%, while cruise passengers reached 90%.
+- **Accommodation capacity remained constrained.** Reported hotel-room inventory stood at 82% of its 2016 level in 2024. Occupancy increased despite the smaller inventory.
+- **Employment lagged visitor volume.** The broad Leisure and Hospitality employment measure reached 91% of its 2016 level in 2024, then fell to 84% in 2025.
+- **Industry output remained below baseline.** Real Accommodation and Food Services value added stood at 87% of its 2016 level in 2021, the latest available industry observation.
+- **Park activity followed a different trajectory.** Virgin Islands National Park recreation visits reached 115% of their 2016 level in 2025. These are estimated recreation visits, not unique visitors or a direct measure of territory-wide tourism.
+
+The comparisons suggest that a return in visitor volume does not necessarily mean a return to the same capacity, employment, or economic structure.
+
+## Selected analysis
+
+The [Analysis page](https://johbry17.github.io/Trade-Winds-and-Headwinds/reports/analysis.html) contains the full set of figures and supporting comparisons. The most useful analytical views include:
+
+1. **Visitor arrivals by mode:** total arrivals, air visitors, and cruise passengers, showing the different trajectories through the hurricane and pandemic disruptions.
+2. **Accommodation inventory and occupancy:** the relationship between available capacity and reported utilization.
+3. **Leisure and Hospitality employment:** monthly and annual trends, including the distinction between broad sector employment and narrower tourism-related measures.
+4. **Economic output:** real GDP and Accommodation and Food Services value added, with their different coverage and end dates.
+5. **Recovery comparisons:** selected indicators indexed to 2016 = 100, with a separate 2019 baseline for the COVID-19 shock.
+
+## Research design
+
+The unit of analysis is the U.S. Virgin Islands at the territory level. The study combines annual and monthly time series, periodic Economic Census observations, and source-specific indicators covering different parts of the visitor economy.
+
+The principal measures include:
+
+- **Visitor activity:** published USVIBER totals for total visitors, air visitors, and cruise passengers.
+- **Accommodation:** survey-based room inventory, Census guestroom counts, hotel room nights available and occupied, and occupancy rates.
+- **Employment and compensation:** FRED Leisure and Hospitality employment, USVIBER tourism employment, and BLS QCEW employment and wage measures.
+- **Economic output:** BEA GDP and Accommodation and Food Services value added, in nominal and chained-dollar terms.
+- **Recreation activity:** National Park Service estimated recreation visits to Virgin Islands National Park and Buck Island Reef National Monument.
+
+Selected indicators are indexed to 2016, the last full year before the 2017 hurricanes. A separate comparison uses 2019 as the pre-pandemic baseline. Each series is indexed independently; no composite recovery score is calculated.
+
+The study does not use the overnight-tourist series. Air visitors and cruise passengers are retained as separate published arrival measures. They should not be interpreted as equivalent measures of visitor duration, spending, or economic contribution.
+
+See [Methods](https://johbry17.github.io/Trade-Winds-and-Headwinds/reports/methodology.html) for the full research design and analytical decisions.
+
+## Data sources
+
+The study draws primarily on public data from the following providers:
+
+| Source | Data |
+|---|---|
+| [USVI Bureau of Economic Research](https://usviber.org/) | Tourism indicators, visitor arrivals, accommodation inventory, hotel statistics, and tourism employment |
+| [Federal Reserve Economic Data](https://fred.stlouisfed.org/) | Monthly USVI Leisure and Hospitality employment and mainland CPI-U |
+| [Bureau of Labor Statistics](https://www.bls.gov/cew/) | Quarterly Census of Employment and Wages: employment, establishments, payroll, and wages |
+| [U.S. Census Bureau](https://www.census.gov/programs-surveys/economic-census.html) | Economic Census industry and accommodation statistics |
+| [Bureau of Economic Analysis](https://www.bea.gov/data/gdp/gdp-us-virgin-islands-usvi) | Territorial GDP and industry value added |
+| [National Park Service IRMA](https://irma.nps.gov/Stats/) | Annual and monthly recreation visitation |
+| [World Bank](https://databank.worldbank.org/source/world-development-indicators) | International arrivals and tourism receipts, used as supplementary evidence |
+
+Source coverage varies. USVIBER provides the principal visitor series; FRED employment begins in 1990; BEA GDP data extend through 2022, while industry value added ends in 2021. The Economic Census provides periodic snapshots rather than annual observations.
+
+The [Data page](https://johbry17.github.io/Trade-Winds-and-Headwinds/reports/data-dictionary.html) documents individual sources, coverage, units, and known qualifications.
+
+## Data quality and limitations
+
+Several source characteristics shape what can be concluded:
+
+- **Visitor statistics:** USVIBER publications contain historical revisions and occasional inconsistencies among published totals and their components. Published totals are retained rather than reconstructed from components.
+- **Employment:** FRED Leisure and Hospitality includes Arts, Entertainment, and Recreation as well as Accommodation and Food Services. QCEW and Census measures cover different populations and reference periods. These series are not interchangeable.
+- **Accommodation:** USVIBER survey inventory and Census payroll-based establishment counts have different coverage. The 2017 Census guestroom count is a post-hurricane observation, not a pre-hurricane benchmark.
+- **Hotel statistics:** extracted reports contain missing years, revisions, and partial 2025 observations. Published occupancy and occupancy calculated from room nights are retained as distinct measures.
+- **Inflation:** mainland CPI-U is used as a proxy to express selected wage measures in approximate 2016 dollars. It is not a USVI-specific price index. The available USVI CPI series ends in 2021 and contains an unresolved discontinuity.
+- **Economic output:** Accommodation and Food Services value added is not tourism GDP. It includes resident activity and excludes tourism-related activity recorded in other industries.
+- **Park visitation:** NPS counts estimated recreation visits, not unique people. VIIS estimates use different methods across 2003–2021 and 2022–2025; 2026 is excluded from long-term comparisons following a major methodology change.
+- **Causality:** the study identifies temporal patterns and differences across indicators. It does not isolate the causal effects of hurricanes, COVID-19, reconstruction spending, or structural changes in the tourism industry.
+
+Missing observations are not interpolated or treated as zero. Full details are recorded in the [Methods](https://johbry17.github.io/Trade-Winds-and-Headwinds/reports/methodology.html) and [Data](https://johbry17.github.io/Trade-Winds-and-Headwinds/reports/data-dictionary.html) pages.
+
+## Repository and reproducibility
+
+The repository contains the source data, processing modules, analysis notebooks, and Quarto publication.
+
+```text
+Trade-Winds-and-Headwinds/
 ├── README.md
-├── requirements.txt          # Python dependencies
-├── _quarto.yml               # Quarto website configuration
+├── LICENSE.md
+├── LICENSE-CODE.md
+├── requirements.txt
+├── _quarto.yml
+├── archive/
 ├── data/
-│   ├── raw/                  # Immutable source files — do not modify
-│   ├── interim/              # Clean intermediate datasets (generated)
-│   └── processed/            # Final analytical datasets (generated)
-├── notebooks/
-│   ├── 01_data_inventory.ipynb   # Phase 1: audit, profiling, validation
-│   ├── 02_tourism.ipynb          # Phase 3: visitor activity EDA
-│   ├── 03_employment.ipynb       # Phase 3: employment EDA
-│   ├── 04_accommodation_capacity.ipynb
-│   ├── 05_economic_context.ipynb
-│   └── 06_recovery_comparisons.ipynb
+│   ├── raw/                 # Original source files
+│   ├── interim/             # Intermediate analytical data
+│   └── processed/           # Derived datasets
+├── figures/
+│   └── publication/         # Selected publication figures
+├── images/                  # Site and project images
+├── notebooks/               # Data audit and analysis notebooks
 ├── src/
-│   ├── acquisition.py        # Source provenance and download helpers
-│   ├── cleaning.py           # Per-source data loaders and cleaners
-│   ├── validation.py         # Cross-source checks and data-quality log
-│   └── charts.py             # Reusable Plotly charting functions
+│   ├── acquisition.py       # Source provenance and acquisition helpers
+│   ├── cleaning.py          # Data loading and preparation
+│   ├── validation.py        # Validation checks and data-quality log
+│   ├── charts.py            # Reusable chart functions
+│   └── hotel_extraction.py  # Hotel report extraction and assembly
 ├── reports/
-│   ├── index.qmd             # Field Note (public-facing)
-│   ├── eda.qmd               # Analytical companion
+│   ├── overview.qmd
+│   ├── analysis.qmd
 │   ├── data-dictionary.qmd
 │   ├── methodology.qmd
-│   └── custom.scss
-├── figures/
-│   └── publication/          # Final charts only (not every exploratory figure)
-└── docs/                     # Quarto website output
+│   ├── scripts/
+│   └── themes/
+└── docs/                    # Rendered Quarto website
 ```
 
----
+### Environment
 
-## Data Sources
+The project uses Python 3.10, with dependencies listed in `requirements.txt`, and [Quarto](https://quarto.org/docs/get-started/) for publication.
 
-| Source | File(s) | Coverage | Notes |
-|---|---|---|---|
-| USVIBER Tourism Indicators | `TOUR20-revised.pdf`, `TOUR22.pdf`, `TOUR24.pdf` | 2000–2024, annual | Primary tourism statistics source |
-| FRED Employment | `fred_SMS*.csv`, `fred_SMU*.csv` | 1990–2026, monthly | Leisure & Hospitality, thousands |
-| NPS IRMA | `VIIS_*.csv`, `BUIS_*.csv` | 1957/1962–2025, annual + monthly | Park visitation, not territory-wide arrivals |
-| World Bank | `VIR.ST.INT.*.json` | 1995–2020, annual | Secondary cross-check; 2020 anomaly flagged |
-| U.S. Census | `2007_IA*`, `IA12*`, `IA17*`, `IA22*` | 2002, 2007, 2012, 2017, 2022 | Establishments, employment, payroll, guestrooms |
-| BEA | `vigdp0624.xlsx` | 2002–2022 (GDP), 2002–2021 (industry) | GDP and accommodation value added |
-| USVIBER CPI | `Econ21.pdf` | 2009–2021 | **Coverage gap post-2021; no reliable deflator beyond 2021** |
-
----
-
-## Key Data Quality Issues
-
-| Severity | Issue |
-|---|---|
-| HIGH | World Bank arrivals 2020 = 8.6M (set to NaN; physically impossible) |
-| HIGH | VIIS monthly 2026 data anomalously high (100k+/month vs. 40–55k in 2025) |
-| MEDIUM | USVIBER 2020 air excursionists = 2000 value (identical; verify) |
-| MEDIUM | Census 2017 guestroom count reflects Dec 31, 2017 post-hurricane conditions |
-| MEDIUM | Census RMRTRAN inconsistent in NAPCS Total vs. room-product rows |
-| MEDIUM | USVIBER excursionists ≠ sum of air + cruise for 2000 and 2010 (rounding or definition) |
-| LOW | USVI CPI 2018 drop anomalous (130.0 → 99.8); verify before deflating |
-
-See `notebooks/01_data_inventory.ipynb` and `src/validation.py` for the full data-quality log.
-
----
-
-## Environment
-
-**Python 3.10** via conda (`dev` environment).
+Create and activate the project environment, then install the Python dependencies:
 
 ```bash
+conda create -n dev python=3.10
+conda activate dev
 pip install -r requirements.txt
 ```
 
-**Quarto** (for publication): [install from quarto.org](https://quarto.org/docs/get-started/).
+### Analysis workflow
+
+1. **Inspect the data.** Review the source inventory and validation log in `src/acquisition.py` and `src/validation.py`.
+2. **Prepare the data.** Use the source-specific loaders and cleaning functions in `src/cleaning.py`. Original source files are retained under `data/raw/`.
+3. **Run the analysis.** The notebooks in `notebooks/` document data validation, exploratory analysis, and recovery comparisons. Run them in their numbered order where applicable.
+4. **Render the publication.** The Quarto project renders the four research pages listed in `_quarto.yml`.
+
+Preview the site locally:
 
 ```bash
-quarto preview   # live preview at localhost
-quarto render    # build to docs/
+quarto preview
 ```
 
+Render the site to `docs/`:
+
+```bash
+quarto render
+```
+
+The repository includes the source data and processing code, but the analysis is not packaged as a single automated end-to-end pipeline. Reproducing the published results may require running the notebooks and rendering the Quarto documents in the appropriate order.
+
+### Dependencies
+
+The principal Python packages are:
+
+- **Data handling:** pandas, NumPy
+- **Visualization:** Plotly, Kaleido
+- **Statistical analysis:** SciPy, statsmodels
+- **File processing:** openpyxl, pdfplumber
+- **Notebook environment:** Jupyter, nbformat, ipykernel
+- **Utilities:** python-dateutil, tqdm
+
+See `requirements.txt` for package versions and minimum requirements.
+
 ---
 
-## Analysis Phases
+## License
 
-| Phase | Status | Description |
-|---|---|---|
-| 1 — Audit & Setup | ✅ Complete | Data inventory, quality log, interim datasets, project scaffolding |
-| 2 — Data Preparation | 🔲 Next | Cleaning scripts, Census crosswalk, aggregation validation |
-| 3 — Exploratory Analysis | 🔲 | Six-section EDA notebooks |
-| 4 — Publication Foundation | 🔲 | Quarto site, styling, navigation |
-| 5 — Findings & Field Note | 🔲 | Selected charts, concise narrative |
+Original written content, documentation, and visualizations are licensed under [CC BY 4.0](LICENSE.md). Source code is licensed separately under the [MIT License](LICENSE-CODE).
 
----
+Third-party data and materials are subject to their respective licenses and terms of use.
 
-## Data Links
+## Author
 
-- [FRED: L&H Employment SA](https://fred.stlouisfed.org/series/SMS78000007000000001)
+Bryan Johns, November 2026  
+[bryan.johns@informedwanderer.com](mailto:bryan.johns@informedwanderer.com) | [LinkedIn](https://www.linkedin.com/in/b-johns/) | [GitHub](https://github.com/johbry17) | [Portfolio](https://informedwanderer.com)  
+— Fluent in Data. Fluent in Human.
+
+<!-- - [FRED: L&H Employment SA](https://fred.stlouisfed.org/series/SMS78000007000000001)
 - [FRED: L&H Employment NSA](https://fred.stlouisfed.org/series/SMU78000007000000001)
 - [FRED: CPI-U, U.S. City Average (CPIAUCNS)](https://fred.stlouisfed.org/series/CPIAUCNS) — Monthly Consumer Price Index for All Urban Consumers, All Items, not seasonally adjusted; sourced from the BLS. Used as a U.S. mainland inflation proxy to express nominal wage measures in approximate 2016 dollars. Not a USVI-specific price index.
 - [BLS: Quarterly Census of Employment and Wages (QCEW)](https://www.bls.gov/cew/) — Annual employment, establishments, payroll, and wage data for USVI accommodation and food services (NAICS 72, 721, 722), 2000–2025.
@@ -123,4 +228,4 @@ quarto render    # build to docs/
 - [BEA GDP for USVI](https://www.bea.gov/data/gdp/gdp-us-virgin-islands-usvi)
 - [World Bank Tourism Receipts](https://api.worldbank.org/v2/country/VI/indicator/ST.INT.RCPT.CD?format=json)
 - [World Bank Tourism Arrivals](https://api.worldbank.org/v2/country/VI/indicator/ST.INT.ARVL?format=json)
-- [NPS Visitor Use Stats](https://irma.nps.gov/Stats/)
+- [NPS Visitor Use Stats](https://irma.nps.gov/Stats/) -->

@@ -59,20 +59,20 @@ FONT = (
     "Segoe UI, Helvetica, Arial, sans-serif"
 )
 
-_GRID        = "#eeeeee"   # horizontal gridline colour
-_AXIS_LINE   = "#d1d5db"   # axis border line colour
-_SHOCK_LINE  = "#cccccc"   # vertical event line colour
-_SHOCK_LABEL = "#aaaaaa"   # event annotation text colour
-_SOURCE_COL  = "#aaaaaa"   # source note text colour
+_GRID        = "rgba(107,101,89,0.22)"   # works in light and dark
+_AXIS_LINE   = "rgba(107,101,89,0.45)"
+_SHOCK_LINE  = "rgba(107,101,89,0.55)"
+_SHOCK_LABEL = "#77736a"
+_SOURCE_COL  = "#77736a"
 
 # ---------------------------------------------------------------------------
 # Base Plotly template
 # ---------------------------------------------------------------------------
 
 _BASE_LAYOUT = dict(
-    font=dict(family=FONT, size=12.5, color="#1f2937"),
-    plot_bgcolor="#ffffff",
-    paper_bgcolor="#ffffff",
+    font=dict(family=FONT, size=12.5, color="#252320"),
+    plot_bgcolor="rgba(0,0,0,0)",
+    paper_bgcolor="rgba(0,0,0,0)",
     margin=dict(l=60, r=34, t=52, b=80),
     legend=dict(
         orientation="h",

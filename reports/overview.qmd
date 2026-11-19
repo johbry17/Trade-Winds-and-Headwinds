@@ -1,6 +1,6 @@
 ---
 title: "Trade Winds & Headwinds"
-subtitle: "A Data Portrait of Tourism Recovery in the U.S. Virgin Islands, 2000–2025"
+subtitle: "Twenty-Five Years of Tourism and Economic Change in the U.S. Virgin Islands, 2000–2025"
 author: "Bryan Johns"
 date: "November 2026"
 date-format: "MMMM YYYY"
@@ -20,435 +20,180 @@ os.chdir(PROJ_ROOT)
 
 import pandas as pd
 import plotly.graph_objects as go
-import src.cleaning as c, src.charts as ch
-import importlib
-importlib.reload(c); importlib.reload(ch)
-
-from src.cleaning import (
-    load_usviber_combined, load_fred_employment,
-    load_bea, load_nps_annual,
-)
+from src.cleaning import load_usviber_combined, load_fred_employment, load_bea, load_nps_annual
+import src.charts as ch
 from src.charts import PALETTE
 
-tour     = load_usviber_combined()
-fred     = load_fred_employment()
+tour = load_usviber_combined(deflate=True, cpi_base_year=2016)
+fred = load_fred_employment()
 bea_real = load_bea("2.3")
-viis_ann = load_nps_annual("VIIS")
+viis = load_nps_annual("VIIS")
+fred_ann = fred.groupby("year", as_index=False)["emp_sa"].mean().rename(columns={"emp_sa": "emp_sa_avg"})
+af_real = (bea_real[bea_real["label"].str.contains("ccommodation", case=False, na=False)]
+           .drop_duplicates("year")[["year", "value"]].rename(columns={"value": "af_real"}))
 
-fred_ann = (
-    fred.groupby("year")["emp_sa"].mean()
-    .reset_index().rename(columns={"emp_sa": "emp_sa_avg"})
-)
-af_real = (
-    bea_real[bea_real["label"].str.contains("ccommodation", case=False, na=False)]
-    .drop_duplicates(subset="year")[["year", "value"]]
-    .rename(columns={"value": "af_real"})
-)
-
-BASE = 2016
-
-def _index(df, year_col, val_col, base=BASE):
-    bv = df.loc[df[year_col] == base, val_col]
-    if bv.empty or bv.values[0] == 0:
+def index_series(df, column, base=2016):
+    base_value = df.loc[df["year"].eq(base), column]
+    if base_value.empty:
         return None
-    base_val = bv.values[0]
-    out = df[[year_col, val_col]].copy()
-    out["idx"] = out[val_col] / base_val * 100
+    out = df[["year", column]].dropna().copy()
+    out["index"] = out[column] / base_value.iloc[0] * 100
     return out
 ```
 
+## The central question
 
+The U.S. Virgin Islands' tourism economy returned through two catastrophic shocks: Hurricanes Irma and Maria in September 2017, and the COVID-19 shutdown of 2020. The first destroyed infrastructure as well as demand. The second interrupted travel again before the islands had recovered.
 
-## Context
+The useful question is not simply whether tourism is back. It is whether the economy that has reappeared is the same economy that existed before the storms.
 
-In September 2017, Hurricanes Irma and Maria struck the U.S. Virgin Islands within two weeks of each other. The territory took a direct hit from two Category 5 storms, destroying hotel infrastructure, damaging or closing Virgin Islands National Park, and disrupting the economy that tourism had sustained for decades. Three years later, before recovery was complete, COVID-19 closed borders and halted cruise shipping.
+The evidence produces a mixed answer. In 2024, published arrivals were close to the 2016 benchmark. Air arrivals exceeded it. Cruise traffic did not. Hotel rooms remained smaller, published occupancy was higher, and broad Leisure and Hospitality employment was still below its former annual average. By 2021, the latest available year for BEA accommodation and food-services value added, that industry remained below its 2016 real-dollar level as well.
 
-This study draws on data spanning roughly 25 years across six primary sources to document how the USVI tourism economy has moved through those shocks — and what recovery looks like in 2024 and 2025. Source coverage varies: USVIBER provides annual data from 2000, with 2001–2009 from an earlier publication vintage and 2010–2024 from the current edition; FRED employment begins in 1990; BEA data run 2002–2021/2022.
+Arrivals, capacity, labor, and economic output are therefore not telling the same recovery story. They show a sector that has regained a substantial flow of visitors, but has not restored its full pre-hurricane scale.
 
-
-
-## The two shocks
+## Two shocks, two kinds of disruption
 
 ```{python}
 #| echo: false
-#| label: fig-total-arrivals
-#| fig-cap: "Air visitors (all USVI arrivals by air) versus cruise passengers. Total visitors shown as context. 2001–2009 from USVIBER 2010 publication."
+#| label: fig-overview-arrivals
+#| fig-cap: "Published visitor arrivals by travel mode, 2000–2024. Air visitors and cruise passengers are distinct measures and are not components that should be assumed to sum to total visitors."
 
-fig = go.Figure() 
-for col, name, color, dash, lw, op in [
-    ("air_visitors",     "Air visitors",     PALETTE["air_visitors"], "solid", 2.4, 1.0),
-    ("cruise_passengers","Cruise passengers", PALETTE["cruise"],       "solid", 2.4, 1.0),
-    ("total_visitors",   "Total visitors",   PALETTE["total"],        "dash",  1.4, 0.55),
+fig = go.Figure()
+for col, name, color, dash in [
+    ("air_visitors", "Air visitors", PALETTE["air_visitors"], "solid"),
+    ("cruise_passengers", "Cruise passengers", PALETTE["cruise"], "solid"),
+    ("total_visitors", "Total visitors", PALETTE["total"], "dash"),
 ]:
     sub = tour[["year", col]].dropna()
     fig.add_trace(go.Scatter(
-        x=sub["year"], y=sub[col],
-        mode="lines", name=name, opacity=op,
-        line=dict(color=color, width=lw, dash=dash),
+        x=sub["year"], y=sub[col], mode="lines", name=name,
+        line=dict(color=color, width=2.5 if col != "total_visitors" else 1.4, dash=dash),
+        opacity=1.0 if col != "total_visitors" else 0.55,
     ))
-
 fig.update_layout(
-    title=dict(text="<b>Air Visitors vs. Cruise Passengers</b>", font=dict(size=16), x=0.0),
-    yaxis_title="Visitors (thousands)",
-    height=400,
-    annotations=[ch.source_note(
-        "USVIBER Annual Tourism Indicator 2024; 2001–2009 from USVIBER 2010"
-    )],
+    title=dict(text="<b>Visitor Arrivals Retained a Large Aggregate Volume</b>", font=dict(size=16), x=0.0),
+    yaxis_title="Annual arrivals (thousands)", height=410,
+    annotations=[ch.source_note("USVIBER, published annual tourism indicators; 2001–2009 from TOUR10 vintage")],
 )
 ch.add_shocks(fig)
-ch.save_fig(fig, "total-arrivals", formats=("png",))
+ch.save_fig(fig, "overview-arrivals", formats=("png",))
 fig.show()
 ```
 
-The 2017 hurricane shock cut total arrivals to 76% of their 2016 level within the same calendar year — notable given that the storms struck in September, meaning the first eight months of 2017 were largely normal. By 2018, the decline deepened as the full damage to hotel inventory became apparent.
+The 2017 hurricanes struck in September, when much of that year's visitation had already occurred. Their full consequences became visible in 2018. Total arrivals fell to about 86% of their 2016 level in 2018 and reached their low point in 2020.
 
-COVID-19 in 2020 produced a collapse of different character: cruise shipping stopped almost entirely (cruise passengers fell to 25% of their 2019 level), while overnight tourists declined less sharply (to about 32% of 2019). The territory's isolation and the absence of large-group gatherings may have made it modestly attractive to small-party leisure travelers once borders reopened.
+The pandemic altered the mix. In 2020, cruise passengers fell to 25% of their 2019 level, while air visitors fell to 32%. Both have since returned, but at different speeds. By 2024, air visitors reached 109% of the 2016 level, while cruise passengers reached 90%. The published total, which includes the two published modes, stood at 97%.
 
+These are arrivals, not visitor-days. They do not establish length of stay, number of repeat trips, or total spending.
 
-
-## A recovery that isn't what it looks like
+## A smaller economy serving a large flow of visitors
 
 ```{python}
 #| echo: false
-#| label: fig-recovery-index
-#| fig-cap: "Recovery index, 2016 = 100. Air visitors and cruise passengers (thick solid lines) are the primary arrival-mode comparison. Overnight tourists and context indicators (thin lines, reduced opacity) are shown for reference."
+#| label: fig-overview-recovery
+#| fig-cap: "Selected recovery indicators indexed independently to 2016 = 100. Occupancy is not indexed. Measures have different latest years and source populations."
 
-SERIES = [
-    # name, col, source_df, color, dash, line_width, opacity
-    ("Air visitors",     "air_visitors",        tour,                     PALETTE["air_visitors"], "solid",    2.6, 1.00),
-    ("Cruise passengers","cruise_passengers",   tour,                     PALETTE["cruise"],       "solid",    2.6, 1.00),
-    ("Overnight tourists","tourists",           tour,                     PALETTE["tourists"],     "dash",     1.8, 0.80),
-    ("Hotel rooms",      "hotel_rooms",         tour,                     PALETTE["rooms"],        "dot",      1.2, 0.48),
-    ("L&H employment",   "emp_sa_avg",          fred_ann,                 PALETTE["employment"],   "longdash", 1.2, 0.48),
-    ("A&F real VA",      "af_real",             af_real,                  PALETTE["value_added"],  "dash",     1.2, 0.48),
-    ("VIIS NP visits",   "recreation_visitors", viis_ann.query("year>=2000"), PALETTE["nps_viis"], "dashdot",  1.2, 0.48),
+series = [
+    ("Air visitors", "air_visitors", tour, PALETTE["air_visitors"]),
+    ("Cruise passengers", "cruise_passengers", tour, PALETTE["cruise"]),
+    ("Hotel rooms", "hotel_rooms", tour, PALETTE["rooms"]),
+    ("L&H employment", "emp_sa_avg", fred_ann, PALETTE["employment"]),
 ]
-
 fig = go.Figure()
-for name, col, df_src, color, dash, lw, op in SERIES:
-    idx_df = _index(df_src, "year", col)
-    if idx_df is None:
+for name, col, df, color in series:
+    sub = index_series(df, col)
+    if sub is None:
         continue
-    sub = idx_df[idx_df["year"] >= 2012][["year", "idx"]].dropna()
     fig.add_trace(go.Scatter(
-        x=sub["year"], y=sub["idx"],
-        mode="lines", name=name, opacity=op,
-        line=dict(color=color, dash=dash, width=lw),
+        x=sub["year"], y=sub["index"], mode="lines", name=name,
+        line=dict(color=color, width=2.4),
     ))
-
-fig.add_hline(
-    y=100, line=dict(color="#d1d5db", width=1.0, dash="dot"),
-    annotation_text="2016 = 100", annotation_position="right",
-    annotation_font=dict(size=9, color="#aaaaaa"),
-)
+fig.add_hline(y=100, line=dict(color="#77736a", width=1, dash="dot"),
+              annotation_text="2016 = 100", annotation_position="right",
+              annotation_font=dict(size=9, color="#77736a"))
 fig.update_layout(
-    title=dict(text="<b>Recovery Index</b>", font=dict(size=16), x=0.0),
-    yaxis=dict(title="Index (2016 = 100)", range=[0, 125]),
-    xaxis=dict(range=[2012, tour["year"].max()]),
-    height=440,
-    legend=dict(
-        orientation="h", yanchor="bottom", y=-0.30,
-        xanchor="center", x=0.5,
-        font=dict(size=10), tracegroupgap=0,
-    ),
-    margin=dict(l=60, r=24, t=52, b=100),
-    annotations=[ch.source_note(
-        "USVIBER, FRED, BEA, NPS IRMA — author calculations"
-    )],
+    title=dict(text="<b>Visitor Recovery Outran Capacity and Employment</b>", font=dict(size=16), x=0.0),
+    yaxis=dict(title="Index (2016 = 100)", range=[0, 120]),
+    xaxis=dict(range=[2012, 2025]), height=430,
+    annotations=[ch.source_note("USVIBER, FRED/BLS; annual means for FRED employment")],
 )
 ch.add_shocks(fig)
-ch.save_fig(fig, "recovery-index", formats=("png",))
+ch.save_fig(fig, "overview-recovery", formats=("png",))
 fig.show()
 ```
 
-As of 2024, the index looks deceptively healthy at the top line. Total arrivals sit at 97% of their 2016 baseline. But that recovery in total arrivals masks a stark difference in visitor value. USVIBER data for 2024 imply an average of approximately $2,350 per overnight tourist trip, compared with roughly $450 per cruise passenger stop and roughly $400 per air excursionist — both in nominal 2024 dollars. These are implied averages per arrival in their respective categories, not daily spending estimates.
+The visitor base is the clearest partial recovery. Capacity is not.
 
-Air visitors — USVIBER's reported total of all arrivals by air — reached **109% of their 2016 level** by 2024. Cruise passengers reached **90% of their 2016 level**. These two arrival-mode series have followed divergent trajectories since 2017. Employment and accommodation capacity, measured in hotel rooms, tell a compatible story: the sector is operating at roughly 80–90% of its pre-storm scale, but on a visitor base that has not recovered.
+USVIBER's reported hotel-room inventory stood at 3,127 rooms in 2024, 82% of the 2016 level. The Census series points to an even sharper change in one payroll-filing population: 2,039 accommodation guest rooms in 2022, down from 5,027 in 2012. Because the Census counts a different population and changed its guestroom product crosswalk in 2017, these numbers should not be combined; together, however, they describe a capacity constraint.
 
+The result is a high published occupancy rate on a smaller inventory. USVIBER reports 66.3% occupancy in 2024, up 9.6 percentage points from 56.7% in 2016. The ratio does not mean the accommodation sector produced 66.3% of prior room nights. It means the remaining inventory was used more intensively.
 
+FRED's Leisure and Hospitality series broadens the labor view beyond tourism alone. It includes arts, entertainment, and accommodation and food services. Its annual average reached 91% of the 2016 level in 2024 and fell to 84% in 2025. That is a broad labor signal, not a count of tourism jobs.
 
-## What the park shows
-
-Virgin Islands National Park on St. John covers roughly 60 percent of the island's land area. Its visitation has followed a markedly different trajectory than territory-wide overnight tourist arrivals, making the two series an interesting comparative indicator — though they measure different things and cannot be treated as equivalent.
+## Spending and economic output add context, not a definitive accounting
 
 ```{python}
 #| echo: false
-#| label: fig-viis-vs-tourists
-#| fig-cap: "VIIS NP estimated recreation visits vs. overnight tourists, both indexed to 2016 = 100. The park recovered to its 2016 level by 2024; overnight tourist arrivals remain at roughly 57%. This divergence is an open question, not a resolved finding."
+#| label: fig-overview-economic
+#| fig-cap: "Nominal and approximately 2016-dollar total visitor expenditure (left) and real accommodation and food-services value added (right). The CPI-adjusted expenditure series uses a mainland CPI-U proxy; BEA value added is already chained-dollar real output."
 
-viis_idx = _index(viis_ann.query("year >= 2000"), "year", "recreation_visitors")
-tour_idx = _index(tour, "year", "tourists")
-
-fig = go.Figure()
-fig.add_trace(go.Scatter(
-    x=viis_idx["year"], y=viis_idx["idx"],
-    mode="lines", name="VIIS NP recreation visits",
-    line=dict(color=PALETTE["nps_viis"], width=2.4),
-))
-fig.add_trace(go.Scatter(
-    x=tour_idx["year"], y=tour_idx["idx"],
-    mode="lines", name="Overnight tourists (USVIBER)",
-    line=dict(color=PALETTE["tourists"], width=2.4, dash="dash"),
-))
-fig.add_hline(
-    y=100, line=dict(color="#d1d5db", width=1.0, dash="dot"),
-    annotation_text="2016 = 100", annotation_position="right",
-    annotation_font=dict(size=9, color="#aaaaaa"),
+from plotly.subplots import make_subplots
+fig = make_subplots(
+    rows=1, cols=2, shared_xaxes=False,
+    subplot_titles=("Total visitor expenditure", "A&F real value added"),
 )
+fig.add_trace(go.Scatter(
+    x=tour["year"], y=tour["expenditures_total"], mode="lines",
+    name="Visitor expenditure, nominal",
+    line=dict(color=PALETTE["total"], width=2.3),
+), row=1, col=1)
+fig.add_trace(go.Scatter(
+    x=tour["year"], y=tour["expenditures_total_real"], mode="lines",
+    name="Visitor expenditure, approx. 2016 dollars",
+    line=dict(color=PALETTE["total"], width=2.0, dash="dash"),
+), row=1, col=1)
+fig.add_trace(go.Scatter(
+    x=af_real["year"], y=af_real["af_real"] / af_real.loc[af_real["year"].eq(2016), "af_real"].iloc[0] * 100,
+    mode="lines", name="A&F real value added (2016 = 100)",
+    line=dict(color=PALETTE["value_added"], width=2.2, dash="dot"),
+), row=1, col=2)
+fig.add_hline(y=100, row=1, col=2, line=dict(color="#77736a", width=1, dash="dot"))
 fig.update_layout(
-    title=dict(text="<b>VIIS NP Visits vs. Overnight Tourists</b>", font=dict(size=16), x=0.0),
-    yaxis_title="Index (2016 = 100)",
-    height=400,
-    annotations=[ch.source_note(
-        "NPS IRMA Public Use Statistics; USVIBER Annual Tourism Indicator 2024"
-    )],
+    title=dict(text="<b>Nominal Spending and Real Output Moved Differently</b>", font=dict(size=16), x=0.0),
+    yaxis_title="Expenditure (millions USD)",
+    yaxis2=dict(title="Index (2016 = 100)", range=[50, 125]),
+    height=430,
+    annotations=[ch.source_note("USVIBER expenditure; BLS mainland CPI-U proxy; BEA chained-dollar A&F value added", y=-0.12)],
 )
 ch.add_shocks(fig)
-ch.save_fig(fig, "viis-np-recreation-visits", formats=("png",))
 fig.show()
 ```
 
-VIIS NP visitation reached 103% of its 2016 level in 2024 and 115% in 2025. Overnight tourists, by USVIBER's count, remained at 57% of 2016. The divergence is substantial enough to warrant investigation. Possible explanations include: changes in how NPS counts day-use visitors, increased use of the park by short-term rental guests (not counted as hotel tourists), or different recovery trajectories across segments of the overnight market. This is an open analytical question, not a resolved finding.
+This chart deliberately does not resolve spending and industry output onto a common unit. Nominal expenditure in millions of dollars, approximate real expenditure, and an indexed BEA series answer different questions. It is useful only as a reminder that the available economic measures did not move as neatly as arrivals.
 
+Nominal visitor expenditure reached $1.829 billion in 2024, close to the $1.873 billion recorded in 2016. After converting it with annual mainland CPI-U, however, it was about $1.399 billion in approximate 2016 dollars. The adjustment is not a USVI cost-of-living estimate.
 
+BEA real Accommodation and Food Services value added reached 87% of its 2016 level in 2021, the latest industry observation. This industry is broader than tourism: it includes resident-serving activity, while visitor-related activity in transportation, retail, and recreation appears elsewhere. The series cannot establish tourism GDP or isolate the effect of disaster spending. But it does fit the broader pattern of industry recovery lagging visitor arrivals.
 
-## Accommodation capacity
+## What did not recover in the same way
 
-```{python}
-#| echo: false
-#| label: fig-rooms-employment
-#| fig-cap: "Hotel room inventory (USVIBER survey) and L&H employment (FRED seasonally adjusted annual average), both indexed to 2016. Neither has fully recovered; rooms remain more constrained than employment."
+Virgin Islands National Park offers a separate signal. Estimated recreation visits reached 103% of their 2016 level in 2024 and 115% in 2025. Those visits are not unique people and cannot be compared directly with territory-wide arrivals. The series also has a major counting-method change before 2022 and a separate 2026 traffic-counter approach that is excluded here.
 
-rooms_idx = _index(tour, "year", "hotel_rooms")
-emp_idx   = _index(fred_ann, "year", "emp_sa_avg")
+The park's stronger recovery may reflect a shift toward recreation, changes in visitor behavior, differences in how visits are estimated, or simply the different population the park data measure. It does not prove stronger total tourism.
 
-fig = go.Figure()
-fig.add_trace(go.Scatter(
-    x=rooms_idx["year"], y=rooms_idx["idx"],
-    mode="lines", name="Hotel rooms",
-    line=dict(color=PALETTE["rooms"], width=2.4),
-))
-fig.add_trace(go.Scatter(
-    x=emp_idx["year"], y=emp_idx["idx"],
-    mode="lines", name="L&H employment",
-    line=dict(color=PALETTE["employment"], width=2.4, dash="dash"),
-))
-fig.add_hline(
-    y=100, line=dict(color="#d1d5db", width=1.0, dash="dot"),
-    annotation_text="2016 = 100", annotation_position="right",
-    annotation_font=dict(size=9, color="#aaaaaa"),
-)
-fig.update_layout(
-    title=dict(text="<b>Accommodation Capacity and L&H Employment</b>", font=dict(size=16), x=0.0),
-    xaxis=dict(range=[2000, tour["year"].max()]),
-    yaxis_title="Index (2016 = 100)",
-    height=400,
-    annotations=[ch.source_note(
-        "USVIBER Annual Tourism Indicator 2024; FRED SMS78000007000000001"
-    )],
-)
-ch.add_shocks(fig)
-ch.save_fig(fig, "accommodation-capacity-lh-employment", formats=("png",))
-fig.show()
-```
+What is clear is the contrast. At the same post-disruption horizon:
 
-Hotel room inventory tracked by USVIBER's annual survey stood at 82% of its 2016 level by 2024. The U.S. Census Economic Census (which counts only payroll-filing establishments) shows a more severe contraction: 2,039 rooms in 2022 versus a 2012 peak of 5,027 — a 59% decline. The Census and USVIBER series use different methodologies and should not be directly compared, but they agree on the direction: accommodation capacity has not recovered.
+- air arrivals are above the 2016 level;
+- cruise passengers remain below;
+- hotel inventory remains smaller;
+- broad Leisure and Hospitality employment remains below;
+- real Accommodation and Food Services value added remains below;
+- NPS park recreation visits are above.
 
-Leisure and Hospitality employment (FRED, seasonally adjusted) ran at 91% of its 2016 annual average in 2024 — closer to baseline than hotel rooms. This may reflect leaner staffing in surviving hotels, or expanded employment in the food and entertainment segment that comprises a large share of the L&H aggregate.
+## The strongest interpretation
 
+The USVI appears to have recovered much of its **visitor flow**, but not necessarily the full **scale or structure** of the tourism economy that existed in 2016. The evidence is consistent with a smaller accommodation stock operating with higher occupancy, uneven labor recovery, and visitor activity that does not map cleanly onto park or industry output.
 
+That conclusion is not a claim that the economy has been permanently transformed. Later observations, especially for 2025 and beyond, may revise the picture. It is a statement about what can be established now: the two major shocks did not leave all indicators at the same stage of recovery.
 
-## What the broader economy shows
-
-Aggregate GDP and tourism activity tell different stories about the post-hurricane economy. BEA data show that USVI real GDP remained relatively stable in 2017 and grew in 2018–2021, even as visitor arrivals and accommodation revenue remained severely depressed. BEA attributed some of this growth to government spending and private fixed investment, which likely reflect hurricane response and reconstruction activity. These patterns illustrate how economic production can recover through activity outside the visitor economy while tourism itself remains impaired. This analysis does not estimate the contribution of federal disaster assistance to GDP.
-
-```{python}
-#| echo: false
-#| label: fig-af-gdp-share
-#| fig-cap: "Accommodation and food services as a share of USVI nominal GDP (BEA data, through 2021). A&F value added is not equivalent to tourism GDP: it includes resident consumption and excludes tourism-related retail, transportation, and recreation."
-
-bea_nom  = load_bea("2.1")
-bea_gdp  = load_bea("1.1")
-
-def _get(df, pattern):
-    return (df[df["label"].str.contains(pattern, case=False, na=False)]
-              .drop_duplicates(subset="year").sort_values("year"))
-
-gdp_nom = _get(bea_gdp, "Gross domestic product")
-af_nom  = _get(bea_nom, "Accommodation")
-share   = af_nom[["year", "value"]].merge(
-    gdp_nom[["year", "value"]].rename(columns={"value": "gdp"}), on="year"
-)
-share["pct"] = (share["value"] / share["gdp"] * 100).round(1)
-
-fig = go.Figure()
-fig.add_trace(go.Scatter(
-    x=share["year"], y=share["pct"],
-    mode="lines", name="A&F share of GDP",
-    line=dict(color=PALETTE["value_added"], width=2.4),
-    fill="tozeroy",
-    fillcolor="rgba(26,79,114,0.07)",
-))
-fig.update_layout(
-    title=dict(text="<b>Accommodation & Food Services as Share of USVI GDP</b>",
-               font=dict(size=16), x=0.0),
-    yaxis_title="A&F share of nominal GDP (%)",
-    yaxis_range=[0, 18],
-    height=380,
-    showlegend=False,
-    annotations=[ch.source_note(
-        "BEA USVI GDP data. Coverage ends 2021. A&F ≠ tourism GDP."
-    )],
-)
-ch.add_shocks(fig)
-ch.save_fig(fig, "af-gdp-share", formats=("png",))
-fig.show()
-```
-
-Accommodation and food services value added — the broadest BEA measure of the sector's economic contribution — fell from 13% of GDP in 2015 to 11.5% in 2017, collapsed to 6% in 2020, and rebounded to 11% in 2021, the last year BEA data are available. The rebound to 11% is encouraging but still below the pre-hurricane trend, and the GDP denominator during 2018–2021 likely reflects activity beyond the visitor economy. The sector had not returned to its pre-hurricane GDP share by 2021.
-
-
-
-## Summary of findings
-
-```{python}
-#| echo: false
-#| label: fig-scorecard
-#| fig-cap: "Recovery scorecard. Air visitors and cruise passengers use their palette colours; all other series use green (at or above 2016 baseline) or blue-grey (below baseline). Year in parentheses is the latest available observation for each series."
-
-latest_map = {
-    "Total arrivals":    ("2024", _index(tour, "year", "total_visitors")),
-    "Air visitors":      ("2024", _index(tour, "year", "air_visitors")),
-    "Cruise passengers": ("2024", _index(tour, "year", "cruise_passengers")),
-    "Hotel rooms":       ("2024", _index(tour, "year", "hotel_rooms")),
-    "L&H employment":    ("2025", _index(fred_ann, "year", "emp_sa_avg")),
-    "A&F real VA":       ("2021", _index(af_real, "year", "af_real")),
-    "VIIS NP visits":    ("2025", _index(viis_ann.query("year>=2000"), "year", "recreation_visitors")),
-}
-
-def _bar_color(name, value):
-    if name == "Air visitors":      return PALETTE["air_visitors"]
-    if name == "Cruise passengers": return PALETTE["cruise"]
-    return PALETTE["above_baseline"] if value >= 100 else PALETTE["below_baseline"]
-
-rows = []
-for name, (yr_str, df) in latest_map.items():
-    if df is None: continue
-    row = df[df["year"] == int(yr_str)]
-    if row.empty: continue
-    rows.append((name, yr_str, round(row["idx"].values[0], 1)))
-
-rows.sort(key=lambda r: r[2])   # ascending: highest value at top of horizontal chart
-labels = [f"{r[0]} ({r[1]})" for r in rows]
-values = [r[2] for r in rows]
-colors = [_bar_color(r[0], r[2]) for r in rows]
-
-fig = go.Figure(go.Bar(
-    x=values, y=labels,
-    orientation="h",
-    marker_color=colors,
-    text=[f"{v:.0f}" for v in values],
-    textposition="outside",
-    textfont=dict(size=11),
-    cliponaxis=False,
-))
-fig.add_vline(
-    x=100,
-    line=dict(color="#555", width=1.2),
-    annotation_text="2016 = 100",
-    annotation_position="top",
-    annotation_font=dict(size=9, color="#777"),
-)
-fig.update_layout(
-    title=dict(text="<b>Recovery Scorecard</b>", font=dict(size=16), x=0.0),
-    xaxis=dict(
-        title="Index (2016 = 100)",
-        range=[0, max(values) * 1.14],
-        showgrid=True, gridcolor="#eeeeee",
-    ),
-    yaxis=dict(tickfont=dict(size=11)),
-    height=360,
-    showlegend=False,
-    margin=dict(l=180, r=56, t=52, b=56),
-    annotations=[ch.source_note(
-        "USVIBER, FRED, BEA, NPS IRMA — author calculations", y=-0.12
-    )],
-)
-ch.save_fig(fig, "recovery-scorecard", formats=("png",))
-fig.show()
-```
-
-| Indicator | Most recent year | Index vs. 2016 |
-|---|---|---|
-| **Air visitors** | 2024 | **109** |
-| **Cruise passengers** | 2024 | **90** |
-| Total visitor arrivals | 2024 | 97 |
-| Hotel rooms | 2024 | 82 |
-| Hotel occupancy (rate) | 2024 | 66.3% (+9.6 pp vs. 56.7% in 2016) |
-| L&H employment (FRED) | 2025 | 84 |
-| A&F real value added | 2021 | 87 |
-| VIIS NP visits | 2025 | 115 |
-
-*Index values: 2016 = 100. Air visitors and cruise passengers are the primary arrival-mode comparison.*
-*Occupancy shown as rate and pp change; not an index.*
-*USVIBER employment ends 2022; FRED L&H employment used for post-2022.*
-
-
-
-## Unresolved questions
-
-This analysis surfaces some questions that the data alone cannot resolve:
-
-**What does 66% occupancy on a smaller room base actually mean for the economy?** High occupancy on reduced inventory may reflect healthy operating margins at surviving hotels while masking a smaller aggregate economic contribution. The Census 2022 data (1,650 accommodation employees vs. 3,876 in 2012) suggests the surviving hotel sector is operating at significantly reduced staffing levels.
-
-
-
-*The full exploratory analysis is in the [Analysis companion](analysis.qmd). Data sources, variable definitions, and methodological choices are documented in the [Data Dictionary](data-dictionary.qmd) and [Methodology](methodology.qmd) pages.*
-
-
-
-# Trade Winds & Headwinds (Alt.)
-
-## The uneven recovery of the U.S. Virgin Islands' tourism economy, 2000–2025
-
-Tourism is the U.S. Virgin Islands' economic lifeblood. It is also unusually exposed to forces beyond its control: hurricanes, pandemics, shifting travel patterns, and the fortunes of a handful of major visitor markets.
-
-The territory has weathered two extraordinary disruptions in less than a decade. Hurricanes Irma and Maria struck in 2017. COVID-19 brought another collapse in travel three years later. By 2024, visitor arrivals had nearly returned to their 2016 level.
-
-That sounds like a recovery. Look a little closer, and the picture gets more complicated.
-
-### The visitors came back
-
-Total visitor arrivals in 2024 were about 97% of their 2016 level. But the mix had changed. Air visitors had reached 109% of the earlier benchmark; cruise passengers were still at 90%.
-
-The headline number conceals two different trajectories. And arrivals alone tell us little about how long visitors stay, how much they spend, or how widely that spending circulates through the local economy.
-
-### The infrastructure did not
-
-Reported hotel-room inventory remained below its pre-hurricane level. By 2024, it stood at roughly 82% of the 2016 figure.
-
-Occupancy, meanwhile, had risen from 56.7% to 66.3%. More rooms were occupied as a share of a smaller available inventory. That may indicate stronger utilization of the accommodation that remains, but it is not the same as restoring lost capacity.
-
-The distinction is easy to miss: a destination can fill more of its rooms without having as many rooms to fill.
-
-### The workforce tells another story
-
-Leisure and Hospitality employment has not kept pace with the return in arrivals. Its annual average stood at about 91% of the 2016 level in 2024, falling to 84% in 2025.
-
-This is a broad employment measure, not a count of tourism workers alone. Still, its trajectory raises a question worth asking: what does a return in visitor volume mean when employment remains below its earlier level?
-
-The available data show the divergence. They do not yet explain it.
-
-### Recovery depends on what you measure
-
-Other indicators reinforce the uneven picture. Real Accommodation and Food Services value added reached about 87% of its 2016 level in 2021, the latest year available for that industry measure. Recreation visits to Virgin Islands National Park, by contrast, reached 103% of their 2016 level in 2024 and 115% in 2025.
-
-These are not interchangeable measures. Park visits are not unique tourists; industry value added is not tourism GDP. But together they show why no single number can stand in for the health of the visitor economy.
-
-### A return, but not a reset
-
-The U.S. Virgin Islands has recovered much of its visitor traffic. That is a significant achievement after two major shocks. But arrivals, accommodation capacity, employment, economic output, and park visitation tell different stories.
-
-The evidence points to a tourism economy that has regained much of its volume without clearly restoring its former scale or structure. Whether this reflects a lasting change or an incomplete recovery remains an open question.
-
-The distinction matters. Counting visitors tells us whether people are coming back. It does not, by itself, tell us what kind of economy they are coming back to.
+The next report examines the evidence source by source, and separates visitor counts, room capacity, employment definitions, output measures, and the methodological limits that determine what each comparison can support.

@@ -37,6 +37,7 @@ buis = load_nps_annual("BUIS")
 census_rooms = load_census_rooms()
 hotel = load_hotel_annual()
 qcew = load_qcew(deflate=True, cpi_base_year=2016)
+qcew_usvi = qcew.query("area_fips == '78000'")
 
 fred_ann = fred.groupby("year", as_index=False)["emp_sa"].mean().rename(columns={"emp_sa": "emp_sa_avg"})
 af_real = (bea_real[bea_real["label"].str.contains("ccommodation", case=False, na=False)]
@@ -249,7 +250,7 @@ The FRED series covers broad NAICS 71+72, not tourism employment alone. Its 2024
 #| fig-cap: "Related employment measures at their source values. Coverage and reference periods differ: annual averages, March Census snapshots, and USVIBER categories."
 
 fig = go.Figure()
-q72 = qcew[qcew["naics"].eq("72")]
+q72 = qcew_usvi[qcew_usvi["naics"].eq("72")]
 fig.add_trace(go.Scatter(
     x=q72["year"], y=q72["annual_avg_emplvl"], mode="lines",
     name="QCEW NAICS 72 annual average jobs",

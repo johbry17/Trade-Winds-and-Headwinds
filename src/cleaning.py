@@ -901,7 +901,10 @@ def load_cpi_annual(base_year: int = 2016) -> pd.DataFrame:
 # BLS QCEW — USVI Accommodation & Food Services
 # ---------------------------------------------------------------------------
 
-def load_qcew(deflate: bool = True, cpi_base_year: int = 2016) -> pd.DataFrame:
+def load_qcew(
+    deflate: bool = True,
+    cpi_base_year: int = 2016
+) -> pd.DataFrame:
     """
     Load BLS Quarterly Census of Employment and Wages (QCEW) for USVI
     Accommodation and Food Services (NAICS 72, 721, 722).
@@ -909,56 +912,135 @@ def load_qcew(deflate: bool = True, cpi_base_year: int = 2016) -> pd.DataFrame:
     Source: data/raw/qcew_usvi_accommodation_food_services_2000_2025.csv
     Coverage: 2000–2025, annual.
     Sector: Private (own_code = 5), all sizes (size_code = 0).
-    Geography: USVI (area_fips = 78000).
+    Geography:
+        78000 USVI (Territory)
+        78010 St. Croix
+        78020 St. John
+        78030 St. Thomas
 
     Returns
     -------
     DataFrame with columns (per industry and year):
-        year, naics (str), naics_label,
+        year, area_fips, area_name, geography,
+        naics (str), naics_label, disclosure_code (str),
         annual_avg_estabs, annual_avg_emplvl,
         total_annual_wages (nominal $),
+        annual_avg_wkly_wage (nominal $),
         avg_annual_pay (nominal $),
         avg_annual_pay_real (approximate base_year $, if deflate=True),
-        total_annual_wages_real (approximate base_year $, if deflate=True)
+        total_annual_wages_real (approximate base_year $, if deflate=True),
+        cpi_base_year (int, if deflate=True)
 
     Notes
     -----
     QCEW employment counts covered jobs, not unique individuals.
     It excludes self-employment and workers not covered by UI laws.
+    'disclosure_code' indicates whether the observation is suppressed.
     'avg_annual_pay' is total wages divided by average employment —
     not the earnings of a typical individual worker.
     NAICS 72 is the sum of 721 + 722 plus any residual; do not add them.
+
+    Suppressed observations are converted to NaN using disclosure_code.
     """
+
     path = RAW / "qcew_usvi_accommodation_food_services_2000_2025.csv"
-    raw = pd.read_csv(path)
+    raw = pd.read_csv(path, dtype={
+        "area_fips": str,
+        "industry_code": str,
+        "disclosure_code": str,
+    })
 
-    naics_labels = {72: "Accommodation & food services", 721: "Accommodation", 722: "Food services & drinking places"}
-    raw["naics_label"] = raw["industry_code"].map(naics_labels)
+    area_labels = {
+        "78000": "USVI",
+        "78010": "St. Croix",
+        "78020": "St. John",
+        "78030": "St. Thomas",
+    }
 
-    df = raw.rename(columns={
-        "industry_code": "naics",
-        "annual_avg_emplvl": "annual_avg_emplvl",
-        "total_annual_wages": "total_annual_wages",
-        "avg_annual_pay": "avg_annual_pay",
-        "annual_avg_estabs": "annual_avg_estabs",
-    }).copy()
-    df["naics"] = df["naics"].astype(str)
+    naics_labels = {
+        "72": "Accommodation & food services",
+        "721": "Accommodation",
+        "722": "Food services & drinking places",
+    }
 
+    df = raw.copy()
+
+    df["area_name"] = df["area_fips"].map(area_labels)
+    df["geography"] = df["area_fips"].map({
+        "78000": "Territory",
+        "78010": "Island",
+        "78020": "Island",
+        "78030": "Island",
+    })
+
+    df["naics_label"] = df["industry_code"].map(naics_labels)
+    df["naics"] = df["industry_code"]
+
+    df["disclosure_code"] = (
+        df["disclosure_code"].fillna("").str.strip()
+    )
+
+    # Convert numeric fields
+    numeric_cols = [
+        "annual_avg_estabs",
+        "annual_avg_emplvl",
+        "total_annual_wages",
+        "annual_avg_wkly_wage",
+        "avg_annual_pay",
+    ]
+
+    for col in numeric_cols:
+        df[col] = pd.to_numeric(df[col], errors="coerce")
+
+    # Suppressed observations are unavailable, not zero.
+    suppressed = df["disclosure_code"].eq("N")
+    df.loc[suppressed, numeric_cols] = np.nan
+
+    # Inflation adjustment
     if deflate:
-        cpi = load_cpi_annual(base_year=cpi_base_year)[["year", "cpi_index"]]
-        # cpi_index = 100 at base_year → deflate: multiply by (100 / cpi_index)
+        cpi = load_cpi_annual(
+            base_year=cpi_base_year
+        )[["year", "cpi_index"]]
+
         df = df.merge(cpi, on="year", how="left")
+
         deflator = 100.0 / df["cpi_index"]
-        df["avg_annual_pay_real"] = (df["avg_annual_pay"] * deflator).round(0)
-        df["total_annual_wages_real"] = (df["total_annual_wages"] * deflator).round(0)
+
+        df["avg_annual_pay_real"] = (
+            df["avg_annual_pay"] * deflator
+        ).round(0)
+
+        df["total_annual_wages_real"] = (
+            df["total_annual_wages"] * deflator
+        ).round(0)
+
         df["cpi_base_year"] = cpi_base_year
-        df = df.drop(columns=["cpi_index"])
+        df = df.drop(columns="cpi_index")
 
     keep_cols = [
-        "year", "naics", "naics_label",
-        "annual_avg_estabs", "annual_avg_emplvl",
-        "total_annual_wages", "avg_annual_pay",
+        "year",
+        "area_fips",
+        "area_name",
+        "geography",
+        "naics",
+        "naics_label",
+        "disclosure_code",
+        "annual_avg_estabs",
+        "annual_avg_emplvl",
+        "total_annual_wages",
+        "annual_avg_wkly_wage",
+        "avg_annual_pay",
     ]
+
     if deflate:
-        keep_cols += ["avg_annual_pay_real", "total_annual_wages_real", "cpi_base_year"]
-    return df[keep_cols].sort_values(["naics", "year"]).reset_index(drop=True)
+        keep_cols += [
+            "avg_annual_pay_real",
+            "total_annual_wages_real",
+            "cpi_base_year",
+        ]
+
+    return (
+        df[keep_cols]
+        .sort_values(["area_fips", "naics", "year"])
+        .reset_index(drop=True)
+    )

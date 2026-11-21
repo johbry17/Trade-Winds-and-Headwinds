@@ -1,0 +1,55 @@
+DE_NAME|DISP_LABEL|DATA_TYPE|MAX_LEN|DECIMAL_PLACES|DE_TYPE|IB_TYPE|FLAG_DE_NAME|MEANING_TABLE_NAME
+GEOTYPE|Type of geography flag|CHARACTER|2|0|G|||META0500
+GEOTYPE_MEANING|Meaning of Type of geography flag|CHARACTER|4000|0||||
+ST|FIPS state code|CHARACTER|2|0|G|||
+COUNTY|FIPS county code|CHARACTER|3|0|G|||
+COMMREG|Puerto Rico Commercial Region code|CHARACTER|1|0|G|||
+PLACE|FIPS place code|CHARACTER|5|0|G|||
+GEO_ID|geographic identifier code|CHARACTER|20|0|G|||META0422
+GEOGRAPHY|Geographic Area|CHARACTER|1000|0||||
+PROGRAM|Economic program identifier|CHARACTER|2|0|O|||META0500
+PROGRAM_MEANING|Meaning of Economic program identifier|CHARACTER|4000|0||||
+SECTOR|NAICS economic sector code|CHARACTER|2|0|O|||META0500
+SECTOR_MEANING|Meaning of NAICS economic sector code|CHARACTER|4000|0||||
+NAICS2007|2007 NAICS code|CHARACTER|8|0|I|NAICS2007||META1422
+NAICS2007_MEANING|Meaning of 2007 NAICS code|CHARACTER|255|0||||
+EMPNON|Employment indicator|CHARACTER|3|0|X|||META0500
+EMPNON_MEANING|Meaning of Employment indicator|CHARACTER|4000|0||||
+FOOTID|Footnote identifier|CHARACTER|3|0|O|||META0500
+FOOTID_MEANING|Meaning of Footnote identifier|CHARACTER|4000|0||||
+YEAR|Year|CHARACTER|4|0|R|||META0500
+YEAR_MEANING|Meaning of Year|CHARACTER|4000|0||||
+ESTAB|Number of establishments|NUMBER|9|0|D||ESTAB_F|
+ESTAB_F|Flag for number of establishments|CHARACTER|3|0|F|||META0500
+RCPTOT|Sales, rcpts, rev, shps ($1,000)|NUMBER|11|0|D||RCPTOT_F|
+RCPTOT_F|Flag for sls, rcpts, rev, shps|CHARACTER|3|0|F|||META0500
+RCPTOT_N|Noise range for sls, ships, rcpts, rev, or bus done|NUMBER|1|0|D||RCPTOT_N_F|
+RCPTOT_N_F|Flag for noise range for sls, shps, rcpts, rev or bus done (%)|CHARACTER|3|0|F|||META0500
+PAYANN|Annual payroll ($1,000)|NUMBER|11|0|D||PAYANN_F|
+PAYANN_F|Flag for annual payroll|CHARACTER|3|0|F|||META0500
+PAYANN_N|Noise range for annual payroll|NUMBER|1|0|D||PAYANN_N_F|
+PAYANN_N_F|Flag for Noise range for annual payroll|CHARACTER|3|0|F|||META0500
+PAYQTR1|First-quarter payroll ($1,000)|NUMBER|11|0|D||PAYQTR1_F|
+PAYQTR1_F|Flag for first-quarter payroll|CHARACTER|3|0|F|||META0500
+PAYQTR1_N|Noise range for first-quarter payroll|NUMBER|1|0|D||PAYQTR1_N_F|
+PAYQTR1_N_F|Flag for Noise range for first-quarter payroll|CHARACTER|3|0|F|||META0500
+EMP|Number of employees|NUMBER|9|0|D||EMP_F|
+EMP_F|Flag for number of paid emps for pay period incl March 12|CHARACTER|3|0|F|||META0500
+EMP_N|Noise range for paid employees for pay period including March 12|NUMBER|1|0|D||EMP_N_F|
+EMP_N_F|Flag for Noise range for paid emps for pay period incl Mar 12|CHARACTER|3|0|F|||META0500
+EMPUNPD|Number of unpaid family workers|NUMBER|8|0|D||EMPUNPD_F|
+EMPUNPD_F|Flag for number of unpaid family workers|CHARACTER|3|0|F|||META0500
+EMPUNPD_N|Noise range for number of unpaid family workers|NUMBER|1|0|D||EMPUNPD_N_F|
+EMPUNPD_N_F|Flag for Noise range for number of unpaid family workers|CHARACTER|3|0|F|||META0500
+OPEX|Operating expenses ($1,000)|NUMBER|11|0|D||OPEX_F|
+OPEX_F|Flag for operating expenses|CHARACTER|3|0|F|||META0500
+OPEX_N|Noise range for operating expenses|NUMBER|1|0|D||OPEX_N_F|
+OPEX_N_F|Flag for Noise range for operating expenses|CHARACTER|3|0|F|||META0500
+INVTOTB|Total inventories, beginning-of-year ($1,000)|NUMBER|11|0|D||INVTOTB_F|
+INVTOTB_F|Flag for total inventories, beginning of year|CHARACTER|3|0|F|||META0500
+INVTOTB_N|Noise range for total inventories, beginning of year|NUMBER|1|0|D||INVTOTB_N_F|
+INVTOTB_N_F|Flag for Noise range for total inventories, beginning of year|CHARACTER|3|0|F|||META0500
+INVTOTE|Total inventories, end-of-year ($1,000)|NUMBER|11|0|D||INVTOTE_F|
+INVTOTE_F|Flag for total inventories, end of year|CHARACTER|3|0|F|||META0500
+INVTOTE_N|Noise range for total inventories, end of year|NUMBER|1|0|D||INVTOTE_N_F|
+INVTOTE_N_F|Flag for Noise range for total inventories, end of year|CHARACTER|3|0|F|||META0500

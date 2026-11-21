@@ -128,28 +128,29 @@ Trade-Winds-and-Headwinds/
 ├── LICENSE-CODE.md
 ├── requirements.txt
 ├── _quarto.yml
+│
 ├── archive/
 ├── data/
 │   ├── raw/                 # Original source files
 │   ├── interim/             # Intermediate analytical data
 │   └── processed/           # Derived datasets
-├── figures/
-│   └── publication/         # Selected publication figures
-├── images/                  # Site and project images
-├── notebooks/               # Data audit and analysis notebooks
+│
 ├── src/
 │   ├── acquisition.py       # Source provenance and acquisition helpers
 │   ├── cleaning.py          # Data loading and preparation
 │   ├── validation.py        # Validation checks and data-quality log
-│   ├── charts.py            # Reusable chart functions
-│   └── hotel_extraction.py  # Hotel report extraction and assembly
-├── reports/
-│   ├── overview.qmd
-│   ├── analysis.qmd
-│   ├── data-dictionary.qmd
-│   ├── methodology.qmd
-│   ├── scripts/
-│   └── themes/
+│   ├── charts.py            # Reusable Plotly chart functions
+│   ├── hotel_extraction.py  # Hotel report extraction and assembly
+│   └── export_report_data.py  # Generates processed data CSV's
+│
+├── notebooks/               # Data audit and analysis notebooks
+│
+├── R/                      # Chart publication R scripts
+│   └── render_all.R        # Generates all plots
+├── figures/
+│   └── publication/         # Selected publication figures
+│
+├── reports/                 # Quarto pages, supporting CSS and JS
 └── docs/                    # Rendered Quarto website
 ```
 
@@ -184,7 +185,50 @@ Render the site to `docs/`:
 quarto render
 ```
 
-The repository includes the source data and processing code, but the analysis is not packaged as a single automated end-to-end pipeline. Reproducing the published results may require running the notebooks and rendering the Quarto documents in the appropriate order.
+### Data pipeline and R visualization
+
+The publication uses a two-stage pipeline:
+
+**Stage 1 — Python: Data export**  
+Run from the project root to generate curated report-ready CSVs in `data/processed/`:
+
+```bash
+python src/export_report_data.py
+```
+
+This imports all source loaders from `src/cleaning.py`, applies existing analytical transformations, validates key values against known figures, and writes 12 CSV files. Raw files and interim notebook exports are not modified.
+
+**Stage 2 — R: Figure generation**  
+Requires R 4.4+ with the following packages: `ggplot2`, `dplyr`, `readr`, `tidyr`, `scales`, `patchwork`, `ragg`.
+
+```bash
+Rscript R/render_all.R
+```
+
+This reads from `data/processed/` and writes 22 PNG figures (11 figures × light + dark variants) to `figures/publication/`.
+
+**Stage 3 — Quarto: Site render**
+
+```bash
+quarto render
+```
+
+The reports in `reports/` reference static PNGs from `figures/publication/` and use `.light-content` / `.dark-content` CSS classes (defined in `reports/themes/_base.scss`) to switch between variants.
+
+### R directory
+
+| File | Purpose |
+|---|---|
+| `R/palette.R` | Semantic color palettes (light and dark) |
+| `R/theme_trade_winds.R` | ggplot2 theme (`theme_tw()`) |
+| `R/annotations.R` | `add_shocks()`, `add_benchmark()`, `source_note()` |
+| `R/scales.R` | Named color scale helpers |
+| `R/plot_visitors.R` | Fig 1 (arrivals), Fig 2 (expenditure) |
+| `R/plot_accommodation.R` | Fig 3 (capacity), Fig 4 (occupancy), Fig 5 (island hotel) |
+| `R/plot_employment.R` | Fig 6 (FRED employment), Fig 7 (employment comparison) |
+| `R/plot_economy.R` | Fig 8 (GDP/A&F indexed), Fig 9 (A&F share) |
+| `R/plot_recovery.R` | Fig 10 (6-series recovery), figOV (overview recovery) |
+| `R/render_all.R` | Orchestrator — sources all modules, renders all figures |
 
 ### Dependencies
 

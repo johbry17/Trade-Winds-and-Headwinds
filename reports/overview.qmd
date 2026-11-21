@@ -128,6 +128,8 @@ USVIBER's reported hotel-room inventory stood at 3,127 rooms in 2024, 82% of the
 
 The result is a high published occupancy rate on a smaller inventory. USVIBER reports 66.3% occupancy in 2024, up 9.6 percentage points from 56.7% in 2016. The ratio does not mean the accommodation sector produced 66.3% of prior room nights. It means the remaining inventory was used more intensively.
 
+Island-level hotel data, available from USVIBER's published PDF reports, reveal where the capacity loss is concentrated. By 2024, available room-nights on St. Thomas–St. John were 75% of their 2016 level, while available room-nights on St. Croix were 95%. The territory-wide accommodation shortfall is overwhelmingly a St. Thomas–St. John story. St. Croix's hotel capacity, measured in room-nights available, had largely returned to its 2016 level by 2024.
+
 FRED's Leisure and Hospitality series broadens the labor view beyond tourism alone. It includes arts, entertainment, and accommodation and food services. Its annual average reached 91% of the 2016 level in 2024 and fell to 84% in 2025. That is a broad labor signal, not a count of tourism jobs.
 
 ## Spending and economic output add context, not a definitive accounting

@@ -24,6 +24,7 @@ from src.charts import PALETTE
 from src.cleaning import (
     load_usviber_combined, load_fred_employment, load_bea, load_nps_annual,
     load_census_rooms, load_qcew,
+    load_usviber_island_arrivals, load_hotel_island,
 )
 from src.hotel_extraction import load_hotel_annual
 
@@ -38,6 +39,8 @@ census_rooms = load_census_rooms()
 hotel = load_hotel_annual()
 qcew = load_qcew(deflate=True, cpi_base_year=2016)
 qcew_usvi = qcew.query("area_fips == '78000'")
+island_arr = load_usviber_island_arrivals()
+hotel_island = load_hotel_island()
 
 fred_ann = fred.groupby("year", as_index=False)["emp_sa"].mean().rename(columns={"emp_sa": "emp_sa_avg"})
 af_real = (bea_real[bea_real["label"].str.contains("ccommodation", case=False, na=False)]
@@ -95,6 +98,8 @@ fig.show()
 Total arrivals fell from 2.585 million in 2016 to 2.143 million in 2018, or 83% of the 2016 level. The 2020 low was not the same as the hurricane interruption: COVID closed cruise shipping and sharply restricted air travel. In 2024, air arrivals were 884,200, 109% of their 2016 level, and cruise passengers were 1.600 million, 90%. The published total was 2.507 million, 97%.
 
 The 2019-2020 comparison clarifies the character of the pandemic. Air visitors fell from 653,700 to 206,300, while cruise passengers fell from 1.433 million to 358,900. Both measures rebounded, but cruise traffic remained structurally weaker after 2020.
+
+**Island-level arrivals reveal different cruise trajectories.** At the island-group level, cruise traffic followed distinct paths. By 2024, STT (St. Thomas–St. John) cruise arrivals were at 90% of their 2016 level. STX (St. Croix) cruise arrivals were at 144%. The STX number reflects partly the lower 2016 baseline: STX cruise was itself well below early-2000s peaks (240,000+) in 2016. The divergence is real but should not be read as STX cruise recovering more fully from the 2017 disruption alone — it was building from a structurally lower starting point.
 
 ```{python}
 #| echo: false
@@ -215,6 +220,60 @@ Higher utilization can be consistent with a smaller inventory. It does not estab
 | Published occupancy | 2016 rate | 2024 | 66.3%; +9.6 pp | Higher utilization of smaller stock |
 <!-- | Census guest rooms | 2012 | 2022 | 41% | Different source/population | -->
 | 2025 room-night data | n/a | 2025 | Partial or missing | Not a full-year comparison |
+
+## Island-level accommodation: St. Thomas–St. John vs. St. Croix
+
+The territory-wide shortfall masks a stark difference between the two island groups.
+
+```{python}
+#| echo: false
+#| label: fig-analysis-hotel-island
+#| fig-cap: "Room nights available and occupied indexed to 2016 = 100, by island group. STT = St. Thomas–St. John; STX = St. Croix. 2025 occupied room-nights not available."
+
+b16 = hotel_island[hotel_island["year"].eq(2016)].iloc[0]
+for col in ["stt_available", "stx_available", "stt_occupied", "stx_occupied"]:
+    hotel_island[col + "_idx"] = hotel_island[col] / b16[col] * 100
+
+fig = go.Figure()
+for col, name, color, dash in [
+    ("stt_available_idx", "Available – STT", PALETTE["air_visitors"], "solid"),
+    ("stx_available_idx", "Available – STX", PALETTE["cruise"],       "dash"),
+    ("stt_occupied_idx",  "Occupied – STT",  PALETTE["rooms"],        "solid"),
+    ("stx_occupied_idx",  "Occupied – STX",  PALETTE["employment"],   "dash"),
+]:
+    sub = hotel_island[["year", col]].dropna()
+    fig.add_trace(go.Scatter(
+        x=sub["year"], y=sub[col], mode="lines",
+        name=name, line=dict(color=color, width=2.0, dash=dash),
+    ))
+fig.add_hline(y=100, line=dict(color="#77736a", width=1, dash="dot"),
+              annotation_text="2016 = 100", annotation_position="right")
+fig.update_layout(
+    title=dict(text="<b>STX Room Capacity Largely Recovered; STT Has Not</b>", font=dict(size=16), x=0.0),
+    yaxis=dict(title="Index (2016 = 100)", range=[0, 120]),
+    xaxis=dict(range=[2007, 2025]),
+    height=460,
+    annotations=[ch.source_note("USVIBER hotel PDF reports; island-level series")],
+)
+ch.add_shocks(fig)
+fig.show()
+```
+
+By 2024, STT available room-nights were 75% of their 2016 level and occupied room-nights were 81%. STX available room-nights were 95% of 2016, and occupied room-nights were essentially at 2016 (101%).
+
+The territory-wide 82% hotel-room figure is overwhelmingly an STT story. St. Croix's hotel capacity, measured in published available room-nights, had almost returned to its 2016 level by 2024. The territory-wide accommodation deficit reflects the still-unrebuilt capacity on St. Thomas and St. John.
+
+Occupancy rose at both islands: STT from 59.9% in 2016 to 64.5% in 2024, STX from 46.6% to 52.0%. As before, higher occupancy on a smaller inventory does not mean more total room-nights sold.
+
+### Island accommodation scorecard (2024 vs. 2016)
+
+| Measure | STT (2024) | STX (2024) |
+|---|---:|---:|
+| Available room-nights | 75% | 95% |
+| Occupied room-nights | 81% | 101% |
+| Published occupancy | 64.5% (+4.6 pp) | 52.0% (+5.4 pp) |
+
+*Source: USVIBER hotel PDF reports. 2025 occupied room-nights not available.*
 
 # 3. Employment
 

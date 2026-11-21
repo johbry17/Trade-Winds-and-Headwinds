@@ -1044,3 +1044,111 @@ def load_qcew(
         .sort_values(["area_fips", "naics", "year"])
         .reset_index(drop=True)
     )
+
+
+# ---------------------------------------------------------------------------
+# Island-level visitor arrivals (USVIBER)
+# ---------------------------------------------------------------------------
+
+def load_usviber_island_arrivals() -> pd.DataFrame:
+    """
+    Load island-level visitor arrivals from USVIBER.
+
+    Source: data/raw/usviber_visitors_island_level.csv
+    Coverage: 2000–2024, annual.
+
+    The file is wide-format with years as columns.  This loader
+    transposes it to a long-format tidy frame.
+
+    Returns
+    -------
+    DataFrame with columns:
+        year (int),
+        stt_air (float, thousands)       — air arrivals to St. Thomas–St. John,
+        stt_cruise (float, thousands)    — cruise arrivals to St. Thomas–St. John,
+        stx_air (float, thousands)       — air arrivals to St. Croix,
+        stx_cruise (float, thousands)    — cruise arrivals to St. Croix.
+
+    Notes
+    -----
+    Island assignment reflects the port of arrival recorded by USVIBER,
+    not necessarily where visitors stayed or spent money.
+    Published component series should not be assumed to reconcile with
+    territory-wide totals; use them for intra-island comparisons only.
+    """
+    path = RAW / "usviber_visitors_island_level.csv"
+    raw = pd.read_csv(path, index_col=0)
+    df = raw.T.reset_index()
+    df.columns = ["year", "stt_air", "stt_cruise", "stx_air", "stx_cruise"]
+    df["year"] = pd.to_numeric(df["year"], errors="coerce").astype(int)
+    for col in ["stt_air", "stt_cruise", "stx_air", "stx_cruise"]:
+        df[col] = pd.to_numeric(df[col], errors="coerce")
+    return df.sort_values("year").reset_index(drop=True)
+
+
+# ---------------------------------------------------------------------------
+# Island-level hotel statistics (USVIBER PDF extraction)
+# ---------------------------------------------------------------------------
+
+def load_hotel_island() -> pd.DataFrame:
+    """
+    Load island-level USVIBER hotel statistics for St. Thomas–St. John
+    and St. Croix.
+
+    Sources
+    -------
+    data/raw/USVIBER-Hotel/raw_available_islands.csv
+        Room nights available by island, one row per published PDF.
+    data/raw/USVIBER-Hotel/raw_occupied_islands.csv
+        Room nights occupied by island, one row per published PDF.
+    data/raw/USVIBER-Hotel/raw_occupancy_islands.csv
+        Published occupancy rate by island, one row per published PDF.
+
+    Returns
+    -------
+    DataFrame with columns:
+        year (int),
+        stt_available (float, thousands)      — room nights available, STT,
+        stx_available (float, thousands)      — room nights available, STX,
+        stt_occupied (float, thousands)       — room nights occupied, STT,
+        stx_occupied (float, thousands)       — room nights occupied, STX,
+        stt_occ_reported (float, pct)         — published occupancy, STT,
+        stx_occ_reported (float, pct)         — published occupancy, STX,
+        stt_occ_calculated (float, pct)       — occupied/available × 100, STT,
+        stx_occ_calculated (float, pct)       — occupied/available × 100, STX.
+
+    Notes
+    -----
+    The preferred value is the most recently published (stt_value / stx_value);
+    the previous-year carry-forward field is included in the source CSVs for
+    validation but is not used here.
+
+    Published occupancy and calculated occupancy may differ due to rounding
+    or differences in the reporting population.  Both are retained.
+
+    2025 occupied room-nights and occupancy are absent from the source data
+    and therefore NaN in the returned frame.
+    """
+    hotel_dir = RAW / "USVIBER-Hotel"
+
+    avail = pd.read_csv(hotel_dir / "raw_available_islands.csv")
+    occ = pd.read_csv(hotel_dir / "raw_occupied_islands.csv")
+    hocc = pd.read_csv(hotel_dir / "raw_occupancy_islands.csv")
+
+    def _select(df, stt_col="stt_available", stx_col="stx_available"):
+        out = df[["year", "stt_value", "stx_value"]].copy()
+        out["year"] = pd.to_numeric(out["year"], errors="coerce").astype(int)
+        out["stt_value"] = pd.to_numeric(out["stt_value"], errors="coerce")
+        out["stx_value"] = pd.to_numeric(out["stx_value"], errors="coerce")
+        out.columns = ["year", stt_col, stx_col]
+        return out
+
+    a = _select(avail, "stt_available", "stx_available")
+    o = _select(occ, "stt_occupied", "stx_occupied")
+    h = _select(hocc, "stt_occ_reported", "stx_occ_reported")
+
+    df = a.merge(o, on="year", how="outer").merge(h, on="year", how="outer")
+    df["stt_occ_calculated"] = (df["stt_occupied"] / df["stt_available"] * 100).round(1)
+    df["stx_occ_calculated"] = (df["stx_occupied"] / df["stx_available"] * 100).round(1)
+
+    return df.sort_values("year").reset_index(drop=True)

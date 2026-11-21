@@ -29,7 +29,7 @@ Census data are assembled from the 2007, 2012, 2017, and 2022 Economic Census re
 
 ## Tourism Arrivals
 
-Visitor statistics are drawn primarily from USVIBER Annual Tourism Indicators. The analysis uses published annual totals for total visitors, air visitors, and cruise passengers. These measures are retained as reported rather than reconstructed from visitor-type components, which do not consistently sum to published totals.
+Visitor statistics are drawn primarily from USVIBER Annual Tourism Indicators. The analysis uses published annual totals for total visitors, air visitors, and cruise passengers. These measures are retained as reported rather than reconstructed from visitor-type components, which do not consistently sum to published totals. Island-level air and cruise arrivals for St. Thomas–St. John and St. Croix are used for intra-island comparisons only and are not assumed to reconcile with territory-wide totals.
 
 Historical coverage combines report vintages. TOUR24 supplies 2000 and 2010–2024 observations; TOUR10 supplies 2001–2009, where the later publication does not provide a consistent historical series. The change in source vintage is documented because some historical values were revised. Accommodation-related series are retained separately where their historical coverage is consistent across publications.
 
@@ -53,7 +53,7 @@ QCEW average annual pay is calculated as total annual wages divided by annual av
 
 Accommodation capacity is measured using two distinct sources:
 
-- **USVIBER annual tourism indicators:** Survey-based counts of hotels, hotel rooms, and condominium or other accommodation units.
+- **USVIBER annual tourism indicators:** Survey-based counts of hotels, hotel rooms, and condominium or other accommodation units; hotel occupancy statistics.
 - **Economic Census:** Establishments and guestroom counts for payroll-filing accommodation businesses, primarily NAICS 7211.
 
 These sources have different coverage. The USVIBER survey includes a broader range of accommodation providers; Census counts are limited to businesses meeting its reporting criteria. Their totals are not combined.

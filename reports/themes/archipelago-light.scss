@@ -130,3 +130,72 @@ hr {
 .nav-footer a:hover {
   color: $link-hover-color;
 }
+
+// ── Editorial components — light palette ──────────────────────────────────────
+
+.section-intro {
+  border-left-color: $archi-teal;
+  color: $archi-ink;
+}
+
+.analytical-question {
+  background-color: rgba($archi-teal, 0.06);
+  border-left: 3px solid rgba($archi-teal, 0.4);
+  color: $archi-ink;
+}
+
+.section-label {
+  color: $archi-teal;
+}
+
+.scorecard-item {
+  background-color: $archi-parchment;
+
+  &.above-baseline {
+    border-left-color: #2a7a3b;
+    .sc-value { color: #2a7a3b; }
+    .sc-bar-track { .sc-bar-fill { background-color: #2a7a3b; } }
+  }
+
+  &.below-baseline {
+    border-left-color: $archi-coral;
+    .sc-value { color: darken($archi-coral, 5%); }
+    .sc-bar-track { .sc-bar-fill { background-color: $archi-coral; } }
+  }
+
+  &.near-baseline {
+    border-left-color: $archi-teal;
+    .sc-value { color: $archi-teal; }
+    .sc-bar-track { .sc-bar-fill { background-color: $archi-teal; } }
+  }
+
+  .sc-label { color: $archi-muted; }
+  .sc-value { color: $archi-navy; }
+  .sc-context { color: $archi-muted; }
+}
+
+.context-panel {
+  background-color: $archi-parchment;
+  border-left: 3px solid $archi-teal;
+  color: $archi-ink;
+}
+
+.closing-synthesis {
+  background-color: $archi-parchment;
+  border-left: 4px solid $archi-navy;
+  color: $archi-ink;
+}
+
+.to-analysis-link {
+  background-color: $archi-navy;
+  color: #fff !important;
+}
+
+.stat-row .stat-item {
+  .stat-value { color: $archi-navy; }
+  .stat-label { color: $archi-muted; }
+}
+
+.analysis-section-header .section-number {
+  color: $archi-teal;
+}

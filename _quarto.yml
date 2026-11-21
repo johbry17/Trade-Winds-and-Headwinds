@@ -13,7 +13,7 @@ website:
   title: "Trade Winds & Headwinds"
   description: "Twenty-Five Years of Tourism and Economic Change in the U.S. Virgin Islands"
   site-url: "https://johbry17.github.io/Trade-Winds-and-Headwinds/"
-  favicon: "images/favicon.png"
+  favicon: "reports/images/favicon.png"
   # image: "images/open-graph.png"
   # image-alt: "Trade Winds & Headwinds — Tourism and Economic Change in the U.S. Virgin Islands"
   open-graph: true
@@ -64,8 +64,8 @@ format:
       - text: |
           <script src="scripts/site.js"></script>
 
-execute:
-  freeze: auto
-  cache: true
+# execute:
+#   freeze: auto
+#   cache: true
 
 jupyter: python3

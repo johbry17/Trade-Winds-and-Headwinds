@@ -30,8 +30,8 @@ This report follows one analytical question through the principal evidence: did 
 :::{.section-number}
 Section 1 of 5
 :::
-# 1. Visitor activity
 :::
+# Visitor activity
 
 :::{.analytical-question}
 How did the scale and composition of visitor arrivals change across the 2017 and 2020 shocks? The answer requires keeping published arrival measures separate.
@@ -73,7 +73,7 @@ Nominal expenditure recovered to $1.829 billion in 2024, 98% of its 2016 value. 
 
 There is no defensible category-level expenditure breakdown in the available data. The report therefore uses total visitor expenditure only.
 
-### Visitor scorecard
+## Visitor scorecard
 
 | Measure | Benchmark | Latest | Value | Interpretation |
 |---|---:|---:|---:|---|
@@ -89,8 +89,8 @@ There is no defensible category-level expenditure breakdown in the available dat
 :::{.section-number}
 Section 2 of 5
 :::
-# 2. Accommodation capacity and utilization
 :::
+# Accommodation capacity and utilization
 
 :::{.analytical-question}
 Did hotel capacity return as visitor traffic did, and what does reported occupancy actually establish?
@@ -128,7 +128,7 @@ The USVIBER annual indicator reached 66.3% in 2024, 9.6 percentage points above 
 
 Higher utilization on a smaller inventory does not establish whether total occupied room-nights, revenue, or profitability recovered. It means the remaining inventory was used more intensively.
 
-### Census guestroom crosswalk
+## Census guestroom crosswalk
 
 | Year | Guestrooms | Establishments | Basis |
 |---:|---:|---:|---|
@@ -137,7 +137,7 @@ Higher utilization on a smaller inventory does not establish whether total occup
 | 2017 | 2,624 | 46 | NAPCS 7003825000; December 31, post-hurricane |
 | 2022 | 2,039 | 51 | NAPCS 7003825000 |
 
-### Accommodation scorecard
+## Accommodation scorecard
 
 | Measure | Benchmark | Latest | Value | Interpretation |
 |---|---:|---:|---:|---|
@@ -170,7 +170,7 @@ The territory-wide 82% hotel-room figure is overwhelmingly an STT story. St. Cro
 
 Occupancy rose at both islands: STT from 59.9% in 2016 to 64.5% in 2024; STX from 46.6% to 52.0%. As before, higher occupancy on a smaller inventory does not mean more total room-nights sold.
 
-### Island accommodation scorecard (2024 vs. 2016)
+## Island accommodation scorecard (2024 vs. 2016)
 
 | Measure | STT (2024) | STX (2024) |
 |---|---:|---:|
@@ -186,8 +186,8 @@ Occupancy rose at both islands: STT from 59.9% in 2016 to 64.5% in 2024; STX fro
 :::{.section-number}
 Section 3 of 5
 :::
-# 3. Employment
 :::
+# Employment
 
 :::{.analytical-question}
 Which employment measures support a labor-market recovery claim, and which are too different to compare directly?
@@ -225,7 +225,7 @@ QCEW employment fell from 6,775 annual average jobs in 2016 to 3,826 in 2020 and
 
 The Census Economic Census provides only 2007, 2012, 2017, and 2022 snapshots. Accommodation employment was 3,876 in 2012 and 1,650 in 2022. It cannot be treated as an annual series or directly combined with QCEW or FRED. The 2017 figure reflects a mid-disruption snapshot taken after the September hurricanes.
 
-### Employment scorecard
+## Employment scorecard
 
 | Measure | Benchmark | Latest | Value | Interpretation |
 |---|---:|---:|---:|---|
@@ -240,8 +240,8 @@ The Census Economic Census provides only 2007, 2012, 2017, and 2022 snapshots. A
 :::{.section-number}
 Section 4 of 5
 :::
-# 4. Economic output
 :::
+# Economic output
 
 :::{.analytical-question}
 What can BEA GDP and industry value-added data establish about tourism activity, and what falls outside their scope?
@@ -279,7 +279,7 @@ Accommodation and Food Services nominal value added divided by nominal GDP. The 
 
 The A&F share of nominal GDP fell from 12.7% in 2016 to 11.0% in 2021, with a 6.0% low in 2020. Disaster-recovery funding may help explain the GDP trajectory after 2017, but the BEA series alone does not establish a causal channel or quantify any effect.
 
-### Economic-output scorecard
+## Economic-output scorecard
 
 | Measure | Benchmark | Latest | Value | Interpretation |
 |---|---:|---:|---:|---|
@@ -293,8 +293,8 @@ The A&F share of nominal GDP fell from 12.7% in 2016 to 11.0% in 2021, with a 6.
 :::{.section-number}
 Section 5 of 5
 :::
-# 5. Cross-indicator recovery
 :::
+# Cross-indicator recovery
 
 :::{.analytical-question}
 Where do the indicators converge, where do they diverge, and what is defensible to conclude?
@@ -319,7 +319,7 @@ The lines separate around two shocks. Visitor modes are the fastest to change in
 
 NPS VIIS visitation adds a useful but non-equivalent recreation signal. The 2025 value is 115% of 2016, but the series uses estimated recreation visits and changed its counting method in 2022. It is not a count of unique visitors or a substitute for arrival counts.
 
-### Final synthesis scorecard
+## Final synthesis scorecard
 
 | Measure | Benchmark | Latest year | Value | Interpretation |
 |---|---:|---:|---:|---|

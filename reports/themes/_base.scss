@@ -108,6 +108,29 @@ body.quarto-dark {
     padding-left: 1rem;
   }
 
+  .img-attribution {
+    position: absolute;
+    right: 1rem;
+    bottom: 0.5rem;
+    z-index: 2;
+    margin: 0;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-size: 0.68rem;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.8);
+    opacity: 1;
+    text-align: right;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+    }
+    a:hover {
+      color: rgba(255, 255, 255, 1);
+    }
+  }
+
   .hero-label,
   .hero-title,
   .hero-subtitle,
@@ -319,15 +342,6 @@ body.quarto-dark {
     text-transform: uppercase;
     font-weight: 600;
   }
-}
-
-// ── Image attribution ─────────────────────────────────────────────────────────
-
-.img-attribution {
-  font-size: 0.72rem;
-  opacity: 0.55;
-  margin-top: 0.3rem;
-  font-style: italic;
 }
 
 // ── Analysis section header ───────────────────────────────────────────────────

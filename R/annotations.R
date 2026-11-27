@@ -10,7 +10,7 @@ source("R/palette.R")
 # mode     : "light" or "dark"
 # y_label  : y-coordinate for the text annotation (data coordinates)
 add_shocks <- function(p, x_vals = c(2017, 2020),
-                       labels = c("Irma & Maria", "COVID\u201319"),
+                       labels = c("Hurricanes", "COVID\u201319"),
                        mode = "light", y_label = NULL) {
   pal <- tw_palette(mode)
 

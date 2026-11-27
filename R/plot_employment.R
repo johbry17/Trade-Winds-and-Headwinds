@@ -39,7 +39,7 @@ plot_fred_employment <- function(mode = "light") {
     ) +
     geom_text(
       data  = ann_pts,
-      aes(label = paste0(year, ": ", round(emp_sa_avg, 1), "k"),
+      aes(label = paste0(year, ":\n", round(emp_sa_avg, 1), "k"),
           y = emp_sa_avg + nudge_y,
           vjust = vjust),
       size   = 2.9,
@@ -66,7 +66,12 @@ plot_fred_employment <- function(mode = "light") {
     theme_tw(mode) +
     theme(legend.position = "none")
 
-  add_shocks(p, mode = mode)
+  add_shocks(
+    p,
+    x_vals = c(1995, 2017, 2020),
+    labels = c("Hurricane\nMarilyn\n(1995)", "Hurricanes\nIrma & Maria", "COVID-19"),
+    mode = mode
+  )
 }
 
 # ---------------------------------------------------------------------------

@@ -41,14 +41,11 @@ How did the scale and composition of visitor arrivals change across the 2017 and
 USVIBER publishes total visitors, air visitors, and cruise passengers as separate series. They are not components of a sum: air visitors and cruise passengers cannot be assumed to add to the published total. The two shocks interrupted these flows in different ways and at different proportions.
 :::
 
-:::{.light-content}
-![Published total, air, and cruise arrivals, 2000–2024](../figures/publication/fig01_arrivals_light.png){#fig-analysis-arrivals fig-alt="Line chart showing air visitors, cruise passengers, and total arrivals from 2000 to 2024"}
-:::
-:::{.dark-content}
-![Published total, air, and cruise arrivals, 2000–2024](../figures/publication/fig01_arrivals_dark.png){#fig-analysis-arrivals-dk fig-alt="Line chart showing air visitors, cruise passengers, and total arrivals from 2000 to 2024"}
-:::
+::: {#fig-analysis-arrivals}
+![Published total, air, and cruise arrivals, 2000–2024](../figures/publication/fig01_arrivals_light.png){.light-content #fig-analysis-arrivals fig-alt="Line chart showing air visitors, cruise passengers, and total arrivals from 2000 to 2024"}
 
-:::{.figure-caption}
+![Published total, air, and cruise arrivals, 2000–2024](../figures/publication/fig01_arrivals_dark.png){.dark-content #fig-analysis-arrivals-dk fig-alt="Line chart showing air visitors, cruise passengers, and total arrivals from 2000 to 2024"}
+
 Published total visitors is a USVIBER aggregate. It should not be reconstructed from the air and cruise series, which do not reliably sum to the published total. Historical coverage combines TOUR24 (2000, 2010–2024) and TOUR10 (2001–2009 gap-fill).
 :::
 
@@ -58,14 +55,11 @@ The 2019–2020 comparison clarifies the character of the pandemic. Air visitors
 
 **Island-level arrivals reveal different cruise trajectories.** At the island-group level, cruise traffic followed distinct paths. By 2024, STT (St. Thomas–St. John) cruise arrivals were at 90% of their 2016 level. STX (St. Croix) cruise arrivals were at 144%. The STX number reflects partly the lower 2016 baseline: STX cruise was itself well below early-2000s peaks (240,000+) in 2016. The divergence is real but should not be read as STX cruise recovering more fully from the 2017 disruption alone — it was building from a structurally lower starting point.
 
-:::{.light-content}
-![Total visitor expenditure in nominal and approximate 2016 dollars](../figures/publication/fig02_expenditure_light.png){#fig-analysis-expenditure fig-alt="Line chart showing visitor expenditure nominal and real from 2000 to 2024"}
-:::
-:::{.dark-content}
-![Total visitor expenditure in nominal and approximate 2016 dollars](../figures/publication/fig02_expenditure_dark.png){#fig-analysis-expenditure-dk fig-alt="Line chart showing visitor expenditure nominal and real from 2000 to 2024"}
-:::
+::: {#fig-analysis-expenditure}
+![Total visitor expenditure in nominal and approximate 2016 dollars](../figures/publication/fig02_expenditure_light.png){.light-content #fig-analysis-expenditure fig-alt="Line chart showing visitor expenditure nominal and real from 2000 to 2024"}
 
-:::{.figure-caption}
+![Total visitor expenditure in nominal and approximate 2016 dollars](../figures/publication/fig02_expenditure_dark.png){.dark-content #fig-analysis-expenditure-dk fig-alt="Line chart showing visitor expenditure nominal and real from 2000 to 2024"}
+
 Nominal expenditure in millions of current USD; approximate real series uses mainland CPI-U as an inflation proxy. This is not a USVI-specific purchasing-power estimate.
 :::
 
@@ -100,27 +94,21 @@ Did hotel capacity return as visitor traffic did, and what does reported occupan
 Two distinct data sources measure accommodation capacity. USVIBER's annual survey tracks hotel-room inventory continuously. The Census Economic Census provides establishment and guestroom snapshots at five-year intervals. Their totals differ in ways that cannot be reconciled — they count different populations.
 :::
 
-:::{.light-content}
-![USVIBER hotel-room inventory and Census accommodation guestrooms, 2000–2024](../figures/publication/fig03_capacity_light.png){#fig-analysis-rooms fig-alt="Line chart of USVIBER hotel rooms with Census guestroom snapshot points"}
-:::
-:::{.dark-content}
-![USVIBER hotel-room inventory and Census accommodation guestrooms, 2000–2024](../figures/publication/fig03_capacity_dark.png){#fig-analysis-rooms-dk fig-alt="Line chart of USVIBER hotel rooms with Census guestroom snapshot points"}
-:::
+::: {#fig-analysis-rooms}
+![USVIBER hotel-room inventory and Census accommodation guestrooms, 2000–2024](../figures/publication/fig03_capacity_light.png){.light-content #fig-analysis-rooms fig-alt="Line chart of USVIBER hotel rooms with Census guestroom snapshot points"}
 
-:::{.figure-caption}
+![USVIBER hotel-room inventory and Census accommodation guestrooms, 2000–2024](../figures/publication/fig03_capacity_dark.png){.dark-content #fig-analysis-rooms-dk fig-alt="Line chart of USVIBER hotel rooms with Census guestroom snapshot points"}
+
 USVIBER hotel rooms: continuous annual survey. Census guestrooms: four snapshots (2007, 2012, 2017, 2022), not connected. The two series represent different populations and should not be combined into a single capacity trend.
 :::
 
 USVIBER hotel rooms fell from 3,819 in 2016 to 3,127 in 2024, 82% of the earlier level. Census guestroom counts fell from 5,027 in 2012 to 2,039 in 2022. The Census vintages use different guestroom definitions, and the 2017 count is a December 31 post-hurricane snapshot — it is not a pre-hurricane baseline for 2017.
 
-:::{.light-content}
-![Published annual occupancy rate and two related measures](../figures/publication/fig04_occupancy_light.png){#fig-analysis-occupancy fig-alt="Line chart showing three occupancy measures from 2001 to 2025"}
-:::
-:::{.dark-content}
-![Published annual occupancy rate and two related measures](../figures/publication/fig04_occupancy_dark.png){#fig-analysis-occupancy-dk fig-alt="Line chart showing three occupancy measures from 2001 to 2025"}
-:::
+::: {#fig-analysis-occupancy}
+![Published annual occupancy rate and two related measures](../figures/publication/fig04_occupancy_light.png){.light-content #fig-analysis-occupancy fig-alt="Line chart showing three occupancy measures from 2001 to 2025"}
 
-:::{.figure-caption}
+![Published annual occupancy rate and two related measures](../figures/publication/fig04_occupancy_dark.png){.dark-content #fig-analysis-occupancy-dk fig-alt="Line chart showing three occupancy measures from 2001 to 2025"}
+
 Three related measures: (1) USVIBER annual indicator occupancy (solid) — 66.3% in 2024; (2) occupancy from individual USVIBER hotel PDF reports (dashed) — 61.0% in 2024; (3) calculated from published room-nights available and occupied (dotted) — 60.3% in 2024. These are distinct series from different USVIBER publications and should not be treated as equivalent.
 :::
 
@@ -153,14 +141,11 @@ Higher utilization on a smaller inventory does not establish whether total occup
 The territory-wide accommodation shortfall masks a stark geographic difference. By 2024, St. Thomas–St. John available room-nights were 75% of their 2016 level. St. Croix available room-nights were 95%. The territorial deficit is overwhelmingly concentrated on the two northern islands.
 :::
 
-:::{.light-content}
-![Room nights available and occupied, indexed to 2016 = 100, by island group](../figures/publication/fig05_island_hotel_light.png){#fig-analysis-hotel-island fig-alt="Line chart of STT and STX hotel room-nights indexed to 2016=100"}
-:::
-:::{.dark-content}
-![Room nights available and occupied, indexed to 2016 = 100, by island group](../figures/publication/fig05_island_hotel_dark.png){#fig-analysis-hotel-island-dk fig-alt="Line chart of STT and STX hotel room-nights indexed to 2016=100"}
-:::
+::: {#fig-analysis-hotel-island}
+![Room nights available and occupied, indexed to 2016 = 100, by island group](../figures/publication/fig05_island_hotel_light.png){.light-content #fig-analysis-hotel-island fig-alt="Line chart of STT and STX hotel room-nights indexed to 2016=100"}
 
-:::{.figure-caption}
+![Room nights available and occupied, indexed to 2016 = 100, by island group](../figures/publication/fig05_island_hotel_dark.png){.dark-content #fig-analysis-hotel-island-dk fig-alt="Line chart of STT and STX hotel room-nights indexed to 2016=100"}
+
 Room nights available and occupied indexed to 2016 = 100, by island group. STT = St. Thomas–St. John; STX = St. Croix. 2025 occupied room-nights not available. Source: USVIBER hotel PDF reports.
 :::
 
@@ -197,27 +182,21 @@ Which employment measures support a labor-market recovery claim, and which are t
 Three independent sources measure employment in the USVI tourism-adjacent labor market. They count different populations, use different reference periods, and are not interchangeable. FRED/BLS covers the broadest sector; QCEW covers UI-insured jobs; the Census Economic Census provides establishment-level snapshots.
 :::
 
-:::{.light-content}
-![FRED/BLS Leisure and Hospitality employment, annual means, 2000–2025](../figures/publication/fig06_fred_employment_light.png){#fig-analysis-fred fig-alt="Line chart of FRED L&H employment annual means"}
-:::
-:::{.dark-content}
-![FRED/BLS Leisure and Hospitality employment, annual means, 2000–2025](../figures/publication/fig06_fred_employment_dark.png){#fig-analysis-fred-dk fig-alt="Line chart of FRED L&H employment annual means"}
-:::
+:::{#fig-analysis-employment-fred}
+![FRED/BLS Leisure and Hospitality employment, annual means, 2000–2025](../figures/publication/fig06_fred_employment_light.png){.light-content #fig-analysis-fred fig-alt="Line chart of FRED L&H employment annual means"}
 
-:::{.figure-caption}
+![FRED/BLS Leisure and Hospitality employment, annual means, 2000–2025](../figures/publication/fig06_fred_employment_dark.png){.dark-content #fig-analysis-fred-dk fig-alt="Line chart of FRED L&H employment annual means"}
+
 FRED/BLS Leisure and Hospitality employment (NAICS 71+72), seasonally adjusted monthly series. Annual values shown here are arithmetic means of twelve monthly observations.
 :::
 
 The FRED series covers broad NAICS 71+72, not tourism employment alone. Its 2024 annual mean was 6.98 thousand employees, 91% of the 7.69 thousand 2016 mean. The 2025 mean was 6.49 thousand, 84%. This is a decline in the broad sector from 2024, even though 2024 visitor arrivals were near 2016.
 
-:::{.light-content}
-![Related employment measures: QCEW (continuous) and Census Economic Census (snapshots)](../figures/publication/fig07_employment_comparison_light.png){#fig-analysis-employment fig-alt="Two-panel chart: QCEW continuous series and Census snapshot points"}
-:::
-:::{.dark-content}
-![Related employment measures: QCEW (continuous) and Census Economic Census (snapshots)](../figures/publication/fig07_employment_comparison_dark.png){#fig-analysis-employment-dk fig-alt="Two-panel chart: QCEW continuous series and Census snapshot points"}
-:::
+:::{#fig-analysis-employment}
+![Related employment measures: QCEW (continuous) and Census Economic Census (snapshots)](../figures/publication/fig07_employment_comparison_light.png){.light-content #fig-analysis-employment fig-alt="Two-panel chart: QCEW continuous series and Census snapshot points"}
 
-:::{.figure-caption}
+![Related employment measures: QCEW (continuous) and Census Economic Census (snapshots)](../figures/publication/fig07_employment_comparison_dark.png){.dark-content #fig-analysis-employment-dk fig-alt="Two-panel chart: QCEW continuous series and Census snapshot points"}
+
 Top: QCEW NAICS 72 (Accommodation and Food Services) annual average covered jobs, territory total. Bottom: Census Economic Census employment snapshots at four points (2007, 2012, 2017, 2022). The two panels use different populations, definitions, and reference periods and are not directly comparable.
 :::
 
@@ -251,14 +230,11 @@ What can BEA GDP and industry value-added data establish about tourism activity,
 BEA provides two distinct measures. Real GDP covers the entire territorial economy and all industries — it is not a tourism measure. Real Accommodation and Food Services value added covers a broad industry that includes resident-serving activity. Neither series isolates tourism output or attributes economic change to any specific cause.
 :::
 
-:::{.light-content}
-![BEA real USVI GDP and real A&F value added, each indexed to 2016 = 100](../figures/publication/fig08_gdp_af_light.png){#fig-analysis-gdp fig-alt="Line chart of real GDP and real A&F value added indexed to 2016=100"}
-:::
-:::{.dark-content}
-![BEA real USVI GDP and real A&F value added, each indexed to 2016 = 100](../figures/publication/fig08_gdp_af_dark.png){#fig-analysis-gdp-dk fig-alt="Line chart of real GDP and real A&F value added indexed to 2016=100"}
-:::
+:::{#fig-analysis-gdp}
+![BEA real USVI GDP and real A&F value added, each indexed to 2016 = 100](../figures/publication/fig08_gdp_af_light.png){.light-content #fig-analysis-gdp fig-alt="Line chart of real GDP and real A&F value added indexed to 2016=100"}
 
-:::{.figure-caption}
+![BEA real USVI GDP and real A&F value added, each indexed to 2016 = 100](../figures/publication/fig08_gdp_af_dark.png){.dark-content #fig-analysis-gdp-dk fig-alt="Line chart of real GDP and real A&F value added indexed to 2016=100"}
+
 Real GDP (solid) and real Accommodation and Food Services value added (dashed), each indexed to 2016 = 100. Latest GDP observation: 2022. Latest A&F observation: 2021. BEA real series use chained dollars.
 :::
 
@@ -266,14 +242,11 @@ Real GDP rose from 100 in 2016 to 119 in 2022 — above the hurricane benchmark.
 
 These are different concepts. Real GDP includes the entire territorial economy. Accommodation and Food Services is a broad industry that includes resident-serving activity and excludes tourism-related spending in transportation, retail, and recreation.
 
-:::{.light-content}
-![Accommodation and Food Services as an approximate share of nominal GDP](../figures/publication/fig09_af_share_light.png){#fig-analysis-af-share fig-alt="Line chart of A&F share of nominal GDP"}
-:::
-:::{.dark-content}
-![Accommodation and Food Services as an approximate share of nominal GDP](../figures/publication/fig09_af_share_dark.png){#fig-analysis-af-share-dk fig-alt="Line chart of A&F share of nominal GDP"}
-:::
+:::{#fig-analysis-af-share}
+![Accommodation and Food Services as an approximate share of nominal GDP](../figures/publication/fig09_af_share_light.png){.light-content #fig-analysis-af-share fig-alt="Line chart of A&F share of nominal GDP"}
 
-:::{.figure-caption}
+![Accommodation and Food Services as an approximate share of nominal GDP](../figures/publication/fig09_af_share_dark.png){.dark-content #fig-analysis-af-share-dk fig-alt="Line chart of A&F share of nominal GDP"}
+
 Accommodation and Food Services nominal value added divided by nominal GDP. The numerator and denominator are not fully equivalent concepts, so this is an approximate industry share, not a tourism GDP estimate.
 :::
 
@@ -304,14 +277,11 @@ Where do the indicators converge, where do they diverge, and what is defensible 
 The five preceding sections establish independent evidence for different dimensions of the tourism economy. This section brings the principal indicators together on a common index scale to show where they converge and where they diverge. No single recovery number exists; the aggregate pattern is the finding.
 :::
 
-:::{.light-content}
-![Six indicators indexed independently to 2016 = 100, 2012–2025](../figures/publication/fig10_recovery_light.png){#fig-analysis-recovery fig-alt="Multi-line chart showing six indicators indexed to 2016=100"}
-:::
-:::{.dark-content}
-![Six indicators indexed independently to 2016 = 100, 2012–2025](../figures/publication/fig10_recovery_dark.png){#fig-analysis-recovery-dk fig-alt="Multi-line chart showing six indicators indexed to 2016=100"}
-:::
+:::{#fig-analysis-recovery}
+![Six indicators indexed independently to 2016 = 100, 2012–2025](../figures/publication/fig10_recovery_light.png){.light-content #fig-analysis-recovery fig-alt="Multi-line chart showing six indicators indexed to 2016=100"}
 
-:::{.figure-caption}
+![Six indicators indexed independently to 2016 = 100, 2012–2025](../figures/publication/fig10_recovery_dark.png){.dark-content #fig-analysis-recovery-dk fig-alt="Multi-line chart showing six indicators indexed to 2016=100"}
+
 Six indicators indexed independently to 2016 = 100. Latest observation years differ: air visitors and cruise through 2024; hotel rooms through 2024; L&H employment through 2025; A&F real value added through 2021; NPS recreation visits through 2025. Occupancy is not indexed because a rate is not interpretable on this scale. Sources: USVIBER, FRED/BLS, BEA, NPS IRLS.
 :::
 

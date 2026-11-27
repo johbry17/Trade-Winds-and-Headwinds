@@ -155,14 +155,11 @@ The 2017 hurricanes and the 2020 pandemic interrupted tourism in fundamentally d
 
 The 2017 storms struck in September, after much of that year's visitation had already occurred. Their full economic consequences showed in 2018. COVID-19 hit in March 2020, collapsing both air and cruise traffic in the same season.
 
-:::{.light-content}
-![Air visitors, cruise passengers, and published total arrivals, 2000–2024](../figures/publication/fig01_arrivals_light.png){fig-alt="Line chart showing air visitor and cruise passenger arrivals from 2000 to 2024 with shock markers at 2017 and 2020"}
-:::
-:::{.dark-content}
-![Air visitors, cruise passengers, and published total arrivals, 2000–2024](../figures/publication/fig01_arrivals_dark.png){fig-alt="Line chart showing air visitor and cruise passenger arrivals from 2000 to 2024 with shock markers at 2017 and 2020"}
-:::
+::: {#fig-arrivals}
+![Air visitors, cruise passengers, and published total arrivals, 2000–2024](../figures/publication/fig01_arrivals_light.png){.light-content fig-alt="Line chart showing air visitor and cruise passenger arrivals from 2000 to 2024 with shock markers at 2017 and 2020"}
 
-:::{.figure-caption}
+![Air visitors, cruise passengers, and published total arrivals, 2000–2024](../figures/publication/fig01_arrivals_dark.png){.dark-content fig-alt="Line chart showing air visitor and cruise passenger arrivals from 2000 to 2024 with shock markers at 2017 and 2020"}
+
 Published total visitors is a USVIBER aggregate. Air visitors and cruise passengers are separate arrival counts and should not be assumed to sum to the total.
 :::
 
@@ -178,14 +175,11 @@ The character of the pandemic disruption was distinct. In 2020, cruise passenger
 
 USVIBER's reported hotel-room inventory stood at 3,127 rooms in 2024, 82% of the 3,819 reported in 2016. The Census Economic Census provides a different count, covering a different population of payroll-filing establishments: 2,039 accommodation guestrooms in 2022, compared with 5,027 in 2012. Because the Census counts a different population and changed its guestroom product definition in 2017, these numbers cannot be combined. Together, however, they describe a capacity constraint.
 
-:::{.light-content}
-![Recovery comparison: air arrivals, cruise, hotel rooms, and L&H employment indexed to 2016 = 100](../figures/publication/figOV_recovery_light.png){fig-alt="Line chart comparing key recovery indicators indexed to 2016 = 100"}
-:::
-:::{.dark-content}
-![Recovery comparison: air arrivals, cruise, hotel rooms, and L&H employment indexed to 2016 = 100](../figures/publication/figOV_recovery_dark.png){fig-alt="Line chart comparing key recovery indicators indexed to 2016 = 100"}
-:::
+::: {#fig-recovery}
+![Recovery comparison: air arrivals, cruise, hotel rooms, and L&H employment indexed to 2016 = 100](../figures/publication/figOV_recovery_light.png){.light-content fig-alt="Line chart comparing key recovery indicators indexed to 2016 = 100"}
 
-:::{.figure-caption}
+![Recovery comparison: air arrivals, cruise, hotel rooms, and L&H employment indexed to 2016 = 100](../figures/publication/figOV_recovery_dark.png){.dark-content fig-alt="Line chart comparing key recovery indicators indexed to 2016 = 100"}
+
 Four indicators indexed independently to 2016 = 100. Latest observation years differ: visitors through 2024, employment through 2025.
 :::
 

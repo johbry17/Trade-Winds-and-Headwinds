@@ -203,9 +203,13 @@ plot_employment_comparison <- function(mode = "light") {
       aes(
         x = year,
         y = emp,
-        label = paste0(year, "\n", scales::comma(emp))
+        label = paste0(year, "\n", scales::comma(emp)),
+        vjust = if_else(
+          year %in% range(cens_72$year),
+          1.3,
+          -0.6
+        )
       ),
-      vjust = -0.6,
       size = 2.6,
       color = census_color,
       show.legend = FALSE

@@ -109,13 +109,8 @@ plot_expenditure <- function(mode = "light") {
       )
     )
 
-  # Label each line near its 2010 value
-  mid_labels <- long |>
-    filter(year == 2010, !is.na(value)) |>
-    mutate(nudge_y = case_when(
-      series == "Nominal" ~ 80,
-      TRUE ~ -80
-    ))
+  # Label each line near its 2024 value
+  mid_labels <- long |> filter(year == 2024, !is.na(value))
 
   p <- ggplot(long, aes(x = year, y = value, color = series, linetype = series)) +
     geom_line(linewidth = 1.1, na.rm = TRUE) +
@@ -131,10 +126,11 @@ plot_expenditure <- function(mode = "light") {
       guide = "none"
     ) +
     geom_text(
-      data  = mid_labels,
-      aes(label = series, y = value + nudge_y),
-      hjust = 0.5,
-      size  = 2.9,
+      data = mid_labels,
+      aes(label = series, y = value,),
+      hjust = 0.62,
+      vjust = -0.35,
+      size = 2.9,
       show.legend = FALSE
     ) +
     scale_x_continuous(

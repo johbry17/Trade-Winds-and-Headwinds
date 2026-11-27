@@ -20,8 +20,11 @@ plot_fred_employment <- function(mode = "light") {
 
   ann_pts <- df_clean |>
     filter(year %in% c(2016, max(df_clean$year))) |>
-    mutate(nudge_y = c(0.35, 0.35))
-
+    mutate(
+      nudge_y = if_else(year == 2016, 0.15, -0.25),
+      vjust = if_else(year == 2016, 0, 0.5)
+    )
+  
   p <- ggplot(df_clean, aes(x = year, y = emp_sa_avg)) +
     geom_line(
       color     = pal$employment,
@@ -37,7 +40,8 @@ plot_fred_employment <- function(mode = "light") {
     geom_text(
       data  = ann_pts,
       aes(label = paste0(year, ": ", round(emp_sa_avg, 1), "k"),
-          y = emp_sa_avg + nudge_y),
+          y = emp_sa_avg + nudge_y,
+          vjust = vjust),
       size   = 2.9,
       color  = pal$employment,
       hjust  = 0.5,
@@ -159,6 +163,84 @@ plot_employment_comparison <- function(mode = "light") {
   combined
 }
 
+# plot_employment_comparison <- function(mode = "light") {
+#   pal  <- tw_palette(mode)
+#   qcew <- read_csv("data/processed/employment_qcew.csv", show_col_types = FALSE)
+#   cens <- read_csv("data/processed/census_naics72.csv", show_col_types = FALSE)
+
+#   qcew_clean <- qcew |>
+#     filter(!is.na(annual_avg_emplvl))
+
+#   cens_72 <- cens |>
+#     filter(naics == "72", !is.na(emp))
+
+#   census_color <- if (mode == "light") "#4a7a53" else "#7ad09a"
+
+#   p <- ggplot() +
+#     geom_line(
+#       data = qcew_clean,
+#       aes(
+#         x = year,
+#         y = annual_avg_emplvl,
+#         color = "QCEW annual average"
+#       ),
+#       linewidth = 1.1,
+#       na.rm = TRUE
+#     ) +
+#     geom_point(
+#       data = cens_72,
+#       aes(
+#         x = year,
+#         y = emp,
+#         color = "Economic Census"
+#       ),
+#       shape = 18,
+#       size = 4.0,
+#       na.rm = TRUE
+#     ) +
+#     geom_text(
+#       data = cens_72,
+#       aes(
+#         x = year,
+#         y = emp,
+#         label = paste0(year, "\n", scales::comma(emp))
+#       ),
+#       vjust = -0.6,
+#       size = 2.6,
+#       color = census_color,
+#       show.legend = FALSE
+#     ) +
+#     scale_color_manual(
+#       values = c(
+#         "QCEW annual average" = pal$employment,
+#         "Economic Census" = census_color
+#       )
+#     ) +
+#     scale_x_continuous(
+#       breaks = seq(2000, 2025, 4),
+#       limits = c(2000, 2025),
+#       expand = expansion(mult = c(0.01, 0.05))
+#     ) +
+#     scale_y_continuous(
+#       labels = label_comma(),
+#       expand = expansion(mult = c(0.05, 0.15))
+#     ) +
+#     labs(
+#       x = NULL,
+#       y = "Employment (jobs)",
+#       title = "Two Measures of Leisure & Hospitality Employment",
+#       caption = source_note(
+#         "Source: BLS QCEW (UI-covered jobs, annual average); U.S. Census Economic Census, NAICS 72 (March payroll snapshot). Different populations and reference periods."
+#       ),
+#       color = NULL
+#     ) +
+#     theme_tw(mode) +
+#     theme(
+#       legend.position = "bottom"
+#     )
+
+#   add_shocks(p, mode = mode)
+# }
 
 # ---------------------------------------------------------------------------
 # Fig 6 — FRED L&H employment

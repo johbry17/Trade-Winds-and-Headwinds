@@ -118,11 +118,11 @@ items = [
     ("Air arrivals",          f"{air_pct}%",    "2024 vs. 2016 · USVIBER",                "above-baseline", min(air_pct / 125 * 100, 100)),
     ("Cruise passengers",     f"{cruise_pct}%", "2024 vs. 2016 · USVIBER",                "below-baseline", min(cruise_pct / 125 * 100, 100)),
     ("Total arrivals",        f"{total_pct}%",  "2024 vs. 2016 · USVIBER",                "near-baseline",  min(total_pct / 125 * 100, 100)),
+    ("NPS recreation visits", f"{nps_pct}%",    "2025 vs. 2016 · VIIS estimated visits",  "above-baseline", min(nps_pct / 125 * 100, 100)),
     ("Hotel inventory",       f"{rooms_pct}%",  "2024 vs. 2016 · USVIBER survey",          "below-baseline", min(rooms_pct / 125 * 100, 100)),
     ("L&H employment",        f"{emp_pct25}%",  "2025 vs. 2016 annual mean · FRED/BLS",   "below-baseline", min(emp_pct25 / 125 * 100, 100)),
-    ("Real A&F value added",  f"{af_pct}%",     "2021 vs. 2016 · BEA (latest available)", "below-baseline", min(af_pct / 125 * 100, 100)),
     ("Real territorial GDP",  f"{gdp_pct}%",    "2022 vs. 2016 · BEA (whole economy)",   "above-baseline", min(gdp_pct / 125 * 100, 100)),
-    ("NPS recreation visits", f"{nps_pct}%",    "2025 vs. 2016 · VIIS estimated visits",  "above-baseline", min(nps_pct / 125 * 100, 100)),
+    ("Real A&F value added",  f"{af_pct}%",     "2021 vs. 2016 · BEA (latest available)", "below-baseline", min(af_pct / 125 * 100, 100)),
 ]
 
 from IPython.display import display, HTML
@@ -156,9 +156,9 @@ The 2017 hurricanes and the 2020 pandemic interrupted tourism in fundamentally d
 The 2017 storms struck in September, after much of that year's visitation had already occurred. Their full economic consequences showed in 2018. COVID-19 hit in March 2020, collapsing both air and cruise traffic in the same season.
 
 ::: {#fig-arrivals}
-![Air visitors, cruise passengers, and published total arrivals, 2000–2024](../figures/publication/fig01_arrivals_light.png){.light-content fig-alt="Line chart showing air visitor and cruise passenger arrivals from 2000 to 2024 with shock markers at 2017 and 2020"}
+![Air visitors, cruise passengers, and published total arrivals, 2000–2024](../figures/publication/figOV_arrivals_light.png){.light-content fig-alt="Line chart showing air visitor and cruise passenger arrivals from 2000 to 2024 with shock markers at 2017 and 2020"}
 
-![Air visitors, cruise passengers, and published total arrivals, 2000–2024](../figures/publication/fig01_arrivals_dark.png){.dark-content fig-alt="Line chart showing air visitor and cruise passenger arrivals from 2000 to 2024 with shock markers at 2017 and 2020"}
+![Air visitors, cruise passengers, and published total arrivals, 2000–2024](../figures/publication/figOV_arrivals_dark.png){.dark-content fig-alt="Line chart showing air visitor and cruise passenger arrivals from 2000 to 2024 with shock markers at 2017 and 2020"}
 
 Published total visitors is a USVIBER aggregate. Air visitors and cruise passengers are separate arrival counts and should not be assumed to sum to the total.
 :::

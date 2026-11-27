@@ -49,7 +49,8 @@ save_fig <- function(plot_obj, name, mode,
 # Figure registry: list(name, fn, width, height)
 # ---------------------------------------------------------------------------
 figures <- list(
-  list(name = "fig01_arrivals",             fn = plot_arrivals),
+  list(name = "figOV_arrivals",             fn = plot_arrivals),
+  list(name = "fig01_arrivals",             fn = plot_arrivals_comparison),
   list(name = "fig02_expenditure",          fn = plot_expenditure),
   list(name = "fig03_capacity",             fn = plot_capacity),
   list(name = "fig04_occupancy",            fn = plot_occupancy),

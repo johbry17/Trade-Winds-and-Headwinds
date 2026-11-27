@@ -11,7 +11,7 @@ source("R/annotations.R")
 source("R/scales.R")
 
 # ---------------------------------------------------------------------------
-# Fig 1 — Visitor arrivals
+# FigOV — Visitor arrivals
 # ---------------------------------------------------------------------------
 plot_arrivals <- function(mode = "light") {
   pal  <- tw_palette(mode)
@@ -86,6 +86,140 @@ plot_arrivals <- function(mode = "light") {
 
   p <- add_shocks(p, mode = mode)
   p
+}
+
+# ---------------------------------------------------------------------------
+# Fig 01 — Visitor arrivals: USVIBER and World Bank
+# ---------------------------------------------------------------------------
+plot_arrivals_comparison <- function(mode = "light") {
+  pal <- tw_palette(mode)
+
+  usviber <- read_csv(
+    "data/processed/visitors_annual.csv",
+    show_col_types = FALSE
+  )
+
+  worldbank <- read_csv(
+    "data/interim/worldbank_arrivals.csv",
+    show_col_types = FALSE
+  ) |>
+    filter(year <= 2019, !is.na(value)) |>
+    transmute(
+      year,
+      series = "World Bank international arrivals",
+      value = value / 1000
+    )
+
+  arrivals <- usviber |>
+    select(year, air_visitors, cruise_passengers, total_visitors) |>
+    pivot_longer(
+      cols = c(air_visitors, cruise_passengers, total_visitors),
+      names_to = "series",
+      values_to = "value"
+    ) |>
+    mutate(
+      series = recode(
+        series,
+        air_visitors = "Air visitors",
+        cruise_passengers = "Cruise passengers",
+        total_visitors = "Total visitors"
+      )
+    )
+
+  long <- bind_rows(arrivals, worldbank)
+
+  series_order <- c(
+    "Air visitors",
+    "Cruise passengers",
+    "Total visitors",
+    "World Bank international arrivals"
+  )
+
+  long <- long |>
+    mutate(series = factor(series, levels = series_order))
+
+  endpoints <- long |>
+    filter(!is.na(value)) |>
+    group_by(series) |>
+    filter(year == max(year)) |>
+    ungroup() |>
+    mutate(
+      nudge_y = case_when(
+        series == "Air visitors" ~ 80,
+        series == "Cruise passengers" ~ -80,
+        series == "Total visitors" ~ 60,
+        series == "World Bank international arrivals" ~ 45,
+        TRUE ~ 0
+      )
+    )
+
+  colors <- c(
+    "Air visitors" = pal$air_visitors,
+    "Cruise passengers" = pal$cruise,
+    "Total visitors" = pal$total,
+    "World Bank international arrivals" = pal$benchmark
+  )
+
+  widths <- c(
+    "Air visitors" = 1.1,
+    "Cruise passengers" = 1.1,
+    "Total visitors" = 0.8,
+    "World Bank international arrivals" = 0.9
+  )
+
+  linetypes <- c(
+    "Air visitors" = "solid",
+    "Cruise passengers" = "solid",
+    "Total visitors" = "solid",
+    "World Bank international arrivals" = "22"
+  )
+
+  p <- ggplot(
+    long,
+    aes(x = year, y = value, color = series)
+  ) +
+    geom_line(
+      aes(linewidth = series, linetype = series),
+      na.rm = TRUE
+    ) +
+    scale_color_manual(values = colors) +
+    scale_linewidth_manual(values = widths, guide = "none") +
+    scale_linetype_manual(values = linetypes, guide = "none") +
+    geom_text(
+      data = endpoints,
+      aes(
+        label = as.character(series),
+        y = value + nudge_y
+      ),
+      hjust = -0.08,
+      size = 2.8,
+      show.legend = FALSE
+    ) +
+    scale_x_continuous(
+      breaks = seq(2000, 2024, 4),
+      expand = expansion(mult = c(0.01, 0.24))
+    ) +
+    scale_y_continuous(
+      labels = label_comma(),
+      expand = expansion(mult = c(0.02, 0.08))
+    ) +
+    labs(
+      x = NULL,
+      y = "Annual arrivals (thousands)",
+      title = "Visitor Arrivals Across Two Statistical Sources",
+      subtitle = "World Bank international arrivals are a distinct measure, not a direct equivalent of USVIBER total visitors",
+      caption = source_note(
+        paste(
+          "Sources: USVIBER Annual Tourism Indicators (TOUR24, TOUR10);",
+          "World Bank international tourism arrivals.",
+          "\nWorld Bank series ends in 2019; anomalous 2020 observation excluded."
+        )
+      )
+    ) +
+    theme_tw(mode) +
+    theme(legend.position = "none")
+
+  add_shocks(p, mode = mode)
 }
 
 # ---------------------------------------------------------------------------

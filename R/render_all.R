@@ -53,13 +53,13 @@ figures <- list(
   list(name = "fig02_expenditure",          fn = plot_expenditure),
   list(name = "fig03_capacity",             fn = plot_capacity),
   list(name = "fig04_occupancy",            fn = plot_occupancy),
-  list(name = "fig05_island_hotel",         fn = plot_island_hotel),
+  list(name = "fig05_island_hotel",         fn = plot_island_hotel, height = 9),
   list(name = "fig06_fred_employment",      fn = plot_fred_employment),
   list(name = "fig07_employment_comparison", fn = plot_employment_comparison,
        height = 7.5),
   list(name = "fig08_gdp_af",              fn = plot_gdp_af),
   list(name = "fig09_af_share",            fn = plot_af_share),
-  list(name = "fig10_recovery",            fn = plot_recovery),
+  list(name = "fig10_recovery",            fn = plot_recovery, height = 10),
   list(name = "figOV_recovery",            fn = plot_overview_recovery)
 )
 

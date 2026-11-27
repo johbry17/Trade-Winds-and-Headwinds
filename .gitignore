@@ -19,3 +19,6 @@ __pycache__/
 .venv/
 .venv-1/
 .venv-2/
+
+# Visual Studio Code
+.vscode/

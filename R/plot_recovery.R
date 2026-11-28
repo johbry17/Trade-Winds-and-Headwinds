@@ -638,7 +638,7 @@ plot_recovery <- function(mode = "light") {
     plot_annotation(
       title = "Uneven Recovery: Common Index, Different Concepts and Observation Years",
       caption = source_note(
-        "Source: USVIBER, FRED/BLS, BEA, NPS IRLS. Each series is independently indexed to 2016 = 100."
+        "Source: USVIBER, FRED/BLS, BEA, NPS IRMA. Each series is independently indexed to 2016 = 100."
       ),
       theme = theme_tw(mode) +
         theme(

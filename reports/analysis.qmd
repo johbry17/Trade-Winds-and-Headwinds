@@ -42,23 +42,23 @@ USVIBER publishes total visitors, air visitors, and cruise passengers as separat
 :::
 
 ::: {#fig-analysis-arrivals}
-![Published total, air, and cruise arrivals, 2000–2024](../figures/publication/fig01_arrivals_light.png){.light-content #fig-analysis-arrivals fig-alt="Line chart showing air visitors, cruise passengers, and total arrivals from 2000 to 2024"}
+![](../figures/publication/fig01_arrivals_light.png){.light-content}
 
-![Published total, air, and cruise arrivals, 2000–2024](../figures/publication/fig01_arrivals_dark.png){.dark-content #fig-analysis-arrivals-dk fig-alt="Line chart showing air visitors, cruise passengers, and total arrivals from 2000 to 2024"}
+![](../figures/publication/fig01_arrivals_dark.png){.dark-content}
 
-Published total visitors is a USVIBER aggregate. It should not be reconstructed from the air and cruise series, which do not reliably sum to the published total. Historical coverage combines TOUR24 (2000, 2010–2024) and TOUR10 (2001–2009 gap-fill).
+Published total visitors is a USVIBER aggregate. It should not be reconstructed from the air and cruise series, which do not reliably sum to the published total. Historical coverage combines TOUR24 (2000, 2010–2024) and TOUR10 (2001–2009 gap-fill). The World Bank international arrivals series (dashed) is a distinct measure that is not equivalent to USVIBER total visitors; it ends in 2019.
 :::
 
 Total arrivals fell from 2.585 million in 2016 to 2.143 million in 2018, or 83% of the 2016 level. The 2020 low was not the same as the hurricane interruption: COVID closed cruise shipping and sharply restricted air travel. In 2024, air arrivals were 884,200, 109% of their 2016 level, and cruise passengers were 1.600 million, 90%. The published total was 2.507 million, 97%.
 
-The 2019–2020 comparison clarifies the character of the pandemic. Air visitors fell from 653,700 to 206,300, while cruise passengers fell from 1.433 million to 358,900. Both measures rebounded, but cruise traffic remained structurally weaker after 2020.
+The 2019–2020 comparison clarifies the character of the pandemic. Air visitors fell from 653,700 to 352,400 (54% of the 2019 level), while cruise passengers fell from 1.433 million to 440,400 (31%). Both measures rebounded, but cruise traffic remained structurally weaker after 2020.
 
 **Island-level arrivals reveal different cruise trajectories.** At the island-group level, cruise traffic followed distinct paths. By 2024, STT (St. Thomas–St. John) cruise arrivals were at 90% of their 2016 level. STX (St. Croix) cruise arrivals were at 144%. The STX number reflects partly the lower 2016 baseline: STX cruise was itself well below early-2000s peaks (240,000+) in 2016. The divergence is real but should not be read as STX cruise recovering more fully from the 2017 disruption alone — it was building from a structurally lower starting point.
 
 ::: {#fig-analysis-expenditure}
-![Total visitor expenditure in nominal and approximate 2016 dollars](../figures/publication/fig02_expenditure_light.png){.light-content #fig-analysis-expenditure fig-alt="Line chart showing visitor expenditure nominal and real from 2000 to 2024"}
+![](../figures/publication/fig02_expenditure_light.png){.light-content}
 
-![Total visitor expenditure in nominal and approximate 2016 dollars](../figures/publication/fig02_expenditure_dark.png){.dark-content #fig-analysis-expenditure-dk fig-alt="Line chart showing visitor expenditure nominal and real from 2000 to 2024"}
+![](../figures/publication/fig02_expenditure_dark.png){.dark-content}
 
 Nominal expenditure in millions of current USD; approximate real series uses mainland CPI-U as an inflation proxy. This is not a USVI-specific purchasing-power estimate.
 :::
@@ -95,9 +95,9 @@ Two distinct data sources measure accommodation capacity. USVIBER's annual surve
 :::
 
 ::: {#fig-analysis-rooms}
-![USVIBER hotel-room inventory and Census accommodation guestrooms, 2000–2024](../figures/publication/fig03_capacity_light.png){.light-content #fig-analysis-rooms fig-alt="Line chart of USVIBER hotel rooms with Census guestroom snapshot points"}
+![](../figures/publication/fig03_capacity_light.png){.light-content}
 
-![USVIBER hotel-room inventory and Census accommodation guestrooms, 2000–2024](../figures/publication/fig03_capacity_dark.png){.dark-content #fig-analysis-rooms-dk fig-alt="Line chart of USVIBER hotel rooms with Census guestroom snapshot points"}
+![](../figures/publication/fig03_capacity_dark.png){.dark-content}
 
 USVIBER hotel rooms: continuous annual survey. Census guestrooms: four snapshots (2007, 2012, 2017, 2022), not connected. The two series represent different populations and should not be combined into a single capacity trend.
 :::
@@ -105,9 +105,9 @@ USVIBER hotel rooms: continuous annual survey. Census guestrooms: four snapshots
 USVIBER hotel rooms fell from 3,819 in 2016 to 3,127 in 2024, 82% of the earlier level. Census guestroom counts fell from 5,027 in 2012 to 2,039 in 2022. The Census vintages use different guestroom definitions, and the 2017 count is a December 31 post-hurricane snapshot — it is not a pre-hurricane baseline for 2017.
 
 ::: {#fig-analysis-occupancy}
-![Published annual occupancy rate and two related measures](../figures/publication/fig04_occupancy_light.png){.light-content #fig-analysis-occupancy fig-alt="Line chart showing three occupancy measures from 2001 to 2025"}
+![](../figures/publication/fig04_occupancy_light.png){.light-content}
 
-![Published annual occupancy rate and two related measures](../figures/publication/fig04_occupancy_dark.png){.dark-content #fig-analysis-occupancy-dk fig-alt="Line chart showing three occupancy measures from 2001 to 2025"}
+![](../figures/publication/fig04_occupancy_dark.png){.dark-content}
 
 Three related measures: (1) USVIBER annual indicator occupancy (solid) — 66.3% in 2024; (2) occupancy from individual USVIBER hotel PDF reports (dashed) — 61.0% in 2024; (3) calculated from published room-nights available and occupied (dotted) — 60.3% in 2024. These are distinct series from different USVIBER publications and should not be treated as equivalent.
 :::
@@ -142,9 +142,9 @@ The territory-wide accommodation shortfall masks a stark geographic difference. 
 :::
 
 ::: {#fig-analysis-hotel-island}
-![Room nights available and occupied, indexed to 2016 = 100, by island group](../figures/publication/fig05_island_hotel_light.png){.light-content #fig-analysis-hotel-island fig-alt="Line chart of STT and STX hotel room-nights indexed to 2016=100"}
+![](../figures/publication/fig05_island_hotel_light.png){.light-content}
 
-![Room nights available and occupied, indexed to 2016 = 100, by island group](../figures/publication/fig05_island_hotel_dark.png){.dark-content #fig-analysis-hotel-island-dk fig-alt="Line chart of STT and STX hotel room-nights indexed to 2016=100"}
+![](../figures/publication/fig05_island_hotel_dark.png){.dark-content}
 
 Room nights available and occupied indexed to 2016 = 100, by island group. STT = St. Thomas–St. John; STX = St. Croix. 2025 occupied room-nights not available. Source: USVIBER hotel PDF reports.
 :::
@@ -183,31 +183,31 @@ Four independent sources measure employment in the USVI tourism-adjacent labor m
 :::
 
 :::{#fig-analysis-employment-fred}
-![FRED/BLS Leisure and Hospitality employment, annual means, 2000–2025](../figures/publication/fig06_fred_employment_light.png){.light-content #fig-analysis-fred fig-alt="Line chart of FRED L&H employment annual means"}
+![](../figures/publication/fig06_fred_employment_light.png){.light-content}
 
-![FRED/BLS Leisure and Hospitality employment, annual means, 2000–2025](../figures/publication/fig06_fred_employment_dark.png){.dark-content #fig-analysis-fred-dk fig-alt="Line chart of FRED L&H employment annual means"}
+![](../figures/publication/fig06_fred_employment_dark.png){.dark-content}
 
 FRED/BLS Leisure and Hospitality employment (NAICS 71+72), seasonally adjusted monthly series. Annual values shown here are arithmetic means of twelve monthly observations.
 :::
 
-The FRED series covers broad NAICS 71+72, not tourism employment alone. Its 2024 annual mean was 6.98 thousand employees, 91% of the 7.69 thousand 2016 mean. The 2025 mean was 6.49 thousand, 84%. This is a decline in the broad sector from 2024, even though 2024 visitor arrivals were near 2016.
+The FRED series covers broad NAICS 71+72, not tourism employment alone. It fell from a 7.69 thousand annual mean in 2016 to a post-hurricane low of 4.23 thousand in 2018 — a deeper trough than the 4.89 thousand reached during COVID in 2020, meaning the hurricane aftermath was more disruptive to this sector than the pandemic. The series recovered to 6.79 thousand in 2023 and 6.98 thousand in 2024, then fell to 6.49 thousand in 2025 — 84% of the 2016 mean. That 2025 decline arrived even as visitor arrivals were near their 2016 level.
 
 :::{#fig-analysis-employment}
-![Related employment measures: QCEW (continuous) and Census Economic Census (snapshots)](../figures/publication/fig07_employment_comparison_light.png){.light-content #fig-analysis-employment fig-alt="Two-panel chart: QCEW continuous series and Census snapshot points"}
+![](../figures/publication/fig07_employment_comparison_light.png){.light-content}
 
-![Related employment measures: QCEW (continuous) and Census Economic Census (snapshots)](../figures/publication/fig07_employment_comparison_dark.png){.dark-content #fig-analysis-employment-dk fig-alt="Two-panel chart: QCEW continuous series and Census snapshot points"}
+![](../figures/publication/fig07_employment_comparison_dark.png){.dark-content}
 
 Top: QCEW NAICS 72 (Accommodation and Food Services) annual average covered jobs, territory total. Bottom: Census Economic Census employment snapshots at four points (2007, 2012, 2017, 2022). The two panels use different populations, definitions, and reference periods and are not directly comparable.
 :::
 
-QCEW employment fell from 6,775 annual average jobs in 2016 to 3,826 in 2020 and was 6,275 in 2025. It is UI-covered employment, not a count of people. Average annual pay is total wages divided by annual average employment, not typical individual earnings.
+QCEW employment fell from 6,775 annual average jobs in 2016 to 3,619 in 2018 — the hurricane-era trough — before partially recovering. COVID pushed it down again to 4,324 in 2020. It reached 6,076 in 2025. It is UI-covered employment, not a count of people. Average annual pay is total wages divided by annual average employment, not typical individual earnings.
 
 The Census Economic Census provides only 2007, 2012, 2017, and 2022 snapshots. Accommodation employment was 3,876 in 2012 and 1,650 in 2022. It cannot be treated as an annual series or directly combined with QCEW or FRED. The 2017 figure reflects a mid-disruption snapshot taken after the September hurricanes.
 
 :::{#fig-analysis-employment-sources}
-![Related employment measures: FRED, USVIBER, and QCEW](../figures/publication/fig07a_employment_sources_light.png){.light-content #fig-analysis-employment-sources fig-alt="Two-panel chart: FRED, USVIBER, and QCEW employment measures"}
+![](../figures/publication/fig07a_employment_sources_light.png){.light-content}
 
-![Related employment measures: FRED, USVIBER, and QCEW](../figures/publication/fig07a_employment_sources_dark.png){.dark-content #fig-analysis-employment-sources-dk fig-alt="Two-panel chart: FRED, USVIBER, and QCEW employment measures"}
+![](../figures/publication/fig07a_employment_sources_dark.png){.dark-content}
 
 Each series indexed to its own 2016 employment level. FRED/BLS: Leisure and Hospitality (NAICS 71+72), annual mean; USVIBER: selected tourism-related employment categories; QCEW: Accommodation and Food Services (NAICS 72), annual average covered jobs. Different employment definitions and populations; indices compare relative change, not equivalent job counts.
 :::
@@ -218,7 +218,7 @@ Each series indexed to its own 2016 employment level. FRED/BLS: Leisure and Hosp
 |---|---:|---:|---:|---|
 | FRED L&H employment | 2016 annual mean | 2025 | 84% | Broad sector below 2016 |
 | FRED L&H employment | 2016 annual mean | 2024 | 91% | Partial recovery, then 2025 decline |
-| QCEW NAICS 72 jobs | 2016 | 2025 | 93% | UI-covered annual average jobs |
+| QCEW NAICS 72 jobs | 2016 | 2025 | 90% | UI-covered annual average jobs |
 | USVIBER tourism employment | 2016 | 2022 | 81% | Selected tourism-related jobs below 2016 |
 | Census accommodation employment | 2012 | 2022 | 43% | March snapshot; different source and industry coverage; early in recovery |
 
@@ -240,21 +240,23 @@ BEA provides two distinct measures. Real GDP covers the entire territorial econo
 :::
 
 :::{#fig-analysis-gdp}
-![BEA real USVI GDP and real A&F value added, each indexed to 2016 = 100](../figures/publication/fig08_gdp_af_light.png){.light-content #fig-analysis-gdp fig-alt="Line chart of real GDP and real A&F value added indexed to 2016=100"}
+![](../figures/publication/fig08_gdp_af_light.png){.light-content}
 
-![BEA real USVI GDP and real A&F value added, each indexed to 2016 = 100](../figures/publication/fig08_gdp_af_dark.png){.dark-content #fig-analysis-gdp-dk fig-alt="Line chart of real GDP and real A&F value added indexed to 2016=100"}
+![](../figures/publication/fig08_gdp_af_dark.png){.dark-content}
 
 Real GDP (solid) and real Accommodation and Food Services value added (dashed), each indexed to 2016 = 100. Latest GDP observation: 2022. Latest A&F observation: 2021. BEA real series use chained dollars.
 :::
 
-Real GDP rose from 100 in 2016 to 119 in 2022 — above the hurricane benchmark. Accommodation and Food Services real value added reached 87 in 2021, the last available industry observation — still below 2016.
+Real GDP rose from 100 in 2016 to 105 in 2022 — a modest gain above the hurricane benchmark. Accommodation and Food Services real value added reached 87 in 2021, the last available industry observation — still below 2016.
 
 These are different concepts. Real GDP includes the entire territorial economy. Accommodation and Food Services is a broad industry that includes resident-serving activity and excludes tourism-related spending in transportation, retail, and recreation.
 
-:::{#fig-analysis-af-share}
-![Accommodation and Food Services as an approximate share of nominal GDP](../figures/publication/fig09_af_share_light.png){.light-content #fig-analysis-af-share fig-alt="Line chart of A&F share of nominal GDP"}
+The 2016 benchmark itself merits context. BEA real GDP was 5,565 in 2008 and fell steadily to 3,748 by 2015 — a 33% contraction — before the 2017 hurricanes. The Hess Oil Virgin Islands Corporation (Hovensa) refinery, which had operated as the territory's largest private employer and a major source of GDP, closed in February 2012. The sharp GDP decline from 2011 to 2015 coincided with this closure, though the BEA series alone cannot attribute causation or quantify the effect. What it establishes is that the 2016 baseline was already a substantially diminished level compared to the decade before. A 2022 index of 105 represents a 5% gain above an already-depressed starting point, not a return to historical scale.
 
-![Accommodation and Food Services as an approximate share of nominal GDP](../figures/publication/fig09_af_share_dark.png){.dark-content #fig-analysis-af-share-dk fig-alt="Line chart of A&F share of nominal GDP"}
+:::{#fig-analysis-af-share}
+![](../figures/publication/fig09_af_share_light.png){.light-content}
+
+![](../figures/publication/fig09_af_share_dark.png){.dark-content}
 
 Accommodation and Food Services nominal value added divided by nominal GDP. The numerator and denominator are not fully equivalent concepts, so this is an approximate industry share, not a tourism GDP estimate.
 :::
@@ -265,7 +267,7 @@ The A&F share of nominal GDP fell from 12.7% in 2016 to 11.0% in 2021, with a 6.
 
 | Measure | Benchmark | Latest | Value | Interpretation |
 |---|---:|---:|---:|---|
-| Real GDP | 2016 | 2022 | 119% | Above 2016; whole economy |
+| Real GDP | 2016 | 2022 | 105% | Above 2016; whole economy |
 | Real A&F value added | 2016 | 2021 | 87% | Industry output below 2016 |
 | A&F share of nominal GDP | 2016 | 2021 | 11.0% vs. 12.7% | Approx. share down 1.7 pp |
 
@@ -274,9 +276,9 @@ The A&F share of nominal GDP fell from 12.7% in 2016 to 11.0% in 2021, with a 6.
 By 2021, air arrivals had returned to their 2016 level, but cruise passengers remained at just 13%. Hotel inventory stood at 62% of its baseline, while broad Leisure & Hospitality employment was at 76% and real Accommodation & Food Services value added at 87%. The visitor economy was not recovering as a single unit: different parts of it were moving at very different speeds.
 
 :::{#fig-analysis-2021-snapshot}
-![2021 common-year recovery snapshot](../figures/publication/fig09a_2021_recovery_snapshot_light.png){.light-content #fig-analysis-2021-snapshot fig-alt="Multi-line chart showing 2021 common-year recovery snapshot"}
+![](../figures/publication/fig09a_2021_recovery_snapshot_light.png){.light-content}
 
-![2021 common-year recovery snapshot](../figures/publication/fig09a_2021_recovery_snapshot_dark.png){.dark-content #fig-analysis-2021-snapshot-dk fig-alt="Multi-line chart showing 2021 common-year recovery snapshot"}
+![](../figures/publication/fig09a_2021_recovery_snapshot_dark.png){.dark-content}
 
 Each indicator is independently indexed to its 2016 level (2016 = 100%). Measures differ in definition, coverage, and source population; their relative positions should not be interpreted as directly comparable quantities. 2021 reflects an ongoing pandemic-era recovery, not the eventual outcome.
 :::
@@ -299,11 +301,11 @@ The preceding sections establish independent evidence for different dimensions o
 :::
 
 :::{#fig-analysis-recovery}
-![Six indicators indexed independently to 2016 = 100, 2012–2025](../figures/publication/fig10_recovery_light.png){.light-content #fig-analysis-recovery fig-alt="Multi-line chart showing six indicators indexed to 2016=100"}
+![](../figures/publication/fig10_recovery_light.png){.light-content}
 
-![Six indicators indexed independently to 2016 = 100, 2012–2025](../figures/publication/fig10_recovery_dark.png){.dark-content #fig-analysis-recovery-dk fig-alt="Multi-line chart showing six indicators indexed to 2016=100"}
+![](../figures/publication/fig10_recovery_dark.png){.dark-content}
 
-Six indicators indexed independently to 2016 = 100. Latest observation years differ: air visitors and cruise through 2024; hotel rooms through 2024; L&H employment through 2025; A&F real value added through 2021; NPS recreation visits through 2025. Occupancy is not indexed because a rate is not interpretable on this scale. Sources: USVIBER, FRED/BLS, BEA, NPS IRLS.
+Six indicators indexed independently to 2016 = 100. Latest observation years differ: air visitors and cruise through 2024; hotel rooms through 2024; L&H employment through 2025; A&F real value added through 2021; NPS recreation visits through 2025. Occupancy is not indexed because a rate is not interpretable on this scale. Sources: USVIBER, FRED/BLS, BEA, NPS IRMA.
 :::
 
 The lines separate around two shocks. Visitor modes are the fastest to change in 2020 and the most varied in 2024. Capacity and broad employment remain lower than before 2017. A&F real value added is lower in the latest available industry observation. Real GDP is higher, but it covers the whole territorial economy.
@@ -321,7 +323,7 @@ NPS VIIS visitation adds a useful but non-equivalent recreation signal. The 2025
 | Annual indicator occupancy | 2016 rate | 2024 | 66.3%; +9.6 pp | Higher utilization |
 | FRED L&H employment | 2016 annual mean | 2025 | 84% | Partial or renewed weakness |
 | Real A&F value added | 2016 | 2021 | 87% | Below baseline; not tourism GDP |
-| Real GDP | 2016 | 2022 | 119% | Broader economy above baseline |
+| Real GDP | 2016 | 2022 | 105% | Broader economy above baseline |
 | VIIS recreation visits | 2016 | 2025 | 115% | Above 2016; different population |
 
 :::{.closing-synthesis}

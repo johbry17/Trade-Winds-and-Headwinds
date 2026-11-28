@@ -18,6 +18,7 @@ plot_fred_employment <- function(mode = "light") {
 
   df_clean <- df |> 
     filter(!is.na(emp_sa_avg)) |>
+    filter(year <= 2025) |>
     mutate(emp_sa_avg = emp_sa_avg * 1000)
 
   ann_pts <- df_clean |>

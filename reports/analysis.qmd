@@ -295,7 +295,7 @@ Where do the indicators converge, where do they diverge, and what is defensible 
 :::
 
 :::{.section-intro}
-The five preceding sections establish independent evidence for different dimensions of the tourism economy. This section brings the principal indicators together on a common index scale to show where they converge and where they diverge. No single recovery number exists; the aggregate pattern is the finding.
+The preceding sections establish independent evidence for different dimensions of the tourism economy. This section brings the principal indicators together on a common index scale to show where they converge and where they diverge. No single recovery number exists; the aggregate pattern is the finding.
 :::
 
 :::{#fig-analysis-recovery}

@@ -64,8 +64,8 @@ format:
       - text: |
           <script src="scripts/site.js"></script>
 
-# execute:
-#   freeze: auto
-#   cache: true
+execute:
+  freeze: auto
+  cache: true
 
 jupyter: python3

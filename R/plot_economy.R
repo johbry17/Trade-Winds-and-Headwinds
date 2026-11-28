@@ -71,6 +71,7 @@ plot_gdp_af <- function(mode = "light") {
       expand = expansion(mult = c(0.01, 0.30))
     ) +
     scale_y_continuous(
+      labels = function(x) paste0(x, "%"),
       expand = expansion(mult = c(0.02, 0.05))
     ) +
     labs(
@@ -85,7 +86,7 @@ plot_gdp_af <- function(mode = "light") {
     theme_tw(mode) +
     theme(legend.position = "none")
 
-  p <- add_benchmark(p, y = 100, label = "2016 = 100", mode = mode)
+  p <- add_benchmark(p, y = 100, label = "2016 level", mode = mode)
   add_shocks(p, mode = mode)
 }
 

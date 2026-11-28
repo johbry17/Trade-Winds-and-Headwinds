@@ -117,6 +117,7 @@ plot_overview_recovery <- function(mode = "light") {
       expand = expansion(mult = c(0.01, 0.28))
     ) +
     scale_y_continuous(
+      labels = function(x) paste0(x, "%"),
       expand = expansion(mult = c(0.03, 0.05))
     ) +
     labs(
@@ -130,7 +131,7 @@ plot_overview_recovery <- function(mode = "light") {
     theme_tw(mode) +
     theme(legend.position = "none")
 
-  p <- add_benchmark(p, y = 100, label = "2016 = 100", mode = mode)
+  p <- add_benchmark(p, y = 100, label = "2016 level", mode = mode)
   add_shocks(p, mode = mode)
 }
 
@@ -299,8 +300,8 @@ plot_recovery <- function(mode = "light") {
   group_order <- c(
     "Visitor activity",
     "Accommodation",
-    "Labor and industry",
-    "Recreation"
+    "Recreation",
+    "Labor and industry"
   )
 
   df <- df |>
@@ -342,6 +343,7 @@ plot_recovery <- function(mode = "light") {
       breaks = c(2012, 2017, 2020, 2025),
       expand = expansion(mult = c(0.02, 0.08))
     ) +
+    scale_y_continuous(labels = function(x) paste0(x, "%")) +
     coord_cartesian(ylim = c(20, 125)) +
     labs(
       x = NULL,

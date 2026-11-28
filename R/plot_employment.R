@@ -16,12 +16,14 @@ plot_fred_employment <- function(mode = "light") {
   pal <- tw_palette(mode)
   df  <- read_csv("data/processed/employment_fred_annual.csv", show_col_types = FALSE)
 
-  df_clean <- df |> filter(!is.na(emp_sa_avg))
+  df_clean <- df |> 
+    filter(!is.na(emp_sa_avg)) |>
+    mutate(emp_sa_avg = emp_sa_avg * 1000)
 
   ann_pts <- df_clean |>
     filter(year %in% c(2016, max(df_clean$year))) |>
     mutate(
-      nudge_y = if_else(year == 2016, 0.15, -0.25),
+      nudge_y = if_else(year == 2016, 150, -250),
       vjust = if_else(year == 2016, 0, 0.5)
     )
   
@@ -39,7 +41,7 @@ plot_fred_employment <- function(mode = "light") {
     ) +
     geom_text(
       data  = ann_pts,
-      aes(label = paste0(year, ":\n", round(emp_sa_avg, 1), "k"),
+      aes(label = paste0(year, ":\n", scales::comma(emp_sa_avg)),
           y = emp_sa_avg + nudge_y,
           vjust = vjust),
       size   = 2.9,
@@ -57,7 +59,7 @@ plot_fred_employment <- function(mode = "light") {
     ) +
     labs(
       x       = NULL,
-      y       = "Employees (thousands)",
+      y       = "Employees (jobs)",
       title   = "Broad L&H Employment Recovered Only in Part",
       caption = source_note(
         "Source: FRED/BLS USVI Leisure & Hospitality (NAICS 71+72); annual values are means of monthly SA observations"
@@ -237,7 +239,7 @@ plot_employment_comparison <- function(mode = "light") {
     labs(
       x = NULL,
       y = "Employment (jobs)",
-      title = "Two Measures of Leisure & Hospitality Employment",
+      title = "Two Measures of Accommodation & Food Services Employment",
       caption = source_note(
         "Source: BLS QCEW (UI-covered jobs, annual average); U.S. Census Economic Census, NAICS 72 (March payroll snapshot).\nDifferent populations and reference periods."
       ),
@@ -402,5 +404,6 @@ plot_employment_sources <- function(mode = "light") {
       legend.text = element_text(size = rel(0.82))
     )
 
+  p <- add_benchmark(p, y = 100, label = "2016 level", mode = mode)
   add_shocks(p, mode = mode)
 }

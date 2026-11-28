@@ -349,11 +349,11 @@ plot_island_hotel <- function(mode = "light") {
           label = paste0(round(index), "%"),
           vjust = if_else(
             measure == "Occupied room-nights",
-            -0.7,
-            1.5
+            -1.5,
+            2.5
           )
         ),
-        hjust = 1.1,
+        hjust = 0.25,
         size = 2.7,
         show.legend = FALSE
       ) +
@@ -368,6 +368,7 @@ plot_island_hotel <- function(mode = "light") {
         breaks = c(2007, 2012, 2017, 2020, 2024),
         expand = expansion(mult = c(0.02, 0.08))
       ) +
+      scale_y_continuous(labels = function(x) paste0(x, "%")) +
       labs(
         x = NULL,
         y = "Index (2016 = 100)",
@@ -388,6 +389,7 @@ plot_island_hotel <- function(mode = "light") {
         }
       )
 
+    p <- add_benchmark(p, y = 100, label = "2016 level", mode = mode)
     add_shocks(p, mode = mode)
   }
 

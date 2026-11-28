@@ -135,6 +135,193 @@ plot_overview_recovery <- function(mode = "light") {
   add_shocks(p, mode = mode)
 }
 
+
+# ---------------------------------------------------------------------------
+# Fig 9a — 2021 common-year recovery snapshot
+# ---------------------------------------------------------------------------
+plot_2021_recovery_snapshot <- function(mode = "light") {
+  pal <- tw_palette(mode)
+
+  # Read processed data
+  visitors <- read_csv(
+    "data/processed/visitors_annual.csv",
+    show_col_types = FALSE
+  )
+
+  fred <- read_csv(
+    "data/processed/employment_fred_annual.csv",
+    show_col_types = FALSE
+  )
+
+  af <- read_csv(
+    "data/processed/bea_af_real.csv",
+    show_col_types = FALSE
+  )
+
+  gdp <- read_csv(
+    "data/processed/bea_gdp_real.csv",
+    show_col_types = FALSE
+  )
+
+  # Calculate index relative to 2016
+  index_value <- function(data, value_col, year = 2021) {
+    base <- data |>
+      filter(year == 2016) |>
+      pull({{ value_col }})
+
+    current <- data |>
+      filter(year == !!year) |>
+      pull({{ value_col }})
+
+    if (
+      length(base) != 1 ||
+      length(current) != 1 ||
+      is.na(base) ||
+      is.na(current) ||
+      base == 0
+    ) {
+      return(NA_real_)
+    }
+
+    current / base * 100
+  }
+
+  # Build the selected 2021 indicators
+  snapshot <- tibble(
+    series = c(
+      "Total arrivals",
+      "Air visitors",
+      "Cruise passengers",
+      "Hotel rooms",
+      "L&H employment",
+      "A&F real value added",
+      "Real GDP"
+    ),
+    group = c(
+      "Visitor activity",
+      "Visitor activity",
+      "Visitor activity",
+      "Accommodation",
+      "Employment",
+      "Economic output",
+      "Economic output"
+    ),
+    index = c(
+      index_value(visitors, total_visitors),
+      index_value(visitors, air_visitors),
+      index_value(visitors, cruise_passengers),
+      index_value(visitors, hotel_rooms),
+      index_value(fred, emp_sa_avg),
+      index_value(af, af_real),
+      index_value(gdp, gdp_real)
+    )
+  ) |>
+    filter(!is.na(index))
+
+  # Consistent semantic colors
+  series_colors <- c(
+    "Total arrivals"       = pal$total,
+    "Air visitors"         = pal$air_visitors,
+    "Cruise passengers"    = pal$cruise,
+    "Hotel rooms"          = pal$rooms,
+    "L&H employment"       = pal$employment,
+    "A&F real value added"  = pal$value_added,
+    "Real GDP"              = pal$gdp
+  )
+
+  group_order <- c(
+    "Visitor activity",
+    "Accommodation",
+    "Employment",
+    "Economic output"
+  )
+
+  # Group and order rows
+  snapshot <- snapshot |>
+    mutate(
+      group = factor(group, levels = group_order),
+      series = factor(series, levels = names(series_colors))
+    ) |>
+    arrange(group, series) |>
+    mutate(
+      label_order = factor(
+        as.character(series),
+        levels = rev(as.character(series))
+      ),
+      endpoint_color = unname(
+        series_colors[as.character(series)]
+      )
+    )
+
+  # Horizontal comparison plot
+  p <- ggplot(
+    snapshot,
+    aes(x = index, y = label_order, color = endpoint_color)
+  ) +
+    geom_vline(
+      xintercept = 100,
+      color = pal$benchmark,
+      linewidth = 0.6
+    ) +
+    geom_segment(
+      aes(
+        x = 100,
+        xend = index,
+        y = label_order,
+        yend = label_order
+      ),
+      linewidth = 0.8,
+      na.rm = TRUE
+    ) +
+    geom_point(size = 3.2, na.rm = TRUE) +
+    geom_text(
+      aes(label = paste0(round(index, 1), "%")),
+      hjust = ifelse(snapshot$index >= 100, -0.35, 1.35),
+      size = 2.8,
+      show.legend = FALSE
+    ) +
+    scale_color_identity(guide = "none") +
+    scale_x_continuous(
+      limits = c(0, 120),
+      breaks = seq(0, 120, 20),
+      expand = expansion(mult = c(0.01, 0.08))
+    ) +
+    labs(
+      x = "% of 2016 level",
+      y = NULL,
+      title = "The Tourism Economy in 2021",
+      subtitle = "Selected indicators relative to their 2016 levels"
+    ) +
+    theme_tw(mode) +
+    theme(
+      panel.grid.major.y = element_blank(),
+      axis.line.y = element_blank(),
+      legend.position = "none"
+    )
+
+  p +
+    plot_annotation(
+      caption = source_note(
+        paste0(
+          "Source: USVIBER, FRED/BLS, BEA. Each indicator is independently ",
+          "indexed to 2016 = 100. Definitions, coverage, and source ",
+          "populations differ. \nL&H employment covers the broader ",
+          "Leisure & Hospitality sector; A&F value added covers ",
+          "Accommodation & Food Services, not tourism alone. ",
+          "\nReal GDP represents the wider territorial economy."
+        )
+      ),
+      theme = theme_tw(mode) +
+        theme(
+          plot.caption = element_text(
+            color = pal$text_caption,
+            size = rel(0.72),
+            hjust = 0
+          )
+        )
+    )
+}
+
 # # ---------------------------------------------------------------------------
 # # Fig 10 — Full 6-series recovery chart
 # # ---------------------------------------------------------------------------

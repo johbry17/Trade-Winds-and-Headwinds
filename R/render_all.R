@@ -60,6 +60,7 @@ figures <- list(
   list(name = "fig07a_employment_sources", fn = plot_employment_sources),
   list(name = "fig08_gdp_af",              fn = plot_gdp_af),
   list(name = "fig09_af_share",            fn = plot_af_share),
+  list(name = "fig09a_2021_recovery_snapshot", fn = plot_2021_recovery_snapshot, height = 3.5),
   list(name = "fig10_recovery",            fn = plot_recovery, height = 10),
   list(name = "figOV_recovery",            fn = plot_overview_recovery)
 )

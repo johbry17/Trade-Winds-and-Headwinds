@@ -179,7 +179,7 @@ Which employment measures support a labor-market recovery claim, and which are t
 :::
 
 :::{.section-intro}
-Three independent sources measure employment in the USVI tourism-adjacent labor market. They count different populations, use different reference periods, and are not interchangeable. FRED/BLS covers the broadest sector; QCEW covers UI-insured jobs; the Census Economic Census provides establishment-level snapshots.
+Four independent sources measure employment in the USVI tourism-adjacent labor market. They count different populations, use different reference periods, and are not interchangeable. FRED/BLS covers the broadest sector; QCEW covers UI-insured jobs; the Census Economic Census provides establishment-level snapshots. USVIBER surveys selected tourism-related jobs.
 :::
 
 :::{#fig-analysis-employment-fred}
@@ -204,6 +204,14 @@ QCEW employment fell from 6,775 annual average jobs in 2016 to 3,826 in 2020 and
 
 The Census Economic Census provides only 2007, 2012, 2017, and 2022 snapshots. Accommodation employment was 3,876 in 2012 and 1,650 in 2022. It cannot be treated as an annual series or directly combined with QCEW or FRED. The 2017 figure reflects a mid-disruption snapshot taken after the September hurricanes.
 
+:::{#fig-analysis-employment-sources}
+![Related employment measures: FRED, USVIBER, and QCEW](../figures/publication/fig07a_employment_sources_light.png){.light-content #fig-analysis-employment-sources fig-alt="Two-panel chart: FRED, USVIBER, and QCEW employment measures"}
+
+![Related employment measures: FRED, USVIBER, and QCEW](../figures/publication/fig07a_employment_sources_dark.png){.dark-content #fig-analysis-employment-sources-dk fig-alt="Two-panel chart: FRED, USVIBER, and QCEW employment measures"}
+
+Each series indexed to its own 2016 employment level. FRED/BLS: Leisure and Hospitality (NAICS 71+72), annual mean; USVIBER: selected tourism-related employment categories; QCEW: Accommodation and Food Services (NAICS 72), annual average covered jobs. Different employment definitions and populations; indices compare relative change, not equivalent job counts.
+:::
+
 ## Employment scorecard
 
 | Measure | Benchmark | Latest | Value | Interpretation |
@@ -211,7 +219,8 @@ The Census Economic Census provides only 2007, 2012, 2017, and 2022 snapshots. A
 | FRED L&H employment | 2016 annual mean | 2025 | 84% | Broad sector below 2016 |
 | FRED L&H employment | 2016 annual mean | 2024 | 91% | Partial recovery, then 2025 decline |
 | QCEW NAICS 72 jobs | 2016 | 2025 | 93% | UI-covered annual average jobs |
-| Census accommodation employment | 2012 | 2022 | 43% | March snapshot; different source |
+| USVIBER tourism employment | 2016 | 2022 | 81% | Selected tourism-related jobs below 2016 |
+| Census accommodation employment | 2012 | 2022 | 43% | March snapshot; different source and industry coverage; early in recovery |
 
 ---
 

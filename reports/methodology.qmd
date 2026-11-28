@@ -39,13 +39,14 @@ Visitor counts represent arrivals, not unique individuals. They do not measure l
 
 ## Employment and Compensation
 
-Three sources provide complementary measures of employment:
+Four sources provide complementary measures of employment:
 
 - **FRED Leisure and Hospitality:** Monthly seasonally adjusted and non-seasonally adjusted employment. Annual values are calculated as the mean of the twelve monthly observations, not their sum. The series covers the broader Leisure and Hospitality sector (NAICS 71 and 72), not tourism alone.
-- **USVIBER tourism employment:** Published employment categories for hotels and lodging, and eating and drinking establishments. The available series ends in 2022.
+- **USVIBER tourism employment:** Published employment categories for hotels and lodging, eating and drinking establishments, and other tourism-related sectors. The available series ends in 2022.
 - **BLS Quarterly Census of Employment and Wages (QCEW):** Annual average employment, wages, and establishments for NAICS 72, 721, and 722. QCEW counts covered jobs rather than unique workers and excludes self-employed and other uncovered workers.
+- **Census Bureau, Economic Census:** Periodic employment snapshots for payroll-filing businesses. Figures represent March pay period, not annual averages.
 
-Census employment figures are March pay-period snapshots, not annual averages. Census, QCEW, FRED, and USVIBER employment figures are therefore compared as indicators of related activity, not as equivalent counts.
+The sources differ in industry coverage, reporting population, and reference period. Census, QCEW, FRED, and USVIBER employment figures are therefore compared as indicators of related activity, not as equivalent counts.
 
 QCEW average annual pay is calculated as total annual wages divided by annual average employment. Nominal wages and payroll are adjusted to approximate 2016 dollars using the mainland U.S. CPI-U. This is an inflation proxy, not a USVI-specific price adjustment.
 

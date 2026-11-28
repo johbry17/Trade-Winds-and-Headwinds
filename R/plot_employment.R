@@ -239,7 +239,7 @@ plot_employment_comparison <- function(mode = "light") {
       y = "Employment (jobs)",
       title = "Two Measures of Leisure & Hospitality Employment",
       caption = source_note(
-        "Source: BLS QCEW (UI-covered jobs, annual average); U.S. Census Economic Census, NAICS 72 (March payroll snapshot). Different populations and reference periods."
+        "Source: BLS QCEW (UI-covered jobs, annual average); U.S. Census Economic Census, NAICS 72 (March payroll snapshot).\nDifferent populations and reference periods."
       ),
       color = NULL
     ) +
@@ -252,4 +252,155 @@ plot_employment_comparison <- function(mode = "light") {
 }
 
 # ---------------------------------------------------------------------------
-# Fig 6 — FRED L&H employment
+# Fig 7a — Employment comparison — FRED, USVIBER, and QCEW
+# ---------------------------------------------------------------------------
+plot_employment_sources <- function(mode = "light") {
+  pal <- tw_palette(mode)
+
+  fred <- read_csv(
+    "data/processed/employment_fred_annual.csv",
+    show_col_types = FALSE
+  ) |>
+    transmute(
+      year = as.integer(year),
+      employment = emp_sa_avg * 1000,
+      source = "FRED/BLS Leisure & Hospitality"
+    )
+
+  usviber <- read_csv(
+    "data/processed/employment_usviber.csv",
+    show_col_types = FALSE
+  ) |>
+    filter(!is.na(emp_tourism_total)) |>
+    transmute(
+      year = as.integer(year),
+      employment = as.numeric(emp_tourism_total),
+      source = "USVIBER tourism employment"
+    )
+
+  qcew <- read_csv(
+    "data/processed/employment_qcew.csv",
+    show_col_types = FALSE
+  ) |>
+    filter(!is.na(annual_avg_emplvl)) |>
+    transmute(
+      year = as.integer(year),
+      employment = as.numeric(annual_avg_emplvl),
+      source = "QCEW Accommodation & Food Services"
+    )
+
+  long <- bind_rows(fred, usviber, qcew) |>
+    filter(!is.na(year), !is.na(employment))
+
+  # Ensure each source has at most one observation per year.
+  duplicates <- long |>
+    count(source, year) |>
+    filter(n > 1)
+
+  if (nrow(duplicates) > 0) {
+    stop(
+      "Duplicate source-year observations in employment comparison: ",
+      paste(
+        paste(duplicates$source, duplicates$year, sep = " / "),
+        collapse = "; "
+      )
+    )
+  }
+
+  # Require an observed 2016 baseline for every source.
+  baselines <- long |>
+    filter(year == 2016) |>
+    select(source, baseline = employment)
+
+  missing_baselines <- setdiff(
+    unique(long$source),
+    baselines$source
+  )
+
+  if (length(missing_baselines) > 0) {
+    stop(
+      "Missing 2016 employment baseline for: ",
+      paste(missing_baselines, collapse = ", ")
+    )
+  }
+
+  long <- long |>
+    left_join(baselines, by = "source") |>
+    mutate(index = employment / baseline * 100)
+
+  source_order <- c(
+    "FRED/BLS Leisure & Hospitality",
+    "USVIBER tourism employment",
+    "QCEW Accommodation & Food Services"
+  )
+
+  long <- long |>
+    mutate(source = factor(source, levels = source_order))
+
+  colors <- c(
+    "FRED/BLS Leisure & Hospitality" = pal$employment,
+    "USVIBER tourism employment" = pal$air_visitors,
+    "QCEW Accommodation & Food Services" = pal$value_added
+  )
+
+  linetypes <- c(
+    "FRED/BLS Leisure & Hospitality" = "solid",
+    "USVIBER tourism employment" = "22",
+    "QCEW Accommodation & Food Services" = "solid"
+  )
+
+  p <- ggplot(
+    long,
+    aes(
+      x = year,
+      y = index,
+      color = source,
+      linetype = source
+    )
+  ) +
+    geom_hline(
+      yintercept = 100,
+      color = pal$benchmark,
+      linewidth = 0.5
+    ) +
+    geom_line(
+      linewidth = 1,
+      na.rm = TRUE
+    ) +
+    scale_color_manual(values = colors) +
+    scale_linetype_manual(values = linetypes) +
+    scale_x_continuous(
+      breaks = seq(2000, 2025, 5),
+      limits = c(2000, 2025),
+      expand = expansion(mult = c(0.01, 0.02))
+    ) +
+    scale_y_continuous(
+      labels = label_number(suffix = "%"),
+      expand = expansion(mult = c(0.05, 0.12))
+    ) +
+    labs(
+      x = NULL,
+      y = "Employment index (2016 = 100)",
+      title = "Employment Trends Across Three Sources",
+      subtitle = "Each series is indexed to its own 2016 employment level",
+      caption = source_note(
+        paste(
+          "Sources: FRED/BLS, USVIBER Annual Tourism Indicators, and BLS QCEW.",
+          "FRED: NAICS 71+72, annual mean of seasonally adjusted monthly estimates.",
+          "\nUSVIBER: selected tourism-related employment categories.",
+          "QCEW: NAICS 72, annual average UI-covered jobs.",
+          "\nDefinitions and coverage differ; indexed trends are not directly",
+          "equivalent measures of the same employment population."
+        )
+      ),
+      color = NULL,
+      linetype = NULL
+    ) +
+    theme_tw(mode) +
+    theme(
+      legend.position = "bottom",
+      legend.text = element_text(size = rel(0.82))
+    )
+
+  add_shocks(p, mode = mode)
+}

@@ -16,6 +16,7 @@ Outputs (data/processed/):
     hotel_island_annual.csv      Island-level hotel stats (STT / STX)
     island_arrivals.csv          Island-level air and cruise arrivals
     employment_fred_annual.csv   FRED L&H annual means, 2000–2025
+    employment_usviber.csv    USVIBER tourism-related employment, 2000–2024
     employment_qcew.csv          QCEW NAICS 72 territory-level, 2000–2025
     census_naics72.csv           Census Economic Census snapshots (2007, 2012, 2017, 2022)
     bea_gdp_real.csv             BEA real GDP, 2002–2022
@@ -154,7 +155,43 @@ def export_fred_employment():
 
 
 # ---------------------------------------------------------------------------
-# 6. QCEW territory NAICS 72 — employment_qcew.csv
+# 6. USVIBER tourism employment — employment_usviber.csv
+# ---------------------------------------------------------------------------
+
+def export_usviber_employment():
+    """
+    Export USVIBER tourism-related employment indicators.
+
+    Uses the combined TOUR10/TOUR24 series:
+      - 2001–2009: TOUR10
+      - 2000 and 2010–2024: TOUR24
+
+    Employment is reported as number of jobs. TOUR24 provides hotel and
+    eating/drinking employment components; TOUR10 provides only the total.
+    Employment observations for 2023–2024 are unavailable.
+    """
+    df = load_usviber_combined(deflate=False)
+
+    keep = [
+        "year",
+        "emp_tourism_total",
+        "emp_hotels",
+        "emp_eating_drinking",
+        "source_publication",
+    ]
+
+    out = (
+        df.loc[df["year"].between(2000, 2024), keep]
+        .sort_values("year")
+        .reset_index(drop=True)
+    )
+
+    _save(out, "employment_usviber.csv")
+    return out
+
+
+# ---------------------------------------------------------------------------
+# 7. QCEW territory NAICS 72 — employment_qcew.csv
 # ---------------------------------------------------------------------------
 
 def export_qcew():
@@ -172,7 +209,7 @@ def export_qcew():
 
 
 # ---------------------------------------------------------------------------
-# 7. Census Economic Census NAICS 72 — census_naics72.csv
+# 8. Census Economic Census NAICS 72 — census_naics72.csv
 # ---------------------------------------------------------------------------
 
 def export_census_naics72():
@@ -273,7 +310,7 @@ def export_census_naics72():
 
 
 # ---------------------------------------------------------------------------
-# 8. BEA real GDP — bea_gdp_real.csv
+# 9. BEA real GDP — bea_gdp_real.csv
 # ---------------------------------------------------------------------------
 
 def export_bea_gdp_real():
@@ -297,7 +334,7 @@ def export_bea_gdp_real():
 
 
 # ---------------------------------------------------------------------------
-# 9. BEA real A&F value added — bea_af_real.csv
+# 10. BEA real A&F value added — bea_af_real.csv
 # ---------------------------------------------------------------------------
 
 def export_bea_af_real():
@@ -314,7 +351,7 @@ def export_bea_af_real():
 
 
 # ---------------------------------------------------------------------------
-# 10. BEA A&F share of nominal GDP — bea_af_share.csv
+# 11. BEA A&F share of nominal GDP — bea_af_share.csv
 # ---------------------------------------------------------------------------
 
 def export_bea_af_share():
@@ -340,7 +377,7 @@ def export_bea_af_share():
 
 
 # ---------------------------------------------------------------------------
-# 11. Census guestrooms — census_rooms.csv
+# 12. Census guestrooms — census_rooms.csv
 # ---------------------------------------------------------------------------
 
 def export_census_rooms():
@@ -350,7 +387,7 @@ def export_census_rooms():
 
 
 # ---------------------------------------------------------------------------
-# 12. NPS VIIS annual — nps_viis.csv
+# 13. NPS VIIS annual — nps_viis.csv
 # ---------------------------------------------------------------------------
 
 def export_nps_viis():
@@ -441,6 +478,7 @@ def main() -> None:
     export_hotel_island()
     export_island_arrivals()
     fred_ann = export_fred_employment()
+    export_usviber_employment()
     export_qcew()
     export_census_naics72()
     export_bea_gdp_real()
